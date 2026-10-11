@@ -48,3 +48,6 @@ td:nth-child(2){white-space:nowrap}
 .vwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .video figcaption{font-weight:700;margin-top:.4rem}
 .vnote{display:block;font-weight:400;font-size:.85rem;opacity:.75}
+#changelog details{margin:.5em 0}
+#changelog summary{cursor:pointer;font-weight:800}
+#changelog ul{margin:.4em 0 .4em 1.2em}

@@ -84,7 +84,7 @@
       <div class="card"><h3>Tough bosses</h3><p>EliteMobs brings stronger mobs and boss fights.</p></div>
       <div class="card"><h3>Land claims</h3><p>Protect your stuff with GriefPrevention. Use a golden shovel to claim land.</p></div>
       <div class="card"><h3>Rollback</h3><p>CoreProtect can undo griefing if something goes wrong.</p></div>
-      <div class="card"><h3>Handy commands</h3><p>/spawn, /tpa, and warps. Use the menu compass to get around. Sleep in a bed to set your respawn.</p></div>
+      <div class="card"><h3>Handy commands</h3><p>/spawn, /tpa, /compass, and warps. Use the menu compass to get around. You always respawn with it. Sleep in a bed to set your respawn.</p></div>
       <div class="card"><h3>Weekend bonus</h3><p>1.2x mcMMO XP every weekend.</p></div>
     </div>
   </section>
@@ -166,6 +166,7 @@
       <p><b>What you can type:</b></p>
       <ul class="cmds">
         <li><code>/spawn</code> go back to the village (or tap Spawn in the compass menu)</li>
+        <li><code>/compass</code> get a new Server Menu compass if yours is missing</li>
         <li><code>/tpa &lt;name&gt;</code> ask to jump over to someone</li>
         <li><code>/tpaccept</code> or <code>/tpdeny</code> say yes or no when someone asks to come to you</li>
         <li><code>/warps</code> see the list of special places, and <code>/warp &lt;place&gt;</code> to go there</li>
@@ -222,8 +223,13 @@
     <div class="panel" role="tabpanel" id="panel-server-menu-compass" aria-labelledby="tab-server-menu-compass" tabindex="0">
       <h3>Server menu compass</h3>
       <p><b>What it does:</b> The compass in your bag opens a menu with big buttons, like Spawn (takes you to the village), Leaderboard, and Teleport to a player. No typing needed. Just use the compass (right-click or tap) and pick a button.</p>
+      <p><b>Always with you:</b> You always respawn with your Server Menu compass. It does not drop when you die, and you cannot throw it away.</p>
       <p><b>Teleport to a player:</b> tap it, then tap a family member's name. They get a request and tap Accept (or Decline). Your bed sets where you respawn; there are no home teleports.</p>
-      <p><b>What you can type:</b> <code>/menu</code> opens the same menu.</p>
+      <p><b>What you can type:</b></p>
+      <ul class="cmds">
+        <li><code>/menu</code> opens the same menu</li>
+        <li><code>/compass</code> get a new Server Menu compass if yours is missing</li>
+      </ul>
     </div>
     <div class="panel" role="tabpanel" id="panel-leaderboards" aria-labelledby="tab-leaderboards" tabindex="0">
       <h3>Leaderboards: who's on top</h3>
@@ -262,7 +268,7 @@
     <div class="tablewrap"><table>
       <thead><tr><th>Plugin</th><th>Version</th><th>What it does</th></tr></thead>
       <tbody>
-        <tr><td>BedrockMenu</td><td>1.2.3</td><td>Shows the server menu on phones, tablets, and consoles.</td></tr>
+        <tr><td>BedrockMenu</td><td>1.4.1</td><td>Shows the server menu on phones, tablets, and consoles.</td></tr>
         <tr><td>BlueMap</td><td>5.29</td><td>Makes a map of the world you can see in a web browser.</td></tr>
         <tr><td>CMILib</td><td>1.6.0.1</td><td>A helper piece that Jobs needs.</td></tr>
         <tr><td>Chunky</td><td>1.5.3</td><td>Builds the world ahead of time so it loads faster.</td></tr>
@@ -276,7 +282,7 @@
         <tr><td>Jobs</td><td>5.2.6.3</td><td>Pays you money for everyday things.</td></tr>
         <tr><td>Leaderboard</td><td>1.0.0</td><td>Scoreboards showing who's on top.</td></tr>
         <tr><td>LuckPerms</td><td>5.5.87</td><td>Decides who is allowed to do what.</td></tr>
-        <tr><td>MenuJoin</td><td>1.1.0</td><td>Gives you the menu compass.</td></tr>
+        <tr><td>MenuJoin</td><td>1.2.0</td><td>Gives you the menu compass.</td></tr>
         <tr><td>NoPhantoms</td><td>1.0.0</td><td>Turns off phantoms, the flying night monsters.</td></tr>
         <tr><td>PlaceholderAPI</td><td>2.12.3</td><td>A helper piece that lets add-ons share info.</td></tr>
         <tr><td>RestartCountdown</td><td>1.1.0</td><td>Warns everyone before the server restarts.</td></tr>
@@ -306,6 +312,37 @@
       <li>No cheats or x-ray.</li>
       <li>Have fun!</li>
     </ol>
+  </section>
+  <section id="changelog">
+    <h2>Change log</h2>
+    <p>What's new on the server, newest first.</p>
+    <details open>
+      <summary>Oct 11, 2026</summary>
+      <ul>
+        <li>Compass update (MenuJoin 1.2.0): you always get your menu compass back when you respawn, it no longer drops when you die, and you can't throw it away. Lost it anyway? Type <code>/compass</code>.</li>
+        <li>Menu update (BedrockMenu 1.4.1): Home buttons removed, Leaderboard button is back, and the teleport menu stays.</li>
+        <li>Home teleports turned off. Beds still set where you respawn, and Spawn and teleport requests still work.</li>
+        <li>New "Teleport to a player" menu (BedrockMenu 1.3.0): tap a name to ask to teleport, and they get Accept and Decline buttons.</li>
+        <li>Nicknames added: Mike, Kailey, and Rylie.</li>
+        <li>This website launched, with a short link: tinyurl.com/winkreyesvalley.</li>
+        <li>Starter kits removed so everyone starts fresh, close to vanilla.</li>
+        <li>The world spawn is now set at the village.</li>
+        <li>Menu fixes (BedrockMenu 1.2.x): the Spawn button now takes you straight there instead of showing a chat error, with EssentialsX Spawn added for <code>/spawn</code>.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Oct 10, 2026</summary>
+      <ul>
+        <li>Wink Reyes Valley opened on Shockbyte, with crossplay so PC, Mac, phones, tablets, and consoles can play together.</li>
+        <li>Plugins added: mcMMO skills, land claims (GriefPrevention), damage undo (CoreProtect), EssentialsX, LuckPerms, Chunky, and more.</li>
+        <li>Custom mcMMO "Together" bonus: extra skill XP when you play in a party.</li>
+        <li>The menu compass and phone/console menu (BedrockMenu 1.2.0) added.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Oct 9, 2026</summary>
+      <ul><li>Server planned: a family-only world for every device.</li></ul>
+    </details>
   </section>
 </main>
 
