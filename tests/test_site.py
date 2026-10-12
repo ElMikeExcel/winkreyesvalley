@@ -115,15 +115,17 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('All other Excel renames are still planned.', self.text)
         self.assertNotIn('ExcelmcMMO', self.text)
         self.assertEqual(len(re.findall(r'<tr><td>Excel', self.text)), 1)
-    def test_installed_display_changes_keep_human_acceptance_pending(self):
+    def test_user_reported_display_acceptance_is_narrow(self):
         panel = self.text.split('id="panel-player-map"', 1)[1].split('id="panel-world-map"', 1)[0]
         xp = self.text.split('id="mcmmo-xp-preview"', 1)[1].split('</section>', 1)[0]
-        for phrase in ['compact five-pixel names', 'Actual Java/Bedrock compact-label acceptance is still pending.', 'You do not need to make a replacement map.', '/excelplayermap']:
+        for phrase in ['compact five-pixel names', 'Appearance passed by owner report, October 12:', 'You do not need to make a replacement map.', '/excelplayermap']:
             self.assertIn(phrase, panel)
-        for phrase in ['hides three seconds after your latest gain', 'enables future brief notifications', 'Actual Java/Bedrock display acceptance is still pending.']:
+        for phrase in ['hides three seconds after your latest gain', 'enables future brief notifications', 'This is a basic user-reported pass']:
             self.assertIn(phrase, xp)
         self.assertNotIn('not installed yet', panel)
         self.assertNotIn('being prepared', xp)
+        self.assertIn('The client platform was not supplied', panel)
+        self.assertIn('precise timing and edge-case checks remain open', xp)
     def test_local_assets_exist(self):
         for tag,a in self.page.nodes:
             if tag not in ['script','link']:continue
