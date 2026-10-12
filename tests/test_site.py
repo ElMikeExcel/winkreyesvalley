@@ -85,9 +85,14 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('Oct 10, 2026', self.text)
         self.assertIn('Oct 9, 2026', self.text)
     def test_shop_preview_keeps_live_controls_separate(self):
-        for phrase in ['WRVShops 0.1.0 is not installed yet.', '/wrvshop amount 19', '/wrvshop amount 12.50', '/wrvshop setup', '/wrvshop manage', 'Confirm purchase', 'Confirm and publish shop', 'not active in the current Spawn Shop yet', 'Line 1: leave it empty', 'B 40']:
-            self.assertIn(phrase, self.text)
-        self.assertNotIn('<td>WRVShops</td>', self.text)
+        preview=self.text.split('id="shops-preview"',1)[1].split('</section>',1)[0]
+        for phrase in ['ExcelShops 0.1.2 and the guarded ChestShop update are not installed yet.', '/excelshop amount 19', '/excelshop amount 12.50', '/excelshop setup', '/excelshop manage', '/wrvshop', 'Confirm purchase', 'Confirm and publish shop', 'not active in the current Spawn Shop yet', 'Buy from shop', 'Sell to shop', 'Confirm Buy', 'Confirm Sell', 'item count, not a bundle count', 'existing single or double chests', 'Those pauses are not live yet', '[Excel Shop]', '[WRV Shop]', 'PLAYER-CHECKLIST.md']:
+            self.assertIn(phrase, preview)
+        for phrase in ['Line 1: leave it empty', 'B 40', 'To sell to it, hit (left-click) the sign.']:
+            self.assertIn(phrase,self.text)
+        self.assertNotIn('WRVShops 0.1.0',preview)
+        self.assertNotRegex(self.text,r'<td>(?:WRVShops|ExcelShops)</td>')
+        self.assertIn('<td>ChestShop</td><td>3.13-pre-1</td>',self.text)
     def test_installed_xp_status(self):
         xp = self.text.split('id="mcmmo-xp-preview"', 1)[1].split('</section>', 1)[0]
         for phrase in ['Installed October 12, 2026.', 'mcMMO 2.3.003-WRV-XP-2', 'WeekendXP 1.0.2', 'gameplay acceptance checks remain pending']:

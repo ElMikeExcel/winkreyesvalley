@@ -1406,38 +1406,49 @@
       </ul>
       <p><b>To buy from a family shop:</b> just tap (right-click) the sign. To sell to it, hit (left-click) the sign.</p>
       <section class="guide-section" id="shops-preview" aria-labelledby="shops-preview-title">
-        <h4 id="shops-preview-title">Prepared shop update: guided buying and selling</h4>
-        <p class="note"><b>Planned name: ExcelShops.</b> The prepared candidate is still WRVShops 0.1.0; neither the plugin nor its rename is installed.</p>
-        <p class="guide-warning"><b>WRVShops 0.1.0 is not installed yet.</b> This tested draft adds guided shops alongside ChestShop. The current shops above keep their existing controls until the update is installed. Real Java/phone controls and the server's economy and claims combination still need acceptance checks.</p>
-        <details class="skill-notes"><summary>Preview: buy from a labeled shop chest</summary>
+        <h4 id="shops-preview-title">Prepared ExcelShops update: review before you trade</h4>
+        <p class="guide-warning"><b>ExcelShops 0.1.2 and the guarded ChestShop update are not installed yet.</b> These preview instructions describe a tested pair prepared for installation. The current shops above keep their existing controls for now. Real Java/phone controls and the exact live economy-provider integration still need acceptance checks.</p>
+        <p>The custom add-on is now named <b>ExcelShops</b>. The paired third-party plugin keeps the name <b>ChestShop</b>. Together, they add a separate final confirmation to new Excel shops, existing ChestShop Buy/Sell trades, and the matching Spawn Shop checkout. This is not yet a promise that every purchase route on the live server has confirmation.</p>
+        <details class="skill-notes"><summary>Preview: buy from an Excel shop chest</summary>
           <ol class="guide-steps">
-            <li>Open a chest labeled <b>[WRV Shop]</b>, or use its sign. The browsing screen is read-only.</li>
-            <li>Choose an item and how many you want. On a phone, enter a whole number in the form. On Java, use the plus/minus buttons; <code>/wrvshop amount 19</code> is an optional exact entry while choosing quantity.</li>
-            <li>Review the item, quantity, price, and total.</li>
-            <li>Choose <b>Confirm purchase</b> on the separate final confirmation screen. Back, Cancel, closing the menu, or disconnecting does not buy anything.</li>
+            <li>Open a chest labeled <b>[Excel Shop]</b>, or use its sign. Old managed <b>[WRV Shop]</b> labels also work. The browsing screen is read-only.</li>
+            <li>Choose an item and how many you want. On a Bedrock phone, enter a whole number in the form. On Java, use the plus/minus buttons; <code>/excelshop amount 19</code> is an optional exact entry while choosing quantity.</li>
+            <li>Review the item, quantity, unit price, and total. Check enchantments and custom item details too.</li>
+            <li>Choose <b>Confirm purchase</b> once on the separate final confirmation screen. Back, Cancel, closing the menu, or disconnecting before confirmation does not buy anything.</li>
           </ol>
-          <p>Stay within six blocks. Quotes normally expire after 60 seconds. Changed prices or stock need a fresh review; insufficient money or inventory room prevents the purchase. If phone forms are unavailable, the inventory buttons are used.</p>
+          <p>Stay within six blocks. Quotes normally expire after 60 seconds. Changed prices or stock need a fresh review; insufficient money or inventory room prevents the purchase. If phone forms are unavailable, the inventory buttons are used. A recovery warning means stop and ask Mike, rather than repeatedly retrying.</p>
         </details>
-        <details class="skill-notes"><summary>Preview: make your own shop</summary>
+        <details class="skill-notes"><summary>Preview: buy or sell at an existing ChestShop sign</summary>
           <ol class="guide-steps">
-            <li>Place one single normal or trapped chest in a land claim you own. Put your sale items inside. Both the chest and its sign must be in your claims; being trusted in someone else's claim is not ownership.</li>
+            <li>Tap the existing sign and explicitly choose <b>Buy from shop</b> or <b>Sell to shop</b>, where the sign offers that direction. In this prepared update, left-clicking, right-clicking, or crouching does not immediately trade.</li>
+            <li>Choose an <b>item count, not a bundle count</b>. Use the phone number form, Java quantity buttons, or <code>/excelshop amount</code> on the quantity screen.</li>
+            <li>Review the direction, actual item quantity, item details, and total. If only part of the requested amount is available, the adjusted amount is shown before you approve it.</li>
+            <li>Use the separate <b>Confirm Buy</b> or <b>Confirm Sell</b> screen once. Buy spends money and receives items; Sell gives items and receives money.</li>
+          </ol>
+          <p>Existing signs do not need rewriting or conversion. Their prices, stock, owners, permissions, protection, and existing single or double chests are retained. Cancel, Back, closing a screen, or disconnecting before confirmation does not trade.</p>
+          <p>If the confirmation service is unavailable, the guarded ChestShop stops trading while continuing to protect the chest. Ask Mike if a shop is paused. Do not bypass a blocked confirmation.</p>
+        </details>
+        <details class="skill-notes"><summary>Preview: make your own Excel shop</summary>
+          <ol class="guide-steps">
+            <li>Place your own single normal or trapped chest in a land claim you own. Put your sale items inside. Both the chest and its sign must be in your claims; being trusted in someone else's claim is not ownership.</li>
             <li>Sneak while placing an ordinary wall sign against the chest, or a standing sign on top. Finish the normal sign editor. No special sign syntax is needed.</li>
-            <li>Answer <b>Make this a shop?</b>, then set the price for one item for every distinct item type.</li>
+            <li>Answer <b>Make this a shop?</b>, then set the price for one item for every distinct item type. Choosing No leaves ordinary storage.</li>
             <li>Review the owner, items, prices, and stock. Choose the separate <b>Confirm and publish shop</b> action to open it.</li>
           </ol>
-          <p>On phones, enter a positive unit price with up to two decimal places. Java has price buttons, or optional <code>/wrvshop amount 12.50</code> while choosing a price. After canceling, look at the attached ordinary sign and use <code>/wrvshop setup</code> to resume. Stock an empty chest first.</p>
-          <p>Use your own separately placed single chest. Double chests, another player's recorded chest, and existing ChestShop-formatted signs are not adopted.</p>
+          <p>On phones, enter a positive unit price with up to two decimal places. Java has price buttons, or optional <code>/excelshop amount 12.50</code> while choosing a price. After canceling, look at the attached ordinary sign and use <code>/excelshop setup</code> to resume. Stock an empty chest first.</p>
+          <p>New Excel shop setup supports only your separately placed single chest. It does not adopt double chests, another player's recorded chest, or existing ChestShop-formatted signs. Existing ChestShop double chests use the separate confirmed Buy/Sell flow above.</p>
         </details>
         <details class="skill-notes"><summary>Preview: restock, change prices, or close</summary>
-          <p>Open your own shop chest/sign, or look at it and type <code>/wrvshop manage</code>. Choose <b>Open stock chest</b> to move your stock normally. New item types need a price before they appear for sale; sold-out listings can be restocked.</p>
-          <p><b>Edit item prices</b> needs review and confirmation. <b>Close shop</b> also needs confirmation and returns it to ordinary storage with all stock still inside. Close it before breaking its chest or sign. Active shop stock cannot be moved by hoppers.</p>
-          <p>If a shop is blocked after a claim change or server problem, ask Mike to check it. Don't grant public container trust as a workaround.</p>
+          <p>Open your own Excel shop chest/sign, or look at it and type <code>/excelshop manage</code>. Choose <b>Open stock chest</b> to move your stock normally. New item types need a price before they appear for sale; sold-out listings can be restocked.</p>
+          <p><b>Edit item prices</b> needs review and confirmation. <b>Close shop</b> also needs confirmation and returns it to ordinary storage with all stock still inside. Close it before breaking its chest or sign. Active Excel shop stock cannot be moved by hoppers.</p>
+          <p>If a shop is blocked after a claim change or server problem, ask Mike to check it. Don't grant public container trust as a workaround. The old <code>/wrvshop</code> command remains a working alias for <code>/excelshop</code>.</p>
         </details>
         <details class="skill-notes"><summary>Preview: the Spawn Shop update</summary>
-          <p>After the matching plugin and menus are installed together, <code>/shop</code>, the compass menu, and the Spawn Shop villager will keep their entry points and open the new confirmation checkout. <code>/wrvshop</code> will also open its catalog.</p>
-          <p>Existing bundle prices stay the same: one 16-bread bundle costs $40, and two bundles give 32 bread for $80. Review the bundle size and final item count before confirming. This confirmation flow is not active in the current Spawn Shop yet.</p>
+          <p>After the matching pair and menus are installed together, <code>/shop</code>, the compass menu, and the Spawn Shop villager keep their entry points and open the new confirmation checkout. <code>/excelshop</code> also opens its catalog.</p>
+          <p>The prepared catalog matches the 18 existing offers and preserves bundle pricing: one 16-bread bundle costs $40, and two bundles give 32 bread for $80. Review the bundle size and final item count before confirming. This confirmation flow is not active in the current Spawn Shop yet.</p>
         </details>
-        <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/454741fd4d3b67e001a0c7b31556f780faf83afe/WRVShops/README.md">Full shop instructions on GitHub</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/4">Shop update review</a></p>
+        <div class="howto"><h4>Other purchase menus: pause prepared, not applied</h4><p>A reversible pause is prepared for the Jobs item shop and two purchasing example menus while confirmation coverage is completed. Those pauses are not live yet. Existing Jobs progress, balances, and unrelated menus are preserved by the plan; the main Jobs earning features are not being removed.</p></div>
+        <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/d082342b1d8f9a6adbb987d86c9f1e2758fec6bf/WRVShops/README.md">Full shop instructions on GitHub</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/blob/d082342b1d8f9a6adbb987d86c9f1e2758fec6bf/WRVShops/PLAYER-CHECKLIST.md">Player and seller checklist</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/4">Shop update review</a></p>
       </section>
     </div>
     <div class="panel" role="tabpanel" id="panel-shopkeepers" aria-labelledby="tab-shopkeepers" tabindex="0">
@@ -1544,7 +1555,7 @@
   <section id="all-plugins">
     <h2>All plugins</h2>
     <p>Every add-on currently installed on the server. The server runs on Paper 26.2.</p>
-    <div class="howto" id="excel-plugin-names"><h3>Excel plugin names</h3><p>Our custom add-ons are moving toward <b>Excel</b> branding. <b>ExcelPlayerMap 0.2.1 is now installed</b>, replacing WRVPlayerMap. The table keeps every current installed name and version, with remaining planned names underneath. All other Excel renames are still planned.</p><p>mcMMO and all third-party plugins keep their original names. The rename plan keeps existing player commands; use the current instructions until an updated build is installed. GitHub source-folder names may stay different from plugin display names.</p><p>The staged <b>WRVShops → ExcelShops</b> update is also planned. It is not installed and is described in the <a href="#shops-preview">shop preview</a>.</p></div>
+    <div class="howto" id="excel-plugin-names"><h3>Excel plugin names</h3><p>Our custom add-ons are moving toward <b>Excel</b> branding. <b>ExcelPlayerMap 0.2.1 is now installed</b>, replacing WRVPlayerMap. The table keeps every current installed name and version, with remaining planned names underneath. All other Excel renames are still planned.</p><p>mcMMO and all third-party plugins keep their original names. The rename plan keeps existing player commands; use the current instructions until an updated build is installed. GitHub source-folder names may stay different from plugin display names.</p><p>The <b>WRVShops → ExcelShops</b> rename is included in the prepared ExcelShops 0.1.2 candidate. It is not installed and is described in the <a href="#shops-preview">shop preview</a>.</p></div>
     <div class="tablewrap"><table>
       <thead><tr><th>Plugin</th><th>Version</th><th>What it does</th></tr></thead>
       <tbody>
@@ -1601,6 +1612,7 @@
     <details open>
       <summary>Oct 12, 2026</summary>
       <ul>
+        <li>Updated the <a href="#shops-preview">prepared shop guide</a> for ExcelShops 0.1.2 and guarded ChestShop: existing-sign Buy/Sell review and final confirmation, guided new shops, phone/Java controls, and the matching Spawn Shop checkout. This pair is not installed. The planned Jobs item-shop and two example-menu pauses are not applied; real-client and live economy-provider checks remain pending.</li>
         <li>The server owner personally tested the live updates and reported that the map looked perfect and XP worked. Recorded narrow user-reported passes for compact map-label appearance and XP-indicator behavior. Platform-specific coverage, edge cases, measured reward checks, and long-session performance remain open.</li>
         <li>Installed ExcelPlayerMap 0.2.1 with compact names and clear space around the lettering, plus the Excel rename. The safe migration preserved enrolled maps and settings; existing maps need no replacement. Updated the <a href="#panel-player-map">map guide</a> and GitHub deployment record. Human compact-label acceptance remains pending.</li>
         <li>Installed mcMMO 2.3.003-WRV-XP-2 with the temporary XP indicator: positive eligible XP opens one bar, and it hides three seconds after the latest gain. WeekendXP 1.0.2 and reward settings are unchanged. Updated <a href="#mcmmo-xp-preview">indicator instructions</a> and GitHub deployment records. Human display/gameplay acceptance remains pending.</li>
