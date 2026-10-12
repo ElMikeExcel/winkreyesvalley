@@ -114,7 +114,7 @@
       <button type="button" role="tab" id="tab-leaderboards" aria-controls="panel-leaderboards" aria-selected="false" tabindex="-1">Leaderboards</button>
       <button type="button" role="tab" id="tab-no-phantoms" aria-controls="panel-no-phantoms" aria-selected="false" tabindex="-1">No Phantoms</button>
       <button type="button" role="tab" id="tab-restart-warnings" aria-controls="panel-restart-warnings" aria-selected="false" tabindex="-1">Restart warnings</button>
-      <button type="button" role="tab" id="tab-player-map" aria-controls="panel-player-map" aria-selected="false" tabindex="-1">Player Map preview</button>
+      <button type="button" role="tab" id="tab-player-map" aria-controls="panel-player-map" aria-selected="false" tabindex="-1">Player Map</button>
       <button type="button" role="tab" id="tab-world-map" aria-controls="panel-world-map" aria-selected="false" tabindex="-1">Web map status</button>
       <button type="button" role="tab" id="tab-behind-the-scenes" aria-controls="panel-behind-the-scenes" aria-selected="false" tabindex="-1">Behind the scenes</button>
     </div>
@@ -1471,9 +1471,9 @@
       <p>Sometimes the server takes a quick nap to refresh. You'll see a countdown message first, so you have time to get somewhere safe.</p>
     </div>
     <div class="panel guide-panel" role="tabpanel" id="panel-player-map" aria-labelledby="tab-player-map" tabindex="0">
-      <p class="guide-kicker">Player Map 0.2 prototype · not installed</p>
+      <p class="guide-kicker">Player Map 0.2.0 · installed October 12</p>
       <h3 class="guide-title">Player Map: find family in the world</h3>
-      <div class="howto"><h4>Preview instructions</h4><p>This ordinary-map upgrade is <b>not installed on the family server</b>. These instructions describe the prepared prototype. Real phone/Java display checks are still needed. The former BlueMap web map has been removed.</p></div>
+      <div class="howto"><h4>Installed; player checks still pending</h4><p><b>WRVPlayerMap 0.2.0 is installed on the family server.</b> Startup and the <code>/playermap</code> command are confirmed. Real Java/Bedrock display and gameplay acceptance checks are still needed. The former BlueMap web map has been removed.</p></div>
       <p>Use an ordinary empty map as usual. The upgrade adds player names and arrows to newly activated maps while you hold them, keeping Minecraft's normal terrain and exploration. No browser, resource pack, or client mod is needed by this design.</p>
       <nav class="guide-nav" aria-label="Player Map guide sections"><a href="#player-map-start">Start a map</a><a href="#player-map-read">Read the markers</a><a href="#player-map-zoom">Zoom, copy, and frame</a><a href="#player-map-help">Troubleshooting</a></nav>
       <section class="guide-section" id="player-map-start" aria-labelledby="player-map-start-title">
@@ -1483,7 +1483,7 @@
           <li><b>On a phone, hold it in your main hand.</b> Java players can also hold it in their offhand.</li>
           <li>Explore normally to fill in the terrain. The added names show eligible online players in the same world, including players beyond the map's terrain coverage.</li>
         </ol>
-        <p>Maps you already had, explorer maps, and treasure maps are not automatically upgraded. Custom maps are also skipped. The prototype does not give you free maps on join, death, or reconnect. Type <code>/playermap</code> for help.</p>
+        <p>Maps you already had, explorer maps, and treasure maps are not automatically upgraded. Custom maps are also skipped. The add-on does not give you free maps on join, death, or reconnect. Type <code>/playermap</code> for help.</p>
       </section>
       <section class="guide-section" id="player-map-read" aria-labelledby="player-map-read-title">
         <h4 id="player-map-read-title">What the names and arrows mean</h4>
@@ -1516,12 +1516,12 @@
         </ul>
         <p class="note">Player positions are sampled about once per second, with extra client/network delay possible. Actual phone readability, Geyser behavior, and live-server performance still need acceptance checks.</p>
       </section>
-      <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/a92ac702452a684000f860e1667e384d763961e2/WRVPlayerMap/README.md">Full Player Map instructions on GitHub</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/3">Prototype review</a></p>
+      <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/ab883713a06a93ca310e1f367df414dcd7d782a4/WRVPlayerMap/README.md">Full Player Map instructions on GitHub</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/blob/ab883713a06a93ca310e1f367df414dcd7d782a4/WRVPlayerMap/DEPLOYMENT-2026-10-12.md">Installation checks</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/3">Map source review</a></p>
     </div>
     <div class="panel" role="tabpanel" id="panel-world-map" aria-labelledby="tab-world-map" tabindex="0">
       <h3>BlueMap web map removed</h3>
       <p>The BlueMap browser map was removed on October 12, 2026. There is no longer a live BlueMap web map to open. Your Minecraft worlds and player progress are unchanged by this removal.</p>
-      <p>A held-map upgrade is being prepared. See the <a href="#panel-player-map">Player Map preview</a> for its status and instructions.</p>
+      <p>The held-map upgrade is installed. See the <a href="#panel-player-map">Player Map guide</a> for instructions and the remaining player checks.</p>
     </div>
     <div class="panel" role="tabpanel" id="panel-behind-the-scenes" aria-labelledby="tab-behind-the-scenes" tabindex="0">
       <h3>Behind the scenes</h3>
@@ -1566,6 +1566,7 @@
         <tr><td>Vault</td><td>2.0.0</td><td>Keeps track of everyone's money.</td></tr>
         <tr><td>ViaBackwards</td><td>5.12.1</td><td>Lets older game versions join.</td></tr>
         <tr><td>ViaVersion</td><td>5.12.1</td><td>Lets newer game versions join.</td></tr>
+        <tr><td>WRVPlayerMap</td><td>0.2.0</td><td>Adds player names and arrows to newly activated ordinary maps.</td></tr>
         <tr><td>WealthBoard</td><td>1.3.0</td><td>Shows the richest players.</td></tr>
         <tr><td>WeekendXP</td><td>1.0.2</td><td>Weekend bonuses for eligible skill XP and green-bar XP.</td></tr>
         <tr><td>floodgate</td><td>2.2.5</td><td>Lets phone, tablet, and console players join without a computer account.</td></tr>
@@ -1595,10 +1596,11 @@
     <details open>
       <summary>Oct 12, 2026</summary>
       <ul>
+        <li>Installed WRVPlayerMap 0.2.0. Startup and <code>/playermap</code> registration are confirmed. Newly activated ordinary maps can show player names and arrows while retaining normal sharing and cartography controls. Real Java/Bedrock display and gameplay acceptance checks remain pending. <a href="#panel-player-map">Read the Player Map guide</a>.</li>
         <li>Installed mcMMO 2.3.003-WRV-XP-1 and WeekendXP 1.0.2. Startup and <code>/xpbonus</code> registration are confirmed. The pair adds eligible green-bar XP bonuses, Together/weekend stacking, and bonus-bar controls. Real Java/Bedrock display and gameplay checks remain pending. <a href="#mcmmo-xp-preview">Read the XP instructions</a>.</li>
         <li>Removed BlueMap 5.29 and its generated browser-map data. The web map is no longer available; Minecraft worlds and player progress are preserved. <a href="#panel-world-map">Read the map status</a>.</li>
         <li>Earlier today, the server restarted with the original mcMMO and WeekendXP plugins and Together enabled. The green-bar XP update was still awaiting installation at that point; it was installed later as recorded above.</li>
-        <li>Added <a href="#panel-player-map">Player Map 0.2 prototype instructions</a>: starting an ordinary map, phone holding, names and arrows, normal cartography controls, dimensions, and limitations. The upgrade is not installed yet.</li>
+        <li>Earlier today, added <a href="#panel-player-map">Player Map instructions</a> as a prototype preview: starting an ordinary map, phone holding, names and arrows, normal cartography controls, dimensions, and limitations. The guide now describes the installed 0.2.0 build recorded above.</li>
         <li>Expanded the <a href="#mcmmo-xp-preview">XP instructions</a> with the indicator commands, Together/weekend stacking, and eligible XP rules. These were initially preview instructions and now describe the installed pair.</li>
         <li>Added <a href="#shops-preview">WRVShops preview instructions</a> for guided chest-shop setup, quantity and price controls, final-confirm purchases, restocking, and the planned Spawn Shop checkout. This tested draft is not installed; existing shops are unchanged.</li>
       </ul>

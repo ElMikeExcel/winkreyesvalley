@@ -74,7 +74,7 @@ class SiteChecks(unittest.TestCase):
             self.assertIn('panel-'+name,self.ids)
         self.assertIn('winkreyes.duckdns.org:20795',self.text)
     def test_preview_instructions_and_status(self):
-        for phrase in ['/playermap list', 'ordinary empty map', 'Add paper to zoom out', 'Add an empty map to make a copy', 'Add a glass pane to make a locked copy', 'main hand', 'fixed, vanilla-aligned', 'does not follow or continuously recenter', 'not installed on the family server', 'not automatically upgraded', 'BlueMap web map removed', '/xpbonus status', '/xpbonus hide', '/xpbonus show', '/xpbonus toggle', 'Installed October 12, 2026.', 'after Mending']:
+        for phrase in ['/playermap list', 'ordinary empty map', 'Add paper to zoom out', 'Add an empty map to make a copy', 'Add a glass pane to make a locked copy', 'main hand', 'fixed, vanilla-aligned', 'does not follow or continuously recenter', 'WRVPlayerMap 0.2.0 is installed on the family server.', 'not automatically upgraded', 'BlueMap web map removed', '/xpbonus status', '/xpbonus hide', '/xpbonus show', '/xpbonus toggle', 'Installed October 12, 2026.', 'after Mending']:
             self.assertIn(phrase, self.text)
         self.assertNotIn('/playermap get', self.text)
         self.assertNotIn('/playermap scale', self.text)
@@ -96,6 +96,13 @@ class SiteChecks(unittest.TestCase):
             self.assertNotIn(stale, xp)
         self.assertIn('<td>WeekendXP</td><td>1.0.2</td>', self.text)
         self.assertIn('<td>mcMMO</td><td>2.3.003-WRV-XP-1</td>', self.text)
+    def test_installed_map_status(self):
+        panel = self.text.split('id="panel-player-map"', 1)[1].split('id="panel-world-map"', 1)[0]
+        self.assertIn('WRVPlayerMap 0.2.0 is installed on the family server.', panel)
+        self.assertIn('Real Java/Bedrock display and gameplay acceptance checks are still needed.', panel)
+        self.assertNotIn('not installed', panel)
+        self.assertNotIn('prepared prototype', panel)
+        self.assertIn('<td>WRVPlayerMap</td><td>0.2.0</td>', self.text)
     def test_local_assets_exist(self):
         for tag,a in self.page.nodes:
             if tag not in ['script','link']:continue
