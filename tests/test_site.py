@@ -99,7 +99,10 @@ class SiteChecks(unittest.TestCase):
     def test_installed_map_status(self):
         panel = self.text.split('id="panel-player-map"', 1)[1].split('id="panel-world-map"', 1)[0]
         self.assertIn('WRVPlayerMap 0.2.0 is installed on the family server.', panel)
-        self.assertIn('Real Java/Bedrock display and gameplay acceptance checks are still needed.', panel)
+        self.assertIn('a player reported successful map creation', panel)
+        self.assertIn('not a crossplay pass', panel)
+        self.assertIn('Other-player labels and edge arrows await a two-player check.', panel)
+        self.assertIn('Sharing, zoom, locking, portals, and wider gameplay checks remain pending.', panel)
         self.assertNotIn('not installed', panel)
         self.assertNotIn('prepared prototype', panel)
         self.assertIn('<td>WRVPlayerMap</td><td>0.2.0</td>', self.text)

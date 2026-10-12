@@ -1473,7 +1473,7 @@
     <div class="panel guide-panel" role="tabpanel" id="panel-player-map" aria-labelledby="tab-player-map" tabindex="0">
       <p class="guide-kicker">Player Map 0.2.0 · installed October 12</p>
       <h3 class="guide-title">Player Map: find family in the world</h3>
-      <div class="howto"><h4>Installed; player checks still pending</h4><p><b>WRVPlayerMap 0.2.0 is installed on the family server.</b> Startup and the <code>/playermap</code> command are confirmed. Real Java/Bedrock display and gameplay acceptance checks are still needed. The former BlueMap web map has been removed.</p></div>
+      <div class="howto"><h4>Installed; basic player checks reported</h4><p><b>WRVPlayerMap 0.2.0 is installed on the family server.</b> Startup and the <code>/playermap</code> command are confirmed. On October 12, a player reported successful map creation, a self-nameplate that follows movement, and visible local terrain.</p><p>The player's Java/Bedrock platform is not known, so this is not a crossplay pass. Other-player labels and edge arrows await a two-player check. Sharing, zoom, locking, portals, and wider gameplay checks remain pending. The former BlueMap web map has been removed.</p></div>
       <p>Use an ordinary empty map as usual. The upgrade adds player names and arrows to newly activated maps while you hold them, keeping Minecraft's normal terrain and exploration. No browser, resource pack, or client mod is needed by this design.</p>
       <nav class="guide-nav" aria-label="Player Map guide sections"><a href="#player-map-start">Start a map</a><a href="#player-map-read">Read the markers</a><a href="#player-map-zoom">Zoom, copy, and frame</a><a href="#player-map-help">Troubleshooting</a></nav>
       <section class="guide-section" id="player-map-start" aria-labelledby="player-map-start-title">
@@ -1514,9 +1514,9 @@
           <li><b>The map is crowded?</b> Labels cycle about every three seconds at the default update rate. Long or unsupported name characters may be shortened or shown as a question mark.</li>
           <li><b>Lost a map?</b> There is no automatic replacement. Keep a normal copy somewhere safe if you want one.</li>
         </ul>
-        <p class="note">Player positions are sampled about once per second, with extra client/network delay possible. Actual phone readability, Geyser behavior, and live-server performance still need acceptance checks.</p>
+        <p class="note">Player positions are sampled about once per second, with extra client/network delay possible. The basic player report does not verify phone/Java-specific readability, Geyser behavior, or live-server performance; those checks remain open.</p>
       </section>
-      <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/ab883713a06a93ca310e1f367df414dcd7d782a4/WRVPlayerMap/README.md">Full Player Map instructions on GitHub</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/blob/ab883713a06a93ca310e1f367df414dcd7d782a4/WRVPlayerMap/DEPLOYMENT-2026-10-12.md">Installation checks</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/3">Map source review</a></p>
+      <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/250d60c40448440a0792de2d5106921c8f4ef97b/WRVPlayerMap/README.md">Full Player Map instructions on GitHub</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/blob/250d60c40448440a0792de2d5106921c8f4ef97b/WRVPlayerMap/DEPLOYMENT-2026-10-12.md">Installation checks</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/3">Map source review</a></p>
     </div>
     <div class="panel" role="tabpanel" id="panel-world-map" aria-labelledby="tab-world-map" tabindex="0">
       <h3>BlueMap web map removed</h3>
@@ -1596,6 +1596,7 @@
     <details open>
       <summary>Oct 12, 2026</summary>
       <ul>
+        <li>Player Map checks 1 and 2 passed by player report: map creation, a moving self-nameplate, and local terrain display. The other-player/edge-arrow check could not run because no second player was online. The player's platform was not supplied; crossplay, sharing, zoom, locking, and portal checks remain pending. <a href="#panel-player-map">See the current map checks</a>.</li>
         <li>Installed WRVPlayerMap 0.2.0. Startup and <code>/playermap</code> registration are confirmed. Newly activated ordinary maps can show player names and arrows while retaining normal sharing and cartography controls. Real Java/Bedrock display and gameplay acceptance checks remain pending. <a href="#panel-player-map">Read the Player Map guide</a>.</li>
         <li>Installed mcMMO 2.3.003-WRV-XP-1 and WeekendXP 1.0.2. Startup and <code>/xpbonus</code> registration are confirmed. The pair adds eligible green-bar XP bonuses, Together/weekend stacking, and bonus-bar controls. Real Java/Bedrock display and gameplay checks remain pending. <a href="#mcmmo-xp-preview">Read the XP instructions</a>.</li>
         <li>Removed BlueMap 5.29 and its generated browser-map data. The web map is no longer available; Minecraft worlds and player progress are preserved. <a href="#panel-world-map">Read the map status</a>.</li>
