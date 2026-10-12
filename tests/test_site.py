@@ -84,15 +84,22 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('Oct 11, 2026', self.text)
         self.assertIn('Oct 10, 2026', self.text)
         self.assertIn('Oct 9, 2026', self.text)
-    def test_shop_preview_keeps_live_controls_separate(self):
-        preview=self.text.split('id="shops-preview"',1)[1].split('</section>',1)[0]
-        for phrase in ['ExcelShops 0.1.2 and the guarded ChestShop update are not installed yet.', '/excelshop amount 19', '/excelshop amount 12.50', '/excelshop setup', '/excelshop manage', '/wrvshop', 'Confirm purchase', 'Confirm and publish shop', 'not active in the current Spawn Shop yet', 'Buy from shop', 'Sell to shop', 'Confirm Buy', 'Confirm Sell', 'item count, not a bundle count', 'existing single or double chests', 'Those pauses are not live yet', '[Excel Shop]', '[WRV Shop]', 'PLAYER-CHECKLIST.md']:
-            self.assertIn(phrase, preview)
-        for phrase in ['Line 1: leave it empty', 'B 40', 'To sell to it, hit (left-click) the sign.']:
-            self.assertIn(phrase,self.text)
-        self.assertNotIn('WRVShops 0.1.0',preview)
-        self.assertNotRegex(self.text,r'<td>(?:WRVShops|ExcelShops)</td>')
-        self.assertIn('<td>ChestShop</td><td>3.13-pre-1</td>',self.text)
+    def test_installed_shop_controls_and_acceptance_limits(self):
+        shop=self.text.split('id="panel-shops"',1)[1].split('id="panel-shopkeepers"',1)[0]
+        for phrase in ['ExcelShops 0.1.2 is running on its own; ChestShop has been removed.', '/excelshop setup', '/excelshop manage', '/wrvshop', 'Confirm purchase', 'Confirm and publish shop', 'The Jobs item shop and two purchasing example menus are paused.', '[Excel Shop]', '[WRV Shop]', 'PLAYER-CHECKLIST.md', 'A second player buying from that chest shop']:
+            self.assertIn(phrase, shop)
+        for stale in ['not installed yet', 'Preview:', 'prepared update', 'Those pauses are not live yet', 'just tap (right-click) the sign', 'To sell to it, hit (left-click)']:
+            self.assertNotIn(stale,shop)
+        self.assertIn('ChestShop has been removed.',shop)
+        self.assertIn('Native Excel shops and Spawn Shop do not require the removed ChestShop plugin.',shop)
+        self.assertNotIn('Line 1: leave it empty',shop)
+        self.assertNotIn('Confirm Sell',shop)
+        self.assertIn('no fix is installed yet',shop)
+        self.assertIn('Chat-number entry is not a verified Java workaround',shop)
+        self.assertIn('Both the shop chest and its attached sign open the UI',shop)
+        self.assertNotIn('/excelshop amount 19',shop)
+        self.assertIn('<td>ExcelShops</td><td>0.1.2</td>',self.text)
+        self.assertNotIn('<td>ChestShop</td>',self.text)
     def test_installed_xp_status(self):
         xp = self.text.split('id="mcmmo-xp-preview"', 1)[1].split('</section>', 1)[0]
         for phrase in ['Installed October 12, 2026.', 'mcMMO 2.3.003-WRV-XP-2', 'WeekendXP 1.0.2', 'gameplay acceptance checks remain pending']:
@@ -117,9 +124,9 @@ class SiteChecks(unittest.TestCase):
         for current, upcoming in pairs.items():
             self.assertIn(f'<td>{current}<small class="plugin-next">Planned: {upcoming}</small></td>', self.text)
         self.assertIn('WRVShops → ExcelShops', self.text)
-        self.assertIn('All other Excel renames are still planned.', self.text)
+        self.assertIn('All remaining Excel renames are still planned.', self.text)
         self.assertNotIn('ExcelmcMMO', self.text)
-        self.assertEqual(len(re.findall(r'<tr><td>Excel', self.text)), 1)
+        self.assertEqual(len(re.findall(r'<tr><td>Excel', self.text)), 2)
     def test_user_reported_display_acceptance_is_narrow(self):
         panel = self.text.split('id="panel-player-map"', 1)[1].split('id="panel-world-map"', 1)[0]
         xp = self.text.split('id="mcmmo-xp-preview"', 1)[1].split('</section>', 1)[0]
@@ -131,6 +138,13 @@ class SiteChecks(unittest.TestCase):
         self.assertNotIn('being prepared', xp)
         self.assertIn('The client platform was not supplied', panel)
         self.assertIn('precise timing and edge-case checks remain open', xp)
+    def test_live_jobs_difficulty_and_staged_progression(self):
+        jobs=self.text.split('id="panel-jobs"',1)[1].split('id="panel-essentials"',1)[0]
+        for phrase in ['old points balances are preserved', 'server money and give job experience', 'not installed', 'full Jobs build is still blocked']:
+            self.assertIn(phrase,jobs)
+        self.assertNotIn('Jobs only pay money',jobs)
+        self.assertIn('<b>Difficulty: Normal</b> in the Overworld, Nether, and End',self.text)
+        self.assertIn('EliteMobs settings were unchanged',self.text)
     def test_local_assets_exist(self):
         for tag,a in self.page.nodes:
             if tag not in ['script','link']:continue
