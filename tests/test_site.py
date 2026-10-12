@@ -94,18 +94,32 @@ class SiteChecks(unittest.TestCase):
             self.assertIn(phrase, xp)
         for stale in ['Not installed', 'awaiting installation', 'prepared update']:
             self.assertNotIn(stale, xp)
-        self.assertIn('<td>WeekendXP</td><td>1.0.2</td>', self.text)
+        self.assertRegex(self.text, r'<td>WeekendXP<small[^>]*>Planned: ExcelWeekendXP</small></td><td>1\.0\.2</td>')
         self.assertIn('<td>mcMMO</td><td>2.3.003-WRV-XP-1</td>', self.text)
     def test_installed_map_status(self):
         panel = self.text.split('id="panel-player-map"', 1)[1].split('id="panel-world-map"', 1)[0]
         self.assertIn('WRVPlayerMap 0.2.0 is installed on the family server.', panel)
         self.assertIn('a player reported successful map creation', panel)
         self.assertIn('not a crossplay pass', panel)
-        self.assertIn('Other-player labels and edge arrows await a two-player check.', panel)
+        self.assertIn('A later screenshot also shows two player names/markers and terrain.', panel)
+        self.assertIn('Off-map edge-arrow behavior still needs a player check.', panel)
         self.assertIn('Sharing, zoom, locking, portals, and wider gameplay checks remain pending.', panel)
-        self.assertNotIn('not installed', panel)
+        self.assertNotIn('WRVPlayerMap 0.2.0 is not installed', panel)
         self.assertNotIn('prepared prototype', panel)
-        self.assertIn('<td>WRVPlayerMap</td><td>0.2.0</td>', self.text)
+        self.assertRegex(self.text, r'<td>WRVPlayerMap<small[^>]*>Planned: ExcelPlayerMap</small></td><td>0\.2\.0</td>')
+    def test_excel_names_are_planned_not_installed(self):
+        pairs = {'BedrockMenu':'ExcelBedrockMenu', 'Leaderboard':'ExcelLeaderboard', 'MenuJoin':'ExcelMenuJoin', 'NoPhantoms':'ExcelNoPhantoms', 'RestartCountdown':'ExcelRestartCountdown', 'ShopVillager':'ExcelShopVillager', 'WealthBoard':'ExcelWealthBoard', 'WeekendXP':'ExcelWeekendXP', 'WRVPlayerMap':'ExcelPlayerMap'}
+        for current, upcoming in pairs.items():
+            self.assertIn(f'<td>{current}<small class="plugin-next">Planned: {upcoming}</small></td>', self.text)
+        self.assertIn('WRVShops → ExcelShops', self.text)
+        self.assertIn('No Excel rename has been deployed yet.', self.text)
+        self.assertNotIn('ExcelmcMMO', self.text)
+        self.assertNotRegex(self.text, r'<tr><td>Excel')
+    def test_pending_display_changes_are_not_claimed_live(self):
+        self.assertIn('the installed labels are oversized and sit on solid dark blocks', self.text)
+        self.assertIn('that fix is not installed yet', self.text)
+        self.assertIn('a temporary XP indicator is being prepared', self.text)
+        self.assertIn('This change is not installed yet.', self.text)
     def test_local_assets_exist(self):
         for tag,a in self.page.nodes:
             if tag not in ['script','link']:continue

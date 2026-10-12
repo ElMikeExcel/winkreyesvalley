@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=8163d80154">
+<link rel="stylesheet" href="style.css?v=1901a9d7e4">
 </head>
 <body>
 <a class="skip-link" href="#guide">Skip to the plugin guide</a>
@@ -1270,6 +1270,8 @@
         <li><code>/xpbonus show</code> brings your bonus bar back</li>
         <li><code>/xpbonus toggle</code> switches your bar between shown and hidden</li>
       </ul>
+      <p class="note"><b>Display update planned:</b> a temporary XP indicator is being prepared to replace the always-visible bar. This change is not installed yet. For now, use <code>/xpbonus hide</code> to hide the bar without changing rewards, and <code>/xpbonus status</code> to check your factors.</p>
+      <p class="note"><b>Planned plugin name: ExcelWeekendXP.</b> The installed weekend plugin is still WeekendXP 1.0.2. mcMMO keeps its original name.</p>
       <p>Your shown/hidden preference is saved for later joins. If a factor is unexpected, check that your teammate is in the same party and world, is close enough, and that the status command does not show a permission or area restriction.</p>
       <details class="skill-notes"><summary>Which green-bar XP counts?</summary>
         <p>The bonus applies to eligible, positive XP-orb pickups <b>after Mending</b>. It boosts the points left for your green bar, not Mending repairs. Normal identified gameplay sources include mining, mob drops, fishing, furnace output, breeding, trading, bottles o' enchanting, and grindstones.</p>
@@ -1405,6 +1407,7 @@
       <p><b>To buy from a family shop:</b> just tap (right-click) the sign. To sell to it, hit (left-click) the sign.</p>
       <section class="guide-section" id="shops-preview" aria-labelledby="shops-preview-title">
         <h4 id="shops-preview-title">Prepared shop update: guided buying and selling</h4>
+        <p class="note"><b>Planned name: ExcelShops.</b> The prepared candidate is still WRVShops 0.1.0; neither the plugin nor its rename is installed.</p>
         <p class="guide-warning"><b>WRVShops 0.1.0 is not installed yet.</b> This tested draft adds guided shops alongside ChestShop. The current shops above keep their existing controls until the update is installed. Real Java/phone controls and the server's economy and claims combination still need acceptance checks.</p>
         <details class="skill-notes"><summary>Preview: buy from a labeled shop chest</summary>
           <ol class="guide-steps">
@@ -1473,7 +1476,8 @@
     <div class="panel guide-panel" role="tabpanel" id="panel-player-map" aria-labelledby="tab-player-map" tabindex="0">
       <p class="guide-kicker">Player Map 0.2.0 · installed October 12</p>
       <h3 class="guide-title">Player Map: find family in the world</h3>
-      <div class="howto"><h4>Installed; basic player checks reported</h4><p><b>WRVPlayerMap 0.2.0 is installed on the family server.</b> Startup and the <code>/playermap</code> command are confirmed. On October 12, a player reported successful map creation, a self-nameplate that follows movement, and visible local terrain.</p><p>The player's Java/Bedrock platform is not known, so this is not a crossplay pass. Other-player labels and edge arrows await a two-player check. Sharing, zoom, locking, portals, and wider gameplay checks remain pending. The former BlueMap web map has been removed.</p></div>
+      <p class="note"><b>Planned name: ExcelPlayerMap.</b> The server still runs WRVPlayerMap 0.2.0. The rename and compact-label update are in testing and are not installed.</p>
+      <div class="howto"><h4>Installed; tracking works, label cleanup pending</h4><p><b>WRVPlayerMap 0.2.0 is installed on the family server.</b> Startup and the <code>/playermap</code> command are confirmed. On October 12, a player reported successful map creation, a self-nameplate that follows movement, and visible local terrain. A later screenshot also shows two player names/markers and terrain.</p><p><b>Known visual issue:</b> the installed labels are oversized and sit on solid dark blocks. Smaller labels without filled backgrounds are being tested; that fix is not installed yet.</p><p>The player's Java/Bedrock platform is not known, so this is not a crossplay pass. Off-map edge-arrow behavior still needs a player check. Sharing, zoom, locking, portals, and wider gameplay checks remain pending. The former BlueMap web map has been removed.</p></div>
       <p>Use an ordinary empty map as usual. The upgrade adds player names and arrows to newly activated maps while you hold them, keeping Minecraft's normal terrain and exploration. No browser, resource pack, or client mod is needed by this design.</p>
       <nav class="guide-nav" aria-label="Player Map guide sections"><a href="#player-map-start">Start a map</a><a href="#player-map-read">Read the markers</a><a href="#player-map-zoom">Zoom, copy, and frame</a><a href="#player-map-help">Troubleshooting</a></nav>
       <section class="guide-section" id="player-map-start" aria-labelledby="player-map-start-title">
@@ -1539,11 +1543,12 @@
 
   <section id="all-plugins">
     <h2>All plugins</h2>
-    <p>Every add-on on the server. The server runs on Paper 26.2.</p>
+    <p>Every add-on currently installed on the server. The server runs on Paper 26.2.</p>
+    <div class="howto" id="excel-plugin-names"><h3>Upcoming Excel names</h3><p>Our custom add-ons are moving toward <b>Excel</b> branding. The table keeps each current installed name and version, with its planned name underneath. <b>No Excel rename has been deployed yet.</b></p><p>mcMMO and all third-party plugins keep their original names. The rename plan keeps existing player commands; use the current instructions until an updated build is installed. GitHub source-folder names may stay different from plugin display names.</p><p>The staged <b>WRVShops → ExcelShops</b> update is also planned. It is not installed and is described in the <a href="#shops-preview">shop preview</a>.</p></div>
     <div class="tablewrap"><table>
       <thead><tr><th>Plugin</th><th>Version</th><th>What it does</th></tr></thead>
       <tbody>
-        <tr><td>BedrockMenu</td><td>1.4.2</td><td>Shows the server menu on phones, tablets, and consoles.</td></tr>
+        <tr><td>BedrockMenu<small class="plugin-next">Planned: ExcelBedrockMenu</small></td><td>1.4.2</td><td>Shows the server menu on phones, tablets, and consoles.</td></tr>
         <tr><td>CMILib</td><td>1.6.0.1</td><td>A helper piece that Jobs needs.</td></tr>
         <tr><td>ChestShop</td><td>3.13-pre-1</td><td>Lets players run their own sign-and-chest shops.</td></tr>
         <tr><td>Chunky</td><td>1.5.3</td><td>Builds the world ahead of time so it loads faster.</td></tr>
@@ -1555,20 +1560,20 @@
         <tr><td>Geyser-Spigot</td><td>2.11.3</td><td>Lets phones, tablets, and consoles join.</td></tr>
         <tr><td>GriefPrevention</td><td>16.18.7</td><td>Lets you claim land so nobody can wreck your stuff.</td></tr>
         <tr><td>Jobs</td><td>5.2.6.3</td><td>Pays you money for everyday things.</td></tr>
-        <tr><td>Leaderboard</td><td>1.0.0</td><td>Scoreboards showing who's on top.</td></tr>
+        <tr><td>Leaderboard<small class="plugin-next">Planned: ExcelLeaderboard</small></td><td>1.0.0</td><td>Scoreboards showing who's on top.</td></tr>
         <tr><td>LuckPerms</td><td>5.5.87</td><td>Decides who is allowed to do what.</td></tr>
-        <tr><td>MenuJoin</td><td>1.2.0</td><td>Gives you the menu compass.</td></tr>
-        <tr><td>NoPhantoms</td><td>1.0.0</td><td>Turns off phantoms, the flying night monsters.</td></tr>
+        <tr><td>MenuJoin<small class="plugin-next">Planned: ExcelMenuJoin</small></td><td>1.2.0</td><td>Gives you the menu compass.</td></tr>
+        <tr><td>NoPhantoms<small class="plugin-next">Planned: ExcelNoPhantoms</small></td><td>1.0.0</td><td>Turns off phantoms, the flying night monsters.</td></tr>
         <tr><td>PlaceholderAPI</td><td>2.12.3</td><td>A helper piece that lets add-ons share info.</td></tr>
-        <tr><td>RestartCountdown</td><td>1.1.0</td><td>Warns everyone before the server restarts.</td></tr>
-        <tr><td>ShopVillager</td><td>1.0.0</td><td>Tap the Spawn Shop villager to open the shop.</td></tr>
+        <tr><td>RestartCountdown<small class="plugin-next">Planned: ExcelRestartCountdown</small></td><td>1.1.0</td><td>Warns everyone before the server restarts.</td></tr>
+        <tr><td>ShopVillager<small class="plugin-next">Planned: ExcelShopVillager</small></td><td>1.0.0</td><td>Tap the Spawn Shop villager to open the shop.</td></tr>
         <tr><td>Shopkeepers</td><td>2.28.0</td><td>Villager shops you can trade with.</td></tr>
         <tr><td>Vault</td><td>2.0.0</td><td>Keeps track of everyone's money.</td></tr>
         <tr><td>ViaBackwards</td><td>5.12.1</td><td>Lets older game versions join.</td></tr>
         <tr><td>ViaVersion</td><td>5.12.1</td><td>Lets newer game versions join.</td></tr>
-        <tr><td>WRVPlayerMap</td><td>0.2.0</td><td>Adds player names and arrows to newly activated ordinary maps.</td></tr>
-        <tr><td>WealthBoard</td><td>1.3.0</td><td>Shows the richest players.</td></tr>
-        <tr><td>WeekendXP</td><td>1.0.2</td><td>Weekend bonuses for eligible skill XP and green-bar XP.</td></tr>
+        <tr><td>WRVPlayerMap<small class="plugin-next">Planned: ExcelPlayerMap</small></td><td>0.2.0</td><td>Adds player names and arrows to newly activated ordinary maps.</td></tr>
+        <tr><td>WealthBoard<small class="plugin-next">Planned: ExcelWealthBoard</small></td><td>1.3.0</td><td>Shows the richest players.</td></tr>
+        <tr><td>WeekendXP<small class="plugin-next">Planned: ExcelWeekendXP</small></td><td>1.0.2</td><td>Weekend bonuses for eligible skill XP and green-bar XP.</td></tr>
         <tr><td>floodgate</td><td>2.2.5</td><td>Lets phone, tablet, and console players join without a computer account.</td></tr>
         <tr><td>mcMMO</td><td>2.3.003-WRV-XP-1</td><td>Skills that get better with practice, Together XP bonuses, and the /xpbonus indicator.</td></tr>
       </tbody>
@@ -1596,6 +1601,8 @@
     <details open>
       <summary>Oct 12, 2026</summary>
       <ul>
+        <li>Added the <a href="#excel-plugin-names">Excel naming plan</a> beside current custom-plugin names. These are upcoming names; no rename is installed. mcMMO and other third-party names stay unchanged. The website also tracks the pending map-label and temporary XP-indicator improvements.</li>
+        <li>A later map screenshot showed two player names/markers and terrain. Oversized labels with solid dark backgrounds remain a known visual issue; the compact-label fix is in testing. The persistent XP bar also has a temporary-notification update in progress. Neither display update is installed yet.</li>
         <li>Player Map checks 1 and 2 passed by player report: map creation, a moving self-nameplate, and local terrain display. The other-player/edge-arrow check could not run because no second player was online. The player's platform was not supplied; crossplay, sharing, zoom, locking, and portal checks remain pending. <a href="#panel-player-map">See the current map checks</a>.</li>
         <li>Installed WRVPlayerMap 0.2.0. Startup and <code>/playermap</code> registration are confirmed. Newly activated ordinary maps can show player names and arrows while retaining normal sharing and cartography controls. Real Java/Bedrock display and gameplay acceptance checks remain pending. <a href="#panel-player-map">Read the Player Map guide</a>.</li>
         <li>Installed mcMMO 2.3.003-WRV-XP-1 and WeekendXP 1.0.2. Startup and <code>/xpbonus</code> registration are confirmed. The pair adds eligible green-bar XP bonuses, Together/weekend stacking, and bonus-bar controls. Real Java/Bedrock display and gameplay checks remain pending. <a href="#mcmmo-xp-preview">Read the XP instructions</a>.</li>

@@ -176,6 +176,8 @@ OUTRO = '''
         <li><code>/xpbonus show</code> brings your bonus bar back</li>
         <li><code>/xpbonus toggle</code> switches your bar between shown and hidden</li>
       </ul>
+      <p class="note"><b>Display update planned:</b> a temporary XP indicator is being prepared to replace the always-visible bar. This change is not installed yet. For now, use <code>/xpbonus hide</code> to hide the bar without changing rewards, and <code>/xpbonus status</code> to check your factors.</p>
+      <p class="note"><b>Planned plugin name: ExcelWeekendXP.</b> The installed weekend plugin is still WeekendXP 1.0.2. mcMMO keeps its original name.</p>
       <p>Your shown/hidden preference is saved for later joins. If a factor is unexpected, check that your teammate is in the same party and world, is close enough, and that the status command does not show a permission or area restriction.</p>
       <details class="skill-notes"><summary>Which green-bar XP counts?</summary>
         <p>The bonus applies to eligible, positive XP-orb pickups <b>after Mending</b>. It boosts the points left for your green bar, not Mending repairs. Normal identified gameplay sources include mining, mob drops, fishing, furnace output, breeding, trading, bottles o' enchanting, and grindstones.</p>
