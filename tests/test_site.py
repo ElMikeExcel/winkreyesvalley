@@ -74,7 +74,7 @@ class SiteChecks(unittest.TestCase):
             self.assertIn('panel-'+name,self.ids)
         self.assertIn('winkreyes.duckdns.org:20795',self.text)
     def test_preview_instructions_and_status(self):
-        for phrase in ['/playermap list', 'ordinary empty map', 'Add paper to zoom out', 'Add an empty map to make a copy', 'Add a glass pane to make a locked copy', 'main hand', 'fixed, vanilla-aligned', 'does not follow or continuously recenter', 'WRVPlayerMap 0.2.0 is installed on the family server.', 'not automatically upgraded', 'BlueMap web map removed', '/xpbonus status', '/xpbonus hide', '/xpbonus show', '/xpbonus toggle', 'Installed October 12, 2026.', 'after Mending']:
+        for phrase in ['/playermap list', 'ordinary empty map', 'Add paper to zoom out', 'Add an empty map to make a copy', 'Add a glass pane to make a locked copy', 'main hand', 'fixed, vanilla-aligned', 'does not follow or continuously recenter', 'ExcelPlayerMap 0.2.1 is installed on the family server.', 'not automatically upgraded', 'BlueMap web map removed', '/xpbonus status', '/xpbonus hide', '/xpbonus show', '/xpbonus toggle', 'Installed October 12, 2026.', 'after Mending']:
             self.assertIn(phrase, self.text)
         self.assertNotIn('/playermap get', self.text)
         self.assertNotIn('/playermap scale', self.text)
@@ -90,15 +90,15 @@ class SiteChecks(unittest.TestCase):
         self.assertNotIn('<td>WRVShops</td>', self.text)
     def test_installed_xp_status(self):
         xp = self.text.split('id="mcmmo-xp-preview"', 1)[1].split('</section>', 1)[0]
-        for phrase in ['Installed October 12, 2026.', 'mcMMO 2.3.003-WRV-XP-1', 'WeekendXP 1.0.2', 'gameplay acceptance checks remain pending']:
+        for phrase in ['Installed October 12, 2026.', 'mcMMO 2.3.003-WRV-XP-2', 'WeekendXP 1.0.2', 'gameplay acceptance checks remain pending']:
             self.assertIn(phrase, xp)
         for stale in ['Not installed', 'awaiting installation', 'prepared update']:
             self.assertNotIn(stale, xp)
         self.assertRegex(self.text, r'<td>WeekendXP<small[^>]*>Planned: ExcelWeekendXP</small></td><td>1\.0\.2</td>')
-        self.assertIn('<td>mcMMO</td><td>2.3.003-WRV-XP-1</td>', self.text)
+        self.assertIn('<td>mcMMO</td><td>2.3.003-WRV-XP-2</td>', self.text)
     def test_installed_map_status(self):
         panel = self.text.split('id="panel-player-map"', 1)[1].split('id="panel-world-map"', 1)[0]
-        self.assertIn('WRVPlayerMap 0.2.0 is installed on the family server.', panel)
+        self.assertIn('ExcelPlayerMap 0.2.1 is installed on the family server.', panel)
         self.assertIn('a player reported successful map creation', panel)
         self.assertIn('not a crossplay pass', panel)
         self.assertIn('A later screenshot also shows two player names/markers and terrain.', panel)
@@ -106,20 +106,24 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('Sharing, zoom, locking, portals, and wider gameplay checks remain pending.', panel)
         self.assertNotIn('WRVPlayerMap 0.2.0 is not installed', panel)
         self.assertNotIn('prepared prototype', panel)
-        self.assertRegex(self.text, r'<td>WRVPlayerMap<small[^>]*>Planned: ExcelPlayerMap</small></td><td>0\.2\.0</td>')
-    def test_excel_names_are_planned_not_installed(self):
-        pairs = {'BedrockMenu':'ExcelBedrockMenu', 'Leaderboard':'ExcelLeaderboard', 'MenuJoin':'ExcelMenuJoin', 'NoPhantoms':'ExcelNoPhantoms', 'RestartCountdown':'ExcelRestartCountdown', 'ShopVillager':'ExcelShopVillager', 'WealthBoard':'ExcelWealthBoard', 'WeekendXP':'ExcelWeekendXP', 'WRVPlayerMap':'ExcelPlayerMap'}
+        self.assertRegex(self.text, r'<td>ExcelPlayerMap<small[^>]*>Previously: WRVPlayerMap</small></td><td>0\.2\.1</td>')
+    def test_excel_names_distinguish_installed_and_planned(self):
+        pairs = {'BedrockMenu':'ExcelBedrockMenu', 'Leaderboard':'ExcelLeaderboard', 'MenuJoin':'ExcelMenuJoin', 'NoPhantoms':'ExcelNoPhantoms', 'RestartCountdown':'ExcelRestartCountdown', 'ShopVillager':'ExcelShopVillager', 'WealthBoard':'ExcelWealthBoard', 'WeekendXP':'ExcelWeekendXP'}
         for current, upcoming in pairs.items():
             self.assertIn(f'<td>{current}<small class="plugin-next">Planned: {upcoming}</small></td>', self.text)
         self.assertIn('WRVShops → ExcelShops', self.text)
-        self.assertIn('No Excel rename has been deployed yet.', self.text)
+        self.assertIn('All other Excel renames are still planned.', self.text)
         self.assertNotIn('ExcelmcMMO', self.text)
-        self.assertNotRegex(self.text, r'<tr><td>Excel')
-    def test_pending_display_changes_are_not_claimed_live(self):
-        self.assertIn('the installed labels are oversized and sit on solid dark blocks', self.text)
-        self.assertIn('that fix is not installed yet', self.text)
-        self.assertIn('a temporary XP indicator is being prepared', self.text)
-        self.assertIn('This change is not installed yet.', self.text)
+        self.assertEqual(len(re.findall(r'<tr><td>Excel', self.text)), 1)
+    def test_installed_display_changes_keep_human_acceptance_pending(self):
+        panel = self.text.split('id="panel-player-map"', 1)[1].split('id="panel-world-map"', 1)[0]
+        xp = self.text.split('id="mcmmo-xp-preview"', 1)[1].split('</section>', 1)[0]
+        for phrase in ['compact five-pixel names', 'Actual Java/Bedrock compact-label acceptance is still pending.', 'You do not need to make a replacement map.', '/excelplayermap']:
+            self.assertIn(phrase, panel)
+        for phrase in ['hides three seconds after your latest gain', 'enables future brief notifications', 'Actual Java/Bedrock display acceptance is still pending.']:
+            self.assertIn(phrase, xp)
+        self.assertNotIn('not installed yet', panel)
+        self.assertNotIn('being prepared', xp)
     def test_local_assets_exist(self):
         for tag,a in self.page.nodes:
             if tag not in ['script','link']:continue

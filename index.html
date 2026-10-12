@@ -1259,18 +1259,18 @@
     <div class="howto"><h4>What about the Together bonus?</h4><p>The <b>Together and Weekend XP update is installed</b>. It adds bonuses to eligible mcMMO skill XP and green-bar XP, plus the <code>/xpbonus</code> indicator controls. Party XP sharing is a separate feature.</p><p>Startup and command registration are confirmed, with Together and the indicator enabled. Real Java/Bedrock display and gameplay checks are still pending.</p></div>
     <section class="guide-section" id="mcmmo-xp-preview" aria-labelledby="mcmmo-xp-preview-title">
       <h4 id="mcmmo-xp-preview-title">XP bonuses: how to use them</h4>
-      <p class="guide-warning"><b>Installed October 12, 2026.</b> The server is running mcMMO 2.3.003-WRV-XP-1 and WeekendXP 1.0.2. The instructions below describe this installed pair. Real Java/Bedrock display and gameplay acceptance checks remain pending.</p>
+      <p class="guide-warning"><b>Installed October 12, 2026.</b> The server is running mcMMO 2.3.003-WRV-XP-2 and WeekendXP 1.0.2. The instructions below describe this installed pair. Real Java/Bedrock display and gameplay acceptance checks remain pending.</p>
       <p><b>Together:</b> join the same mcMMO party and stay <b>less than 32 blocks</b> from at least one other online teammate in the same world. Where enabled and permitted, eligible skill XP and green-bar XP receive <b>1.25×</b>, or 25% more points. Party level 10 is not required for this separate Together bonus.</p>
       <p><b>Weekend:</b> Saturday and Sunday in Central time give <b>1.20×</b>, or 20% more eligible points, including when you play solo. Both bonuses together give <b>1.50×</b>, or 50% more points. The weekend check runs every 30 minutes, so a midnight change can take up to 30 minutes.</p>
       <p>The update covers every normally earnable mcMMO skill. It boosts the skill you are actually using; it does not award every skill at once. Smelting and Salvage keep their parent-skill progression. These multipliers apply to XP points, not directly to the number of levels you gain.</p>
-      <div class="howto"><h4>Read the bonus bar</h4><p>A separate bonus bar is shown by default and refreshes roughly once per second. <b>×1.00</b> means the base bonus factor. If skill XP and green-bar XP have different factors, it shows them separately. Restrictions or unavailable green-bar support are labeled instead of promising a reward.</p></div>
+      <div class="howto"><h4>Read the bonus bar</h4><p>A separate bonus bar appears after positive accepted skill XP or eligible green-bar XP. It <b>hides three seconds after your latest gain</b>; earning more XP extends the same bar. Joining, standing still, or checking status does not open it. Server lag can stretch the three-second timer. <b>×1.00</b> means the base bonus factor. If skill XP and green-bar XP have different factors, it shows them separately. Restrictions or unavailable green-bar support are labeled instead of promising a reward.</p></div>
       <ul class="cmds">
         <li><code>/xpbonus</code> or <code>/xpbonus status</code> shows your current factors, skill-specific rates, and relevant restrictions</li>
-        <li><code>/xpbonus hide</code> hides your bonus bar without turning off your XP rewards</li>
-        <li><code>/xpbonus show</code> brings your bonus bar back</li>
-        <li><code>/xpbonus toggle</code> switches your bar between shown and hidden</li>
+        <li><code>/xpbonus hide</code> disables future notifications and hides the current bar without turning off your XP rewards</li>
+        <li><code>/xpbonus show</code> enables future brief notifications; earn eligible XP to see the next one</li>
+        <li><code>/xpbonus toggle</code> switches future notifications on or off</li>
       </ul>
-      <p class="note"><b>Display update planned:</b> a temporary XP indicator is being prepared to replace the always-visible bar. This change is not installed yet. For now, use <code>/xpbonus hide</code> to hide the bar without changing rewards, and <code>/xpbonus status</code> to check your factors.</p>
+      <p class="note"><b>Temporary indicator installed October 12:</b> the three-second setting and startup were verified. Actual Java/Bedrock display acceptance is still pending. To check it, earn eligible XP, stop, and watch for the bar to disappear. <code>/xpbonus status</code> still reports your factors in chat without opening the bar.</p>
       <p class="note"><b>Planned plugin name: ExcelWeekendXP.</b> The installed weekend plugin is still WeekendXP 1.0.2. mcMMO keeps its original name.</p>
       <p>Your shown/hidden preference is saved for later joins. If a factor is unexpected, check that your teammate is in the same party and world, is close enough, and that the status command does not show a permission or area restriction.</p>
       <details class="skill-notes"><summary>Which green-bar XP counts?</summary>
@@ -1278,7 +1278,7 @@
         <p>Direct command/API and advancement XP grants do not pass through this pickup bonus. Identified player-death refunds and unmarked custom or unknown orbs are excluded. Tiny fractional bonuses carry forward across eligible pickups instead of being lost.</p>
         <p class="note">Other plugins and merged XP orbs can affect source identification. This is not a guarantee that every refunded or custom orb can be distinguished. Actual Java/phone display and live gameplay checks are still pending.</p>
       </details>
-      <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/931b9039ce409573672ac9a83b5ad20c5b10ece8/mcMMO-TogetherBonus/README.md">Full Together and indicator instructions on GitHub</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/blob/931b9039ce409573672ac9a83b5ad20c5b10ece8/WeekendXP/README.md">WeekendXP instructions</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/blob/931b9039ce409573672ac9a83b5ad20c5b10ece8/mcMMO-TogetherBonus/DEPLOYMENT-2026-10-12.md">Installation checks</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/2">XP source review</a></p>
+      <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/2b26751d84ad3c5f8551c74789b47c97ad6cb531/mcMMO-TogetherBonus/README.md">Full Together and indicator instructions on GitHub</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/blob/2b26751d84ad3c5f8551c74789b47c97ad6cb531/WeekendXP/README.md">WeekendXP instructions</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/blob/2b26751d84ad3c5f8551c74789b47c97ad6cb531/mcMMO-TogetherBonus/DEPLOYMENT-2026-10-12.md">Installation checks</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/2">XP source review</a></p>
     </section>
     <p class="note">WeekendXP is a separate plugin. The Monday, October 12 startup check confirmed the weekday 1.00× base rate for both skill and green-bar XP. Actual weekend rollover, nearby-party rewards, Mending, and fractional pickups still need live gameplay checks. Use <code>/xpbonus status</code> for your current factors.</p>
   </section>
@@ -1474,10 +1474,10 @@
       <p>Sometimes the server takes a quick nap to refresh. You'll see a countdown message first, so you have time to get somewhere safe.</p>
     </div>
     <div class="panel guide-panel" role="tabpanel" id="panel-player-map" aria-labelledby="tab-player-map" tabindex="0">
-      <p class="guide-kicker">Player Map 0.2.0 · installed October 12</p>
+      <p class="guide-kicker">ExcelPlayerMap 0.2.1 · updated October 12</p>
       <h3 class="guide-title">Player Map: find family in the world</h3>
-      <p class="note"><b>Planned name: ExcelPlayerMap.</b> The server still runs WRVPlayerMap 0.2.0. The rename and compact-label update are in testing and are not installed.</p>
-      <div class="howto"><h4>Installed; tracking works, label cleanup pending</h4><p><b>WRVPlayerMap 0.2.0 is installed on the family server.</b> Startup and the <code>/playermap</code> command are confirmed. On October 12, a player reported successful map creation, a self-nameplate that follows movement, and visible local terrain. A later screenshot also shows two player names/markers and terrain.</p><p><b>Known visual issue:</b> the installed labels are oversized and sit on solid dark blocks. Smaller labels without filled backgrounds are being tested; that fix is not installed yet.</p><p>The player's Java/Bedrock platform is not known, so this is not a crossplay pass. Off-map edge-arrow behavior still needs a player check. Sharing, zoom, locking, portals, and wider gameplay checks remain pending. The former BlueMap web map has been removed.</p></div>
+      <p class="note"><b>Now named ExcelPlayerMap.</b> The installed update keeps your existing enrolled maps and <code>/playermap</code> commands. You do not need to make a replacement map. <code>/excelplayermap</code> is an additional help alias.</p>
+      <div class="howto"><h4>Compact-label update installed; player check pending</h4><p><b>ExcelPlayerMap 0.2.1 is installed on the family server.</b> Startup, the safe map-data migration, and the existing update interval are confirmed. The update replaces oversized labels with compact five-pixel names and thin letter-shaped shadows, without solid label, arrow, or footer rectangles.</p><p><b>Try your existing enrolled map:</b> hold it and check that names are readable and terrain remains visible between the letters. Actual Java/Bedrock compact-label acceptance is still pending.</p><p>Before this update, a player reported successful map creation, a self-nameplate that follows movement, and visible local terrain. A later screenshot also shows two player names/markers and terrain. The player's Java/Bedrock platform is not known, so this is not a crossplay pass. Off-map edge-arrow behavior still needs a player check. Sharing, zoom, locking, portals, and wider gameplay checks remain pending. The former BlueMap web map has been removed.</p></div>
       <p>Use an ordinary empty map as usual. The upgrade adds player names and arrows to newly activated maps while you hold them, keeping Minecraft's normal terrain and exploration. No browser, resource pack, or client mod is needed by this design.</p>
       <nav class="guide-nav" aria-label="Player Map guide sections"><a href="#player-map-start">Start a map</a><a href="#player-map-read">Read the markers</a><a href="#player-map-zoom">Zoom, copy, and frame</a><a href="#player-map-help">Troubleshooting</a></nav>
       <section class="guide-section" id="player-map-start" aria-labelledby="player-map-start-title">
@@ -1487,7 +1487,7 @@
           <li><b>On a phone, hold it in your main hand.</b> Java players can also hold it in their offhand.</li>
           <li>Explore normally to fill in the terrain. The added names show eligible online players in the same world, including players beyond the map's terrain coverage.</li>
         </ol>
-        <p>Maps you already had, explorer maps, and treasure maps are not automatically upgraded. Custom maps are also skipped. The add-on does not give you free maps on join, death, or reconnect. Type <code>/playermap</code> for help.</p>
+        <p>Ordinary maps from before the original map-feature installation, explorer maps, and treasure maps are not automatically upgraded. Maps already enrolled with WRVPlayerMap keep tracking after the ExcelPlayerMap update. Custom maps are also skipped. The add-on does not give you free maps on join, death, or reconnect. Type <code>/playermap</code> for help.</p>
       </section>
       <section class="guide-section" id="player-map-read" aria-labelledby="player-map-read-title">
         <h4 id="player-map-read-title">What the names and arrows mean</h4>
@@ -1513,14 +1513,14 @@
       <section class="guide-section" id="player-map-help" aria-labelledby="player-map-help-title">
         <h4 id="player-map-help-title">If something looks wrong</h4>
         <ul>
-          <li><b>No added names?</b> Check that this is a newly activated, unlocked ordinary map and hold it in your hand. Existing and special maps keep their normal behavior.</li>
+          <li><b>No added names?</b> Check that this is an unlocked, enrolled ordinary map and hold it in your hand. Previously enrolled WRVPlayerMap maps still qualify; older untracked and special maps keep their normal behavior.</li>
           <li><b>A player is missing?</b> They may be offline, in another world, or hidden from the added overlay by permissions or supported vanish settings. Use <code>/playermap list</code> to check. Minecraft's ordinary map cursors still follow its own rules.</li>
           <li><b>The map is crowded?</b> Labels cycle about every three seconds at the default update rate. Long or unsupported name characters may be shortened or shown as a question mark.</li>
           <li><b>Lost a map?</b> There is no automatic replacement. Keep a normal copy somewhere safe if you want one.</li>
         </ul>
         <p class="note">Player positions are sampled about once per second, with extra client/network delay possible. The basic player report does not verify phone/Java-specific readability, Geyser behavior, or live-server performance; those checks remain open.</p>
       </section>
-      <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/250d60c40448440a0792de2d5106921c8f4ef97b/WRVPlayerMap/README.md">Full Player Map instructions on GitHub</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/blob/250d60c40448440a0792de2d5106921c8f4ef97b/WRVPlayerMap/DEPLOYMENT-2026-10-12.md">Installation checks</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/3">Map source review</a></p>
+      <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/25612d17c0e522c6f7cb18b913d72bf2c72b2099/WRVPlayerMap/README.md">Full Player Map instructions on GitHub</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/blob/25612d17c0e522c6f7cb18b913d72bf2c72b2099/WRVPlayerMap/DEPLOYMENT-2026-10-12.md">Installation checks</a> · <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/3">Map source review</a></p>
     </div>
     <div class="panel" role="tabpanel" id="panel-world-map" aria-labelledby="tab-world-map" tabindex="0">
       <h3>BlueMap web map removed</h3>
@@ -1544,7 +1544,7 @@
   <section id="all-plugins">
     <h2>All plugins</h2>
     <p>Every add-on currently installed on the server. The server runs on Paper 26.2.</p>
-    <div class="howto" id="excel-plugin-names"><h3>Upcoming Excel names</h3><p>Our custom add-ons are moving toward <b>Excel</b> branding. The table keeps each current installed name and version, with its planned name underneath. <b>No Excel rename has been deployed yet.</b></p><p>mcMMO and all third-party plugins keep their original names. The rename plan keeps existing player commands; use the current instructions until an updated build is installed. GitHub source-folder names may stay different from plugin display names.</p><p>The staged <b>WRVShops → ExcelShops</b> update is also planned. It is not installed and is described in the <a href="#shops-preview">shop preview</a>.</p></div>
+    <div class="howto" id="excel-plugin-names"><h3>Excel plugin names</h3><p>Our custom add-ons are moving toward <b>Excel</b> branding. <b>ExcelPlayerMap 0.2.1 is now installed</b>, replacing WRVPlayerMap. The table keeps every current installed name and version, with remaining planned names underneath. All other Excel renames are still planned.</p><p>mcMMO and all third-party plugins keep their original names. The rename plan keeps existing player commands; use the current instructions until an updated build is installed. GitHub source-folder names may stay different from plugin display names.</p><p>The staged <b>WRVShops → ExcelShops</b> update is also planned. It is not installed and is described in the <a href="#shops-preview">shop preview</a>.</p></div>
     <div class="tablewrap"><table>
       <thead><tr><th>Plugin</th><th>Version</th><th>What it does</th></tr></thead>
       <tbody>
@@ -1571,11 +1571,11 @@
         <tr><td>Vault</td><td>2.0.0</td><td>Keeps track of everyone's money.</td></tr>
         <tr><td>ViaBackwards</td><td>5.12.1</td><td>Lets older game versions join.</td></tr>
         <tr><td>ViaVersion</td><td>5.12.1</td><td>Lets newer game versions join.</td></tr>
-        <tr><td>WRVPlayerMap<small class="plugin-next">Planned: ExcelPlayerMap</small></td><td>0.2.0</td><td>Adds player names and arrows to newly activated ordinary maps.</td></tr>
+        <tr><td>ExcelPlayerMap<small class="plugin-next">Previously: WRVPlayerMap</small></td><td>0.2.1</td><td>Adds compact player names and arrows to ordinary maps; preserves existing enrolled maps.</td></tr>
         <tr><td>WealthBoard<small class="plugin-next">Planned: ExcelWealthBoard</small></td><td>1.3.0</td><td>Shows the richest players.</td></tr>
         <tr><td>WeekendXP<small class="plugin-next">Planned: ExcelWeekendXP</small></td><td>1.0.2</td><td>Weekend bonuses for eligible skill XP and green-bar XP.</td></tr>
         <tr><td>floodgate</td><td>2.2.5</td><td>Lets phone, tablet, and console players join without a computer account.</td></tr>
-        <tr><td>mcMMO</td><td>2.3.003-WRV-XP-1</td><td>Skills that get better with practice, Together XP bonuses, and the /xpbonus indicator.</td></tr>
+        <tr><td>mcMMO</td><td>2.3.003-WRV-XP-2</td><td>Skills that get better with practice, Together XP bonuses, and the /xpbonus indicator.</td></tr>
       </tbody>
     </table></div>
   </section>
@@ -1601,6 +1601,8 @@
     <details open>
       <summary>Oct 12, 2026</summary>
       <ul>
+        <li>Installed ExcelPlayerMap 0.2.1 with compact names and clear space around the lettering, plus the Excel rename. The safe migration preserved enrolled maps and settings; existing maps need no replacement. Updated the <a href="#panel-player-map">map guide</a> and GitHub deployment record. Human compact-label acceptance remains pending.</li>
+        <li>Installed mcMMO 2.3.003-WRV-XP-2 with the temporary XP indicator: positive eligible XP opens one bar, and it hides three seconds after the latest gain. WeekendXP 1.0.2 and reward settings are unchanged. Updated <a href="#mcmmo-xp-preview">indicator instructions</a> and GitHub deployment records. Human display/gameplay acceptance remains pending.</li>
         <li>Added the <a href="#excel-plugin-names">Excel naming plan</a> beside current custom-plugin names. These are upcoming names; no rename is installed. mcMMO and other third-party names stay unchanged. The website also tracks the pending map-label and temporary XP-indicator improvements.</li>
         <li>A later map screenshot showed two player names/markers and terrain. Oversized labels with solid dark backgrounds remain a known visual issue; the compact-label fix is in testing. The persistent XP bar also has a temporary-notification update in progress. Neither display update is installed yet.</li>
         <li>Player Map checks 1 and 2 passed by player report: map creation, a moving self-nameplate, and local terrain display. The other-player/edge-arrow check could not run because no second player was online. The player's platform was not supplied; crossplay, sharing, zoom, locking, and portal checks remain pending. <a href="#panel-player-map">See the current map checks</a>.</li>
