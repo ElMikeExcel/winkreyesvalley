@@ -107,6 +107,7 @@
       <button type="button" role="tab" id="tab-griefprevention" aria-controls="panel-griefprevention" aria-selected="false" tabindex="-1">GriefPrevention</button>
       <button type="button" role="tab" id="tab-coreprotect" aria-controls="panel-coreprotect" aria-selected="false" tabindex="-1">CoreProtect</button>
       <button type="button" role="tab" id="tab-elitemobs" aria-controls="panel-elitemobs" aria-selected="false" tabindex="-1">EliteMobs</button>
+      <button type="button" role="tab" id="tab-shops" aria-controls="panel-shops" aria-selected="false" tabindex="-1">Shops</button>
       <button type="button" role="tab" id="tab-shopkeepers" aria-controls="panel-shopkeepers" aria-selected="false" tabindex="-1">Shopkeepers</button>
       <button type="button" role="tab" id="tab-server-menu-compass" aria-controls="panel-server-menu-compass" aria-selected="false" tabindex="-1">Server menu compass</button>
       <button type="button" role="tab" id="tab-leaderboards" aria-controls="panel-leaderboards" aria-selected="false" tabindex="-1">Leaderboards</button>
@@ -211,6 +212,42 @@
         <figcaption>Watch: a peek at an EliteMobs adventure<span class="vnote">This is a trailer. Our server may not have this exact area. Older videos may show an older version of Minecraft, so things can look a little different.</span></figcaption>
       </figure>
     </div>
+    <div class="panel" role="tabpanel" id="panel-shops" aria-labelledby="tab-shops" tabindex="0">
+      <h3>Shops: spend your Jobs money</h3>
+      <p><b>Spawn Shop:</b> open your compass menu and tap <b>Spawn Shop</b> (or tap the green "Spawn Shop" villager at spawn). Tap an item to buy it. If you don't have enough money, or your bag is full, it tells you and nothing is charged.</p>
+      <table>
+        <thead><tr><th>Item</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>16 Bread</td><td>$40</td></tr>
+          <tr><td>16 Steak</td><td>$80</td></tr>
+          <tr><td>16 Golden Carrots</td><td>$250</td></tr>
+          <tr><td>1 Golden Apple</td><td>$300</td></tr>
+          <tr><td>64 Torches</td><td>$40</td></tr>
+          <tr><td>64 Oak Logs</td><td>$150</td></tr>
+          <tr><td>64 Glass</td><td>$180</td></tr>
+          <tr><td>16 Iron Ingots</td><td>$300</td></tr>
+          <tr><td>1 Water Bucket</td><td>$100</td></tr>
+          <tr><td>1 Saddle</td><td>$400</td></tr>
+          <tr><td>1 Name Tag</td><td>$350</td></tr>
+          <tr><td>2 Leads</td><td>$150</td></tr>
+          <tr><td>4 Ender Pearls</td><td>$400</td></tr>
+          <tr><td>16 Fireworks</td><td>$200</td></tr>
+          <tr><td>16 Bottles o' Enchanting</td><td>$500</td></tr>
+          <tr><td>1 Mending Book</td><td>$600</td></tr>
+          <tr><td>1 Unbreaking III Book</td><td>$450</td></tr>
+          <tr><td>1 Efficiency IV Book</td><td>$450</td></tr>
+        </tbody>
+      </table>
+      <p class="note">No netherite, elytra, or diamonds in the shop. Those you still have to earn the old way.</p>
+      <p><b>Family shops (ChestShop):</b> sell your stuff to each other. Put your items in a chest, then put a sign right next to it:</p>
+      <ul class="cmds">
+        <li>Line 1: leave it empty (your name fills in)</li>
+        <li>Line 2: how many per sale, like <code>8</code></li>
+        <li>Line 3: the price, like <code>B 40</code> (people pay you $40). Add <code>:S 20</code> if you'll also buy them back for $20.</li>
+        <li>Line 4: the item, like <code>Golden Carrot</code>, or a <code>?</code> and then tap the sign with the item</li>
+      </ul>
+      <p><b>To buy from a family shop:</b> just tap (right-click) the sign. To sell to it, hit (left-click) the sign.</p>
+    </div>
     <div class="panel" role="tabpanel" id="panel-shopkeepers" aria-labelledby="tab-shopkeepers" tabindex="0">
       <h3>Shopkeepers: villager shops</h3>
       <p><b>What it does:</b> Shops run by villagers. Walk up, right-click (or tap) the villager, and trade, like buying at a market stand.</p>
@@ -222,7 +259,7 @@
     </div>
     <div class="panel" role="tabpanel" id="panel-server-menu-compass" aria-labelledby="tab-server-menu-compass" tabindex="0">
       <h3>Server menu compass</h3>
-      <p><b>What it does:</b> The compass in your bag opens a menu with big buttons, like Spawn (takes you to the village), Leaderboard, and Teleport to a player. No typing needed. Just use the compass (right-click or tap) and pick a button.</p>
+      <p><b>What it does:</b> The compass in your bag opens a menu with big buttons, like Spawn (takes you to the village), Spawn Shop, Leaderboard, and Teleport to a player. No typing needed. Just use the compass (right-click or tap) and pick a button.</p>
       <p><b>Always with you:</b> You always respawn with your Server Menu compass. It does not drop when you die, and you cannot throw it away.</p>
       <p><b>Teleport to a player:</b> tap it, then tap a family member's name. They get a request and tap Accept (or Decline). Your bed sets where you respawn; there are no home teleports.</p>
       <p><b>What you can type:</b></p>
@@ -268,9 +305,10 @@
     <div class="tablewrap"><table>
       <thead><tr><th>Plugin</th><th>Version</th><th>What it does</th></tr></thead>
       <tbody>
-        <tr><td>BedrockMenu</td><td>1.4.1</td><td>Shows the server menu on phones, tablets, and consoles.</td></tr>
+        <tr><td>BedrockMenu</td><td>1.4.2</td><td>Shows the server menu on phones, tablets, and consoles.</td></tr>
         <tr><td>BlueMap</td><td>5.29</td><td>Makes a map of the world you can see in a web browser.</td></tr>
         <tr><td>CMILib</td><td>1.6.0.1</td><td>A helper piece that Jobs needs.</td></tr>
+        <tr><td>ChestShop</td><td>3.13-pre-1</td><td>Lets players run their own sign-and-chest shops.</td></tr>
         <tr><td>Chunky</td><td>1.5.3</td><td>Builds the world ahead of time so it loads faster.</td></tr>
         <tr><td>CoreProtect</td><td>24.1</td><td>Keeps a record of changes so damage can be undone.</td></tr>
         <tr><td>DeluxeMenus</td><td>1.14.1</td><td>Shows the server menu on computers.</td></tr>
@@ -286,6 +324,7 @@
         <tr><td>NoPhantoms</td><td>1.0.0</td><td>Turns off phantoms, the flying night monsters.</td></tr>
         <tr><td>PlaceholderAPI</td><td>2.12.3</td><td>A helper piece that lets add-ons share info.</td></tr>
         <tr><td>RestartCountdown</td><td>1.1.0</td><td>Warns everyone before the server restarts.</td></tr>
+        <tr><td>ShopVillager</td><td>1.0.0</td><td>Tap the Spawn Shop villager to open the shop.</td></tr>
         <tr><td>Shopkeepers</td><td>2.28.0</td><td>Villager shops you can trade with.</td></tr>
         <tr><td>Vault</td><td>2.0.0</td><td>Keeps track of everyone's money.</td></tr>
         <tr><td>ViaBackwards</td><td>5.12.1</td><td>Lets older game versions join.</td></tr>
@@ -319,6 +358,7 @@
     <details open>
       <summary>Oct 11, 2026</summary>
       <ul>
+        <li>Shops! A Spawn Shop to spend your Jobs money (tap Spawn Shop in the menu, or type <code>/shop</code>), plus family shops with ChestShop so you can sell to each other (BedrockMenu 1.4.2 adds the Spawn Shop button, and a new Spawn Shop villager at spawn opens it too).</li>
         <li>Compass update (MenuJoin 1.2.0): you always get your menu compass back when you respawn, it no longer drops when you die, and you can't throw it away. Lost it anyway? Type <code>/compass</code>.</li>
         <li>Menu update (BedrockMenu 1.4.1): Home buttons removed, Leaderboard button is back, and the teleport menu stays.</li>
         <li>Home teleports turned off. Beds still set where you respawn, and Spawn and teleport requests still work.</li>
