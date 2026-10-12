@@ -58,7 +58,7 @@ class SiteChecks(unittest.TestCase):
                 for source in a['sources']:
                     self.assertTrue(source.startswith('https://github.com/mcMMO-Dev/mcMMO/blob/'+self.data['baseCommit']+'/'))
     def test_critical_caveats(self):
-        for phrase in ['Together and Weekend XP update is built and tested, awaiting installation', 'Salvaging destroys', 'can remove or weaken', 'TNT explodes immediately', 'Effective protection from level 500']:
+        for phrase in ['Together and Weekend XP update is installed', 'Salvaging destroys', 'can remove or weaken', 'TNT explodes immediately', 'Effective protection from level 500']:
             self.assertIn(phrase,self.text)
         self.assertNotIn('everyone gets extra skill points', self.text)
         self.assertNotIn('tap and hold) to get ready', self.text)
@@ -74,7 +74,7 @@ class SiteChecks(unittest.TestCase):
             self.assertIn('panel-'+name,self.ids)
         self.assertIn('winkreyes.duckdns.org:20795',self.text)
     def test_preview_instructions_and_status(self):
-        for phrase in ['/playermap list', 'ordinary empty map', 'Add paper to zoom out', 'Add an empty map to make a copy', 'Add a glass pane to make a locked copy', 'main hand', 'fixed, vanilla-aligned', 'does not follow or continuously recenter', 'not installed on the family server', 'not automatically upgraded', 'BlueMap web map removed', '/xpbonus status', '/xpbonus hide', '/xpbonus show', '/xpbonus toggle', 'Not installed or live yet.', 'after Mending']:
+        for phrase in ['/playermap list', 'ordinary empty map', 'Add paper to zoom out', 'Add an empty map to make a copy', 'Add a glass pane to make a locked copy', 'main hand', 'fixed, vanilla-aligned', 'does not follow or continuously recenter', 'not installed on the family server', 'not automatically upgraded', 'BlueMap web map removed', '/xpbonus status', '/xpbonus hide', '/xpbonus show', '/xpbonus toggle', 'Installed October 12, 2026.', 'after Mending']:
             self.assertIn(phrase, self.text)
         self.assertNotIn('/playermap get', self.text)
         self.assertNotIn('/playermap scale', self.text)
@@ -88,6 +88,14 @@ class SiteChecks(unittest.TestCase):
         for phrase in ['WRVShops 0.1.0 is not installed yet.', '/wrvshop amount 19', '/wrvshop amount 12.50', '/wrvshop setup', '/wrvshop manage', 'Confirm purchase', 'Confirm and publish shop', 'not active in the current Spawn Shop yet', 'Line 1: leave it empty', 'B 40']:
             self.assertIn(phrase, self.text)
         self.assertNotIn('<td>WRVShops</td>', self.text)
+    def test_installed_xp_status(self):
+        xp = self.text.split('id="mcmmo-xp-preview"', 1)[1].split('</section>', 1)[0]
+        for phrase in ['Installed October 12, 2026.', 'mcMMO 2.3.003-WRV-XP-1', 'WeekendXP 1.0.2', 'gameplay acceptance checks remain pending']:
+            self.assertIn(phrase, xp)
+        for stale in ['Not installed', 'awaiting installation', 'prepared update']:
+            self.assertNotIn(stale, xp)
+        self.assertIn('<td>WeekendXP</td><td>1.0.2</td>', self.text)
+        self.assertIn('<td>mcMMO</td><td>2.3.003-WRV-XP-1</td>', self.text)
     def test_local_assets_exist(self):
         for tag,a in self.page.nodes:
             if tag not in ['script','link']:continue
