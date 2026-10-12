@@ -34,3 +34,9 @@ Open `http://127.0.0.1:8767/`. The development-only fixture at `/tests/responsiv
 Before publication, check search/no-results/reset, category filtering, repeated open/close actions, keyboard tab navigation, direct `#mcmmo-mining` links, browser Back/Forward, and the no-script fallback. Check the original server address, joining instructions, and other plugin tabs too.
 
 Publishing, merging, and server configuration changes are separate actions. Editing this website does not update Minecraft plugins or server settings.
+
+## Keep instructions and the change log current
+
+Every plugin added or edited needs player instructions on this website and maintained instructions in its GitHub source repository. Link the relevant source instructions from the guide. For a prepared build, label the instructions as a preview until installation and runtime behavior are verified; never list it as an installed plugin early.
+
+Record actual website and server changes in the existing change log, newest first, using the date in America/Chicago. Preserve earlier entries. When a feature is removed, update its current instructions and installed-plugin listing as well as the change log. Do not publish private backups, access details, or server configuration exports.

@@ -69,10 +69,25 @@ class SiteChecks(unittest.TestCase):
         self.assertIn(module.START+'\n'+generated,self.text)
     def test_existing_guides_and_address(self):
         panels=[a for _,a in self.page.nodes if a.get('role')=='tabpanel']
-        self.assertEqual(len(panels),14)
-        for name in ['jobs','essentials','griefprevention','coreprotect','elitemobs','shops','shopkeepers','server-menu-compass','leaderboards','no-phantoms','restart-warnings','world-map','behind-the-scenes']:
+        self.assertEqual(len(panels),15)
+        for name in ['jobs','essentials','griefprevention','coreprotect','elitemobs','shops','shopkeepers','server-menu-compass','leaderboards','no-phantoms','restart-warnings','world-map','player-map','behind-the-scenes']:
             self.assertIn('panel-'+name,self.ids)
         self.assertIn('winkreyes.duckdns.org:20795',self.text)
+    def test_preview_instructions_and_status(self):
+        for phrase in ['/playermap list', 'ordinary empty map', 'Add paper to zoom out', 'Add an empty map to make a copy', 'Add a glass pane to make a locked copy', 'main hand', 'fixed, vanilla-aligned', 'does not follow or continuously recenter', 'not installed on the family server', 'not automatically upgraded', 'BlueMap web map removed', '/xpbonus status', '/xpbonus hide', '/xpbonus show', '/xpbonus toggle', 'Not installed or live yet.', 'after Mending']:
+            self.assertIn(phrase, self.text)
+        self.assertNotIn('/playermap get', self.text)
+        self.assertNotIn('/playermap scale', self.text)
+        self.assertNotIn('<td>BlueMap</td>', self.text)
+        self.assertNotIn('Ask Mike for the map link', self.text)
+        self.assertIn('Oct 12, 2026', self.text)
+        self.assertIn('Oct 11, 2026', self.text)
+        self.assertIn('Oct 10, 2026', self.text)
+        self.assertIn('Oct 9, 2026', self.text)
+    def test_shop_preview_keeps_live_controls_separate(self):
+        for phrase in ['WRVShops 0.1.0 is not installed yet.', '/wrvshop amount 19', '/wrvshop amount 12.50', '/wrvshop setup', '/wrvshop manage', 'Confirm purchase', 'Confirm and publish shop', 'not active in the current Spawn Shop yet', 'Line 1: leave it empty', 'B 40']:
+            self.assertIn(phrase, self.text)
+        self.assertNotIn('<td>WRVShops</td>', self.text)
     def test_local_assets_exist(self):
         for tag,a in self.page.nodes:
             if tag not in ['script','link']:continue
