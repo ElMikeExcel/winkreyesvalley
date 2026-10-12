@@ -9,9 +9,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=8163d80154">
 </head>
 <body>
+<a class="skip-link" href="#guide">Skip to the plugin guide</a>
 <header class="hero">
   <div class="wrap">
     <h1>Wink Reyes Valley</h1>
@@ -79,7 +80,7 @@
   <section>
     <h2>What's on the server</h2>
     <div class="cards feats">
-      <div class="card"><h3>RPG skills</h3><p>Level up with mcMMO. Play near each other in a party to get a Together XP bonus.</p></div>
+      <div class="card"><h3>RPG skills</h3><p>Level up with mcMMO. Unlock new abilities as you mine, explore, fight, and build. <a href="#panel-mcmmo">Explore the skills</a>.</p></div>
       <div class="card"><h3>Jobs and money</h3><p>Earn cash with Jobs and spend it in player shops.</p></div>
       <div class="card"><h3>Tough bosses</h3><p>EliteMobs brings stronger mobs and boss fights.</p></div>
       <div class="card"><h3>Land claims</h3><p>Protect your stuff with GriefPrevention. Use a golden shovel to claim land.</p></div>
@@ -116,32 +117,1169 @@
       <button type="button" role="tab" id="tab-world-map" aria-controls="panel-world-map" aria-selected="false" tabindex="-1">World map</button>
       <button type="button" role="tab" id="tab-behind-the-scenes" aria-controls="panel-behind-the-scenes" aria-selected="false" tabindex="-1">Behind the scenes</button>
     </div>
-    <div class="panel" role="tabpanel" id="panel-mcmmo" aria-labelledby="tab-mcmmo" tabindex="0">
-      <h3>mcMMO: skills that get better with practice</h3>
-      <p><b>What it does:</b> You get better at things by doing them, just like real life. Dig a lot and your digging skill goes up. Chop trees and your tree skill goes up. Each skill has a level, a number that shows how good you are.</p>
-      <p><b>What leveling up does:</b> Higher levels unlock little bonuses. For mining, there are three:</p>
-      <ul>
-        <li><b>Double Drops:</b> Sometimes a rock gives you 2 pieces instead of 1. The chance grows slowly. At level 100 it happens about 1 time in 10. At level 1000 it happens every time.</li>
-        <li><b>Super Breaker:</b> Hold your pickaxe and right-click (or tap and hold) to get ready. Then start mining. For a few seconds you dig super fast and get extra rocks. The higher your level, the longer it lasts.</li>
-        <li><b>Blast Mining:</b> Unlocks at a higher level. Exploding TNT gives you more ore and less junk.</li>
-      </ul>
-      <p><b>Playing together:</b> Make a party (a little team) with family. When you play near each other, everyone gets extra skill points. That is the Together bonus.</p>
-      <p><b>Weekend bonus:</b> On Saturday and Sunday (Central time) everyone levels up 1.2 times faster.</p>
-      <p><b>What you can type:</b></p>
-      <ul class="cmds">
-        <li><code>/mcstats</code> see all your skill levels</li>
-        <li><code>/mining</code> learn about one skill (swap in any skill name, like <code>/woodcutting</code>)</li>
-        <li><code>/mctop</code> see who has the highest skills</li>
-        <li><code>/party create &lt;name&gt;</code> start a team</li>
-        <li><code>/party invite &lt;player&gt;</code> ask someone to join your team</li>
-        <li><code>/party join &lt;player&gt;</code> join someone's team</li>
-      </ul>
-    
-      <figure class="video">
-        <div class="vwrap"><iframe src="https://www.youtube-nocookie.com/embed/AkNs7GlAZ-8" title="Tutorial - mcMMO Skills Walkthrough" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
-        <figcaption>Watch: a walk through the mcMMO skills<span class="vnote">Older videos may show an older version of Minecraft, so things can look a little different.</span></figcaption>
-      </figure>
+    <!-- MCMO_GUIDE_START -->
+
+<div class="panel guide-panel" role="tabpanel" id="panel-mcmmo" aria-labelledby="tab-mcmmo" tabindex="0">
+  <div class="guide-intro">
+    <p class="guide-kicker">The family field guide</p>
+    <h3 class="guide-title">mcMMO: what will you unlock next?</h3>
+    <p>Mine, fish, farm, fight, and get better as you play. Every skill has its own level, and you can work on all of them. You don't have to choose a class.</p>
+    <p>Some rewards happen automatically. Others are short boosts you switch on. Pick a skill below to see what it does, when it unlocks, and how to use it.</p>
+  </div>
+  <nav class="guide-nav" aria-label="mcMMO guide sections">
+    <a href="#mcmmo-skills">Explore skills</a><a href="#mcmmo-activate">Use an ability</a><a href="#mcmmo-commands">Useful commands</a><a href="#mcmmo-party">Play together</a>
+  </nav>
+  <div class="guide-facts">
+    <div class="guide-fact"><b>19 skills to explore</b><p>Gathering, fighting, and useful everyday skills.</p></div>
+    <div class="guide-fact"><b>Your levels matter</b><p>Unlocks use this server's Retro scale. Level 1000 is a milestone, not a hard limit.</p></div>
+    <div class="guide-fact"><b>Start with /mcstats</b><p>See your levels, then try a skill command such as <code>/mining</code>.</p></div>
+  </div>
+  <div class="howto">
+    <h4>New here? Try Mining first.</h4>
+    <p>Mine natural stone and ores. Double Drops starts at level 1; your first Super Breaker boost unlocks at Mining level 50. <a href="#mcmmo-mining">See the Mining card</a>.</p>
+    <p class="note">mcMMO skill XP is different from green Minecraft XP orbs and Jobs money. Placing and re-breaking the same blocks usually won't earn skill rewards.</p>
+  </div>
+  <section class="guide-section" id="mcmmo-skills" aria-labelledby="mcmmo-skills-title">
+    <h4 id="mcmmo-skills-title">Find your next skill</h4>
+    <p class="guide-legend"><span class="ability-type passive">Automatic</span> happens while you play. <span class="ability-type active">Active boost</span> needs activating. <span class="ability-type manual">Use it yourself</span> needs a special action.</p>
+    <p class="note">In combat, 2 damage points equal 1 heart. Let melee attacks fully charge for the strongest hits; armor can reduce the final damage.</p>
+    <p class="note">Unlock levels below were checked against server files on October 12, 2026 (UTC). Your in-game skill command shows your current bonuses and any permission-based differences.</p>
+    <div class="skill-controls" id="skill-controls" hidden>
+      <div class="skill-fields">
+        <div><label for="skill-search">Search skills or abilities</label><input id="skill-search" type="search" placeholder="Try mining or wolves" autocomplete="off" aria-describedby="skill-results"></div>
+        <div><label for="skill-category">Type of skill</label><select id="skill-category"><option value="all">All skills</option><option value="gathering">Gathering</option><option value="combat">Combat</option><option value="utility">Useful skills</option></select></div>
+      </div>
+      <div class="skill-actions"><button class="plain-btn" id="skill-reset" type="button">Clear filters</button><button class="plain-btn" id="skill-expand" type="button">Open shown skills</button><button class="plain-btn" id="skill-collapse" type="button">Close all skills</button></div>
+      <p class="skill-results" id="skill-results" role="status" aria-live="polite" aria-atomic="true"></p>
     </div>
+    <p class="skill-empty" id="skill-empty" hidden>No skills match that search. Try an ability name, a shorter word, or choose All skills.</p>
+    <div class="skill-grid">
+<details class="skill-card" id="mcmmo-mining" data-category="gathering">
+<summary><span class="skill-title">Mining</span>
+<span class="skill-summary">Mine stone and ores for extra drops and powerful digging abilities.</span>
+<span class="skill-meta">6 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/mining</code> shows your progress. <a href="#mcmmo-mining" aria-label="Link to Mining">Link to this skill</a></p>
+<p><b>How to level up:</b> Mine eligible natural stone and ores with a pickaxe.</p>
+
+
+<ul class="ability-list">
+<li class="ability">
+<h5>Double Drops</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>A chance for an extra copy of normal mining drops.</p>
+<p><b>Use:</b> Passive while mining eligible blocks.</p>
+
+<p class="ability-note">Mine natural blocks. Placing and breaking the same blocks does not earn normal bonus drops.</p>
+</li>
+<li class="ability">
+<h5>Super Breaker</h5>
+<div class="ability-tags"><span class="ability-type active">Active boost</span><span class="unlock">Level 50</span></div>
+<p>Mine faster for a short time. Successful bonus-drop rolls can give triple drops.</p>
+<p><b>Use:</b> Right-click with a pickaxe, then hit an eligible mining block within four seconds.</p>
+<p><b>Wait:</b> 4 minutes after it ends</p>
+
+<p class="ability-note">Triple drops happen when the bonus succeeds; every block is not guaranteed to drop three items.</p>
+</li>
+<li class="ability">
+<h5>Mother Lode</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1000</span></div>
+<p>A high-level chance to receive triple mining drops, even outside Super Breaker. If it fails, the normal Double Drops roll still happens.</p>
+<p><b>Use:</b> Passive while mining eligible blocks.</p>
+
+</li>
+<li class="ability">
+<h5>Blast Mining</h5>
+<div class="ability-tags"><span class="ability-type active">Active boost</span><span class="unlock">Level 100</span></div>
+<p>Remotely detonate TNT for improved ore recovery, fewer ordinary debris drops, and Mining XP from destroyed ores. Higher ranks improve the ore bonus and can add bonus copies.</p>
+<p><b>Use:</b> Place TNT, stand safely back, hold a pickaxe or flint and steel, sneak, aim at the TNT, and right-click.</p>
+<p><b>Wait:</b> 1 minute</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 250 → 350 → 500 → 650 → 750 → 850 → 1000</p>
+
+<p class="ability-note">TNT explodes immediately. Stay back and keep it well away from builds, players and animals.</p>
+<p class="ability-note">Aim from a safe distance. The remote range is 100 blocks. Extra ore copies are chance-based.</p>
+</li>
+<li class="ability">
+<h5>Bigger Bombs</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Makes mcMMO-tracked Blast Mining explosions larger. It improves with your Blast Mining rank.</p>
+<p><b>Use:</b> Automatic when Blast Mining is used.</p>
+
+<p class="ability-note">A larger blast damages a larger area. Use it only in a safe mining area.</p>
+</li>
+<li class="ability">
+<h5>Demolitions Expertise</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Effective protection from level 500</span></div>
+<p>Reduces damage from your own Blast Mining TNT. Protection begins at level 500 with the checked settings.</p>
+<p><b>Use:</b> Passive against your own tracked Blast Mining explosion.</p>
+<p class="rank-list"><b>Rank levels:</b> 500 → 750 → 1000</p>
+
+<p class="ability-note">Protection applies to your own Blast Mining TNT. It does not make ordinary TNT, creepers or other players’ explosives safe.</p>
+<details class="skill-notes"><summary>More about this ability</summary>
+<p>With the checked settings, protection is 25% at level 500, 50% at 750, and 100% at 1000, for your own tracked Blast Mining TNT only.</p>
+</details>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L564-L568">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L101-L178">MiningManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L131-L176">MiningManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/player/McMMOPlayer.java#L972-L1066">McMMOPlayer</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L325-L332">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-woodcutting" data-category="gathering">
+<summary><span class="skill-title">Woodcutting</span>
+<span class="skill-summary">Chop trees faster and earn extra wood.</span>
+<span class="skill-meta">5 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/woodcutting</code> shows your progress. <a href="#mcmmo-woodcutting" aria-label="Link to Woodcutting">Link to this skill</a></p>
+<p><b>How to level up:</b> Chop natural or grown logs with an axe.</p>
+
+
+<ul class="ability-list">
+<li class="ability">
+<h5>Harvest Lumber</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>A chance to gain an extra copy of a chopped block&#x27;s drops.</p>
+<p><b>Use:</b> Passive when chopping eligible blocks with an axe.</p>
+
+</li>
+<li class="ability">
+<h5>Tree Feller</h5>
+<div class="ability-tags"><span class="ability-type active">Active boost</span><span class="unlock">Level 50</span></div>
+<p>Chopping a tree can bring down connected logs and nearby tree parts in one action. Harvest Lumber and Clean Cuts can still add drops.</p>
+<p><b>Use:</b> Right-click with an axe, then hit a valid log within four seconds and chop it.</p>
+<p><b>Wait:</b> 4 minutes after it ends</p>
+
+<p class="ability-note">Check axe durability first. A worn-out axe can make the ability fail and injure you.</p>
+<p class="ability-note">Be careful near treehouses and neighboring trees. Replant afterward. Some tree shapes or protected blocks prevent a complete felling.</p>
+</li>
+<li class="ability">
+<h5>Leaf Blower</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 150</span></div>
+<p>Instantly breaks leaves and eligible non-wood tree parts when hit with an axe.</p>
+<p><b>Use:</b> Passive; hit the leaf or eligible tree part with an axe.</p>
+
+<p class="ability-note">Hold an axe to use it.</p>
+</li>
+<li class="ability">
+<h5>Knock on Wood</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 300</span></div>
+<p>Improves Tree Feller rewards. Rank 1 keeps sapling/propagule drops from more leaves; rank 2 adds a chance for Minecraft XP orbs from eligible non-log tree components.</p>
+<p><b>Use:</b> Passive during Tree Feller.</p>
+<p class="rank-list"><b>Rank levels:</b> 300 → 600</p>
+
+<p class="ability-note">This improves Tree Feller; punching a tree does not trigger it. Sapling drops are still chance-based.</p>
+</li>
+<li class="ability">
+<h5>Clean Cuts</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1000</span></div>
+<p>A high-level chance for triple woodcutting drops. If it fails, Harvest Lumber can still award double drops.</p>
+<p><b>Use:</b> Passive while chopping eligible blocks; also works during Tree Feller.</p>
+
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L872-L876">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L85-L163">WoodcuttingManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L184-L210">WoodcuttingManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/player/McMMOPlayer.java#L972-L1066">McMMOPlayer</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L630-L637">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-herbalism" data-category="gathering">
+<summary><span class="skill-title">Herbalism</span>
+<span class="skill-summary">Harvest more food and learn helpful replanting tricks.</span>
+<span class="skill-meta">7 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/herbalism</code> shows your progress. <a href="#mcmmo-herbalism" aria-label="Link to Herbalism">Link to this skill</a></p>
+<p><b>How to level up:</b> Harvest fully grown crops and eligible plants. Let them grow again before harvesting.</p>
+
+
+<ul class="ability-list">
+<li class="ability">
+<h5>Double Drops</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Eligible harvests can give extra produce.</p>
+<p><b>Use:</b> Passive when harvesting eligible mature plants.</p>
+
+<p class="ability-note">Harvest fully grown crops. Bonus drops depend on the plant; falling sections of tall plants do not all receive the bonus.</p>
+</li>
+<li class="ability">
+<h5>Green Terra</h5>
+<div class="ability-tags"><span class="ability-type active">Active boost</span><span class="unlock">Level 50</span></div>
+<p>A short farming boost: bonus harvests can give triple drops, supported crops replant more reliably, and seeds can turn certain blocks green.</p>
+<p><b>Use:</b> Right-click with a hoe, then hit or harvest an eligible plant or hit a convertible block within four seconds. While active, hit convertible blocks with wheat seeds available in your inventory.</p>
+<p><b>Wait:</b> 4 minutes after it ends</p>
+
+<p class="ability-note">Keep the matching seeds or crop item in your inventory for replanting. Sneaking skips replanting.</p>
+<p class="ability-note">Greening a block consumes a wheat seed. Not every harvest is guaranteed to give triple drops.</p>
+</li>
+<li class="ability">
+<h5>Green Thumb</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Ranked benefits at level 250; basic replanting can happen earlier</span></div>
+<p>Harvest with a hoe to try automatically replanting supported crops. Higher ranks replant at a later growth stage. Wheat seeds can also turn certain blocks green.</p>
+<p><b>Use:</b> Harvest with a hoe without sneaking; keep the matching seed/crop item in your inventory or offhand. Cocoa also supports an axe. For manual block conversion, right-click a compatible block while holding wheat seeds.</p>
+<p class="rank-list"><b>Rank levels:</b> 250 → 500 → 750 → 1000</p>
+
+<p class="ability-note">Crop replanting can happen before level 250, starting at the earliest growth stage. The level-250 unlock is for ranked growth benefits and manual block conversion.</p>
+<p class="ability-note">Keep the matching seeds or crop item in your inventory. Sneaking skips replanting. A failed manual greening attempt still uses its wheat seed.</p>
+</li>
+<li class="ability">
+<h5>Farmer&#x27;s Diet</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 200</span></div>
+<p>Restores extra hunger when eating supported farm foods. Each rank adds one hunger point, up to five points (2.5 drumsticks).</p>
+<p><b>Use:</b> Passive when eating supported foods.</p>
+<p class="rank-list"><b>Rank levels:</b> 200 → 400 → 600 → 800 → 1000</p>
+
+<p class="ability-note">Extra hunger does not remove the poison from poisonous potatoes.</p>
+</li>
+<li class="ability">
+<h5>Hylian Luck</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Available from the start; improves with skill</span></div>
+<p>A small chance to find configured treasure when cutting certain plants with a sword.</p>
+<p><b>Use:</b> Break a supported plant or flower-pot block with a sword.</p>
+
+<p class="ability-note">Use a sword on supported plants. Avoid decorative plants and flower pots around builds.</p>
+<p class="ability-note">There is no separate level gate, but the chance starts at zero and grows with your Herbalism level.</p>
+</li>
+<li class="ability">
+<h5>Shroom Thumb</h5>
+<div class="ability-tags"><span class="ability-type manual">Use it yourself</span><span class="unlock">Available from the start; improves with skill</span></div>
+<p>A chance to turn dirt, grass or a dirt path into mycelium.</p>
+<p><b>Use:</b> Hold a red or brown mushroom and right-click a compatible block while carrying at least one of each mushroom.</p>
+
+<p class="ability-note">Every attempt consumes one red and one brown mushroom, even if it fails. The chance starts at zero and grows with your skill.</p>
+</li>
+<li class="ability">
+<h5>Verdant Bounty</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1000</span></div>
+<p>A high-level chance for a successful bonus harvest to become triple drops outside Green Terra.</p>
+<p><b>Use:</b> Passive during eligible harvests.</p>
+
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L606-L610">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L412-L451">HerbalismManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L199-L239">HerbalismManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/Herbalism.java#L14-L35">Herbalism</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L286-L292">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-excavation" data-category="gathering">
+<summary><span class="skill-title">Excavation</span>
+<span class="skill-summary">Find surprises while you dig.</span>
+<span class="skill-meta">2 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/excavation</code> shows your progress. <a href="#mcmmo-excavation" aria-label="Link to Excavation">Link to this skill</a></p>
+<p><b>How to level up:</b> Dig eligible natural materials, such as dirt, sand and gravel, with a shovel.</p>
+
+
+<ul class="ability-list">
+<li class="ability">
+<h5>Archaeology</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Digging can uncover configured treasures and extra Excavation XP. Higher skill levels unlock individual treasure entries; Archaeology ranks improve the Minecraft XP orb bonus when treasure is found.</p>
+<p><b>Use:</b> Passive when digging eligible natural blocks with a shovel.</p>
+<p class="rank-list"><b>Rank levels:</b> 1 → 250 → 350 → 500 → 650 → 750 → 850 → 1000</p>
+
+<p class="ability-note">Different treasures need different digging materials and levels. This is a shovel skill, separate from Minecraft’s brush archaeology.</p>
+</li>
+<li class="ability">
+<h5>Giga Drill Breaker</h5>
+<div class="ability-tags"><span class="ability-type active">Active boost</span><span class="unlock">Level 50</span></div>
+<p>Dig faster for a short time, with three chances for treasure and extra Excavation XP from eligible blocks.</p>
+<p><b>Use:</b> Right-click with a shovel, then hit an eligible excavation block within four seconds.</p>
+<p><b>Wait:</b> 4 minutes after it ends</p>
+
+<p class="ability-note">It does not dig a 3-by-3 area or triple every ordinary dirt and sand drop. It uses extra tool durability.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L900-L918">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/excavation/ExcavationManager.java#L108-L145">ExcavationManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/excavation/ExcavationManager.java#L119-L145">ExcavationManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L508-L525">BlockListener</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L101-L112">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-fishing" data-category="gathering">
+<summary><span class="skill-title">Fishing</span>
+<span class="skill-summary">Catch treasures, get faster bites and learn fishing tricks.</span>
+<span class="skill-meta">6 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/fishing</code> shows your progress. <a href="#mcmmo-fishing" aria-label="Link to Fishing">Link to this skill</a></p>
+<p><b>How to level up:</b> Fish with a rod. If warned about overfishing, move where your bobber lands.</p>
+
+
+<p>Keep moving your fishing spot when warned about overfishing. Repeated catches in the same spot can stop earning fish or XP.</p>
+<ul class="ability-list">
+<li class="ability">
+<h5>Treasure Hunter</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Fishing can reel in equipment, valuables and other configured treasures. Higher ranks shift the chances toward better rarity tiers and increase ordinary Minecraft fishing XP.</p>
+<p><b>Use:</b> Passive when you successfully catch something with a rod.</p>
+<p class="rank-list"><b>Rank levels:</b> 1 → 250 → 350 → 500 → 650 → 750 → 850 → 1000</p>
+
+<p class="ability-note">A treasure normally replaces the fish you would have caught.</p>
+</li>
+<li class="ability">
+<h5>Master Angler</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Reduces the wait for a bite. Fishing while seated in a boat adds another small reduction.</p>
+<p><b>Use:</b> Passive on casting a fishing rod; sit in a boat for the extra bonus.</p>
+<p class="rank-list"><b>Rank levels:</b> 1 → 200 → 300 → 400 → 600 → 700 → 800 → 900</p>
+
+<p class="ability-note">The wait still varies. A faster bite is not a guarantee of an immediate catch.</p>
+</li>
+<li class="ability">
+<h5>Ice Fishing</h5>
+<div class="ability-tags"><span class="ability-type manual">Use it yourself</span><span class="unlock">Level 50</span></div>
+<p>Can open a small hole in ordinary ice so you can fish through it.</p>
+<p><b>Use:</b> Cast onto qualifying ice and reel the grounded hook while aiming at the ice; the ability converts a small patch to water and recasts.</p>
+
+<p class="ability-note">Use ordinary lake ice. Packed ice and blue ice do not work. It can change a 3-by-3 patch, so avoid decorative ice.</p>
+</li>
+<li class="ability">
+<h5>Shake</h5>
+<div class="ability-tags"><span class="ability-type manual">Use it yourself</span><span class="unlock">Level 150</span></div>
+<p>Hooking a supported creature can shake loose an item and award Fishing XP. Higher ranks improve its success chance.</p>
+<p><b>Use:</b> Hook a supported living entity with the fishing rod and reel it in.</p>
+<p class="rank-list"><b>Rank levels:</b> 150 → 200 → 250 → 300 → 400 → 500 → 600 → 700</p>
+
+<p class="ability-note">Shake hurts the creature and can kill it. Avoid pets, villagers and family members.</p>
+</li>
+<li class="ability">
+<h5>Magic Hunter</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 200</span></div>
+<p>Some enchantable mcMMO fishing treasures can gain enchantments. Its enchantment odds improve with Treasure Hunter rank.</p>
+<p><b>Use:</b> Passive when a suitable fishing treasure is found.</p>
+
+</li>
+<li class="ability">
+<h5>Fisherman&#x27;s Diet</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 200</span></div>
+<p>Restores extra hunger when eating supported fish. Each rank adds one hunger point, up to five points (2.5 drumsticks).</p>
+<p><b>Use:</b> Passive when eating cod, salmon, tropical fish, cooked cod or cooked salmon.</p>
+<p class="rank-list"><b>Rank levels:</b> 200 → 400 → 600 → 800 → 1000</p>
+
+<p class="ability-note">This does not make pufferfish safe to eat.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L707-L725">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L216-L226">FishingManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L73-L81">FishingManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L475-L486">PlayerListener</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L247-L256">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-swords" data-category="combat">
+<summary><span class="skill-title">Swords</span>
+<span class="skill-summary">Sword attacks gain bleeding, counter-attacks and a short splash-damage ability.</span>
+<span class="skill-meta">5 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/swords</code> shows your progress. <a href="#mcmmo-swords" aria-label="Link to Swords">Link to this skill</a></p>
+<p><b>How to level up:</b> Deal damage with a sword to eligible mobs or players.</p>
+
+
+<ul class="ability-list">
+<li class="ability">
+<h5>Rupture</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Sword hits can apply armor-bypassing damage over time. Rank chances are 15%, 33%, 40%, 66%; the duration is about 5 seconds.</p>
+<p class="rank-list"><b>Rank levels:</b> 1 → 150 → 750 → 900</p>
+
+<p class="ability-note">Let melee attacks charge fully for the best chance. Rupture cannot deliver the final killing blow.</p>
+</li>
+<li class="ability">
+<h5>Serrated Strikes</h5>
+<div class="ability-tags"><span class="ability-type active">Active boost</span><span class="unlock">Level 50</span></div>
+<p>Temporarily adds nearby splash damage and attempts Rupture on splash targets. At full strength, splash is one-quarter of the triggering sword damage before armor, with a minimum of 1 damage.</p>
+<p><b>Use:</b> Right-click with a sword to ready it, then hit a target within 4 seconds. Sneak while right-clicking if your off-hand is occupied.</p>
+<p><b>Wait:</b> 4 minutes after it ends</p>
+
+</li>
+<li class="ability">
+<h5>Counter Attack</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 200</span></div>
+<p>While holding a sword, a successful counter damages a living melee attacker for half the incoming damage before armor. Chance increases with Swords level, up to 30% at level 1000.</p>
+
+<p class="ability-note">A counter hurts the attacker; it does not simply cancel the incoming hit.</p>
+</li>
+<li class="ability">
+<h5>Stab</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 750</span></div>
+<p>Adds +2.5 sword damage before armor at rank 1 and +4 at rank 2.</p>
+<p class="rank-list"><b>Rank levels:</b> 750 → 1000</p>
+
+</li>
+<li class="ability">
+<h5>Swords Limit Break</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 200 → 300 → 400 → 500 → 600 → 700 → 800 → 900 → 1000</p>
+
+<p class="ability-note">This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L726-L777">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/swords/SwordsManager.java#L77-L118">SwordsManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/runnables/skills/RuptureTask.java#L51-L61">RuptureTask</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/runnables/skills/RuptureTask.java#L95-L131">RuptureTask</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L488-L510">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-axes" data-category="combat">
+<summary><span class="skill-title">Axes</span>
+<span class="skill-summary">Axe attacks gain extra damage, critical hits and crowd control.</span>
+<span class="skill-meta">6 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/axes</code> shows your progress. <a href="#mcmmo-axes" aria-label="Link to Axes">Link to this skill</a></p>
+<p><b>How to level up:</b> Deal damage with an axe. Chopping trees trains Woodcutting instead.</p>
+
+
+<ul class="ability-list">
+<li class="ability">
+<h5>Axe Mastery</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 50</span></div>
+<p>Adds +1 axe damage before armor per rank, up to +4.</p>
+<p class="rank-list"><b>Rank levels:</b> 50 → 100 → 150 → 200</p>
+
+</li>
+<li class="ability">
+<h5>Critical Strikes</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Chance to deal extra axe damage. At full attack strength, a critical is 2× damage against mobs or 1.5× against players. Chance reaches 37.5% at level 1000.</p>
+
+</li>
+<li class="ability">
+<h5>Armor Impact</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>A 25% chance per armor piece to inflict extra durability damage, growing with rank. Base durability damage is 6.5 × rank before Unbreaking and rounding.</p>
+<p class="rank-list"><b>Rank levels:</b> 1 → 100 → 150 → 200 → 250 → 300 → 350 → 400 → 450 → 500 → 550 → 600 → 650 → 700 → 750 → 800 → 850 → 900 → 950 → 1000</p>
+
+<p class="ability-note">Damages armor durability rather than adding health damage.</p>
+</li>
+<li class="ability">
+<h5>Greater Impact</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 250</span></div>
+<p>Against an unarmored target, a 25% chance to add +2 damage before armor and strong knockback.</p>
+
+</li>
+<li class="ability">
+<h5>Skull Splitter</h5>
+<div class="ability-tags"><span class="ability-type active">Active boost</span><span class="unlock">Level 50</span></div>
+<p>Temporarily splashes axe damage to nearby foes. At full attack strength, splash is half the triggering damage before armor, with a minimum of 1 damage.</p>
+<p><b>Use:</b> Right-click with an axe to ready it, then hit a target within 4 seconds. Sneak while right-clicking if your off-hand is occupied.</p>
+<p><b>Wait:</b> 4 minutes after it ends</p>
+
+<p class="ability-note">With an axe ready, hitting a creature triggers Skull Splitter; chopping a tree triggers Tree Feller.</p>
+</li>
+<li class="ability">
+<h5>Axes Limit Break</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 200 → 300 → 400 → 500 → 600 → 700 → 800 → 900 → 1000</p>
+
+<p class="ability-note">This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L111-L203">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/Axes.java#L49-L58">Axes</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L458-L460">CombatUtils</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L113-L138">AxesManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L199-L202">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-unarmed" data-category="combat">
+<summary><span class="skill-title">Unarmed</span>
+<span class="skill-summary">Fight with empty hands and learn defensive tricks.</span>
+<span class="skill-meta">7 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/unarmed</code> shows your progress. <a href="#mcmmo-unarmed" aria-label="Link to Unarmed">Link to this skill</a></p>
+<p><b>How to level up:</b> Deal damage with an empty main hand. Holding a random block does not count as empty-handed combat.</p>
+
+
+<ul class="ability-list">
+<li class="ability">
+<h5>Steel Arm Style</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Adds punch damage across 20 ranks, from +1 damage before armor at rank 1 to +13.5 at rank 20.</p>
+<p class="rank-list"><b>Rank levels:</b> 1 → 100 → 150 → 200 → 250 → 300 → 350 → 400 → 450 → 500 → 550 → 600 → 650 → 700 → 750 → 800 → 850 → 900 → 950 → 1000</p>
+
+</li>
+<li class="ability">
+<h5>Berserk</h5>
+<div class="ability-tags"><span class="ability-type active">Active boost</span><span class="unlock">Level 50</span></div>
+<p>Temporarily increases fully charged punch damage by 50% and instantly breaks certain weak materials, including excavation-type blocks, snow, and glass.</p>
+<p><b>Use:</b> Right-click with an empty main hand, then punch a target or suitable block within 4 seconds. Sneak while right-clicking if your off-hand is occupied.</p>
+<p><b>Wait:</b> 4 minutes after it ends</p>
+
+<p class="ability-note">Keep your main hand empty. Only certain soft blocks break instantly.</p>
+</li>
+<li class="ability">
+<h5>Arrow Deflect</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 200</span></div>
+<p>Chance to cancel an incoming arrow hit while your main hand is empty. Chance reaches 50% at level 1000.</p>
+
+<p class="ability-note">Keep your main hand empty. This blocks arrow damage; it does not shoot the arrow back.</p>
+</li>
+<li class="ability">
+<h5>Disarm</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 250</span></div>
+<p>Punches can knock a player’s held main-hand item onto the ground. Chance reaches 33% at level 1000.</p>
+
+<p class="ability-note">This affects players. Dropped items can be picked up by others, so be careful around family members’ valuables.</p>
+</li>
+<li class="ability">
+<h5>Iron Grip</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Listed rank: level 600; protection can happen earlier</span></div>
+<p>A chance to keep your held item when another player tries to Disarm you. The chance rises with Unarmed level, reaching 100% at level 1000.</p>
+
+<p class="ability-note">The listed first rank is level 600, but protection can happen earlier in this server build.</p>
+</li>
+<li class="ability">
+<h5>Block Cracker</h5>
+<div class="ability-tags"><span class="ability-type manual">Use it yourself</span><span class="unlock">Use with Berserk from level 50</span></div>
+<p>While Berserk is active, punching supported brick blocks turns them into their cracked variants.</p>
+<p><b>Use:</b> Activate Berserk, then punch stone bricks, infested stone bricks, deepslate bricks/tiles, polished blackstone bricks, or nether bricks.</p>
+
+<p class="ability-note">Use while Berserk is active, so its practical starting point is level 50. Be careful around brick builds.</p>
+</li>
+<li class="ability">
+<h5>Unarmed Limit Break</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 200 → 300 → 400 → 500 → 600 → 700 → 800 → 900 → 1000</p>
+
+<p class="ability-note">This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L778-L864">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L198-L224">UnarmedManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L31-L32">UnarmedManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L191-L193">UnarmedManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L588-L613">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-archery" data-category="combat">
+<summary><span class="skill-title">Archery</span>
+<span class="skill-summary">Improve bow damage and recover some arrows.</span>
+<span class="skill-meta">4 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/archery</code> shows your progress. <a href="#mcmmo-archery" aria-label="Link to Archery">Link to this skill</a></p>
+<p><b>How to level up:</b> Shoot eligible targets with a bow. Longer shots award a distance XP multiplier, capped at 50 blocks; fully drawn bow shots are also favored by the XP calculation.</p>
+
+
+<p>This skill has passive bonuses; there is no usable right-click super ability for it in this version.</p>
+<ul class="ability-list">
+<li class="ability">
+<h5>Skill Shot</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Adds 10% of the original arrow damage per rank, up to +200% at rank 20, limited to +9 extra damage before armor per hit.</p>
+<p class="rank-list"><b>Rank levels:</b> 1 → 100 → 150 → 200 → 250 → 300 → 350 → 400 → 450 → 500 → 550 → 600 → 650 → 700 → 750 → 800 → 850 → 900 → 950 → 1000</p>
+
+</li>
+<li class="ability">
+<h5>Arrow Retrieval</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Chance for arrows fired into a target to be returned as ordinary arrow drops when it dies. Chance reaches 100% at level 1000.</p>
+
+<p class="ability-note">Infinity arrows are excluded. Recovered arrows are ordinary arrows.</p>
+</li>
+<li class="ability">
+<h5>Daze</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Available from the start; improves with skill</span></div>
+<p>Bow hits can disorient a player, change their view angle, add 10 seconds of nausea, and add +4 damage before armor. Chance reaches 50% at level 1000.</p>
+
+<p class="ability-note">Affects players, not monsters. The chance starts at zero and grows with Archery level.</p>
+</li>
+<li class="ability">
+<h5>Archery Limit Break</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 200 → 300 → 400 → 500 → 600 → 700 → 800 → 900 → 1000</p>
+
+<p class="ability-note">This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L33-L104">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/Archery.java#L54-L62">Archery</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/ArcheryManager.java#L160-L166">ArcheryManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L237-L248">EntityListener</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L157-L164">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-taming" data-category="combat">
+<summary><span class="skill-title">Taming</span>
+<span class="skill-summary">Train animal companions, especially your tamed wolves.</span>
+<span class="skill-meta">10 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/taming</code> shows your progress. <a href="#mcmmo-taming" aria-label="Link to Taming">Link to this skill</a></p>
+<p><b>How to level up:</b> Tame animals and let your own tamed wolves fight while you are online. Ordinary breeding does not award Taming XP.</p>
+
+
+<p>Most combat bonuses apply to your own tamed wolves, not every animal. Summoned companions are temporary.</p>
+<ul class="ability-list">
+<li class="ability">
+<h5>Beast Lore</h5>
+<div class="ability-tags"><span class="ability-type manual">Use it yourself</span><span class="unlock">Level 1</span></div>
+<p>Inspect a tameable animal’s health and owner; horse-like animals can also show speed and jump information.</p>
+<p><b>Use:</b> Left-click a tameable animal while holding a bone. The successful inspection cancels that attack’s damage.</p>
+
+</li>
+<li class="ability">
+<h5>Call of the Wild</h5>
+<div class="ability-tags"><span class="ability-type manual">Use it yourself</span><span class="unlock">Level 1</span></div>
+<p>Summon a temporary companion: 10 bones for a wolf, 10 raw cod for a cat, or 10 apples for a horse. You can have two summoned wolves, one cat and one horse at a time.</p>
+<p><b>Use:</b> Crouch and left-click air or a block while holding at least the required item amount in your main hand.</p>
+
+<p class="ability-note">These companions are temporary: they disappear after four minutes. The summoning ingredients are consumed.</p>
+</li>
+<li class="ability">
+<h5>Environmentally Aware</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Protects your wolf from falls and helps it escape hazardous blocks by teleporting it back to you.</p>
+
+<p class="ability-note">It can cancel falls and help a wolf escape hazards, but does not guarantee rescue from lethal lava or fire damage.</p>
+</li>
+<li class="ability">
+<h5>Gore</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 150</span></div>
+<p>Your wolf’s attack gains another copy of its base hit damage, before other bonuses and armor.</p>
+
+</li>
+<li class="ability">
+<h5>Pummel</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 200</span></div>
+<p>Your wolf has a 10% chance to knock back its target.</p>
+
+</li>
+<li class="ability">
+<h5>Fast Food Service</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 200</span></div>
+<p>On a wolf’s attack, a 50% chance to heal it by the hit’s original damage amount, up to its maximum health.</p>
+
+</li>
+<li class="ability">
+<h5>Thick Fur</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 250</span></div>
+<p>Halves incoming melee/projectile damage to your wolf and extinguishes its burning effect on a fire-tick event.</p>
+
+<p class="ability-note">This is damage reduction, not immunity to every kind of damage.</p>
+</li>
+<li class="ability">
+<h5>Holy Hound</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 350</span></div>
+<p>Adds health when your wolf takes magic, poison or wither damage, which can help offset the hit.</p>
+
+<p class="ability-note">The original magic damage can still apply. Do not rely on this as immunity or guaranteed net healing.</p>
+</li>
+<li class="ability">
+<h5>Shock Proof</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 500</span></div>
+<p>Reduces your wolf’s explosion and lightning damage to one-sixth of its previous amount.</p>
+
+</li>
+<li class="ability">
+<h5>Sharpened Claws</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 750</span></div>
+<p>Adds +2 damage before armor to your wolf’s attacks.</p>
+
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L262-L294">TamingManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L729-L737">CombatUtils</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L1075-L1095">PlayerListener</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L529-L537">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-acrobatics" data-category="utility">
+<summary><span class="skill-title">Acrobatics</span>
+<span class="skill-summary">Improve your chance of reducing fall and attack damage.</span>
+<span class="skill-meta">3 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/acrobatics</code> shows your progress. <a href="#mcmmo-acrobatics" aria-label="Link to Acrobatics">Link to this skill</a></p>
+<p><b>How to level up:</b> Gain XP from surviving meaningful falls and successful combat dodges against mobs. Repeating falls at the same spot or grinding the same mob is restricted by anti-farming checks.</p>
+
+
+<p>Practice safely. These abilities do not make every fall survivable.</p>
+<ul class="ability-list">
+<li class="ability">
+<h5>Roll</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Available from the start; improves with skill</span></div>
+<p>A chance to reduce fall damage by up to 7 damage points (3.5 hearts), after normal fall-damage reductions. Chance scales to 100% at level 1000.</p>
+<p><b>Use:</b> Automatic when landing from a damaging fall, without sneaking.</p>
+
+<p class="ability-note">Do not jump from lethal heights to test it. A roll can fail, and cannot save a fall that remains fatal after the reduction.</p>
+</li>
+<li class="ability">
+<h5>Graceful Roll</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Sneaking version of Roll; no separate unlock</span></div>
+<p>Sneaking doubles Roll’s success chance and doubles the maximum reduction to 14 damage points (7 hearts). With configured scaling it reaches 100% chance at level 500.</p>
+<p><b>Use:</b> Hold sneak when you land from a fall.</p>
+
+<p class="ability-note">Sneak before landing. It still cannot save a fall that remains fatal after the reduction.</p>
+</li>
+<li class="ability">
+<h5>Dodge</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Chance to halve incoming attack damage, with a minimum of 1 damage still taken. Chance scales to 20% at level 1000.</p>
+
+<p class="ability-note">Does not work while blocking or if the reduced hit would still be fatal.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L105-L110">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/acrobatics/Roll.java#L245-L286">Roll</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/acrobatics/Roll.java#L307-L356">Roll</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/acrobatics/Roll.java#L245-L265">Roll</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L129-L137">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-crossbows" data-category="combat">
+<summary><span class="skill-title">Crossbows</span>
+<span class="skill-summary">Boost crossbow arrow damage and unlock ricochets.</span>
+<span class="skill-meta">3 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/crossbows</code> shows your progress. <a href="#mcmmo-crossbows" aria-label="Link to Crossbows">Link to this skill</a></p>
+<p><b>How to level up:</b> Damage eligible targets with crossbow arrows. The combat path uses the distance-XP multiplier too.</p>
+
+
+<p>This skill has passive bonuses; there is no usable right-click super ability for it in this version.</p>
+<ul class="ability-list">
+<li class="ability">
+<h5>Powered Shot</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Adds 10% of original arrow damage per rank, up to +200% at rank 20, capped at +9 extra damage before armor.</p>
+<p class="rank-list"><b>Rank levels:</b> 1 → 100 → 150 → 200 → 250 → 300 → 350 → 400 → 450 → 500 → 550 → 600 → 650 → 700 → 750 → 800 → 850 → 900 → 950 → 1000</p>
+
+</li>
+<li class="ability">
+<h5>Trick Shot</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Listed first rank: level 50; a first bounce can happen earlier</span></div>
+<p>Arrows that glance off blocks can ricochet. Higher ranks allow more bounces.</p>
+<p><b>Use:</b> Shoot a block at a glancing angle; a square hit does not ricochet on the first bounce.</p>
+<p class="rank-list"><b>Rank levels:</b> 50 → 200 → 400</p>
+
+<p class="ability-note">The listed first rank is level 50, but an initial ricochet can occur earlier in this server build.</p>
+</li>
+<li class="ability">
+<h5>Crossbows Limit Break</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 200 → 300 → 400 → 500 → 600 → 700 → 800 → 900 → 1000</p>
+
+<p class="ability-note">This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L204-L279">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/crossbows/CrossbowsManager.java#L119-L137">CrossbowsManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L319-L348">CombatUtils</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/crossbows/Crossbows.java#L43-L49">Crossbows</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L188-L194">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-tridents" data-category="combat">
+<summary><span class="skill-title">Tridents</span>
+<span class="skill-summary">Add damage to thrown and melee trident hits.</span>
+<span class="skill-meta">2 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/tridents</code> shows your progress. <a href="#mcmmo-tridents" aria-label="Link to Tridents">Link to this skill</a></p>
+<p><b>How to level up:</b> Damage eligible targets by striking with or throwing a trident.</p>
+
+
+<p>This skill has passive bonuses; there is no usable right-click super ability for it in this version.</p>
+<ul class="ability-list">
+<li class="ability">
+<h5>Impale</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 50</span></div>
+<p>Adds +1.5 damage before armor at rank 1, then +0.5 per additional rank, up to +6 at rank 10. Applies to melee and thrown tridents.</p>
+<p class="rank-list"><b>Rank levels:</b> 50 → 150 → 250 → 350 → 450 → 550 → 650 → 750 → 850 → 1000</p>
+
+<p class="ability-note">This is an mcMMO skill bonus, separate from the Impaling enchantment.</p>
+</li>
+<li class="ability">
+<h5>Tridents Limit Break</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 200 → 300 → 400 → 500 → 600 → 700 → 800 → 900 → 1000</p>
+
+<p class="ability-note">This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L280-L326">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/tridents/TridentsManager.java#L15-L23">TridentsManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L249-L314">CombatUtils</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939">CombatUtils</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L650-L655">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-maces" data-category="combat">
+<summary><span class="skill-title">Maces</span>
+<span class="skill-summary">Improve mace damage and slow enemies.</span>
+<span class="skill-meta">3 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/maces</code> shows your progress. <a href="#mcmmo-maces" aria-label="Link to Maces">Link to this skill</a></p>
+<p><b>How to level up:</b> Damage eligible targets with a mace.</p>
+
+
+<p>This skill has passive bonuses; there is no usable right-click super ability for it in this version.</p>
+<ul class="ability-list">
+<li class="ability">
+<h5>Crush</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Adds mace damage before armor: +1.5, +2.5, +3.5, or +4.5 at ranks 1–4.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 250 → 750 → 900</p>
+
+</li>
+<li class="ability">
+<h5>Cripple</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 50</span></div>
+<p>Mace hits have a 10%, 15%, 20%, or 33% chance by rank to slow the target. Players receive Slowness II for 1 second; mobs receive Slowness III for 1.5 seconds.</p>
+<p class="rank-list"><b>Rank levels:</b> 50 → 200 → 400 → 800</p>
+
+<p class="ability-note">Does not replace Slowness already on the target.</p>
+</li>
+<li class="ability">
+<h5>Maces Limit Break</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 200 → 300 → 400 → 500 → 600 → 700 → 800 → 900 → 1000</p>
+
+<p class="ability-note">This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L512-L557">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/maces/MacesManager.java#L42-L54">MacesManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L384-L385">CombatUtils</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/maces/MacesManager.java#L75-L127">MacesManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L638-L643">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-spears" data-category="combat">
+<summary><span class="skill-title">Spears</span>
+<span class="skill-summary">Gain spear damage and bursts of speed.</span>
+<span class="skill-meta">3 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/spears</code> shows your progress. <a href="#mcmmo-spears" aria-label="Link to Spears">Link to this skill</a></p>
+<p><b>How to level up:</b> Damage eligible targets with a supported spear.</p>
+
+
+<p>This skill has passive bonuses; there is no usable right-click super ability for it in this version.</p>
+<ul class="ability-list">
+<li class="ability">
+<h5>Spear Mastery</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 50</span></div>
+<p>Adds +0.4 damage before armor per rank, reaching +3.2 at rank 8.</p>
+<p class="rank-list"><b>Rank levels:</b> 50 → 150 → 300 → 450 → 600 → 750 → 900 → 1000</p>
+
+</li>
+<li class="ability">
+<h5>Momentum</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Spear hits can grant Speed III. Chance rises from 5% to 50% across ten ranks; duration is 2 seconds per rank, up to 20 seconds.</p>
+<p class="rank-list"><b>Rank levels:</b> 1 → 100 → 150 → 200 → 250 → 400 → 500 → 600 → 800 → 950</p>
+
+<p class="ability-note">Does not replace a stronger or longer-lasting Speed effect.</p>
+</li>
+<li class="ability">
+<h5>Spears Limit Break</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 200 → 300 → 400 → 500 → 600 → 700 → 800 → 900 → 1000</p>
+
+<p class="ability-note">This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L407-L472">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/spears/SpearsManager.java#L131-L134">SpearsManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L415-L418">CombatUtils</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/spears/SpearsManager.java#L52-L128">SpearsManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L656-L658">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-alchemy" data-category="utility">
+<summary><span class="skill-title">Alchemy</span>
+<span class="skill-summary">Brew potions faster and learn new recipes.</span>
+<span class="skill-meta">2 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/alchemy</code> shows your progress. <a href="#mcmmo-alchemy" aria-label="Link to Alchemy">Link to this skill</a></p>
+<p><b>How to level up:</b> Brew potions in a brewing stand.</p>
+
+
+<ul class="ability-list">
+<li class="ability">
+<h5>Catalysis</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Available from the start; improves with skill</span></div>
+<p>Your potions brew faster as your Alchemy level rises.</p>
+<p><b>Use:</b> Automatic while doing the matching action.</p>
+
+<details class="skill-notes"><summary>More about this ability</summary>
+<p>Brewing speed rises from normal at level 0 to 4× at level 1000, before any special perks.</p>
+</details>
+</li>
+<li class="ability">
+<h5>Concoctions</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Available from the start; improves with skill</span></div>
+<p>Unlock extra brewing ingredients as you level up.</p>
+<p><b>Use:</b> Brew the unlocked ingredient with the matching base potion, usually an Awkward Potion.</p>
+<p class="rank-list"><b>Rank levels:</b> 0 → 100 → 200 → 350 → 500 → 750 → 900 → 1000</p>
+
+<p class="ability-note">Some unlocked potions have harmful effects. Read the name before drinking. Hopper brewing is limited to first-rank recipes.</p>
+<details class="skill-notes"><summary>Ingredients you unlock</summary><ul>
+<li><b>Level 100:</b> Carrot: Haste; slimeball: Dullness (mining fatigue); phantom membrane: Slow Falling</li>
+<li><b>Level 200:</b> Quartz: Absorption; rabbit’s foot: Leaping</li>
+<li><b>Level 350:</b> Apple: Health Boost; rotten flesh: Hunger</li>
+<li><b>Level 500:</b> Brown mushroom: Nausea; ink sac: Blindness</li>
+<li><b>Level 750:</b> Fern: Saturation</li>
+<li><b>Level 900:</b> Poisonous potato: Decay</li>
+<li><b>Level 1000:</b> Golden apple: Resistance</li>
+</ul></details>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L8">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/alchemy/AlchemyManager.java#L48">AlchemyManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L144">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-repair" data-category="utility">
+<summary><span class="skill-title">Repair</span>
+<span class="skill-summary">Use materials to fix worn tools and armor.</span>
+<span class="skill-meta">3 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/repair</code> shows your progress. <a href="#mcmmo-repair" aria-label="Link to Repair">Link to this skill</a></p>
+<p><b>How to level up:</b> Repair damaged equipment using mcMMO’s repair block. Each repair consumes one matching material.</p>
+<p><b>How to use it:</b> Hold the damaged item and use it on an iron block. Keep the matching repair material in your inventory.</p>
+<p class="guide-warning"><b>Be careful:</b> Repairing enchanted gear can remove or weaken its enchantments, even at high levels. Read the in-game confirmation before using valuable gear.</p>
+<ul class="ability-list">
+<li class="ability">
+<h5>Repair Mastery</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 1</span></div>
+<p>Get more durability back from each repair material.</p>
+<p><b>Use:</b> Automatic while doing the matching action.</p>
+
+<details class="skill-notes"><summary>More about this ability</summary>
+<p>The checked maximum adds 200% to the base repair amount at level 1000.</p>
+</details>
+</li>
+<li class="ability">
+<h5>Super Repair</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 400</span></div>
+<p>A chance to double the amount repaired.</p>
+<p><b>Use:</b> Automatic while doing the matching action.</p>
+
+</li>
+<li class="ability">
+<h5>Arcane Forging</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Gives a chance to keep enchantments while repairing. Higher ranks improve the odds.</p>
+<p><b>Use:</b> Automatic while doing the matching action.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 250 → 350 → 500 → 650 → 750 → 850 → 1000</p>
+
+<p class="ability-note">Before level 100, enchanted repairs can remove every enchantment. Higher levels still do not guarantee keeping all enchantments.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L919">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/repair/RepairManager.java#L362">RepairManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/repair/RepairManager.java#L380">RepairManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/repair/RepairManager.java#L416">RepairManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L374">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-salvage" data-category="utility">
+<summary><span class="skill-title">Salvage</span>
+<span class="skill-summary">Take spare equipment apart and recover some materials.</span>
+<span class="skill-meta">2 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/salvage</code> shows your progress. <a href="#mcmmo-salvage" aria-label="Link to Salvage">Link to this skill</a></p>
+<p><b>How to level up:</b> Salvage level is the average of Repair and Fishing, rounded down. Raise those skills to raise Salvage.</p>
+<p><b>How to use it:</b> Hold an unwanted item and use it on a gold block. Read the confirmation before proceeding.</p>
+<p class="guide-warning"><b>Be careful:</b> Salvaging destroys the equipment. Damaged items give fewer materials or can be too damaged to salvage. Enchantments may be lost.</p>
+<ul class="ability-list">
+<li class="ability">
+<h5>Scrap Collector</h5>
+<div class="ability-tags"><span class="ability-type manual">Use it yourself</span><span class="unlock">Level 1</span></div>
+<p>Recover materials from unwanted tools and armor. Higher ranks raise the material-return limit.</p>
+<p><b>Use:</b> Automatic while doing the matching action.</p>
+<p class="rank-list"><b>Rank levels:</b> 1 → 100 → 150 → 200 → 250 → 300 → 350 → 400</p>
+
+<p class="ability-note">Salvaging destroys the item. Diamond equipment requires Salvage 50; netherite equipment requires Salvage 100.</p>
+<p class="ability-note">Worn items return fewer materials, and a nearly broken item may be too damaged to salvage.</p>
+<details class="skill-notes"><summary>More about this ability</summary>
+<p>Rank 1 returns up to one material. Later ranks allow up to twice the rank, limited by the item recipe and its remaining durability.</p>
+</details>
+</li>
+<li class="ability">
+<h5>Arcane Salvaging</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>A chance to recover enchantments on an enchanted book when salvaging enchanted equipment.</p>
+<p><b>Use:</b> Automatic while doing the matching action.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 250 → 350 → 500 → 650 → 750 → 850 → 1000</p>
+
+<p class="ability-note">Enchantments can be kept, weakened, or lost. The original item is still destroyed.</p>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L473">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/salvage/SalvageManager.java#L102">SalvageManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/salvage/SalvageManager.java#L187">SalvageManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/salvage/Salvage.java#L38">Salvage</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L419">advanced settings</a></li>
+</ul></details>
+</div></details>
+<details class="skill-card" id="mcmmo-smelting" data-category="utility">
+<summary><span class="skill-title">Smelting</span>
+<span class="skill-summary">Make better use of furnace fuel and smelt extra resources.</span>
+<span class="skill-meta">3 abilities · Tap to see unlocks</span></summary>
+<div class="skill-body">
+<p class="skill-command"><code>/smelting</code> shows your progress. <a href="#mcmmo-smelting" aria-label="Link to Smelting">Link to this skill</a></p>
+<p><b>How to level up:</b> Smelting level is the average of Mining and Repair, rounded down. Smelting eligible materials also splits mcMMO skill XP between Mining and Repair.</p>
+<p><b>How to use it:</b> Use a furnace normally. Click its inventory to associate it with you for mcMMO processing.</p>
+
+<ul class="ability-list">
+<li class="ability">
+<h5>Second Smelt</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Available from the start; improves with skill</span></div>
+<p>A chance to get an extra item from eligible furnace recipes.</p>
+<p><b>Use:</b> Automatic while doing the matching action.</p>
+
+<details class="skill-notes"><summary>More about this ability</summary>
+<p>The checked chance reaches 50% at level 1000. Only configured outputs qualify, and there must be room in the output stack.</p>
+</details>
+</li>
+<li class="ability">
+<h5>Fuel Efficiency</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">Level 100</span></div>
+<p>Your furnace fuel lasts longer.</p>
+<p><b>Use:</b> Automatic while doing the matching action.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 500 → 750</p>
+
+<p class="ability-note">You must be online for fuel efficiency on the furnace associated with you. Only eligible smeltable materials qualify.</p>
+<details class="skill-notes"><summary>More about this ability</summary>
+<p>Ranks 1, 2, and 3 make fuel last 2×, 3×, and 4× as long.</p>
+</details>
+</li>
+<li class="ability">
+<h5>Understanding the Art</h5>
+<div class="ability-tags"><span class="ability-type passive">Automatic</span><span class="unlock">First rank: level 100; extra XP begins at 250</span></div>
+<p>Raises the normal Minecraft XP you collect from eligible furnace results.</p>
+<p><b>Use:</b> Automatic while doing the matching action.</p>
+<p class="rank-list"><b>Rank levels:</b> 100 → 250 → 350 → 500 → 650 → 750 → 850 → 1000</p>
+
+<p class="ability-note">Rank 1 keeps ordinary XP at 1×. The first actual boost, 2×, begins at level 250.</p>
+<details class="skill-notes"><summary>More about this ability</summary>
+<p>The eight ranks give 1×, 2×, 3×, 3×, 4×, 4×, 5× and 5× ordinary Minecraft XP.</p>
+</details>
+</li>
+</ul>
+<details class="guide-sources"><summary>Sources for this skill</summary>
+<p>Implementation checked against the version-pinned mcMMO source and server settings. These links are for anyone who wants the technical details.</p><ul>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L378">skillranks settings</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/SubSkillType.java#L81">SubSkillType</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/smelting/SmeltingManager.java#L25">SmeltingManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/smelting/SmeltingManager.java#L36">SmeltingManager</a></li>
+<li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L454">advanced settings</a></li>
+</ul></details>
+</div></details>
+    </div>
+  </section>
+  <section class="guide-section" id="mcmmo-activate" aria-labelledby="mcmmo-activate-title">
+    <h4 id="mcmmo-activate-title">How to use an active ability</h4>
+    <ol class="guide-steps">
+      <li>Reach the required level and hold the right tool.</li>
+      <li>Use/right-click the tool to ready it. On a phone or controller, use your control scheme's <b>Use / Interact</b> action.</li>
+      <li>Within <b>4 seconds</b>, do the matching action: mine, chop, dig, harvest, or hit a target.</li>
+      <li>Watch for the ability message. After the boost ends, most active abilities have a <b>4-minute base cooldown</b>. Blast Mining has its own activation and a <b>1-minute cooldown</b>.</li>
+    </ol>
+    <p>The usual level-50 boosts start at about 3 seconds, grow to 12 seconds at level 500, and reach 22 seconds at level 1000. Player perks can change the timing.</p>
+    <div class="howto"><h4>Nothing happened?</h4><p>Check your level with the skill command and your timer with <code>/mccooldown</code>. Make sure you're using the right tool and target. With something in your off-hand, try sneaking while you ready the tool. <code>/mcability</code> toggles ability activation, so check its message instead of repeatedly switching it.</p><p class="note">Touch controls differ by Minecraft control scheme. A long press is not the same action on every phone.</p></div>
+    <p class="guide-warning"><b>Keep family builds safe.</b> Tree Feller can take down connected logs, and Blast Mining explodes immediately. Practice far from homes, animals, and other players. Repair may remove enchantments; Salvage destroys the item.</p>
+  </section>
+  <section class="guide-section" id="mcmmo-commands" aria-labelledby="mcmmo-commands-title">
+    <h4 id="mcmmo-commands-title">Useful commands</h4>
+    <ul class="cmds">
+      <li><code>/mcstats</code> see all your skill levels</li>
+      <li><code>/mining</code> see one skill; swap in <code>/fishing</code>, <code>/repair</code>, or another skill name</li>
+      <li><code>/mccooldown</code> check when your active abilities are ready</li>
+      <li><code>/mcability</code> turn ability activation on or off</li>
+      <li><code>/mctop</code> see the skill leaderboard</li>
+      <li><code>/party info</code> check your party and unlocked features</li>
+    </ul>
+    <p class="note">On Java, the compass menu's mcMMO Stats button also runs <code>/mcstats</code>. You can always use chat if a menu doesn't have that button.</p>
+  </section>
+  <section class="guide-section" id="mcmmo-party" aria-labelledby="mcmmo-party-title">
+    <h4 id="mcmmo-party-title">Play together in a party</h4>
+    <p>A party is a little team. Use Minecraft account names in commands, which can be different from display nicknames.</p>
+    <ol class="guide-steps">
+      <li>One person types <code>/party create Family</code> (or chooses another team name).</li>
+      <li>Invite someone with <code>/party invite PlayerName</code>.</li>
+      <li>The invited player types <code>/party accept</code>.</li>
+      <li>Check <code>/party info</code> together. Use <code>/party quit</code> to leave.</li>
+    </ol>
+    <p>Party features unlock as the <b>party's level</b> rises: chat at 1, party teleport at 2, alliances at 5, item sharing at 8, and XP sharing at 10. These are party levels, separate from your skill levels. Features also depend on permissions; the compass teleport-request menu is still the easiest way to visit family.</p>
+    <details class="skill-notes"><summary>How XP sharing works at party level 10</summary>
+      <p>The party leader can use <code>/party xpshare equal</code> to share, or <code>/party xpshare none</code> to stop. Eligible teammates within <b>75 blocks</b> share the earned skill XP pool.</p>
+      <p>With the checked settings, 100 earned XP shared by two nearby teammates becomes a 150-XP pool: <b>75 each</b>, before individual modifiers. Sharing helps everyone progress together, but does not mean each player gets 150 XP.</p>
+    </details>
+    <div class="howto"><h4>What about the Together bonus?</h4><p>The <b>Together and Weekend XP update is built and tested, awaiting installation</b>. The existing Together setting is saved on, but runtime activation is still pending. The new green-bar bonus and live indicator are not installed yet. Party XP sharing is a separate feature.</p></div>
+    <details class="skill-notes"><summary>What is in the prepared XP update?</summary>
+      <p><b>Not live yet:</b> the prepared build adds 25% more eligible mcMMO skill XP and green-bar XP when one online teammate in your party is less than 32 blocks away in the same world. The weekend boost is 20%; together on a weekend gives 50% more XP points.</p>
+      <p>The update also includes a live bonus bar and <code>/xpbonus</code> status, show, hide, and toggle commands. It boosts the skill you are using; it does not award unrelated skills. Green-bar bonuses apply to eligible orb pickups after Mending, where enabled and permitted.</p>
+    </details>
+    <p class="note">WeekendXP is a separate plugin. The site's weekend schedule is Saturday and Sunday (Central time), with a scheduled 1.2× mcMMO XP boost. Check the in-game announcement for the current event; runtime timing has not been verified for this guide.</p>
+  </section>
+  <details class="guide-sources">
+    <summary>About this guide and its sources</summary>
+    <p>Reviewed October 12, 2026 (UTC). Skill ranks, advanced settings, recipes, and treasure tables were compared with the server's files. Implementation was checked against mcMMO 2.3.003-SNAPSHOT source at commit 058279c.</p>
+    <p>The server uses Retro levels. A level number is an unlock, not a promise that a chance-based effect will happen every time. Player permissions, actual in-game behavior, and every touch/controller layout have not been play-tested. Use your skill command for your current stats.</p>
+    <p>Crossbows, Tridents, Maces, and Spears have working passive skills in the checked source. Their unfinished super abilities are not listed as unlocks. Older videos and wiki pages may describe different abilities.</p>
+    <ul>
+      <li><a href="https://github.com/mcMMO-Dev/mcMMO/tree/058279c148a65bd708dc85067d3858f6adde1173">Version-pinned mcMMO source</a></li>
+      <li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml">Skill unlock levels</a></li>
+      <li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/player/McMMOPlayer.java#L1015">Active-ability timing</a></li>
+      <li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/party/ShareHandler.java#L32">Party XP sharing</a></li>
+    </ul>
+  </details>
+  <details class="skill-notes"><summary>Watch the original mcMMO overview video</summary>
+    <figure class="video"><div class="vwrap"><iframe src="https://www.youtube-nocookie.com/embed/AkNs7GlAZ-8" title="Tutorial - mcMMO Skills Walkthrough" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><figcaption>A general overview of mcMMO<span class="vnote">This older video is not a reference for our current unlock levels. Use the skill cards above for this server's checked settings.</span></figcaption></figure>
+  </details>
+  <p class="guide-footer-link"><a href="#mcmmo-skills">Back to the skills</a></p>
+</div>
+    <!-- MCMO_GUIDE_END -->
     <div class="panel" role="tabpanel" id="panel-jobs" aria-labelledby="tab-jobs" tabindex="0">
       <h3>Jobs: get paid for everyday things</h3>
       <p><b>What it does:</b> Pick a job and you earn pretend money for doing normal things. A Miner gets paid for digging rock. A Farmer gets paid for harvesting crops. It's like a paycheck for playing.</p>
@@ -332,7 +1470,7 @@
         <tr><td>WealthBoard</td><td>1.3.0</td><td>Shows the richest players.</td></tr>
         <tr><td>WeekendXP</td><td>1.0.0</td><td>Faster skill leveling on weekends.</td></tr>
         <tr><td>floodgate</td><td>2.2.5</td><td>Lets phone, tablet, and console players join without a computer account.</td></tr>
-        <tr><td>mcMMO</td><td>2.3.003</td><td>Skills that get better with practice. A custom build with the party Together bonus.</td></tr>
+        <tr><td>mcMMO</td><td>2.3.003</td><td>Skills that get better with practice. Custom build with a Together XP bonus; an upgrade is pending.</td></tr>
       </tbody>
     </table></div>
   </section>
@@ -358,6 +1496,9 @@
     <details open>
       <summary>Oct 11, 2026</summary>
       <ul>
+        <li>Website guide expanded: browse all 19 mcMMO skills, search abilities, and see checked unlock levels, activation steps, cooldowns, and safety tips. <a href="#panel-mcmmo">Open the skills guide</a>.</li>
+        <li>Together and Weekend XP update built and tested: the prepared files add green-bar XP bonuses, combined 1.5× weekend/together rewards, and a live bonus indicator. These plugin files are awaiting installation and are not active on the server yet.</li>
+        <li>Together XP setting saved as enabled. Runtime activation is still pending; the server has not been restarted for this change.</li>
         <li>Shops! A Spawn Shop to spend your Jobs money (tap Spawn Shop in the menu, or type <code>/shop</code>), plus family shops with ChestShop so you can sell to each other (BedrockMenu 1.4.2 adds the Spawn Shop button, and a new Spawn Shop villager at spawn opens it too).</li>
         <li>Compass update (MenuJoin 1.2.0): you always get your menu compass back when you respawn, it no longer drops when you die, and you can't throw it away. Lost it anyway? Type <code>/compass</code>.</li>
         <li>Menu update (BedrockMenu 1.4.1): Home buttons removed, Leaderboard button is back, and the teleport menu stays.</li>
@@ -375,7 +1516,7 @@
       <ul>
         <li>Wink Reyes Valley opened on Shockbyte, with crossplay so PC, Mac, phones, tablets, and consoles can play together.</li>
         <li>Plugins added: mcMMO skills, land claims (GriefPrevention), damage undo (CoreProtect), EssentialsX, LuckPerms, Chunky, and more.</li>
-        <li>Custom mcMMO "Together" bonus: extra skill XP when you play in a party.</li>
+        <li>Custom mcMMO "Together" skill-XP bonus added.</li>
         <li>The menu compass and phone/console menu (BedrockMenu 1.2.0) added.</li>
       </ul>
     </details>
@@ -390,31 +1531,6 @@
 
 <footer><div class="wrap">Wink Reyes Valley. A family Minecraft server.</div></footer>
 
-<script>
-document.getElementById('copy').addEventListener('click', function () {
-  var t = document.getElementById('addr').textContent, m = document.getElementById('copied');
-  function done() { m.textContent = 'Copied!'; setTimeout(function(){ m.textContent=''; }, 2000); }
-  if (navigator.clipboard) { navigator.clipboard.writeText(t).then(done, function(){ m.textContent = 'Press and hold to copy.'; }); }
-  else { var r = document.createRange(); r.selectNode(document.getElementById('addr')); getSelection().removeAllRanges(); getSelection().addRange(r); try { document.execCommand('copy'); done(); } catch (e) {} }
-});
-</script>
-<script>
-(function(){
-  var root=document.getElementById('plugtabs'); if(!root) return;
-  var tabs=[].slice.call(root.querySelectorAll('[role=tab]'));
-  function show(t,focus){
-    tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});
-    if(focus){t.focus();t.scrollIntoView({block:'nearest',inline:'nearest'});}
-  }
-  root.classList.add('js');
-  tabs.forEach(function(t,i){
-    t.addEventListener('click',function(){show(t);});
-    t.addEventListener('keydown',function(e){var j=null;
-      if(e.key==='ArrowRight')j=(i+1)%tabs.length;else if(e.key==='ArrowLeft')j=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')j=0;else if(e.key==='End')j=tabs.length-1;
-      if(j!==null){e.preventDefault();show(tabs[j],true);}});
-  });
-  show(tabs[0]);
-})();
-</script>
+<script src="guide.js?v=0ce155966e" defer></script>
 </body>
 </html>

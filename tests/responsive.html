@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Local responsive guide preview</title>
+<style>body{margin:0;padding:16px;font:16px system-ui;background:#e8e8e8}label,select,a{margin-right:12px}select{font:inherit;padding:8px}iframe{display:block;max-width:none;background:white;border:1px solid #666;margin-top:16px;height:844px}nav{margin-bottom:12px}</style>
+<nav><label for="size">Preview width</label><select id="size"><option>320</option><option selected>390</option><option>768</option><option>1188</option></select><label><input type="checkbox" id="no-js"> Disable guide JavaScript</label><a href="../index.html#panel-mcmmo">Open full page</a></nav>
+<iframe id="preview" title="Website responsive preview" src="../index.html#panel-mcmmo" width="390"></iframe>
+<script>document.getElementById('size').addEventListener('change',function(){document.getElementById('preview').width=this.value;});document.getElementById('no-js').addEventListener('change',function(){var frame=document.getElementById('preview');if(this.checked)frame.setAttribute('sandbox','allow-same-origin');else frame.removeAttribute('sandbox');frame.src='../index.html?no-js='+this.checked+'#panel-mcmmo';});</script>
+</html>

@@ -1,0 +1,83 @@
+"""Dependency-free structural and content regression checks."""
+import importlib.util
+import json
+import re
+import unittest
+from collections import Counter
+from html.parser import HTMLParser
+from pathlib import Path
+from urllib.parse import urlsplit, unquote
+
+ROOT = Path(__file__).resolve().parents[1]
+class Page(HTMLParser):
+    def __init__(self, text):
+        super().__init__()
+        self.nodes = []
+        self.feed(text)
+    def handle_starttag(self, tag, attrs):
+        self.nodes.append((tag, dict(attrs)))
+
+class SiteChecks(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.text = (ROOT/'index.html').read_text()
+        cls.page = Page(cls.text)
+        cls.data = json.loads((ROOT/'data/mcmmo-guide.json').read_text())
+        cls.ids = [a['id'] for _,a in cls.page.nodes if 'id' in a]
+    def test_unique_ids_and_anchors(self):
+        self.assertEqual(len(self.ids), len(set(self.ids)))
+        for _,a in self.page.nodes:
+            href=a.get('href','')
+            if href.startswith('#'):
+                self.assertIn(unquote(href[1:]),self.ids)
+    def test_aria_targets(self):
+        for _,a in self.page.nodes:
+            for key in ['aria-controls','aria-labelledby','aria-describedby']:
+                for ref in a.get(key,'').split():
+                    self.assertIn(ref,self.ids)
+    def test_all_skills_render_without_script(self):
+        self.assertEqual(len(self.data['skills']),19)
+        self.assertEqual(sum(len(s['abilities']) for s in self.data['skills']),82)
+        for skill in self.data['skills']:
+            nodes=[a for tag,a in self.page.nodes if a.get('id')=='mcmmo-'+skill['id']]
+            self.assertEqual(len(nodes),1)
+            self.assertNotIn('hidden',nodes[0])
+            for a in skill['abilities']:
+                self.assertIn(a['type'],['active','passive','manual'])
+                self.assertTrue(a['description'])
+                self.assertTrue(a['unlockLabel'])
+                ranks=a['rankLevelsRetro']
+                self.assertEqual(ranks,sorted(set(ranks)))
+    def test_source_privacy_and_pinning(self):
+        serialized=json.dumps(self.data)
+        for private in ['/workspace/', 'shockbyte', 'player_uuid', 'password', 'api_key']:
+            self.assertNotIn(private,serialized.lower())
+        for skill in self.data['skills']:
+            for a in skill['abilities']:
+                self.assertTrue(a['sources'])
+                for source in a['sources']:
+                    self.assertTrue(source.startswith('https://github.com/mcMMO-Dev/mcMMO/blob/'+self.data['baseCommit']+'/'))
+    def test_critical_caveats(self):
+        for phrase in ['Together and Weekend XP update is built and tested, awaiting installation', 'Salvaging destroys', 'can remove or weaken', 'TNT explodes immediately', 'Effective protection from level 500']:
+            self.assertIn(phrase,self.text)
+        self.assertNotIn('everyone gets extra skill points', self.text)
+        self.assertNotIn('tap and hold) to get ready', self.text)
+    def test_reproducible_generation(self):
+        spec=importlib.util.spec_from_file_location('guide',ROOT/'scripts/build_guide.py')
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        generated=module.INTRO+'\n'.join(module.render_skill(s) for s in self.data['skills'])+module.OUTRO
+        self.assertIn(module.START+'\n'+generated,self.text)
+    def test_existing_guides_and_address(self):
+        panels=[a for _,a in self.page.nodes if a.get('role')=='tabpanel']
+        self.assertEqual(len(panels),14)
+        for name in ['jobs','essentials','griefprevention','coreprotect','elitemobs','shops','shopkeepers','server-menu-compass','leaderboards','no-phantoms','restart-warnings','world-map','behind-the-scenes']:
+            self.assertIn('panel-'+name,self.ids)
+        self.assertIn('winkreyes.duckdns.org:20795',self.text)
+    def test_local_assets_exist(self):
+        for tag,a in self.page.nodes:
+            if tag not in ['script','link']:continue
+            link=a.get('src') or a.get('href','')
+            if link and not urlsplit(link).scheme and not link.startswith('#'):
+                self.assertTrue((ROOT/urlsplit(link).path).is_file(),link)
+
+if __name__=='__main__': unittest.main()

@@ -22,6 +22,7 @@ h3{margin:0 0 .4rem}
 @media(min-width:640px){.cards{grid-template-columns:1fr 1fr}}
 @media(min-width:900px){.feats{grid-template-columns:repeat(3,1fr)}}
 .card{background:var(--card);border-radius:8px;padding:1.1rem;border-top:6px solid var(--grass);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.card{min-width:0;overflow-wrap:anywhere}
 .card ol{padding-left:1.2rem;margin:.4rem 0}
 .card .note{opacity:.75}
 .rules{font-weight:700;padding-left:1.4rem}
@@ -51,3 +52,91 @@ td:nth-child(2){white-space:nowrap}
 #changelog details{margin:.5em 0}
 #changelog summary{cursor:pointer;font-weight:800}
 #changelog ul{margin:.4em 0 .4em 1.2em}
+
+/* The skills guide shares the original grass, dirt, and paper palette. */
+[hidden]{display:none!important}
+a{color:#315a20;text-underline-offset:.15em}
+:focus-visible{outline:3px solid var(--dirt);outline-offset:3px}
+.skip-link{position:absolute;top:.5rem;left:.5rem;z-index:10;transform:translateY(-180%);background:#fff;padding:.7rem 1rem;border-radius:6px}
+.skip-link:focus{transform:none}
+.guide-intro{max-width:44rem}
+.guide-panel .howto h4{margin:.25rem 0 .6rem;font-size:1.02rem}
+.tabbar button[aria-selected=true]{background:var(--grass-d);border-color:var(--grass-d)}
+.guide-kicker{text-transform:uppercase;letter-spacing:.09em;font-size:.75rem;font-weight:800;color:var(--grass-d);margin:0 0 .5rem}
+.guide-title{font-size:1.5rem;line-height:1.25}
+.guide-nav{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin:1rem 0 1.4rem;font-weight:800}
+.guide-nav a{padding:.35rem 0}
+.guide-facts{display:grid;grid-template-columns:1fr;gap:.7rem;margin:1rem 0 1.4rem}
+.guide-fact{background:#f4f1e8;border-radius:7px;padding:.8rem 1rem}
+.guide-fact b{display:block;color:var(--grass-d)}
+.guide-fact p{margin:.15rem 0;font-size:.94rem}
+.guide-section{margin-top:1.7rem;scroll-margin-top:1rem}
+.guide-section>h4{font-size:1.2rem;margin:0 0 .5rem}
+.skill-controls{background:#e6eedb;border-radius:8px;padding:1rem;margin:1rem 0}
+.skill-fields{display:grid;grid-template-columns:minmax(0,1fr);gap:.7rem}
+.skill-fields label{display:block;font-weight:800;margin-bottom:.3rem}
+.skill-fields input,.skill-fields select{font:inherit;color:var(--ink);background:#fff;border:1px solid #7c8d6f;border-radius:6px;min-height:46px;padding:.55rem .7rem;width:100%;min-width:0}
+.skill-actions{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.75rem}
+.plain-btn{font:inherit;font-size:.9rem;font-weight:800;cursor:pointer;color:var(--grass-d);background:#fff;border:1px solid #93a881;border-radius:6px;min-height:44px;padding:.45rem .7rem}
+.plain-btn:hover{background:#f4f8ef}
+.skill-results{font-size:.9rem;margin:.7rem 0 0;color:#415437}
+.skill-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:.65rem}
+.skill-card{border:1px solid #d9dfcf;border-radius:8px;background:#fff;min-width:0;scroll-margin-top:1rem;overflow-wrap:anywhere}
+.skill-card>summary{cursor:pointer;padding:.9rem 1rem;list-style:none;position:relative;padding-right:2.6rem;min-height:60px}
+.skill-card>summary::-webkit-details-marker{display:none}
+.skill-card>summary:after{content:'+';font-size:1.5rem;font-weight:800;line-height:1;position:absolute;right:1rem;top:1.1rem;color:var(--grass-d)}
+.skill-card[open]>summary:after{content:'−'}
+.skill-card>summary:hover{background:#f5f8f0;border-radius:8px}
+.skill-card[open]>summary{background:#eef3e6;border-bottom:1px solid #d9dfcf;border-radius:8px 8px 0 0}
+.skill-title{display:block;font-size:1.15rem;font-weight:800;color:var(--grass-d)}
+.skill-summary{display:block;font-size:.94rem;margin:.2rem 0;color:var(--ink)}
+.skill-meta{display:block;font-size:.8rem;color:#626a59;margin-top:.3rem}
+.skill-body{padding:0 1rem 1rem}
+.skill-body>p{margin:.8rem 0}
+.skill-command{font-size:.9rem}
+.skill-command a{margin-left:.6rem}
+.ability-list{list-style:none!important;padding:0!important;margin:1rem 0 0}
+.ability{border-top:1px solid #e4e7df;padding:.9rem 0 .4rem}
+.ability h5{font-size:1.02rem;margin:0 .4rem .25rem 0;display:inline}
+.ability p{margin:.4rem 0;font-size:.95rem}
+.ability .ability-note{font-size:.86rem;color:#585f50}
+.ability-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin:.35rem 0 .55rem}
+.ability-type,.unlock{display:inline-block;font-size:.75rem;font-weight:800;border-radius:4px;padding:.18rem .45rem;background:#eaf0e1;color:#385528}
+.ability-type.active{background:#f2e5cf;color:#6b4518}
+.ability-type.manual{background:#e5edf2;color:#33566b}
+.unlock{background:#f1f0eb;color:#4f4b40}
+.rank-list{font-size:.86rem!important;color:#535d49}
+.guide-warning{border-left:4px solid #ae6e23;background:#fff3de;border-radius:4px;padding:.65rem .85rem;font-size:.94rem}
+.skill-notes{margin:.7rem 0}
+.skill-notes>summary,.guide-sources>summary{font-size:.9rem;font-weight:800;cursor:pointer;padding:.5rem 0;color:var(--grass-d)}
+.skill-notes li{font-size:.9rem;margin:.35rem 0}
+.guide-sources{background:#f5f4ef;padding:.5rem .9rem;border-radius:7px;margin-top:1rem;overflow-wrap:anywhere}
+.guide-sources p,.guide-sources li{font-size:.85rem}
+.skill-empty{background:#f4f1e8;padding:1rem;border-radius:6px}
+.guide-legend{font-size:.9rem}
+.guide-legend span{margin-right:.3rem}
+.guide-steps{padding-left:1.3rem}
+.guide-steps li{margin:.4rem 0}
+.guide-footer-link{margin-top:1.5rem;font-size:.9rem}
+.guide-panel code{overflow-wrap:anywhere}
+@media(min-width:640px){
+  .guide-facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .skill-fields{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}
+  .skill-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .skill-card[open]{grid-column:1/-1}
+}
+@media(max-width:420px){
+  .guide-panel{padding:1rem .75rem;border-left-width:4px}
+  .guide-title{font-size:1.3rem}
+  .skill-card>summary{padding-left:.8rem}
+  .skill-body{padding-left:.8rem;padding-right:.8rem}
+  .addr code{font-size:.9rem}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+@media print{
+  .hero,.tabbar,.skill-controls,.video,.skip-link,footer{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .panel[hidden]{display:block!important}
+  .skill-grid{display:block}
+  .skill-card{break-inside:avoid;margin:.5rem 0}
+}

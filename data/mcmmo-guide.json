@@ -1,0 +1,2772 @@
+{
+  "title": "Wink Reyes Valley mcMMO skill guide",
+  "version": "2.3.003-SNAPSHOT",
+  "baseCommit": "058279c148a65bd708dc85067d3858f6adde1173",
+  "checkedDate": "2026-10-12",
+  "mode": "Retro",
+  "verification": "Read-only comparison of live configuration files with the pinned implementation. Player permissions and in-game behavior have not been play-tested.",
+  "skills": [
+    {
+      "id": "mining",
+      "name": "Mining",
+      "category": "gathering",
+      "summary": "Mine stone and ores for extra drops and powerful digging abilities.",
+      "training": "Mine eligible natural stone and ores with a pickaxe.",
+      "command": "/mining",
+      "abilities": [
+        {
+          "name": "Double Drops",
+          "type": "passive",
+          "description": "A chance for an extra copy of normal mining drops.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1
+          ],
+          "activation": "Passive while mining eligible blocks.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Mine natural blocks. Placing and breaking the same blocks does not earn normal bonus drops."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L101-L178",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L325-L332",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L564-L568"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Super Breaker",
+          "type": "active",
+          "description": "Mine faster for a short time. Successful bonus-drop rolls can give triple drops.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50
+          ],
+          "activation": "Right-click with a pickaxe, then hit an eligible mining block within four seconds.",
+          "cooldownSeconds": 240,
+          "cooldown": "4 minutes after it ends",
+          "caveats": [
+            "Triple drops happen when the bonus succeeds; every block is not guaranteed to drop three items."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L569-L573",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L131-L176",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L346-L373",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L101-L112",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/player/McMMOPlayer.java#L972-L1066",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L600-L616"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Mother Lode",
+          "type": "passive",
+          "description": "A high-level chance to receive triple mining drops, even outside Super Breaker. If it fails, the normal Double Drops roll still happens.",
+          "unlockRetro": 1000,
+          "unlockLabel": "Level 1000",
+          "rankLevelsRetro": [
+            1000
+          ],
+          "activation": "Passive while mining eligible blocks.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L559-L563",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L318-L322",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L149-L176"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Blast Mining",
+          "type": "active",
+          "description": "Remotely detonate TNT for improved ore recovery, fewer ordinary debris drops, and Mining XP from destroyed ores. Higher ranks improve the ore bonus and can add bonus copies.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            250,
+            350,
+            500,
+            650,
+            750,
+            850,
+            1000
+          ],
+          "activation": "Place TNT, stand safely back, hold a pickaxe or flint and steel, sneak, aim at the TNT, and right-click.",
+          "cooldownSeconds": 60,
+          "cooldown": "1 minute",
+          "caveats": [
+            "TNT explodes immediately. Stay back and keep it well away from builds, players and animals.",
+            "Aim from a safe distance. The remote range is 100 blocks. Extra ore copies are chance-based."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L586-L604",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L351-L359",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L334-L370",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L72-L89"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Bigger Bombs",
+          "type": "passive",
+          "description": "Makes mcMMO-tracked Blast Mining explosions larger. It improves with your Blast Mining rank.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100
+          ],
+          "activation": "Automatic when Blast Mining is used.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "A larger blast damages a larger area. Use it only in a safe mining area."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L574-L579",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L361-L370",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L92-L98",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/BlastMining.java#L37-L44",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L884-L908"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Demolitions Expertise",
+          "type": "passive",
+          "description": "Reduces damage from your own Blast Mining TNT. Protection begins at level 500 with the checked settings.",
+          "unlockRetro": 500,
+          "unlockLabel": "Effective protection from level 500",
+          "rankLevelsRetro": [
+            500,
+            750,
+            1000
+          ],
+          "activation": "Passive against your own tracked Blast Mining explosion.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Protection applies to your own Blast Mining TNT. It does not make ordinary TNT, creepers or other players’ explosives safe."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L580-L585",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L339-L348",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L62-L69",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/BlastMining.java#L27-L34"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT.",
+          "sourceRankLevelsRetro": [
+            100
+          ],
+          "detail": "With the checked settings, protection is 25% at level 500, 50% at 750, and 100% at 1000, for your own tracked Blast Mining TNT only."
+        }
+      ],
+      "caveats": [],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L101-L178",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L325-L332",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L564-L568",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L569-L573",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L131-L176",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L346-L373",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L101-L112",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/player/McMMOPlayer.java#L972-L1066",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L600-L616",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L559-L563",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L318-L322",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L149-L176",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L586-L604",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L351-L359",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L334-L370",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L72-L89",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L574-L579",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L361-L370",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L92-L98",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/BlastMining.java#L37-L44",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L884-L908",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L580-L585",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L339-L348",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/MiningManager.java#L62-L69",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/mining/BlastMining.java#L27-L34"
+      ]
+    },
+    {
+      "id": "woodcutting",
+      "name": "Woodcutting",
+      "category": "gathering",
+      "summary": "Chop trees faster and earn extra wood.",
+      "training": "Chop natural or grown logs with an axe.",
+      "command": "/woodcutting",
+      "abilities": [
+        {
+          "name": "Harvest Lumber",
+          "type": "passive",
+          "description": "A chance to gain an extra copy of a chopped block's drops.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1
+          ],
+          "activation": "Passive when chopping eligible blocks with an axe.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L872-L876",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L630-L637",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L85-L163"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Tree Feller",
+          "type": "active",
+          "description": "Chopping a tree can bring down connected logs and nearby tree parts in one action. Harvest Lumber and Clean Cuts can still add drops.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50
+          ],
+          "activation": "Right-click with an axe, then hit a valid log within four seconds and chop it.",
+          "cooldownSeconds": 240,
+          "cooldown": "4 minutes after it ends",
+          "caveats": [
+            "Check axe durability first. A worn-out axe can make the ability fail and injure you.",
+            "Be careful near treehouses and neighboring trees. Replant afterward. Some tree shapes or protected blocks prevent a complete felling."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L867-L871",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L184-L210",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L346-L373",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L101-L112",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/player/McMMOPlayer.java#L972-L1066",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L600-L616"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Leaf Blower",
+          "type": "passive",
+          "description": "Instantly breaks leaves and eligible non-wood tree parts when hit with an axe.",
+          "unlockRetro": 150,
+          "unlockLabel": "Level 150",
+          "rankLevelsRetro": [
+            150
+          ],
+          "activation": "Passive; hit the leaf or eligible tree part with an axe.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Hold an axe to use it."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L889-L893",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L74-L77",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L703-L707"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Knock on Wood",
+          "type": "passive",
+          "description": "Improves Tree Feller rewards. Rank 1 keeps sapling/propagule drops from more leaves; rank 2 adds a chance for Minecraft XP orbs from eligible non-log tree components.",
+          "unlockRetro": 300,
+          "unlockLabel": "Level 300",
+          "rankLevelsRetro": [
+            300,
+            600
+          ],
+          "activation": "Passive during Tree Feller.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This improves Tree Feller; punching a tree does not trigger it. Sapling drops are still chance-based."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L882-L888",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L382-L418",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L617-L620"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Clean Cuts",
+          "type": "passive",
+          "description": "A high-level chance for triple woodcutting drops. If it fails, Harvest Lumber can still award double drops.",
+          "unlockRetro": 1000,
+          "unlockLabel": "Level 1000",
+          "rankLevelsRetro": [
+            1000
+          ],
+          "activation": "Passive while chopping eligible blocks; also works during Tree Feller.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L877-L881",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L622-L629",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L113-L163"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L872-L876",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L630-L637",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L85-L163",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L867-L871",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L184-L210",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L346-L373",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L101-L112",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/player/McMMOPlayer.java#L972-L1066",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L600-L616",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L889-L893",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L74-L77",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L703-L707",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L882-L888",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L382-L418",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L617-L620",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L877-L881",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L622-L629",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/woodcutting/WoodcuttingManager.java#L113-L163"
+      ]
+    },
+    {
+      "id": "herbalism",
+      "name": "Herbalism",
+      "category": "gathering",
+      "summary": "Harvest more food and learn helpful replanting tricks.",
+      "training": "Harvest fully grown crops and eligible plants. Let them grow again before harvesting.",
+      "command": "/herbalism",
+      "abilities": [
+        {
+          "name": "Double Drops",
+          "type": "passive",
+          "description": "Eligible harvests can give extra produce.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1
+          ],
+          "activation": "Passive when harvesting eligible mature plants.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Harvest fully grown crops. Bonus drops depend on the plant; falling sections of tall plants do not all receive the bonus."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L606-L610",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L286-L292",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L412-L451"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Green Terra",
+          "type": "active",
+          "description": "A short farming boost: bonus harvests can give triple drops, supported crops replant more reliably, and seeds can turn certain blocks green.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50
+          ],
+          "activation": "Right-click with a hoe, then hit or harvest an eligible plant or hit a convertible block within four seconds. While active, hit convertible blocks with wheat seeds available in your inventory.",
+          "cooldownSeconds": 240,
+          "cooldown": "4 minutes after it ends",
+          "caveats": [
+            "Keep the matching seeds or crop item in your inventory for replanting. Sneaking skips replanting.",
+            "Greening a block consumes a wheat seed. Not every harvest is guaranteed to give triple drops."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L616-L620",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L199-L239",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/Herbalism.java#L14-L35",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L346-L373",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L101-L112",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/player/McMMOPlayer.java#L972-L1066",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L600-L616"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Green Thumb",
+          "type": "passive",
+          "description": "Harvest with a hoe to try automatically replanting supported crops. Higher ranks replant at a later growth stage. Wheat seeds can also turn certain blocks green.",
+          "unlockRetro": 250,
+          "unlockLabel": "Ranked benefits at level 250; basic replanting can happen earlier",
+          "rankLevelsRetro": [
+            250,
+            500,
+            750,
+            1000
+          ],
+          "activation": "Harvest with a hoe without sneaking; keep the matching seed/crop item in your inventory or offhand. Cocoa also supports an axe. For manual block conversion, right-click a compatible block while holding wheat seeds.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Crop replanting can happen before level 250, starting at the earliest growth stage. The level-250 unlock is for ranked growth benefits and manual block conversion.",
+            "Keep the matching seeds or crop item in your inventory. Sneaking skips replanting. A failed manual greening attempt still uses its wheat seed."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L621-L631",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L278-L284",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L502-L510",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L91-L103",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L1014-L1026"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Farmer's Diet",
+          "type": "passive",
+          "description": "Restores extra hunger when eating supported farm foods. Each rank adds one hunger point, up to five points (2.5 drumsticks).",
+          "unlockRetro": 200,
+          "unlockLabel": "Level 200",
+          "rankLevelsRetro": [
+            200,
+            400,
+            600,
+            800,
+            1000
+          ],
+          "activation": "Passive when eating supported foods.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Extra hunger does not remove the poison from poisonous potatoes."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L632-L644",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/DietFoods.java#L28-L41",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/SkillUtils.java#L96-L105",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L993-L1022"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Hylian Luck",
+          "type": "passive",
+          "description": "A small chance to find configured treasure when cutting certain plants with a sword.",
+          "unlockRetro": 0,
+          "unlockLabel": "Available from the start; improves with skill",
+          "rankLevelsRetro": [],
+          "activation": "Break a supported plant or flower-pot block with a sword.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Use a sword on supported plants. Avoid decorative plants and flower pots around builds.",
+            "There is no separate level gate, but the chance starts at zero and grows with your Herbalism level."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/SubSkillType.java#L51-L57",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/RankUtils.java#L126-L130",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L299-L305",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L191-L196",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/config/treasure/TreasureConfig.java#L249-L279",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L568-L583"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Shroom Thumb",
+          "type": "manual",
+          "description": "A chance to turn dirt, grass or a dirt path into mycelium.",
+          "unlockRetro": 0,
+          "unlockLabel": "Available from the start; improves with skill",
+          "rankLevelsRetro": [],
+          "activation": "Hold a red or brown mushroom and right-click a compatible block while carrying at least one of each mushroom.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Every attempt consumes one red and one brown mushroom, even if it fails. The chance starts at zero and grows with your skill."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/SubSkillType.java#L51-L57",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/RankUtils.java#L126-L130",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L307-L313",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L105-L122",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/Herbalism.java#L44-L54"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Verdant Bounty",
+          "type": "passive",
+          "description": "A high-level chance for a successful bonus harvest to become triple drops outside Green Terra.",
+          "unlockRetro": 1000,
+          "unlockLabel": "Level 1000",
+          "rankLevelsRetro": [
+            1000
+          ],
+          "activation": "Passive during eligible harvests.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L611-L615",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L293-L297",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L412-L451"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L606-L610",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L286-L292",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L412-L451",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L616-L620",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L199-L239",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/Herbalism.java#L14-L35",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L346-L373",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L101-L112",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/player/McMMOPlayer.java#L972-L1066",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L600-L616",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L621-L631",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L278-L284",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L502-L510",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L91-L103",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L1014-L1026",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L632-L644",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/DietFoods.java#L28-L41",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/SkillUtils.java#L96-L105",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L993-L1022",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/SubSkillType.java#L51-L57",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/RankUtils.java#L126-L130",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L299-L305",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L191-L196",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/config/treasure/TreasureConfig.java#L249-L279",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L568-L583",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L307-L313",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/HerbalismManager.java#L105-L122",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/herbalism/Herbalism.java#L44-L54",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L611-L615",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L293-L297"
+      ]
+    },
+    {
+      "id": "excavation",
+      "name": "Excavation",
+      "category": "gathering",
+      "summary": "Find surprises while you dig.",
+      "training": "Dig eligible natural materials, such as dirt, sand and gravel, with a shovel.",
+      "command": "/excavation",
+      "abilities": [
+        {
+          "name": "Archaeology",
+          "type": "passive",
+          "description": "Digging can uncover configured treasures and extra Excavation XP. Higher skill levels unlock individual treasure entries; Archaeology ranks improve the Minecraft XP orb bonus when treasure is found.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1,
+            250,
+            350,
+            500,
+            650,
+            750,
+            850,
+            1000
+          ],
+          "activation": "Passive when digging eligible natural blocks with a shovel.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Different treasures need different digging materials and levels. This is a shovel skill, separate from Minecraft’s brush archaeology."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L900-L918",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/treasures.yml#L4-L228",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/excavation/ExcavationManager.java#L108-L145"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Giga Drill Breaker",
+          "type": "active",
+          "description": "Dig faster for a short time, with three chances for treasure and extra Excavation XP from eligible blocks.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50
+          ],
+          "activation": "Right-click with a shovel, then hit an eligible excavation block within four seconds.",
+          "cooldownSeconds": 240,
+          "cooldown": "4 minutes after it ends",
+          "caveats": [
+            "It does not dig a 3-by-3 area or triple every ordinary dirt and sand drop. It uses extra tool durability."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L895-L899",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/excavation/ExcavationManager.java#L119-L145",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L508-L525",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L346-L373",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L101-L112",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/player/McMMOPlayer.java#L972-L1066",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L600-L616"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L900-L918",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/treasures.yml#L4-L228",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/excavation/ExcavationManager.java#L108-L145",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L895-L899",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/excavation/ExcavationManager.java#L119-L145",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L508-L525",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L346-L373",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L101-L112",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/player/McMMOPlayer.java#L972-L1066",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L600-L616"
+      ]
+    },
+    {
+      "id": "fishing",
+      "name": "Fishing",
+      "category": "gathering",
+      "summary": "Catch treasures, get faster bites and learn fishing tricks.",
+      "training": "Fish with a rod. If warned about overfishing, move where your bobber lands.",
+      "command": "/fishing",
+      "abilities": [
+        {
+          "name": "Treasure Hunter",
+          "type": "passive",
+          "description": "Fishing can reel in equipment, valuables and other configured treasures. Higher ranks shift the chances toward better rarity tiers and increase ordinary Minecraft fishing XP.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1,
+            250,
+            350,
+            500,
+            650,
+            750,
+            850,
+            1000
+          ],
+          "activation": "Passive when you successfully catch something with a rod.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "A treasure normally replaces the fish you would have caught."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L707-L725",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/fishing_treasures.yml#L5-L354",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L247-L256",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L216-L226"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Master Angler",
+          "type": "passive",
+          "description": "Reduces the wait for a bite. Fishing while seated in a boat adds another small reduction.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1,
+            200,
+            300,
+            400,
+            600,
+            700,
+            800,
+            900
+          ],
+          "activation": "Passive on casting a fishing rod; sit in a boat for the extra bonus.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "The wait still varies. A faster bite is not a guarantee of an immediate catch."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L670-L688",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L262-L272",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L73-L81",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L475-L486"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Ice Fishing",
+          "type": "manual",
+          "description": "Can open a small hole in ordinary ice so you can fish through it.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50
+          ],
+          "activation": "Cast onto qualifying ice and reel the grounded hook while aiming at the ice; the ability converts a small patch to water and recasts.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Use ordinary lake ice. Packed ice and blue ice do not work. It can change a 3-by-3 patch, so avoid decorative ice."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L689-L693",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L187-L208",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L427-L435"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Shake",
+          "type": "manual",
+          "description": "Hooking a supported creature can shake loose an item and award Fishing XP. Higher ranks improve its success chance.",
+          "unlockRetro": 150,
+          "unlockLabel": "Level 150",
+          "rankLevelsRetro": [
+            150,
+            200,
+            250,
+            300,
+            400,
+            500,
+            600,
+            700
+          ],
+          "activation": "Hook a supported living entity with the fishing rod and reel it in.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Shake hurts the creature and can kill it. Avoid pets, villagers and family members."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L651-L669",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L237-L245",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L84-L87",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/Fishing.java#L26-L52",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L503-L506"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Magic Hunter",
+          "type": "passive",
+          "description": "Some enchantable mcMMO fishing treasures can gain enchantments. Its enchantment odds improve with Treasure Hunter rank.",
+          "unlockRetro": 200,
+          "unlockLabel": "Level 200",
+          "rankLevelsRetro": [
+            200
+          ],
+          "activation": "Passive when a suitable fishing treasure is found.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L646-L650",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/fishing_treasures.yml#L358-L513",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L403-L407"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Fisherman's Diet",
+          "type": "passive",
+          "description": "Restores extra hunger when eating supported fish. Each rank adds one hunger point, up to five points (2.5 drumsticks).",
+          "unlockRetro": 200,
+          "unlockLabel": "Level 200",
+          "rankLevelsRetro": [
+            200,
+            400,
+            600,
+            800,
+            1000
+          ],
+          "activation": "Passive when eating cod, salmon, tropical fish, cooked cod or cooked salmon.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This does not make pufferfish safe to eat."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L694-L706",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/DietFoods.java#L42-L46",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/SkillUtils.java#L96-L105",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L1018-L1022"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [
+        "Keep moving your fishing spot when warned about overfishing. Repeated catches in the same spot can stop earning fish or XP."
+      ],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L707-L725",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/fishing_treasures.yml#L5-L354",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L247-L256",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L216-L226",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L670-L688",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L262-L272",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L73-L81",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L475-L486",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L689-L693",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L187-L208",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L427-L435",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L651-L669",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L237-L245",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L84-L87",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/Fishing.java#L26-L52",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L503-L506",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L646-L650",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/fishing_treasures.yml#L358-L513",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/fishing/FishingManager.java#L403-L407",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L694-L706",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/DietFoods.java#L42-L46",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/SkillUtils.java#L96-L105",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L1018-L1022"
+      ]
+    },
+    {
+      "id": "swords",
+      "name": "Swords",
+      "category": "combat",
+      "summary": "Sword attacks gain bleeding, counter-attacks and a short splash-damage ability.",
+      "training": "Deal damage with a sword to eligible mobs or players.",
+      "command": "/swords",
+      "abilities": [
+        {
+          "name": "Rupture",
+          "type": "passive",
+          "description": "Sword hits can apply armor-bypassing damage over time. Rank chances are 15%, 33%, 40%, 66%; the duration is about 5 seconds.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1,
+            150,
+            750,
+            900
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Let melee attacks charge fully for the best chance. Rupture cannot deliver the final killing blow."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/swords/SwordsManager.java#L77-L118",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/runnables/skills/RuptureTask.java#L51-L61",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/runnables/skills/RuptureTask.java#L95-L131",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/runnables/skills/RuptureTask.java#L151-L220",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L488-L510",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L726-L777"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Serrated Strikes",
+          "type": "active",
+          "description": "Temporarily adds nearby splash damage and attempts Rupture on splash targets. At full strength, splash is one-quarter of the triggering sword damage before armor, with a minimum of 1 damage.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50
+          ],
+          "activation": "Right-click with a sword to ready it, then hit a target within 4 seconds. Sneak while right-clicking if your off-hand is occupied.",
+          "cooldownSeconds": 240,
+          "cooldown": "4 minutes after it ends",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/swords/SwordsManager.java#L179-L182",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L1008-L1058",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L522-L524",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L726-L777"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Counter Attack",
+          "type": "passive",
+          "description": "While holding a sword, a successful counter damages a living melee attacker for half the incoming damage before armor. Chance increases with Swords level, up to 30% at level 1000.",
+          "unlockRetro": 200,
+          "unlockLabel": "Level 200",
+          "rankLevelsRetro": [
+            200
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "A counter hurts the attacker; it does not simply cancel the incoming hit."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/swords/SwordsManager.java#L42-L49",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/swords/SwordsManager.java#L143-L155",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L710-L720",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L511-L520",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L726-L777"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Stab",
+          "type": "passive",
+          "description": "Adds +2.5 sword damage before armor at rank 1 and +4 at rank 2.",
+          "unlockRetro": 750,
+          "unlockLabel": "Level 750",
+          "rankLevelsRetro": [
+            750,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/swords/SwordsManager.java#L125-L134",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L192-L195",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L484-L487",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L726-L777"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Swords Limit Break",
+          "type": "passive",
+          "description": "Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L726-L777"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/swords/SwordsManager.java#L77-L118",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/runnables/skills/RuptureTask.java#L51-L61",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/runnables/skills/RuptureTask.java#L95-L131",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/runnables/skills/RuptureTask.java#L151-L220",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L488-L510",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L726-L777",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/swords/SwordsManager.java#L179-L182",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L1008-L1058",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L522-L524",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/swords/SwordsManager.java#L42-L49",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/swords/SwordsManager.java#L143-L155",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L710-L720",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L511-L520",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/swords/SwordsManager.java#L125-L134",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L192-L195",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L484-L487",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100"
+      ]
+    },
+    {
+      "id": "axes",
+      "name": "Axes",
+      "category": "combat",
+      "summary": "Axe attacks gain extra damage, critical hits and crowd control.",
+      "training": "Deal damage with an axe. Chopping trees trains Woodcutting instead.",
+      "command": "/axes",
+      "abilities": [
+        {
+          "name": "Axe Mastery",
+          "type": "passive",
+          "description": "Adds +1 axe damage before armor per rank, up to +4.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50,
+            100,
+            150,
+            200
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/Axes.java#L49-L58",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L458-L460",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L199-L202",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L111-L203"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Critical Strikes",
+          "type": "passive",
+          "description": "Chance to deal extra axe damage. At full attack strength, a critical is 2× damage against mobs or 1.5× against players. Chance reaches 37.5% at level 1000.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L113-L138",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L473-L475",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L203-L212",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L111-L203"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Armor Impact",
+          "type": "passive",
+          "description": "A 25% chance per armor piece to inflict extra durability damage, growing with rank. Base durability damage is 6.5 × rank before Unbreaking and rounding.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1,
+            100,
+            150,
+            200,
+            250,
+            300,
+            350,
+            400,
+            450,
+            500,
+            550,
+            600,
+            650,
+            700,
+            750,
+            800,
+            850,
+            900,
+            950,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Damages armor durability rather than adding health damage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L49-L55",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L159-L180",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/SkillUtils.java#L296-L309",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L222-L228",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L111-L203"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Greater Impact",
+          "type": "passive",
+          "description": "Against an unarmored target, a 25% chance to add +2 damage before armor and strong knockback.",
+          "unlockRetro": 250,
+          "unlockLabel": "Level 250",
+          "rankLevelsRetro": [
+            250
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L58-L65",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L200-L227",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L214-L220",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L111-L203"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Skull Splitter",
+          "type": "active",
+          "description": "Temporarily splashes axe damage to nearby foes. At full attack strength, splash is half the triggering damage before armor, with a minimum of 1 damage.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50
+          ],
+          "activation": "Right-click with an axe to ready it, then hit a target within 4 seconds. Sneak while right-clicking if your off-hand is occupied.",
+          "cooldownSeconds": 240,
+          "cooldown": "4 minutes after it ends",
+          "caveats": [
+            "With an axe ready, hitting a creature triggers Skull Splitter; chopping a tree triggers Tree Feller."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L250-L254",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L1008-L1058",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L229-L231",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L111-L203"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Axes Limit Break",
+          "type": "passive",
+          "description": "Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L111-L203"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/Axes.java#L49-L58",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L458-L460",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L199-L202",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L111-L203",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L113-L138",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L473-L475",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L203-L212",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L49-L55",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L159-L180",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/SkillUtils.java#L296-L309",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L222-L228",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L58-L65",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L200-L227",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L214-L220",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/axes/AxesManager.java#L250-L254",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L1008-L1058",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L229-L231",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100"
+      ]
+    },
+    {
+      "id": "unarmed",
+      "name": "Unarmed",
+      "category": "combat",
+      "summary": "Fight with empty hands and learn defensive tricks.",
+      "training": "Deal damage with an empty main hand. Holding a random block does not count as empty-handed combat.",
+      "command": "/unarmed",
+      "abilities": [
+        {
+          "name": "Steel Arm Style",
+          "type": "passive",
+          "description": "Adds punch damage across 20 ranks, from +1 damage before armor at rank 1 to +13.5 at rank 20.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1,
+            100,
+            150,
+            200,
+            250,
+            300,
+            350,
+            400,
+            450,
+            500,
+            550,
+            600,
+            650,
+            700,
+            750,
+            800,
+            850,
+            900,
+            950,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L198-L224",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L588-L613",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L778-L864"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Berserk",
+          "type": "active",
+          "description": "Temporarily increases fully charged punch damage by 50% and instantly breaks certain weak materials, including excavation-type blocks, snow, and glass.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50
+          ],
+          "activation": "Right-click with an empty main hand, then punch a target or suitable block within 4 seconds. Sneak while right-clicking if your off-hand is occupied.",
+          "cooldownSeconds": 240,
+          "cooldown": "4 minutes after it ends",
+          "caveats": [
+            "Keep your main hand empty. Only certain soft blocks break instantly."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L31-L32",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L191-L193",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L610-L631",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L683-L701",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/SuperAbilityType.java#L231-L235",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L778-L864"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Arrow Deflect",
+          "type": "passive",
+          "description": "Chance to cancel an incoming arrow hit while your main hand is empty. Chance reaches 50% at level 1000.",
+          "unlockRetro": 200,
+          "unlockLabel": "Level 200",
+          "rankLevelsRetro": [
+            200
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Keep your main hand empty. This blocks arrow damage; it does not shoot the arrow back."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L64-L72",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L162-L169",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L432-L441",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L572-L578",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L778-L864"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Disarm",
+          "type": "passive",
+          "description": "Punches can knock a player’s held main-hand item onto the ground. Chance reaches 33% at level 1000.",
+          "unlockRetro": 250,
+          "unlockLabel": "Level 250",
+          "rankLevelsRetro": [
+            250
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This affects players. Dropped items can be picked up by others, so be careful around family members’ valuables."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L54-L61",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L133-L156",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L562-L570",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L778-L864"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Iron Grip",
+          "type": "passive",
+          "description": "A chance to keep your held item when another player tries to Disarm you. The chance rises with Unarmed level, reaching 100% at level 1000.",
+          "unlockRetro": 600,
+          "unlockLabel": "Listed rank: level 600; protection can happen earlier",
+          "rankLevelsRetro": [
+            600
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "The listed first rank is level 600, but protection can happen earlier in this server build."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L233-L246",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/random/ProbabilityUtil.java#L290-L312",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L580-L586",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L778-L864"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Block Cracker",
+          "type": "manual",
+          "description": "While Berserk is active, punching supported brick blocks turns them into their cracked variants.",
+          "unlockRetro": 50,
+          "unlockLabel": "Use with Berserk from level 50",
+          "rankLevelsRetro": [],
+          "activation": "Activate Berserk, then punch stone bricks, infested stone bricks, deepslate bricks/tiles, polished blackstone bricks, or nether bricks.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Use while Berserk is active, so its practical starting point is level 50. Be careful around brick builds."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L75-L110",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L683-L689",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L487-L497",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L778-L864"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Unarmed Limit Break",
+          "type": "passive",
+          "description": "Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L778-L864"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L198-L224",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L588-L613",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L778-L864",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L31-L32",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L191-L193",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L610-L631",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L683-L701",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/SuperAbilityType.java#L231-L235",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L64-L72",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L162-L169",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L432-L441",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L572-L578",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L54-L61",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L133-L156",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L562-L570",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L233-L246",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/random/ProbabilityUtil.java#L290-L312",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L580-L586",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L75-L110",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/BlockListener.java#L683-L689",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L487-L497",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100"
+      ]
+    },
+    {
+      "id": "archery",
+      "name": "Archery",
+      "category": "combat",
+      "summary": "Improve bow damage and recover some arrows.",
+      "training": "Shoot eligible targets with a bow. Longer shots award a distance XP multiplier, capped at 50 blocks; fully drawn bow shots are also favored by the XP calculation.",
+      "command": "/archery",
+      "abilities": [
+        {
+          "name": "Skill Shot",
+          "type": "passive",
+          "description": "Adds 10% of the original arrow damage per rank, up to +200% at rank 20, limited to +9 extra damage before armor per hit.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1,
+            100,
+            150,
+            200,
+            250,
+            300,
+            350,
+            400,
+            450,
+            500,
+            550,
+            600,
+            650,
+            700,
+            750,
+            800,
+            850,
+            900,
+            950,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/Archery.java#L54-L62",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/ArcheryManager.java#L160-L166",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L157-L164",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L33-L104"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Arrow Retrieval",
+          "type": "passive",
+          "description": "Chance for arrows fired into a target to be returned as ordinary arrow drops when it dies. Chance reaches 100% at level 1000.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Infinity arrows are excluded. Recovered arrows are ordinary arrows."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L237-L248",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/ArcheryManager.java#L89-L94",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/Archery.java#L45-L50",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L598-L601",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L175-L181",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L33-L104"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Daze",
+          "type": "passive",
+          "description": "Bow hits can disorient a player, change their view angle, add 10 seconds of nausea, and add +4 damage before armor. Chance reaches 50% at level 1000.",
+          "unlockRetro": 0,
+          "unlockLabel": "Available from the start; improves with skill",
+          "rankLevelsRetro": [],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Affects players, not monsters. The chance starts at zero and grows with Archery level."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/ArcheryManager.java#L31-L37",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/ArcheryManager.java#L107-L152",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/SubSkillType.java#L19-L23",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/RankUtils.java#L126-L130",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L165-L173",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L33-L104"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Archery Limit Break",
+          "type": "passive",
+          "description": "Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L33-L104"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [
+        "This skill has passive bonuses; there is no usable right-click super ability for it in this version."
+      ],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/Archery.java#L54-L62",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/ArcheryManager.java#L160-L166",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L157-L164",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L33-L104",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L237-L248",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/ArcheryManager.java#L89-L94",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/Archery.java#L45-L50",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L598-L601",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L175-L181",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/ArcheryManager.java#L31-L37",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/ArcheryManager.java#L107-L152",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/SubSkillType.java#L19-L23",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/RankUtils.java#L126-L130",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L165-L173",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100"
+      ]
+    },
+    {
+      "id": "taming",
+      "name": "Taming",
+      "category": "combat",
+      "summary": "Train animal companions, especially your tamed wolves.",
+      "training": "Tame animals and let your own tamed wolves fight while you are online. Ordinary breeding does not award Taming XP.",
+      "command": "/taming",
+      "abilities": [
+        {
+          "name": "Beast Lore",
+          "type": "manual",
+          "description": "Inspect a tameable animal’s health and owner; horse-like animals can also show speed and jump information.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1
+          ],
+          "activation": "Left-click a tameable animal while holding a bone. The successful inspection cancels that attack’s damage.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L262-L294",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L729-L737",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Call of the Wild",
+          "type": "manual",
+          "description": "Summon a temporary companion: 10 bones for a wolf, 10 raw cod for a cat, or 10 apples for a horse. You can have two summoned wolves, one cat and one horse at a time.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1
+          ],
+          "activation": "Crouch and left-click air or a block while holding at least the required item amount in your main hand.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "These companions are temporary: they disappear after four minutes. The summoning ingredients are consumed."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L1075-L1095",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L360-L435",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L437-L445",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TrackedTamingEntity.java#L26-L39",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/taming/CallOfTheWildType.java#L12-L21",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L459-L486",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L844-L863",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Environmentally Aware",
+          "type": "passive",
+          "description": "Protects your wolf from falls and helps it escape hazardous blocks by teleporting it back to you.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "It can cancel falls and help a wolf escape hazards, but does not guarantee rescue from lethal lava or fire damage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L297-L306",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L688-L702",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Gore",
+          "type": "passive",
+          "description": "Your wolf’s attack gains another copy of its base hit damage, before other bonuses and armor.",
+          "unlockRetro": 150,
+          "unlockLabel": "Level 150",
+          "rankLevelsRetro": [
+            150
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L202-L205",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L537-L567",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L529-L537",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Pummel",
+          "type": "passive",
+          "description": "Your wolf has a 10% chance to knock back its target.",
+          "unlockRetro": 200,
+          "unlockLabel": "Level 200",
+          "rankLevelsRetro": [
+            200
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L309-L328",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L555-L557",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Fast Food Service",
+          "type": "passive",
+          "description": "On a wolf’s attack, a 50% chance to heal it by the hit’s original damage amount, up to its maximum health.",
+          "unlockRetro": 200,
+          "unlockLabel": "Level 200",
+          "rankLevelsRetro": [
+            200
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L181-L193",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L552-L554",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L538-L540",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Thick Fur",
+          "type": "passive",
+          "description": "Halves incoming melee/projectile damage to your wolf and extinguishes its burning effect on a fire-tick event.",
+          "unlockRetro": 250,
+          "unlockLabel": "Level 250",
+          "rankLevelsRetro": [
+            250
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This is damage reduction, not immunity to every kind of damage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/Taming.java#L29-L36",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L704-L719",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L541-L543",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Holy Hound",
+          "type": "passive",
+          "description": "Adds health when your wolf takes magic, poison or wither damage, which can help offset the hit.",
+          "unlockRetro": 350,
+          "unlockLabel": "Level 350",
+          "rankLevelsRetro": [
+            350
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "The original magic damage can still apply. Do not rely on this as immunity or guaranteed net healing."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/Taming.java#L44-L48",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L721-L727",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Shock Proof",
+          "type": "passive",
+          "description": "Reduces your wolf’s explosion and lightning damage to one-sixth of its previous amount.",
+          "unlockRetro": 500,
+          "unlockLabel": "Level 500",
+          "rankLevelsRetro": [
+            500
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/Taming.java#L39-L41",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L729-L739",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L544-L546",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Sharpened Claws",
+          "type": "passive",
+          "description": "Adds +2 damage before armor to your wolf’s attacks.",
+          "unlockRetro": 750,
+          "unlockLabel": "Level 750",
+          "rankLevelsRetro": [
+            750
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L208-L209",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L558-L560",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L547-L549",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [
+        "Most combat bonuses apply to your own tamed wolves, not every animal. Summoned companions are temporary."
+      ],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L262-L294",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L729-L737",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L327-L377",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/PlayerListener.java#L1075-L1095",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L360-L435",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L437-L445",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TrackedTamingEntity.java#L26-L39",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/taming/CallOfTheWildType.java#L12-L21",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/config.yml#L459-L486",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L844-L863",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L297-L306",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L688-L702",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L202-L205",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L537-L567",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L529-L537",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L309-L328",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L555-L557",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L181-L193",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L552-L554",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L538-L540",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/Taming.java#L29-L36",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L704-L719",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L541-L543",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/Taming.java#L44-L48",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L721-L727",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/Taming.java#L39-L41",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/EntityListener.java#L729-L739",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L544-L546",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/taming/TamingManager.java#L208-L209",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L558-L560",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L547-L549"
+      ]
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatics",
+      "category": "utility",
+      "summary": "Improve your chance of reducing fall and attack damage.",
+      "training": "Gain XP from surviving meaningful falls and successful combat dodges against mobs. Repeating falls at the same spot or grinding the same mob is restricted by anti-farming checks.",
+      "command": "/acrobatics",
+      "abilities": [
+        {
+          "name": "Roll",
+          "type": "passive",
+          "description": "A chance to reduce fall damage by up to 7 damage points (3.5 hearts), after normal fall-damage reductions. Chance scales to 100% at level 1000.",
+          "unlockRetro": 0,
+          "unlockLabel": "Available from the start; improves with skill",
+          "rankLevelsRetro": [],
+          "activation": "Automatic when landing from a damaging fall, without sneaking.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Do not jump from lethal heights to test it. A roll can fail, and cannot save a fall that remains fatal after the reduction."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/acrobatics/Roll.java#L245-L286",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/acrobatics/Roll.java#L307-L356",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L129-L137",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/coreskills.yml#L4-L9",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L105-L110"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Graceful Roll",
+          "type": "passive",
+          "description": "Sneaking doubles Roll’s success chance and doubles the maximum reduction to 14 damage points (7 hearts). With configured scaling it reaches 100% chance at level 500.",
+          "unlockRetro": 0,
+          "unlockLabel": "Sneaking version of Roll; no separate unlock",
+          "rankLevelsRetro": [],
+          "activation": "Hold sneak when you land from a fall.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Sneak before landing. It still cannot save a fall that remains fatal after the reduction."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/acrobatics/Roll.java#L245-L265",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/acrobatics/Roll.java#L289-L299",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L138-L140",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L105-L110"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Dodge",
+          "type": "passive",
+          "description": "Chance to halve incoming attack damage, with a minimum of 1 damage still taken. Chance scales to 20% at level 1000.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Does not work while blocking or if the reduced hit would still be fatal."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/acrobatics/Acrobatics.java#L15-L16",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/acrobatics/AcrobaticsManager.java#L63-L121",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L118-L127",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L105-L110"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [
+        "Practice safely. These abilities do not make every fall survivable."
+      ],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/acrobatics/Roll.java#L245-L286",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/acrobatics/Roll.java#L307-L356",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L129-L137",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/coreskills.yml#L4-L9",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L105-L110",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/acrobatics/Roll.java#L245-L265",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/subskills/acrobatics/Roll.java#L289-L299",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L138-L140",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/acrobatics/Acrobatics.java#L15-L16",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/acrobatics/AcrobaticsManager.java#L63-L121",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L118-L127"
+      ]
+    },
+    {
+      "id": "crossbows",
+      "name": "Crossbows",
+      "category": "combat",
+      "summary": "Boost crossbow arrow damage and unlock ricochets.",
+      "training": "Damage eligible targets with crossbow arrows. The combat path uses the distance-XP multiplier too.",
+      "command": "/crossbows",
+      "abilities": [
+        {
+          "name": "Powered Shot",
+          "type": "passive",
+          "description": "Adds 10% of original arrow damage per rank, up to +200% at rank 20, capped at +9 extra damage before armor.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1,
+            100,
+            150,
+            200,
+            250,
+            300,
+            350,
+            400,
+            450,
+            500,
+            550,
+            600,
+            650,
+            700,
+            750,
+            800,
+            850,
+            900,
+            950,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/crossbows/CrossbowsManager.java#L119-L137",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L319-L348",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L188-L194",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L204-L279"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Trick Shot",
+          "type": "passive",
+          "description": "Arrows that glance off blocks can ricochet. Higher ranks allow more bounces.",
+          "unlockRetro": 50,
+          "unlockLabel": "Listed first rank: level 50; a first bounce can happen earlier",
+          "rankLevelsRetro": [
+            50,
+            200,
+            400
+          ],
+          "activation": "Shoot a block at a glancing angle; a square hit does not ricochet on the first bounce.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "The listed first rank is level 50, but an initial ricochet can occur earlier in this server build."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/crossbows/Crossbows.java#L43-L49",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/crossbows/CrossbowsManager.java#L32-L77",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/crossbows/CrossbowsManager.java#L95-L116",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L204-L279"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Crossbows Limit Break",
+          "type": "passive",
+          "description": "Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L204-L279"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [
+        "This skill has passive bonuses; there is no usable right-click super ability for it in this version."
+      ],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/crossbows/CrossbowsManager.java#L119-L137",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L319-L348",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L188-L194",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L204-L279",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/crossbows/Crossbows.java#L43-L49",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/crossbows/CrossbowsManager.java#L32-L77",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/crossbows/CrossbowsManager.java#L95-L116",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100"
+      ]
+    },
+    {
+      "id": "tridents",
+      "name": "Tridents",
+      "category": "combat",
+      "summary": "Add damage to thrown and melee trident hits.",
+      "training": "Damage eligible targets by striking with or throwing a trident.",
+      "command": "/tridents",
+      "abilities": [
+        {
+          "name": "Impale",
+          "type": "passive",
+          "description": "Adds +1.5 damage before armor at rank 1, then +0.5 per additional rank, up to +6 at rank 10. Applies to melee and thrown tridents.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50,
+            150,
+            250,
+            350,
+            450,
+            550,
+            650,
+            750,
+            850,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This is an mcMMO skill bonus, separate from the Impaling enchantment."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/tridents/TridentsManager.java#L15-L23",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L249-L314",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L650-L655",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L280-L326"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Tridents Limit Break",
+          "type": "passive",
+          "description": "Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L280-L326"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [
+        "This skill has passive bonuses; there is no usable right-click super ability for it in this version."
+      ],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/tridents/TridentsManager.java#L15-L23",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L249-L314",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L650-L655",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L280-L326",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100"
+      ]
+    },
+    {
+      "id": "maces",
+      "name": "Maces",
+      "category": "combat",
+      "summary": "Improve mace damage and slow enemies.",
+      "training": "Damage eligible targets with a mace.",
+      "command": "/maces",
+      "abilities": [
+        {
+          "name": "Crush",
+          "type": "passive",
+          "description": "Adds mace damage before armor: +1.5, +2.5, +3.5, or +4.5 at ranks 1–4.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            250,
+            750,
+            900
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/maces/MacesManager.java#L42-L54",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L384-L385",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L638-L643",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L512-L557"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Cripple",
+          "type": "passive",
+          "description": "Mace hits have a 10%, 15%, 20%, or 33% chance by rank to slow the target. Players receive Slowness II for 1 second; mobs receive Slowness III for 1.5 seconds.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50,
+            200,
+            400,
+            800
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Does not replace Slowness already on the target."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/maces/MacesManager.java#L75-L127",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L389-L392",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L644-L649",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L512-L557"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Maces Limit Break",
+          "type": "passive",
+          "description": "Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L512-L557"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [
+        "This skill has passive bonuses; there is no usable right-click super ability for it in this version."
+      ],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/maces/MacesManager.java#L42-L54",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L384-L385",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L638-L643",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L512-L557",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/maces/MacesManager.java#L75-L127",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L389-L392",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L644-L649",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100"
+      ]
+    },
+    {
+      "id": "spears",
+      "name": "Spears",
+      "category": "combat",
+      "summary": "Gain spear damage and bursts of speed.",
+      "training": "Damage eligible targets with a supported spear.",
+      "command": "/spears",
+      "abilities": [
+        {
+          "name": "Spear Mastery",
+          "type": "passive",
+          "description": "Adds +0.4 damage before armor per rank, reaching +3.2 at rank 8.",
+          "unlockRetro": 50,
+          "unlockLabel": "Level 50",
+          "rankLevelsRetro": [
+            50,
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/spears/SpearsManager.java#L131-L134",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L415-L418",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L656-L658",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L407-L472"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Momentum",
+          "type": "passive",
+          "description": "Spear hits can grant Speed III. Chance rises from 5% to 50% across ten ranks; duration is 2 seconds per rank, up to 20 seconds.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1,
+            100,
+            150,
+            200,
+            250,
+            400,
+            500,
+            600,
+            800,
+            950
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Does not replace a stronger or longer-lasting Speed effect."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/spears/SpearsManager.java#L52-L128",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L659-L670",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L407-L472"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Spears Limit Break",
+          "type": "passive",
+          "description": "Adds extra weapon damage before armor against tougher, better-armored players. Ten ranks; up to +10 damage before armor and other damage reductions at rank 10 against high-quality armor.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+          ],
+          "activation": "Passive: works automatically when its conditions are met.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L407-L472"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [
+        "This skill has passive bonuses; there is no usable right-click super ability for it in this version."
+      ],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/spears/SpearsManager.java#L131-L134",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L415-L418",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L656-L658",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L407-L472",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/spears/SpearsManager.java#L52-L128",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L659-L670",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L99-L100"
+      ]
+    },
+    {
+      "id": "alchemy",
+      "name": "Alchemy",
+      "category": "utility",
+      "summary": "Brew potions faster and learn new recipes.",
+      "training": "Brew potions in a brewing stand.",
+      "command": "/alchemy",
+      "abilities": [
+        {
+          "name": "Catalysis",
+          "type": "passive",
+          "description": "Your potions brew faster as your Alchemy level rises.",
+          "unlockRetro": 0,
+          "unlockLabel": "Available from the start; improves with skill",
+          "rankLevelsRetro": [
+            0
+          ],
+          "activation": "Automatic while doing the matching action.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L8",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/alchemy/AlchemyManager.java#L48",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L144"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT.",
+          "detail": "Brewing speed rises from normal at level 0 to 4× at level 1000, before any special perks."
+        },
+        {
+          "name": "Concoctions",
+          "type": "passive",
+          "description": "Unlock extra brewing ingredients as you level up.",
+          "unlockRetro": 0,
+          "unlockLabel": "Available from the start; improves with skill",
+          "rankLevelsRetro": [
+            0,
+            100,
+            200,
+            350,
+            500,
+            750,
+            900,
+            1000
+          ],
+          "activation": "Brew the unlocked ingredient with the matching base potion, usually an Awkward Potion.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Some unlocked potions have harmful effects. Read the name before drinking. Hopper brewing is limited to first-rank recipes."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L14",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/potions.yml#L5",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/potions.yml#L114"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT.",
+          "recipes": [
+            {
+              "level": 100,
+              "ingredients": "Carrot: Haste; slimeball: Dullness (mining fatigue); phantom membrane: Slow Falling"
+            },
+            {
+              "level": 200,
+              "ingredients": "Quartz: Absorption; rabbit’s foot: Leaping"
+            },
+            {
+              "level": 350,
+              "ingredients": "Apple: Health Boost; rotten flesh: Hunger"
+            },
+            {
+              "level": 500,
+              "ingredients": "Brown mushroom: Nausea; ink sac: Blindness"
+            },
+            {
+              "level": 750,
+              "ingredients": "Fern: Saturation"
+            },
+            {
+              "level": 900,
+              "ingredients": "Poisonous potato: Decay"
+            },
+            {
+              "level": 1000,
+              "ingredients": "Golden apple: Resistance"
+            }
+          ]
+        }
+      ],
+      "caveats": [],
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L8",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/alchemy/AlchemyManager.java#L48",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L144",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L14",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/potions.yml#L5",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/potions.yml#L114"
+      ]
+    },
+    {
+      "id": "repair",
+      "name": "Repair",
+      "category": "utility",
+      "summary": "Use materials to fix worn tools and armor.",
+      "training": "Repair damaged equipment using mcMMO’s repair block. Each repair consumes one matching material.",
+      "command": "/repair",
+      "abilities": [
+        {
+          "name": "Repair Mastery",
+          "type": "passive",
+          "description": "Get more durability back from each repair material.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [],
+          "activation": "Automatic while doing the matching action.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L919",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L374",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/repair/RepairManager.java#L362"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT.",
+          "detail": "The checked maximum adds 200% to the base repair amount at level 1000."
+        },
+        {
+          "name": "Super Repair",
+          "type": "passive",
+          "description": "A chance to double the amount repaired.",
+          "unlockRetro": 400,
+          "unlockLabel": "Level 400",
+          "rankLevelsRetro": [],
+          "activation": "Automatic while doing the matching action.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L925",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/repair/RepairManager.java#L380"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        },
+        {
+          "name": "Arcane Forging",
+          "type": "passive",
+          "description": "Gives a chance to keep enchantments while repairing. Higher ranks improve the odds.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            250,
+            350,
+            500,
+            650,
+            750,
+            850,
+            1000
+          ],
+          "activation": "Automatic while doing the matching action.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Before level 100, enchanted repairs can remove every enchantment. Higher levels still do not guarantee keeping all enchantments."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L930",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L391",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/repair/RepairManager.java#L416"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [],
+      "activation": "Hold the damaged item and use it on an iron block. Keep the matching repair material in your inventory.",
+      "warning": "Repairing enchanted gear can remove or weaken its enchantments, even at high levels. Read the in-game confirmation before using valuable gear.",
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L919",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L374",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/repair/RepairManager.java#L362",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L925",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/repair/RepairManager.java#L380",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L930",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L391",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/repair/RepairManager.java#L416"
+      ]
+    },
+    {
+      "id": "salvage",
+      "name": "Salvage",
+      "category": "utility",
+      "summary": "Take spare equipment apart and recover some materials.",
+      "training": "Salvage level is the average of Repair and Fishing, rounded down. Raise those skills to raise Salvage.",
+      "command": "/salvage",
+      "abilities": [
+        {
+          "name": "Scrap Collector",
+          "type": "manual",
+          "description": "Recover materials from unwanted tools and armor. Higher ranks raise the material-return limit.",
+          "unlockRetro": 1,
+          "unlockLabel": "Level 1",
+          "rankLevelsRetro": [
+            1,
+            100,
+            150,
+            200,
+            250,
+            300,
+            350,
+            400
+          ],
+          "activation": "Automatic while doing the matching action.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Salvaging destroys the item. Diamond equipment requires Salvage 50; netherite equipment requires Salvage 100.",
+            "Worn items return fewer materials, and a nearly broken item may be too damaged to salvage."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L473",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/salvage/SalvageManager.java#L102",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/salvage/SalvageManager.java#L187",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/salvage/Salvage.java#L38",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/salvage.vanilla.yml#L242"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT.",
+          "detail": "Rank 1 returns up to one material. Later ranks allow up to twice the rank, limited by the item recipe and its remaining durability."
+        },
+        {
+          "name": "Arcane Salvaging",
+          "type": "passive",
+          "description": "A chance to recover enchantments on an enchanted book when salvaging enchanted equipment.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            250,
+            350,
+            500,
+            650,
+            750,
+            850,
+            1000
+          ],
+          "activation": "Automatic while doing the matching action.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Enchantments can be kept, weakened, or lost. The original item is still destroyed."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L493",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/salvage/SalvageManager.java#L227",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L419"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT."
+        }
+      ],
+      "caveats": [],
+      "activation": "Hold an unwanted item and use it on a gold block. Read the confirmation before proceeding.",
+      "warning": "Salvaging destroys the equipment. Damaged items give fewer materials or can be too damaged to salvage. Enchantments may be lost.",
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L473",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/salvage/SalvageManager.java#L102",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/salvage/SalvageManager.java#L187",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/salvage/Salvage.java#L38",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/salvage.vanilla.yml#L242",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L493",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/salvage/SalvageManager.java#L227",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L419"
+      ]
+    },
+    {
+      "id": "smelting",
+      "name": "Smelting",
+      "category": "utility",
+      "summary": "Make better use of furnace fuel and smelt extra resources.",
+      "training": "Smelting level is the average of Mining and Repair, rounded down. Smelting eligible materials also splits mcMMO skill XP between Mining and Repair.",
+      "command": "/smelting",
+      "abilities": [
+        {
+          "name": "Second Smelt",
+          "type": "passive",
+          "description": "A chance to get an extra item from eligible furnace recipes.",
+          "unlockRetro": null,
+          "unlockLabel": "Available from the start; improves with skill",
+          "rankLevelsRetro": [],
+          "activation": "Automatic while doing the matching action.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/SubSkillType.java#L81",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/smelting/SmeltingManager.java#L25",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L454"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT.",
+          "detail": "The checked chance reaches 50% at level 1000. Only configured outputs qualify, and there must be room in the output stack."
+        },
+        {
+          "name": "Fuel Efficiency",
+          "type": "passive",
+          "description": "Your furnace fuel lasts longer.",
+          "unlockRetro": 100,
+          "unlockLabel": "Level 100",
+          "rankLevelsRetro": [
+            100,
+            500,
+            750
+          ],
+          "activation": "Automatic while doing the matching action.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "You must be online for fuel efficiency on the furnace associated with you. Only eligible smeltable materials qualify."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L378",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/smelting/SmeltingManager.java#L36",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/InventoryListener.java#L57"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT.",
+          "detail": "Ranks 1, 2, and 3 make fuel last 2×, 3×, and 4× as long."
+        },
+        {
+          "name": "Understanding the Art",
+          "type": "passive",
+          "description": "Raises the normal Minecraft XP you collect from eligible furnace results.",
+          "unlockRetro": 100,
+          "unlockLabel": "First rank: level 100; extra XP begins at 250",
+          "rankLevelsRetro": [
+            100,
+            250,
+            350,
+            500,
+            650,
+            750,
+            850,
+            1000
+          ],
+          "activation": "Automatic while doing the matching action.",
+          "cooldownSeconds": null,
+          "cooldown": "No separate ability cooldown",
+          "caveats": [
+            "Rank 1 keeps ordinary XP at 1×. The first actual boost, 2×, begins at level 250."
+          ],
+          "sources": [
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L388",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L470",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/smelting/SmeltingManager.java#L93",
+            "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/InventoryListener.java#L140"
+          ],
+          "verification": "Server configuration files checked 2026-10-12; implementation pinned to mcMMO 2.3.003-SNAPSHOT.",
+          "detail": "The eight ranks give 1×, 2×, 3×, 3×, 4×, 4×, 5× and 5× ordinary Minecraft XP."
+        }
+      ],
+      "caveats": [],
+      "activation": "Use a furnace normally. Click its inventory to associate it with you for mcMMO processing.",
+      "sources": [
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/datatypes/skills/SubSkillType.java#L81",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/smelting/SmeltingManager.java#L25",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L454",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L378",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/smelting/SmeltingManager.java#L36",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/InventoryListener.java#L57",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/skillranks.yml#L388",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L470",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/smelting/SmeltingManager.java#L93",
+        "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/listeners/InventoryListener.java#L140"
+      ]
+    }
+  ],
+  "common": {
+    "intro": "Level up by doing the things you already enjoy. Some bonuses happen automatically; active abilities give you a short boost before a cooldown. You can train every skill.",
+    "activation": "Hold the right tool, use/right-click to ready it, then do the matching action within four seconds. On a phone or controller, use your controls’ equivalent Use/Interact action. If it will not ready with something in your offhand, sneak or empty your offhand.",
+    "duration": "Most timed abilities last 3 seconds at level 50, 12 seconds at level 500, and 22 seconds at level 1000 or higher, before special perks.",
+    "cooldown": "The usual timed abilities have a 4-minute base cooldown after they finish. Blast Mining has a 1-minute base cooldown. Check /mccooldown for your current timers.",
+    "levelCap": "Level 1000 is a common bonus milestone, not a hard skill cap.",
+    "combat": "Let melee attacks charge fully for the best damage and bonus chances. Damage numbers are Minecraft damage points: 2 points equal one heart.",
+    "together": "The Together and Weekend XP update is built and tested, awaiting installation. The existing Together setting is saved on, but runtime activation is still pending. The new green-bar bonus and live indicator are not installed."
+  },
+  "party": {
+    "quickStart": [
+      "/party create Family",
+      "/party invite PlayerName",
+      "/party accept",
+      "/party info"
+    ],
+    "levelUnlocks": [
+      {
+        "level": 1,
+        "feature": "Party chat"
+      },
+      {
+        "level": 2,
+        "feature": "Party teleport, where permitted"
+      },
+      {
+        "level": 5,
+        "feature": "Alliances"
+      },
+      {
+        "level": 8,
+        "feature": "Item sharing"
+      },
+      {
+        "level": 10,
+        "feature": "XP sharing"
+      }
+    ],
+    "sharing": "At party level 10, the leader can use /party xpshare equal to share skill XP with nearby eligible party members within 75 blocks. /party xpshare none turns it off. The pool is split among teammates; it does not give everyone a full copy of the earned XP.",
+    "togetherEnabled": true,
+    "togetherActivation": "Pending server restart and requested plugin upgrade; not runtime-verified.",
+    "vanillaXpBonusDeployed": false
+  },
+  "commandTips": [
+    {
+      "command": "/mcstats",
+      "text": "See all of your skill levels."
+    },
+    {
+      "command": "/mining",
+      "text": "See Mining details; use another skill name for that skill."
+    },
+    {
+      "command": "/mccooldown",
+      "text": "See ability cooldowns."
+    },
+    {
+      "command": "/mcability",
+      "text": "Toggle active ability use."
+    },
+    {
+      "command": "/party info",
+      "text": "See your party and unlocked features."
+    },
+    {
+      "command": "/mctop",
+      "text": "See the skill leaderboard."
+    }
+  ]
+}
