@@ -86,7 +86,7 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('Oct 9, 2026', self.text)
     def test_installed_shop_controls_and_acceptance_limits(self):
         shop=self.text.split('id="panel-shops"',1)[1].split('id="panel-shopkeepers"',1)[0]
-        for phrase in ['ExcelShops 0.1.2 is running on its own; ChestShop has been removed.', '/excelshop setup', '/excelshop manage', '/wrvshop', 'Confirm purchase', 'Confirm and publish shop', 'The Jobs item shop and two purchasing example menus are paused.', '[Excel Shop]', '[WRV Shop]', 'PLAYER-CHECKLIST.md', 'A second player buying from that chest shop']:
+        for phrase in ['ExcelShops 0.1.3 is running on its own; ChestShop has been removed.', '/excelshop setup', '/excelshop manage', '/wrvshop', 'Confirm purchase', 'Confirm and publish shop', 'The Jobs item shop and two purchasing example menus are paused.', '[Excel Shop]', '[WRV Shop]', 'PLAYER-CHECKLIST.md', 'A second player buying from that chest shop']:
             self.assertIn(phrase, shop)
         for stale in ['not installed yet', 'Preview:', 'prepared update', 'Those pauses are not live yet', 'just tap (right-click) the sign', 'To sell to it, hit (left-click)']:
             self.assertNotIn(stale,shop)
@@ -94,11 +94,13 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('Native Excel shops and Spawn Shop do not require the removed ChestShop plugin.',shop)
         self.assertNotIn('Line 1: leave it empty',shop)
         self.assertNotIn('Confirm Sell',shop)
-        self.assertIn('no fix is installed yet',shop)
+        self.assertNotIn('no fix is installed yet',shop)
+        self.assertIn('The human Java cursor retest is still pending.',shop)
+        self.assertIn('update the existing inventory instead of closing and reopening it',shop)
         self.assertIn('Chat-number entry is not a verified Java workaround',shop)
         self.assertIn('Both the shop chest and its attached sign open the UI',shop)
         self.assertNotIn('/excelshop amount 19',shop)
-        self.assertIn('<td>ExcelShops</td><td>0.1.2</td>',self.text)
+        self.assertIn('<td>ExcelShops</td><td>0.1.3</td>',self.text)
         self.assertNotIn('<td>ChestShop</td>',self.text)
     def test_installed_xp_status(self):
         xp = self.text.split('id="mcmmo-xp-preview"', 1)[1].split('</section>', 1)[0]
