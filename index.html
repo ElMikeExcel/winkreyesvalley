@@ -1398,7 +1398,7 @@
           <tr><td>1 Mending Book</td><td>$600</td></tr>
           <tr><td>1 Unbreaking III Book</td><td>$450</td></tr>
           <tr><td>1 Efficiency IV Book</td><td>$450</td></tr>
-          <tr><td>1 Death Protection Potion</td><td>$10,000</td></tr>
+          <tr><td>1 Death Protection Potion</td><td>$15,000</td></tr>
         </tbody>
       </table>
       <p class="note">No netherite, elytra, or diamonds in the shop. Those you still have to earn the old way.</p>
@@ -1437,9 +1437,9 @@
           <p>The installed catalog keeps the 18 existing offers and preserves bundle pricing: one 16-bread bundle costs $40, and two bundles give 32 bread for $80. Review the bundle size and final item count before confirming. A Java PC player reported that the menu, prices, cancellation and a torch purchase worked. Other items, platforms and edge cases have not all been tested.</p>
         </details>
         <div class="howto" id="death-protection"><h4>Death Protection Potion: keep your items through one death</h4>
-          <p><b>Installed October 13, 2026. Player testing is pending.</b> ExcelDeathProtection 0.1.0 loaded on the server with no errors and the Spawn Shop menu updated cleanly, but nobody has used a potion in game yet. Bedrock phone and Java checks are still to come, so treat this page as the plan until those checks pass.</p>
-          <p><b>Buy it at the Spawn Shop for $10,000</b> (bottom row). The first tap only arms the purchase and charges nothing. Tap again within 20 seconds to buy. If you cannot afford it, the second tap just tells you how much more you need, and nothing is charged.</p>
-          <p><b>Drink the potion to turn protection on.</b> It stays on until a death uses it, even if you log off. While it is on, you will see a small green clover icon (the Luck icon) on your screen, and it is listed inside your inventory screen.</p>
+          <p><b>Updated October 13, 2026 to version 0.1.1. Bedrock phone test passed.</b> ExcelDeathProtection 0.1.1 is installed. The server owner tested it on his phone: the shop messages, drinking it, the on-screen protection icon, and a real death that kept his items while his XP dropped all worked. A Java screen check is still to come.</p>
+          <p><b>Buy it at the Spawn Shop for $15,000</b> (bottom row). The first tap only arms the purchase and charges nothing. Tap again within 20 seconds to buy. The price and confirmation also appear as a big message on your screen. If you cannot afford it, the second tap just tells you how much more you need, and nothing is charged.</p>
+          <p><b>Drink the potion to turn protection on.</b> It stays on until a death uses it, even if you log off. While it is on, you will see a small blue shell icon (Conduit Power) at the top right of your main screen, and Java players also see it listed in the inventory screen. While protection is on you also get Conduit Power: breathe, see clearly and dig faster underwater. On land it does nothing.</p>
           <p><b>When you die:</b> you respawn normally, but you keep all of your items. <b>Your XP still drops as normal; XP is NOT saved.</b> The protection is then used up. Check whether yours is on at any time with <code>/dp status</code>.</p>
           <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/plugin/exceldeathprotection-0.1.0-2026-10-13/ExcelDeathProtection/PLAYER-GUIDE.md" target="_blank" rel="noopener noreferrer">Read the Death Protection player instructions on GitHub</a></p>
         </div>
@@ -1599,7 +1599,7 @@
         <tr><td>ExcelBedrockMenu (BedrockMenu)<small class="plugin-next">Created by us</small></td><td>1.4.2</td><td>Shows the server menu on phones, tablets, and consoles.</td></tr>
         <tr><td>CMILib</td><td>1.6.0.1</td><td>A helper piece that Jobs needs.</td></tr>
         <tr><td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td>0.1.5</td><td>Guided player shops and review/final-confirmation controls for shop purchases, with balance, cost and remaining-balance shown on shop screens.</td></tr>
-        <tr><td>ExcelDeathProtection<small class="plugin-next">Created by us</small></td><td>0.1.0</td><td>Sells the Death Protection Potion at the Spawn Shop. Drink it and your next death keeps your items once; XP is not saved. Player testing pending.</td></tr>
+        <tr><td>ExcelDeathProtection<small class="plugin-next">Created by us</small></td><td>0.1.1</td><td>Sells the Death Protection Potion at the Spawn Shop. Drink it and your next death keeps your items once; XP is not saved. While active it also gives Conduit Power underwater perks. Bedrock phone test passed; Java check pending.</td></tr>
         <tr><td>Chunky</td><td>1.5.3</td><td>Builds the world ahead of time so it loads faster.</td></tr>
         <tr><td>CoreProtect</td><td>24.1</td><td>Keeps a record of changes so damage can be undone.</td></tr>
         <tr><td>DeluxeMenus<small class="plugin-next">Third-party · menu configuration by us</small></td><td>1.14.1</td><td>Shows the server menu on computers.</td></tr>
@@ -1651,6 +1651,7 @@
     <details open>
       <summary>Oct 13, 2026</summary>
       <ul>
+        <li>Updated <b>ExcelDeathProtection to 0.1.1</b> and raised the potion price to <b>$15,000</b>. The protection icon now shows on phones (blue shell, top right of the main screen), buy messages also appear as big on-screen messages, and while protection is active the potion also gives Conduit Power perks underwater, which the potion and this guide now state plainly. <b>Bedrock phone test passed</b> (icon seen, death kept items, XP dropped). Java check still to come. <a href="#death-protection">How it works</a>.</li>
         <li>Installed <b>ExcelDeathProtection 0.1.0</b>. The Spawn Shop now sells a <b>Death Protection Potion for $10,000</b>: drink it and your next death keeps all your items once. <b>XP is not saved.</b> The server loaded the plugin and the updated shop menu with no errors. <b>Player testing is pending</b> on Bedrock phone and Java. <a href="#death-protection">How it works</a>.</li>
         <li>Updated <b>ExcelShops to 0.1.5</b>. Shop screens now show your current balance, the purchase cost, your projected remaining balance, and the shortfall when you cannot afford something; Spawn Shop amounts show exact cents. Startup, version and economy connection verified. <b>A live purchase test is still pending.</b></li>
         <li>Updated <b>WealthBoard to 1.3.0-mobile.6</b>, replacing the mobile.1 layout described in the next entry. The join popup is the <b>Wink Reyes Valley</b> title again, with the top three richest players shown underneath it one at a time so full names and balances fit on phone screens. The owner confirmed the display on his phone; a Java screen check is still to come. Details in the <a href="#panel-leaderboards">leaderboard instructions</a>.</li>
