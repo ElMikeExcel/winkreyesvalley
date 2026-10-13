@@ -102,6 +102,12 @@ class SiteChecks(unittest.TestCase):
         self.assertNotIn('/excelshop amount 19',shop)
         self.assertIn('<td>ExcelShops</td><td>0.1.3</td>',self.text)
         self.assertNotIn('<td>ChestShop</td>',self.text)
+    def test_typed_amount_candidate_is_separate_from_live_shop(self):
+        preview=self.text.split('id="shop-amount-preview"',1)[1].split('</div>',1)[0]
+        for phrase in ['0.1.4 is a candidate in testing, not installed', 'server still runs 0.1.3', 'Enter Amount', 'Use amount', '0.50', '19', '60 seconds', 'Escape is disabled', 'Bedrock keeps its native number forms', '0225e77d3a85201c21ca5371e7d7fb8b3806939c', 'AMOUNT-ENTRY-0.1.4.md', 'All-device checks are pending', 'console/controller', 'instead of a Java-only dialog', '70000']:
+            self.assertIn(phrase,preview)
+        self.assertIn('<td>ExcelShops</td><td>0.1.3</td>',self.text)
+        self.assertNotIn('<td>ExcelShops</td><td>0.1.4</td>',self.text)
     def test_installed_xp_status(self):
         xp = self.text.split('id="mcmmo-xp-preview"', 1)[1].split('</section>', 1)[0]
         for phrase in ['Installed October 12, 2026.', 'mcMMO 2.3.003-WRV-XP-2', 'WeekendXP 1.0.2', 'gameplay acceptance checks remain pending']:
