@@ -100,13 +100,13 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('Chat-number entry is not a verified Java workaround',shop)
         self.assertIn('Both the shop chest and its attached sign open the UI',shop)
         self.assertNotIn('/excelshop amount 19',shop)
-        self.assertIn('<td>ExcelShops</td><td>0.1.4</td>',self.text)
+        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td>0.1.4</td>',self.text)
         self.assertNotIn('<td>ChestShop</td>',self.text)
     def test_typed_amount_installed_with_pending_device_checks(self):
         preview=self.text.split('id="shop-amount-preview"',1)[1].split('</div>',1)[0]
         for phrase in ['ExcelShops 0.1.4 is installed.', 'Real Java/Bedrock display and input checks are still pending', 'Enter Amount', 'Use amount', '0.50', '19', '60 seconds', 'Escape is disabled', 'Bedrock keeps its native number forms', '0322d8ade7fe2a1a29ea20e70e1c8c9ebda6a465', 'AMOUNT-ENTRY-0.1.4.md', 'All-device checks are pending', 'console/controller', 'instead of a Java-only dialog', '70000']:
             self.assertIn(phrase,preview)
-        self.assertIn('<td>ExcelShops</td><td>0.1.4</td>',self.text)
+        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td>0.1.4</td>',self.text)
         self.assertNotIn('not installed',preview)
         self.assertNotIn('server still runs 0.1.3',preview)
     def test_installed_xp_status(self):
@@ -115,8 +115,8 @@ class SiteChecks(unittest.TestCase):
             self.assertIn(phrase, xp)
         for stale in ['Not installed', 'awaiting installation', 'prepared update']:
             self.assertNotIn(stale, xp)
-        self.assertRegex(self.text, r'<td>WeekendXP<small[^>]*>Planned: ExcelWeekendXP</small></td><td>1\.0\.2</td>')
-        self.assertIn('<td>mcMMO</td><td>2.3.003-WRV-XP-2</td>', self.text)
+        self.assertRegex(self.text, r'<td>ExcelWeekendXP \(WeekendXP\)<small[^>]*>Created by us</small></td><td>1\.0\.2</td>')
+        self.assertIn('<td>Excel XP (mcMMO)<small class="plugin-next">Modified by us · upstream mcMMO</small></td><td>2.3.003-WRV-XP-2</td>', self.text)
     def test_installed_map_status(self):
         panel = self.text.split('id="panel-player-map"', 1)[1].split('id="panel-world-map"', 1)[0]
         self.assertIn('ExcelPlayerMap 0.2.1 is installed on the family server.', panel)
@@ -127,15 +127,28 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('Sharing, zoom, locking, portals, and wider gameplay checks remain pending.', panel)
         self.assertNotIn('WRVPlayerMap 0.2.0 is not installed', panel)
         self.assertNotIn('prepared prototype', panel)
-        self.assertRegex(self.text, r'<td>ExcelPlayerMap<small[^>]*>Previously: WRVPlayerMap</small></td><td>0\.2\.1</td>')
-    def test_excel_names_distinguish_installed_and_planned(self):
-        pairs = {'BedrockMenu':'ExcelBedrockMenu', 'Leaderboard':'ExcelLeaderboard', 'MenuJoin':'ExcelMenuJoin', 'NoPhantoms':'ExcelNoPhantoms', 'RestartCountdown':'ExcelRestartCountdown', 'ShopVillager':'ExcelShopVillager', 'WealthBoard':'ExcelWealthBoard', 'WeekendXP':'ExcelWeekendXP'}
-        for current, upcoming in pairs.items():
-            self.assertIn(f'<td>{current}<small class="plugin-next">Planned: {upcoming}</small></td>', self.text)
-        self.assertIn('WRVShops → ExcelShops', self.text)
-        self.assertIn('All remaining Excel renames are still planned.', self.text)
-        self.assertNotIn('ExcelmcMMO', self.text)
-        self.assertEqual(len(re.findall(r'<tr><td>Excel', self.text)), 2)
+        self.assertRegex(self.text, r'<td>ExcelPlayerMap \(WRVPlayerMap\)<small[^>]*>Created by us</small></td><td>0\.2\.1</td>')
+    def test_excel_names_identify_origin_without_runtime_rename(self):
+        pairs = {'BedrockMenu':'ExcelBedrockMenu', 'Leaderboard':'ExcelLeaderboard', 'MenuJoin':'ExcelMenuJoin', 'NoPhantoms':'ExcelNoPhantoms', 'RestartCountdown':'ExcelRestartCountdown', 'ShopVillager':'ExcelShopVillager', 'WealthBoard':'ExcelWealthBoard', 'WeekendXP':'ExcelWeekendXP', 'WRVPlayerMap':'ExcelPlayerMap', 'WRVShops':'ExcelShops'}
+        table=self.text.split('id="all-plugins"',1)[1].split('</section>',1)[0]
+        for original, label in pairs.items():
+            self.assertIn(f'<td>{label} ({original})<small class="plugin-next">Created by us</small></td>', table)
+        self.assertEqual(table.count('Created by us</small>'),10)
+        self.assertIn('Modified by us · upstream mcMMO',table)
+        self.assertIn('Third-party · settings customized',table)
+        self.assertIn('Third-party · menu configuration by us',table)
+        self.assertIn('The wider runtime rename has been canceled.',table)
+        self.assertNotIn('Planned:',table)
+        self.assertNotIn('All remaining Excel renames are still planned.',self.text)
+        self.assertNotIn('Planned plugin name:',self.text)
+        self.assertIn('Created by us: ExcelProgression.',self.text)
+        self.assertIn('upstream mcMMO authors retain credit',self.text)
+    def test_java_menu_removal_keeps_bedrock_pending(self):
+        panel=self.text.split('id="panel-server-menu-compass"',1)[1].split('id="panel-leaderboards"',1)[0]
+        self.assertIn('removed from the Java menu',panel)
+        self.assertIn('Bedrock menu still has that button',panel)
+        self.assertIn('removal is prepared but not installed',panel)
+        self.assertIn('Jobs earnings, balances and the Spawn Shop’s balance display are unchanged.',panel)
     def test_user_reported_display_acceptance_is_narrow(self):
         panel = self.text.split('id="panel-player-map"', 1)[1].split('id="panel-world-map"', 1)[0]
         xp = self.text.split('id="mcmmo-xp-preview"', 1)[1].split('</section>', 1)[0]

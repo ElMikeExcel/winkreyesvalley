@@ -177,7 +177,7 @@ OUTRO = '''
         <li><code>/xpbonus toggle</code> switches future notifications on or off</li>
       </ul>
       <p class="note"><b>Temporary indicator installed October 12:</b> the three-second setting and startup were verified. The server owner personally tested it on October 12 and reported that it worked. This is a basic user-reported pass; identified Java/Bedrock coverage, precise timing and edge-case checks remain open. <code>/xpbonus status</code> still reports your factors in chat without opening the bar.</p>
-      <p class="note"><b>Planned plugin name: ExcelWeekendXP.</b> The installed weekend plugin is still WeekendXP 1.0.2. mcMMO keeps its original name.</p>
+      <p class="note"><b>Created by us: ExcelWeekendXP (WeekendXP).</b> <b>Modified by us: Excel XP (mcMMO).</b> These are website/GitHub labels for our weekend add-on and our changes to upstream mcMMO. Installed names remain WeekendXP 1.0.2 and mcMMO; upstream mcMMO authors retain credit for the original plugin.</p>
       <p>Your shown/hidden preference is saved for later joins. If a factor is unexpected, check that your teammate is in the same party and world, is close enough, and that the status command does not show a permission or area restriction.</p>
       <details class="skill-notes"><summary>Which green-bar XP counts?</summary>
         <p>The bonus applies to eligible, positive XP-orb pickups <b>after Mending</b>. It boosts the points left for your green bar, not Mending repairs. Normal identified gameplay sources include mining, mob drops, fishing, furnace output, breeding, trading, bottles o' enchanting, and grindstones.</p>
