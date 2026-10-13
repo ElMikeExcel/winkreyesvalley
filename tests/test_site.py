@@ -167,6 +167,16 @@ class SiteChecks(unittest.TestCase):
         self.assertNotIn('Jobs only pay money',jobs)
         self.assertIn('<b>Difficulty: Normal</b> in the Overworld, Nether, and End',self.text)
         self.assertIn('EliteMobs settings were unchanged',self.text)
+    def test_installed_mobile_wealthboard_instructions(self):
+        panel=self.text.split('id="panel-leaderboards"',1)[1].split('id="panel-no-phantoms"',1)[0]
+        for phrase in ['WealthBoard 1.3.0-mobile.1 is installed.', 'Welcome!', 'Wealth in chat', 'full name appears on its own ranked line', 'balance on the following line', 'same for Java and Bedrock', 'no permanent sidebar', 'no shortened names', '/leaderboard', '/baltop', '/mctop', 'Go earn!', 'Actual phone-screen confirmation is still pending.', 'Leave and rejoin', 'PLAYER-GUIDE.md']:
+            self.assertIn(phrase,panel)
+        self.assertIn('<td>ExcelWealthBoard (WealthBoard)<small class="plugin-next">Created by us</small></td><td>1.3.0-mobile.1</td>',self.text)
+        changelog=self.text.split('id="changelog"',1)[1]
+        self.assertLess(changelog.index('Oct 13, 2026'),changelog.index('Oct 12, 2026'))
+        self.assertIn('WealthBoard 1.3.0-mobile.1',changelog)
+        for stale in ['not installed', 'undeployed candidate', 'passed on every device']:
+            self.assertNotIn(stale,panel)
     def test_local_assets_exist(self):
         for tag,a in self.page.nodes:
             if tag not in ['script','link']:continue
