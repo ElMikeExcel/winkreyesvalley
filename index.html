@@ -1477,25 +1477,25 @@
     <div class="panel" role="tabpanel" id="panel-leaderboards" aria-labelledby="tab-leaderboards" tabindex="0">
       <h3>Leaderboards: who's on top</h3>
       <p class="note"><b>Created by us:</b> ExcelLeaderboard (Leaderboard) and ExcelWealthBoard (WealthBoard). The original names still appear in the installed plugin list.</p>
-      <p><b>WealthBoard 1.3.0-mobile.1 is installed.</b> When you join, a short <b>Welcome!</b> message appears with <b>Wealth in chat</b> beneath it. Open chat to see the three richest players.</p>
-      <p>Each player's full name appears on its own ranked line, with their balance on the following line. Long names can wrap in chat instead of running off the edge of the title. The layout is the same for Java and Bedrock, with no permanent sidebar and no shortened names.</p>
+      <p><b>WealthBoard 1.3.0-mobile.6 is installed.</b> When you join, the <b>Wink Reyes Valley</b> welcome popup appears once you are in the world, with the three richest players shown underneath it.</p>
+      <p>The three rankings take turns underneath the title, one at a time, a few seconds each, so every full name and balance fits on a phone screen instead of running off the edge. The layout is the same for Java and Bedrock, with no permanent sidebar and no shortened names.</p>
       <p><b>What you can type:</b></p>
       <ul class="cmds">
         <li><code>/leaderboard</code> reopens the full wealth and mcMMO boards</li>
         <li><code>/baltop</code> shows the wealth rankings</li>
         <li><code>/mctop</code> shows the mcMMO rankings</li>
       </ul>
-      <p>If there are no recorded balances yet, the subtitle says <b>Go earn!</b> and chat explains that the board is empty.</p>
+      <p>If there are no recorded balances yet, the popup says <b>No balances yet - go earn!</b></p>
       <div class="howto" id="wealthboard-mobile-check">
         <h4>Check the display on your phone</h4>
-        <p><b>Actual phone-screen confirmation is still pending.</b> The installed update uses short title text and separate chat lines; please check how it looks on your device.</p>
+        <p><b>Phone-screen confirmation passed October 13.</b> The server owner checked the popup on his phone: the Wink Reyes Valley title shows with each ranking readable underneath it. A Java screen check is still to come.</p>
         <ol class="guide-steps">
-          <li>Leave and rejoin the server, then check that the short welcome message fits.</li>
-          <li>Open chat and confirm that each ranked name and the balance beneath it are readable.</li>
+          <li>Leave and rejoin the server, then wait a few seconds after you are in the world for the welcome popup.</li>
+          <li>Watch the rankings take turns underneath the title and confirm each name and balance is readable.</li>
           <li>Type <code>/leaderboard</code> to reopen the full boards.</li>
         </ol>
       </div>
-      <p><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/fix/wealthboard-mobile-2026-10-13/WealthBoard/PLAYER-GUIDE.md" target="_blank" rel="noopener noreferrer">Read the WealthBoard player instructions on GitHub</a>.</p>
+      <p><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/fix/wealthboard-popup-cycle-2026-10-13/WealthBoard/PLAYER-GUIDE.md" target="_blank" rel="noopener noreferrer">Read the WealthBoard player instructions on GitHub</a>.</p>
     </div>
     <div class="panel" role="tabpanel" id="panel-no-phantoms" aria-labelledby="tab-no-phantoms" tabindex="0">
       <h3>No Phantoms</h3>
@@ -1612,7 +1612,7 @@
         <tr><td>ViaBackwards</td><td>5.12.1</td><td>Lets older game versions join.</td></tr>
         <tr><td>ViaVersion</td><td>5.12.1</td><td>Lets newer game versions join.</td></tr>
         <tr><td>ExcelPlayerMap (WRVPlayerMap)<small class="plugin-next">Created by us</small></td><td>0.2.1</td><td>Adds compact player names and arrows to ordinary maps; preserves existing enrolled maps.</td></tr>
-        <tr><td>ExcelWealthBoard (WealthBoard)<small class="plugin-next">Created by us</small></td><td>1.3.0-mobile.1</td><td>Short welcome popup and full richest-player names with balances in chat.</td></tr>
+        <tr><td>ExcelWealthBoard (WealthBoard)<small class="plugin-next">Created by us</small></td><td>1.3.0-mobile.6</td><td>Wink Reyes Valley welcome popup with the three richest players cycling underneath it, sized to fit phone screens.</td></tr>
         <tr><td>ExcelWeekendXP (WeekendXP)<small class="plugin-next">Created by us</small></td><td>1.0.2</td><td>Weekend bonuses for eligible skill XP and green-bar XP.</td></tr>
         <tr><td>floodgate</td><td>2.2.5</td><td>Lets phone, tablet, and console players join without a computer account.</td></tr>
         <tr><td>Excel XP (mcMMO)<small class="plugin-next">Modified by us · upstream mcMMO</small></td><td>2.3.003-WRV-XP-2</td><td>Skills that get better with practice, Together XP bonuses, and the /xpbonus indicator.</td></tr>
@@ -1642,6 +1642,7 @@
     <details open>
       <summary>Oct 13, 2026</summary>
       <ul>
+        <li>Updated <b>WealthBoard to 1.3.0-mobile.6</b>, replacing the mobile.1 layout described in the next entry. The join popup is the <b>Wink Reyes Valley</b> title again, with the top three richest players shown underneath it one at a time so full names and balances fit on phone screens. The owner confirmed the display on his phone; a Java screen check is still to come. Details in the <a href="#panel-leaderboards">leaderboard instructions</a>.</li>
         <li>Installed <b>WealthBoard 1.3.0-mobile.1</b> and updated the <a href="#panel-leaderboards">leaderboard instructions</a>. Joining now shows a short <b>Welcome!</b> / <b>Wealth in chat</b> popup, with the top three full names on separate ranked chat lines and each balance underneath. Existing leaderboard commands remain available. <b>Actual phone-screen confirmation is still pending.</b></li>
       </ul>
     </details>
