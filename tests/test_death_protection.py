@@ -1,4 +1,4 @@
-"""Regression checks for the installed two-tier Death Protection instructions."""
+"""Regression checks for the installed 0.1.3 one-item review instructions."""
 from pathlib import Path
 import unittest
 
@@ -14,20 +14,17 @@ class DeathProtectionChecks(unittest.TestCase):
         cls.history = cls.text.split('<section id="changelog">', 1)[1]
 
     def test_installed_version_has_explicit_acceptance_limits(self):
-        for phrase in ['ExcelDeathProtection 0.1.2 is installed, October 13, 2026.',
-                       'Java checks, remaining phone UI checks, real purchases and gameplay acceptance are still pending for 0.1.2.',
-                       'Successful startup is not a gameplay pass.']:
+        for phrase in ['ExcelDeathProtection 0.1.3 is installed, October 13, 2026.',
+                       'Java and Bedrock-phone review-window checks, real purchases and gameplay acceptance are still pending for 0.1.3.',
+                       'Startup and automated tests do not prove the in-game experience.']:
             self.assertIn(phrase, self.guide)
         self.assertNotIn('Bedrock phone test passed', self.current)
-        self.assertNotIn('ExcelDeathProtection 0.1.1 is installed', self.current)
-        self.assertIn('<td>ExcelDeathProtection<small class="plugin-next">Created by us</small></td><td>0.1.2</td>', self.current)
+        self.assertNotIn('ExcelDeathProtection 0.1.2 is installed', self.current)
+        self.assertIn('<td>ExcelDeathProtection<small class="plugin-next">Created by us</small></td><td>0.1.3</td>', self.current)
 
     def test_limited_phone_report_does_not_claim_full_acceptance(self):
-        for phrase in ["both shop entries look good on his phone",
-                       "These single-item purchases do not open the quantity window",
-                       "the owner accepts that flow", "Known feedback issue:",
-                       "exact amount missing", "still needs checking"]:
-            self.assertIn(phrase, self.guide)
+        self.assertIn('earlier 0.1.2 phone check covered shop-entry appearance only', self.guide)
+        self.assertIn('earlier 0.1.2 phone appearance report does not validate this new review window', self.history)
         self.assertNotIn("phone test passed", self.guide)
 
     def test_basic_is_immediate_without_item_or_powers(self):
@@ -47,12 +44,21 @@ class DeathProtectionChecks(unittest.TestCase):
         self.assertIn('<tr><td>1 +Death Protection Potion (drink later)</td><td>$30,000</td></tr>', self.current)
         self.assertNotIn('<tr><td>1 Death Protection Potion</td><td>$15,000</td></tr>', self.current)
 
-    def test_quote_requires_same_option_and_price_confirmation(self):
-        for phrase in ['first click or tap', "quoted price and charges nothing",
-                       'the same option again within 20 seconds', 'confirm and buy at that quoted price',
-                       'a changed price needs a fresh confirmation', 'These prices are in-game money.']:
+    def test_fixed_one_review_exposes_balance_and_shortfall(self):
+        for phrase in ['review window opens with quantity fixed at 1', 'product, price, your available balance',
+                       'money you would have left', 'Need $… more', 'disables purchasing',
+                       'Prices use in-game money']:
             self.assertIn(phrase, self.guide)
-        self.assertIn('use their own two-click price confirmation', self.current)
+        self.assertNotIn('two-click price confirmation', self.current)
+        self.assertNotIn('the same option again within 20 seconds', self.current)
+
+    def test_only_confirm_buys_and_refresh_requires_separate_confirm(self):
+        for phrase in ['Only Confirm buys:', 'current price, funds, eligibility and inventory space',
+                       'Opening the review, repeating a buy command, refreshing, going Back or closing it never buys anything.',
+                       'Back to Spawn Shop', 'cancels the review', 'review expires after 20 seconds',
+                       'tap the disabled button to refresh the review, then use a separate Confirm',
+                       'Refreshing itself does not charge you', 'about once per second']:
+            self.assertIn(phrase, self.guide)
 
     def test_shared_limits_and_legacy_entitlements(self):
         for phrase in ['keep your inventory once', "Neither option saves your XP; the server's normal XP rules still apply.",
@@ -64,9 +70,11 @@ class DeathProtectionChecks(unittest.TestCase):
             self.assertIn(phrase, self.guide)
 
     def test_new_entry_precedes_preserved_historical_versions(self):
+        latest = self.history.index('Installed <b>ExcelDeathProtection 0.1.3</b>')
         installed = self.history.index('Installed <b>ExcelDeathProtection 0.1.2</b>')
         previous = self.history.index('Updated <b>ExcelDeathProtection to 0.1.1</b>')
         first = self.history.index('Installed <b>ExcelDeathProtection 0.1.0</b>')
+        self.assertLess(latest, installed)
         self.assertLess(installed, previous)
         self.assertLess(previous, first)
         self.assertIn('Bedrock phone test passed', self.history)
