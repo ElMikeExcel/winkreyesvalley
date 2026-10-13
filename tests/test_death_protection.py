@@ -15,12 +15,20 @@ class DeathProtectionChecks(unittest.TestCase):
 
     def test_installed_version_has_explicit_acceptance_limits(self):
         for phrase in ['ExcelDeathProtection 0.1.2 is installed, October 13, 2026.',
-                       'Java and Bedrock-phone screens, real purchases and gameplay checks are still pending for 0.1.2.',
+                       'Java checks, remaining phone UI checks, real purchases and gameplay acceptance are still pending for 0.1.2.',
                        'Successful startup is not a gameplay pass.']:
             self.assertIn(phrase, self.guide)
         self.assertNotIn('Bedrock phone test passed', self.current)
         self.assertNotIn('ExcelDeathProtection 0.1.1 is installed', self.current)
         self.assertIn('<td>ExcelDeathProtection<small class="plugin-next">Created by us</small></td><td>0.1.2</td>', self.current)
+
+    def test_limited_phone_report_does_not_claim_full_acceptance(self):
+        for phrase in ["both shop entries look good on his phone",
+                       "These single-item purchases do not open the quantity window",
+                       "the owner accepts that flow", "Known feedback issue:",
+                       "exact amount missing", "still needs checking"]:
+            self.assertIn(phrase, self.guide)
+        self.assertNotIn("phone test passed", self.guide)
 
     def test_basic_is_immediate_without_item_or_powers(self):
         for phrase in ['Death Protection — $15,000',
