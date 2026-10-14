@@ -86,7 +86,7 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('Oct 9, 2026', self.text)
     def test_installed_shop_controls_and_acceptance_limits(self):
         shop=self.text.split('id="panel-shops"',1)[1].split('id="panel-shopkeepers"',1)[0]
-        for phrase in ['ExcelShops 0.1.4 is running on its own; ChestShop has been removed.', '/excelshop setup', '/excelshop manage', '/wrvshop', 'Confirm purchase', 'Confirm and publish shop', 'The Jobs item shop and two purchasing example menus are paused.', '[Excel Shop]', '[WRV Shop]', 'PLAYER-CHECKLIST.md', 'A second player buying from that chest shop']:
+        for phrase in ['ExcelShops 0.1.6 is running on its own; ChestShop has been removed.', '/excelshop setup', '/excelshop manage', '/wrvshop', 'Confirm purchase', 'Confirm and publish shop', 'The Jobs item shop and two purchasing example menus are paused.', '[Excel Shop]', '[WRV Shop]', 'PLAYER-CHECKLIST.md', 'A second player buying from that chest shop']:
             self.assertIn(phrase, shop)
         for stale in ['not installed yet', 'Preview:', 'prepared update', 'Those pauses are not live yet', 'just tap (right-click) the sign', 'To sell to it, hit (left-click)']:
             self.assertNotIn(stale,shop)
@@ -95,18 +95,18 @@ class SiteChecks(unittest.TestCase):
         self.assertNotIn('Line 1: leave it empty',shop)
         self.assertNotIn('Confirm Sell',shop)
         self.assertNotIn('no fix is installed yet',shop)
-        self.assertIn('The human Java cursor retest is still pending.',shop)
+        self.assertIn('Human Java cursor behavior remains unverified; no new player test is being requested.',shop)
         self.assertIn('update the existing inventory instead of closing and reopening it',shop)
         self.assertIn('Chat-number entry is not a verified Java workaround',shop)
         self.assertIn('Both the shop chest and its attached sign open the UI',shop)
         self.assertNotIn('/excelshop amount 19',shop)
-        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td>0.1.4</td>',self.text)
+        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td>0.1.6</td>',self.text)
         self.assertNotIn('<td>ChestShop</td>',self.text)
     def test_typed_amount_installed_with_pending_device_checks(self):
         preview=self.text.split('id="shop-amount-preview"',1)[1].split('</div>',1)[0]
-        for phrase in ['ExcelShops 0.1.4 is installed.', 'Real Java/Bedrock display and input checks are still pending', 'Enter Amount', 'Use amount', '0.50', '19', '60 seconds', 'Escape is disabled', 'Bedrock keeps its native number forms', '0322d8ade7fe2a1a29ea20e70e1c8c9ebda6a465', 'AMOUNT-ENTRY-0.1.4.md', 'All-device checks are pending', 'console/controller', 'instead of a Java-only dialog', '70000']:
+        for phrase in ['ExcelShops 0.1.6 is installed.', 'Real Java/Bedrock display and input behavior remains unverified', 'Enter Amount', 'Use amount', '0.50', '19', '60 seconds', 'Escape is disabled', 'Bedrock keeps its native number forms', '0322d8ade7fe2a1a29ea20e70e1c8c9ebda6a465', 'AMOUNT-ENTRY-0.1.4.md', 'Real-device behavior remains unverified', 'console/controller', 'instead of a Java-only dialog', '70000']:
             self.assertIn(phrase,preview)
-        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td>0.1.4</td>',self.text)
+        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td>0.1.6</td>',self.text)
         self.assertNotIn('not installed',preview)
         self.assertNotIn('server still runs 0.1.3',preview)
     def test_installed_xp_status(self):
