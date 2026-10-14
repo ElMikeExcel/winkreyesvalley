@@ -18,16 +18,23 @@ class CategoryGuideChecks(unittest.TestCase):
     def test_current_version_and_unverified_real_clients(self):
         self.assertIn('ExcelShops 1.0 is installed.',CURRENT)
         self.assertNotIn('ExcelShops 0.1.5',CURRENT)
-        self.assertIn('Broader Java/Bedrock input and live-purchase acceptance remain unverified.',CURRENT)
+        self.assertIn('Actual phone delivery, touch behavior and live-purchase acceptance remain unverified;',CURRENT)
         self.assertIn('no new player test is being requested',CURRENT)
         self.assertNotIn('All-device checks are pending',CURRENT)
         self.assertNotIn('Cursor update installed; player retest pending',CURRENT)
     def test_version_only_milestone_and_mobile_boundary(self):
-        self.assertIn('compiled shop behavior is identical to 0.1.6', CURRENT)
-        self.assertIn('is not included in 1.0', CURRENT)
-        self.assertIn('holding to read item descriptions feels clunky', CURRENT)
+        self.assertIn('readable native category and item lists on Bedrock', CURRENT)
+        self.assertIn('ExcelShops 1.1 is prepared, not installed.', CURRENT)
+        self.assertIn('item-specific details and an explicit category Back button', CURRENT)
+        self.assertIn('holding to read descriptions felt clunky', CURRENT)
         self.assertIn('Installed <b>ExcelShops 0.1.6</b>', TEXT)
-        self.assertIn('new mobile description/quantity/Back controls are still in development', TEXT)
+        self.assertIn('all 76 production classes are identical to 0.1.6', TEXT)
+    def test_item_identity_quantity_back_and_safe_close(self):
+        for phrase in ['view details', 'Enter exact amount', 'Review this quantity', 'Back to Food',
+                       'same item’s details', 'Closing number entry cancels safely', 'Open guarded review',
+                       'They have no quantity editor', 'A numeric phone keyboard is not guaranteed',
+                       'rather than opening unread inventory controls']:
+            self.assertIn(phrase, CURRENT)
     def test_special_purchases_keep_exact_prices(self):
         for row in ['<tr><td>1 Veil Potion (drink later)</td><td>$2,000</td></tr>',
                     '<tr><td>Death Protection (activates immediately)</td><td>$15,000</td></tr>',
