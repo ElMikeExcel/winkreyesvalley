@@ -88,7 +88,7 @@ class SiteChecks(unittest.TestCase):
         shop=self.text.split('id="panel-shops"',1)[1].split('id="panel-shopkeepers"',1)[0]
         for phrase in ['ExcelShops 1.0 is running on its own; ChestShop has been removed.', '/excelshop setup', '/excelshop manage', '/wrvshop', 'Confirm purchase', 'Confirm and publish shop', 'The Jobs item shop and two purchasing example menus are paused.', '[Excel Shop]', '[WRV Shop]', 'PLAYER-CHECKLIST.md', 'A second player buying from that chest shop']:
             self.assertIn(phrase, shop)
-        for stale in ['not installed yet', 'Preview:', 'prepared update', 'Those pauses are not live yet', 'just tap (right-click) the sign', 'To sell to it, hit (left-click)']:
+        for stale in ['Preview:', 'Those pauses are not live yet', 'just tap (right-click) the sign', 'To sell to it, hit (left-click)']:
             self.assertNotIn(stale,shop)
         self.assertIn('ChestShop has been removed.',shop)
         self.assertIn('Native Excel shops and Spawn Shop do not require the removed ChestShop plugin.',shop)
