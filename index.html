@@ -1689,7 +1689,7 @@
         <tr><td>GriefPrevention</td><td>16.18.7</td><td>Lets you claim land so nobody can wreck your stuff.</td></tr>
         <tr><td>Jobs<small class="plugin-next">Third-party · settings customized</small></td><td>5.2.6.3</td><td>Pays you money for everyday things.</td></tr>
         <tr><td>ExcelLeaderboard (Leaderboard)<small class="plugin-next">Created by us</small></td><td>1.0.0</td><td>Scoreboards showing who's on top.</td></tr>
-        <tr><td>ExcelLeaderboard<small class="plugin-next">Created by us</small></td><td>1.0</td><td>Our own boards plugin, separate from the Leaderboard scoreboards add-on above: the /leaderboard command opens a menu in the welcome popup's style with Top Miner, Top Builder, Most Playtime, Top Slayer, Top Traveler, Most Deaths and Richest. The mcMMO Power and Jobs Levels boards are waiting on a fix; Elite Coins stays hidden while elites pay real dollars.</td></tr>
+        <tr><td>ExcelLeaderboard<small class="plugin-next">Created by us</small></td><td>1.1</td><td>Our own boards plugin, separate from the Leaderboard scoreboards add-on above: the /leaderboard command opens a menu in the welcome popup's style with Top Miner, Top Builder, Most Playtime, Top Slayer, Top Traveler, Most Deaths, Richest, mcMMO Power and Jobs Levels. Elite Coins stays hidden while elites pay real dollars.</td></tr>
         <tr><td>ExcelAcrobatics<small class="plugin-next">Created by us</small></td><td>1.0</td><td>Pays mcMMO Acrobatics XP for falls mcMMO never pays for: height falls into water at the land-fall rate with a style bonus, and fatal falls that cost real XP. Paid through mcMMO itself; Builder Mode sessions never pay.</td></tr>
         <tr><td>LuckPerms</td><td>5.5.87</td><td>Decides who is allowed to do what.</td></tr>
         <tr><td>ExcelMenuJoin (MenuJoin)<small class="plugin-next">Created by us</small></td><td>1.2.0</td><td>Gives you the menu compass.</td></tr>
@@ -1730,6 +1730,12 @@
     <h2>Change log</h2>
     <p>What's new on the server, newest first. Older entries describe the status at that point in time.</p>
     <details open>
+      <summary>Oct 15, 2026</summary>
+      <ul>
+        <li>Updated <b>ExcelLeaderboard to 1.1</b> just after midnight. The two boards hidden in 1.0, <b>mcMMO Power and Jobs Levels, are now live</b>: their connection checks were rewritten against the hooks that actually exist in the installed mcMMO and Jobs versions, verified against those plugins' own files before shipping, and both checks passed at startup on the live server. Nine of the ten boards now show; <b>Elite Coins stays hidden on purpose</b> while EliteMobs pays real dollars, since Richest already covers that money. The 1.0 jar is kept on the server as the rollback. <b>Still to check in game:</b> opening /leaderboard, and a calibration jump to confirm the Acrobatics payout size.</li>
+      </ul>
+    </details>
+    <details>
       <summary>Oct 14, 2026</summary>
       <ul>
         <li>Installed <b>ExcelLeaderboard 1.0</b> and <b>ExcelAcrobatics 1.0</b> late in the evening. <b>/leaderboard</b> opens a menu of boards in the welcome popup's style: Top Miner, Top Builder, Most Playtime, Top Slayer, Top Traveler and Most Deaths from the game's own statistics, plus Richest from Vault. Two boards, <b>mcMMO Power and Jobs Levels, are not showing yet</b>: the connection checks for mcMMO and Jobs did not pass against the installed versions, so those boards hid themselves rather than show wrong numbers. A 1.1 fix is built and tested and will be noted here when it is installed. <b>Elite Coins stays hidden on purpose</b> while EliteMobs pays real dollars, since Richest already covers that money. <b>ExcelAcrobatics</b> pays mcMMO Acrobatics XP for falls mcMMO never pays for: falling from height into water at the same rate as a land fall, plus a style bonus, and fatal falls that cost real XP; its awards were verified ON at startup. Honest record: the first upload of both plugins earlier that evening failed to load because of a formatting defect in their description files; the server ran normally without them, and the corrected files are what this restart installed. <b>Still to check in game:</b> opening /leaderboard, and a calibration jump to confirm the Acrobatics payout size.</li>
