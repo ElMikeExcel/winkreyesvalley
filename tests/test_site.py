@@ -86,7 +86,7 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('Oct 9, 2026', self.text)
     def test_installed_shop_controls_and_acceptance_limits(self):
         shop=self.text.split('id="panel-shops"',1)[1].split('id="panel-shopkeepers"',1)[0]
-        for phrase in ['ExcelShops 1.0 is running on its own; ChestShop has been removed.', '/excelshop setup', '/excelshop manage', '/wrvshop', 'Confirm purchase', 'Confirm and publish shop', 'The Jobs item shop and two purchasing example menus are paused.', '[Excel Shop]', '[WRV Shop]', 'PLAYER-CHECKLIST.md', 'A second player buying from that chest shop']:
+        for phrase in ['ExcelShops 1.1 is running on its own; ChestShop has been removed.', '/excelshop setup', '/excelshop manage', '/wrvshop', 'Confirm purchase', 'Confirm and publish shop', 'The Jobs item shop and two purchasing example menus are paused.', '[Excel Shop]', '[WRV Shop]', 'PLAYER-CHECKLIST.md', 'a second player buying from a chest shop']:
             self.assertIn(phrase, shop)
         for stale in ['Preview:', 'Those pauses are not live yet', 'just tap (right-click) the sign', 'To sell to it, hit (left-click)']:
             self.assertNotIn(stale,shop)
@@ -95,18 +95,19 @@ class SiteChecks(unittest.TestCase):
         self.assertNotIn('Line 1: leave it empty',shop)
         self.assertNotIn('Confirm Sell',shop)
         self.assertNotIn('no fix is installed yet',shop)
-        self.assertIn('Human Java cursor behavior remains unverified; no new player test is being requested.',shop)
+        self.assertIn('Java cursor checks are still open.',shop)
         self.assertIn('update the existing inventory instead of closing and reopening it',shop)
-        self.assertIn('Chat-number entry is not a verified Java workaround',shop)
+        self.assertNotIn('Chat-number entry is not a verified Java workaround',shop)
+        self.assertIn('Chat-number entry is not a verified Java workaround',self.text.split('id="changelog"',1)[1])
         self.assertIn('Both the shop chest and its attached sign open the UI',shop)
         self.assertNotIn('/excelshop amount 19',shop)
-        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td>1.0</td>',self.text)
+        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td>1.1</td>',self.text)
         self.assertNotIn('<td>ChestShop</td>',self.text)
     def test_typed_amount_installed_with_pending_device_checks(self):
         preview=self.text.split('id="shop-amount-preview"',1)[1].split('</div>',1)[0]
-        for phrase in ['ExcelShops 1.0 is installed.', 'Real Java/Bedrock display and input behavior remains unverified', 'Enter Amount', 'Use amount', '0.50', '19', '60 seconds', 'Escape is disabled', 'Bedrock keeps its native number forms', '0322d8ade7fe2a1a29ea20e70e1c8c9ebda6a465', 'AMOUNT-ENTRY-0.1.4.md', 'Real-device behavior remains unverified', 'console/controller', 'instead of a Java-only dialog', '70000']:
+        for phrase in ['ExcelShops 1.1 is installed.', 'Mike confirmed the Bedrock phone flow on October 14, 2026; Java display and input checks are still open.', 'Enter Amount', 'Use amount', '0.50', '19', '60 seconds', 'Escape is disabled', 'Bedrock keeps its native number forms', '0322d8ade7fe2a1a29ea20e70e1c8c9ebda6a465', 'AMOUNT-ENTRY-0.1.4.md', 'Other device checks are still open', 'console/controller', 'instead of a Java-only dialog', '70000']:
             self.assertIn(phrase,preview)
-        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td>1.0</td>',self.text)
+        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td>1.1</td>',self.text)
         self.assertNotIn('not installed',preview)
         self.assertNotIn('server still runs 0.1.3',preview)
     def test_installed_xp_status(self):
@@ -169,9 +170,13 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('EliteMobs settings were unchanged',self.text)
     def test_installed_mobile_wealthboard_instructions(self):
         panel=self.text.split('id="panel-leaderboards"',1)[1].split('id="panel-no-phantoms"',1)[0]
-        for phrase in ['WealthBoard 1.3.0-mobile.1 is installed.', 'Welcome!', 'Wealth in chat', 'full name appears on its own ranked line', 'balance on the following line', 'same for Java and Bedrock', 'no permanent sidebar', 'no shortened names', '/leaderboard', '/baltop', '/mctop', 'Go earn!', 'Actual phone-screen confirmation is still pending.', 'Leave and rejoin', 'PLAYER-GUIDE.md']:
+        for phrase in ['WealthBoard 1.3.0-mobile.7 is installed.', 'Wink Reyes Valley',
+                       'each full name and balance readable', 'same for Java and Bedrock',
+                       'no permanent sidebar', 'no shortened names', '/leaderboard', '/baltop', '/mctop',
+                       'No balances yet - go earn!', 'Phone-screen confirmation passed October 13.',
+                       'What you should see when you join', 'PLAYER-GUIDE.md']:
             self.assertIn(phrase,panel)
-        self.assertIn('<td>ExcelWealthBoard (WealthBoard)<small class="plugin-next">Created by us</small></td><td>1.3.0-mobile.1</td>',self.text)
+        self.assertIn('<td>ExcelWealthBoard (WealthBoard)<small class="plugin-next">Created by us</small></td><td>1.3.0-mobile.7</td>',self.text)
         changelog=self.text.split('id="changelog"',1)[1]
         self.assertLess(changelog.index('Oct 13, 2026'),changelog.index('Oct 12, 2026'))
         self.assertIn('WealthBoard 1.3.0-mobile.1',changelog)
