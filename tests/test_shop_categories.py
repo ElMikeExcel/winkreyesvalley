@@ -15,23 +15,24 @@ class CategoryGuideChecks(unittest.TestCase):
                        'Browsing, Back and Cancel never purchase', 'separate final <b>Confirm purchase</b>',
                        '<code>/shop</code> opens the categories', 'standalone ordinary-item catalog as a fallback']:
             self.assertIn(phrase,CURRENT)
-    def test_current_version_and_unverified_real_clients(self):
-        self.assertIn('ExcelShops 1.0 is installed.',CURRENT)
-        self.assertNotIn('ExcelShops 0.1.5',CURRENT)
-        self.assertIn('Actual phone delivery, touch behavior and live-purchase acceptance remain unverified;',CURRENT)
-        self.assertIn('no new player test is being requested',CURRENT)
-        self.assertNotIn('All-device checks are pending',CURRENT)
-        self.assertNotIn('Cursor update installed; player retest pending',CURRENT)
-    def test_version_only_milestone_and_mobile_boundary(self):
-        self.assertIn('readable native category and item lists on Bedrock', CURRENT)
-        self.assertIn('ExcelShops 1.1 is prepared, not installed.', CURRENT)
-        self.assertIn('item-specific details and an explicit category Back button', CURRENT)
-        self.assertIn('holding to read descriptions felt clunky', CURRENT)
+    def test_current_version_and_narrow_phone_confirmation(self):
+        self.assertIn('ExcelShops 1.1 is installed.', CURRENT)
+        self.assertIn('Mike checked the new shop on his phone on October 14, 2026 and confirmed the flow works.', CURRENT)
+        self.assertIn('A live purchase with money movement, and a second player buying from a chest shop, have not been verified yet.', CURRENT)
+        for stale in ['ExcelShops 1.0 is installed.', 'Actual phone delivery, touch behavior and live-purchase acceptance remain unverified;', 'Real-device acceptance remains unverified']:
+            self.assertNotIn(stale, CURRENT)
+    def test_installed_mobile_controls_and_preserved_milestone(self):
+        for phrase in ['readable native category and item lists on Bedrock',
+                       'Bedrock shop controls (ExcelShops 1.1): read first, then choose the amount',
+                       'Installed October 14, 2026.', 'Review purchase', 'Are you sure?']:
+            self.assertIn(phrase, CURRENT)
+        self.assertNotIn('ExcelShops 1.1 is prepared, not installed.', CURRENT)
+        self.assertNotIn('Prepared for 1.1', CURRENT)
         self.assertIn('Installed <b>ExcelShops 0.1.6</b>', TEXT)
         self.assertIn('all 76 production classes are identical to 0.1.6', TEXT)
     def test_item_identity_quantity_back_and_safe_close(self):
         for phrase in ['view details', 'Enter exact amount', 'Review this quantity', 'Back to Food',
-                       'same item’s details', 'Closing number entry cancels safely', 'Open guarded review',
+                       'same item’s details', 'closing number entry cancels safely', 'Open guarded review',
                        'They have no quantity editor', 'A numeric phone keyboard is not guaranteed',
                        'rather than opening unread inventory controls']:
             self.assertIn(phrase, CURRENT)
