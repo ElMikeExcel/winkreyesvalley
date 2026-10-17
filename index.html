@@ -54,15 +54,30 @@
         <ol><li>Multiplayer, then Add Server</li><li>Address: <b>winkreyes.duckdns.org:20795</b></li></ol>
       </article>
       <article class="card">
-        <h3>Xbox, PlayStation, Switch</h3>
+        <h3>Xbox, PlayStation</h3>
         <ol>
-          <li>In your console network settings, set primary DNS to <b>104.238.130.180</b> and secondary to <b>8.8.8.8</b> (this is the public <a href="https://github.com/Pugmatt/BedrockConnect">BedrockConnect</a> helper, not our server)</li>
+          <li>In your console network settings, set the DNS by hand. Xbox primary: <b>104.238.130.180</b>. PlayStation primary: <b>45.55.68.52</b>. Secondary for both: <b>8.8.8.8</b> (these reach the public <a href="https://github.com/Pugmatt/BedrockConnect">BedrockConnect</a> helper, not our server)</li>
           <li>Restart Minecraft, then go to Servers</li>
           <li>Join one of these featured servers: <b>The Hive, Lifeboat, Mineville, Galaxite or Enchanted</b>. Other featured servers, like CubeCraft, will not work</li>
-          <li>The BedrockConnect menu opens. Pick <b>Connect to a Server</b></li>
-          <li>Enter <b>winkreyes.duckdns.org</b>, port <b>20795</b></li>
+          <li>The BedrockConnect menu opens instead of the featured server. Pick <b>Connect to a Server</b></li>
+          <li>Address: <b>winkreyes.duckdns.org</b> (address only, no port at the end). Port: <b>20795</b></li>
         </ol>
-        <p class="note"><b>Stuck?</b> Restart the console and Minecraft after changing DNS. If the featured server just opens normally with no menu, your home network may be using IPv6 or a content filter, so set the DNS on your router instead. On PlayStation, try <b>45.55.68.52</b> as the primary DNS. Set your DNS back to automatic later if you want.</p>
+        <p class="note"><b>Stuck?</b> Restart the console and Minecraft after changing DNS. If the featured server just opens normally with no menu, the home network may be using IPv6 or filtering DNS; ask before changing router settings. Leave the DNS on manual if you want to join again: switching it back to automatic turns this join route off.</p>
+      </article>
+      <article class="card">
+        <h3>Nintendo Switch</h3>
+        <p>Before you start: you need Nintendo Switch Online for internet play, and Minecraft signed in with a Microsoft account (your gamertag showing on the title screen). Switch has no Add Server button for this server, so use these steps:</p>
+        <ol>
+          <li>On the HOME screen, open System Settings, then Internet, then Internet Settings</li>
+          <li>Under Registered Networks, pick the Wi-Fi you are using, then Change Settings</li>
+          <li>Pick DNS Settings, then Manual. Primary DNS: <b>104.238.130.180</b>. Secondary DNS: <b>8.8.8.8</b> (the public <a href="https://github.com/Pugmatt/BedrockConnect">BedrockConnect</a> helper, not our server)</li>
+          <li>Save, then pick Connect to This Network. DNS is saved per Wi-Fi network, so a different network needs its own change</li>
+          <li>Close Minecraft and open it again. Pick Play, then Servers</li>
+          <li>Join one of these featured servers: <b>The Hive, Lifeboat, Mineville, Galaxite or Enchanted</b>. Do not use CubeCraft; it will not open the right menu</li>
+          <li>A BedrockConnect screen opens instead of the featured server. Pick <b>Connect to a Server</b></li>
+          <li>Address: <b>winkreyes.duckdns.org</b> (address only, do not add :20795). Port: <b>20795</b>. Pick Connect</li>
+        </ol>
+        <p class="note">Success means you land in the Wink Reyes Valley village. <b>Stuck?</b> If the featured server opens normally, go back, open Servers again, and try another server from the list. If Servers says Coming Soon, sign out of your Microsoft account in Minecraft, sign back in, reload Servers, and restart Minecraft. Leave the DNS on manual if you want to join again: changing it back to automatic turns this join route off.</p>
       </article>
     </div>
   </section>
@@ -1741,6 +1756,7 @@
     <details open>
       <summary>Oct 16, 2026</summary>
       <ul>
+        <li><b>Console join instructions fixed (October 16):</b> the How to join section now gives Nintendo Switch its own full steps (Microsoft account and Nintendo Switch Online first, the exact DNS settings path, and the BedrockConnect menu), and PlayStation now starts on the <b>45.55.68.52</b> BedrockConnect address. Switch players: there is no Add Server button; the DNS steps are the way in.</li>
         <li><b>WorldEdit max radius raised from 21 to 50 (October 16):</b> the server-wide WorldEdit shape limit is now a maximum radius of 50; the 5,000-block per-operation cap is unchanged.</li>
         <li><b>Website audit and wording fix (not a server change):</b> everywhere the guide talks about devices it now says phone, iPad or tablet (plus PC, Mac and console). Also corrected: the Together range is 50 blocks (was shown as 32), the server menu button list, the Builder Mode page (now ExcelBuildMode 1.3, WorldEdit max radius 21), and the in-game results reported tonight.</li>
         <li><b>Built, NOT installed: ExcelWeekendXP 1.2.0</b> adds Friday, so the 1.2x weekend bonus would run all day Friday, Saturday and Sunday (Central time). 30 automated tests pass. It will go in when the server is empty. <b>UNTESTED live.</b> Until then the live bonus is Saturday and Sunday only (ExcelWeekendXP 1.1.0).</li>
