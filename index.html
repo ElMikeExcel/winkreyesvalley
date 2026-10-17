@@ -80,7 +80,7 @@
   <section>
     <h2>What's on the server</h2>
     <div class="cards feats">
-      <div class="card"><h3>RPG skills</h3><p>Level up with mcMMO. Unlock new abilities as you mine, explore, and build. <a href="#panel-mcmmo">Explore the skills</a>.</p></div>
+      <div class="card"><h3>RPG skills</h3><p>Level up with mcMMO. Unlock new abilities as you mine, explore, and build. <a href="#panel-mcmmo">Explore the skills</a>. <a href="#skill-trees">See the Skill Trees page</a>.</p></div>
       <div class="card"><h3>Earn in-game cash</h3><p>Earn in-game cash from doing anything you like, and spend it in player shops.</p></div>
       <div class="card"><h3>Big adventures</h3><p>EliteMobs brings stronger monsters and boss adventures to take on together.</p></div>
       <div class="card"><h3>Land claims</h3><p>Protect your stuff with GriefPrevention. Use a golden shovel to claim land.</p></div>
@@ -126,7 +126,7 @@
     <p class="guide-kicker">The family field guide</p>
     <h3 class="guide-title">mcMMO: what will you unlock next?</h3>
     <p>Mine, fish, farm, fight, and get better as you play. Every skill has its own level, and you can work on all of them. You don't have to choose a class.</p>
-    <p>Some rewards happen automatically. Others are short boosts you switch on. Pick a skill below to see what it does, when it unlocks, and how to use it.</p>
+    <p>Some rewards happen automatically. Others are short boosts you switch on. Pick a skill below to see what it does, when it unlocks, and how to use it. For every perk on one page, see the <a href="#skill-trees">Skill Trees</a>.</p>
   </div>
   <nav class="guide-nav" aria-label="mcMMO guide sections">
     <a href="#mcmmo-skills">Explore skills</a><a href="#mcmmo-activate">Use an ability</a><a href="#mcmmo-commands">Useful commands</a><a href="#mcmmo-party">Play together</a><a href="#mcmmo-xp-preview">XP bonuses</a>
@@ -1672,6 +1672,561 @@
     </div>
   </section>
 
+  <section id="skill-trees">
+    <h2>Skill Trees</h2>
+    <p class="guide-intro">Every perk in the valley, on one page: what it does, the exact level it unlocks on this server, and how strong it is here. mcMMO skills are live right now. Magic is the next big system: it is sealed behind the Adventurers Guild seals, and its tree below is a preview of what is coming, not something you can play yet.</p>
+    <div class="st-tabs" id="st-tabs">
+      <div class="st-tabbar" role="tablist" aria-label="Skill systems">
+        <button role="tab" id="st-tab-mcmmo" aria-controls="st-panel-mcmmo" aria-selected="true">mcMMO skills · Live now</button>
+        <button role="tab" id="st-tab-magic" aria-controls="st-panel-magic" aria-selected="false">Magic · Sealed, coming with the guild</button>
+      </div>
+      <div class="panel" role="tabpanel" id="st-panel-mcmmo" aria-labelledby="st-tab-mcmmo">
+        <p class="guide-kicker">Live now · mcMMO</p>
+        <h3 class="guide-title">The mcMMO Skill Tree</h3>
+        <p>Nineteen skills and eighty-three perks, exactly as this server runs them. Levels run from 1 to 1,000 here (mcMMO Retro Mode), so most chances grow a little with every level instead of jumping in big steps. Tap a skill to walk its ladder.</p>
+        <div class="howto">
+          <h4>Check your own skills in game</h4>
+          <ul class="cmds">
+            <li><code>/mcstats</code> shows all of your skill levels on one page.</li>
+            <li><code>/mining</code> opens one skill's own page. Type any skill's name (like <code>/smelting</code> or <code>/repair</code>) to see your exact current chances for its perks.</li>
+            <li><code>/mctop</code> shows the server leaderboards.</li>
+          </ul>
+          <p><b>Unlocks announce themselves.</b> The moment you cross a perk's level, the game posts a clickable "[ mcMMO @ Skill Rank Unlocked!]" message in chat, with a sound, so you hear about new perks as you earn them. Level-ups show in the action bar and chat too.</p>
+          <p>Perks marked <b>From the start</b> have no unlock level at all: they work from your first day and quietly grow stronger as you level. That is why a bonus like Smelting's Second Smelt can feel like it appeared from nowhere. It was always on.</p>
+        </div>
+        <h4>Good to know</h4>
+        <ul>
+          <li>Bonuses stack: Friday through Sunday, mcMMO and vanilla XP earn at 1.2x (ExcelWeekendXP), and playing near your party shares mcMMO XP (ExcelTogether).</li>
+          <li>Jobs pays cash for many of the same activities, but Jobs has no level perks of its own. Its only boost is the Jobs weekend bonus: 1.2x XP and money on Saturday and Sunday.</li>
+          <li>A few perks are switched off on purpose on this family server: player-vs-player fighting is off, so the PvP perks (Daze, Disarm, Iron Grip) and the Limit Breaks never trigger. They are marked "Not active" below instead of being hidden.</li>
+          <li>Salvage is a child skill: it grows from your Repair and Fishing levels together.</li>
+        </ul>
+        <details class="st-track">
+          <summary><span class="st-title">Acrobatics</span><span class="st-blurb">Roll away fall damage, dodge attacks, and move like you mean it.</span><span class="st-meta">3 perks · all on from the start</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> surviving falls that hurt you, and dodging in combat. (Our ExcelAcrobatics plugin tunes how Acrobatics XP is earned; it does not change these perks.)</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Roll</summary><p>When fall damage hits, a chance to roll and negate it: 0.1% per level, reaching 100% at level 1000. A roll protects up to 7 damage (3 and a half hearts). Turned on in coreskills.yml.</p></details>
+              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Graceful Roll</summary><p>Sneak while falling to double your Roll chance, and a graceful roll protects up to 14 damage (7 hearts).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Dodge</summary><p>In combat, a chance to dodge and take half damage: 0.02% per level, reaching 20% at level 1000. Dodged damage is divided by 2.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Alchemy</span><span class="st-blurb">Brew faster, stretch your fuel, and unlock special potions.</span><span class="st-meta">2 perks · all on from the start</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> brewing potions.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Catalysis</summary><p>Brewing stands work faster as you level: speed ramps evenly from 1x at level 0 to 4x at level 1000.</p></details>
+              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Concoctions</summary><p>Special brewing ingredients unlock by rank. Rank 1 (level 0): the vanilla potion set. Rank 2 (100): Carrot for Potion of Haste, Slimeball for Potion of Dullness. Rank 3 (200): Quartz for Potion of Absorption. Rank 4 (350): Apple for Potion of Health Boost, Rotten Flesh for Potion of Hunger. Rank 5 (500): Brown Mushroom for Potion of Nausea, Ink Sac for Potion of Blindness. Rank 6 (750): Fern for Potion of Saturation. Rank 7 (900): Poisonous Potato for Potion of Decay. Rank 8 (1000): Golden Apple for Potion of Resistance.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Archery</span><span class="st-blurb">Arrows that hit harder, daze targets, and come back to you.</span><span class="st-meta">4 perks · all on from the start</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> shooting mobs with a bow.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Daze</summary><p>Arrows have a chance to daze a player target, forcing their view up and adding 4 damage (2 hearts): 0.05% per level, reaching 50% at level 1000. Player targets only, and server PvP is off, so this one sleeps in normal play. No rank gate in skillranks.yml; it scales from the start.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Skill Shot</summary><p>Arrows hit harder: +10% damage per rank, with ranks at levels 1, 100, 150, 200 and every 50 after, up to +200% at rank 20 (level 1000). The bonus damage itself is capped at 9 (4 and a half hearts).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Arrow Retrieval</summary><p>When you kill something with your bow, a chance to get your arrows back: 0.1% per level, reaching 100% at level 1000.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Archery Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. On this server it is dormant: Limit Break PvE is disabled in advanced.yml and server PvP is off.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Axes</span><span class="st-blurb">Chop through armor and land the big critical hits.</span><span class="st-meta">6 perks · first unlock at level 1</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> hitting mobs with an axe.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Critical Strikes</summary><p>A chance for a critical hit: 0.0375% per level, reaching 37.5% at level 1000. Crits deal double damage to mobs and 1.5x damage to players.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Armor Impact</summary><p>On a hit, a flat 25% chance to damage the target's armor. The durability damage grows with your rank (DamagePerRank 6.5, ranks at 1, 100, 150, 200 and every 50 after to 1000).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Axe Mastery</summary><p>Axes simply hit harder: +1 damage at level 50, +2 at 100, +3 at 150, +4 at 200.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Skull Splitter</summary><p>Active ability: right-click with an axe, then your hits splash half damage (DamageModifier 2.0) onto nearby enemies.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Axes Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 250</span> Greater Impact</summary><p>A flat 25% chance on a hit for a huge knockback (1.5x velocity, like Knockback II) plus 2 bonus damage.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Crossbows</span><span class="st-blurb">Trick shots and powered shots with a crossbow.</span><span class="st-meta">3 perks · first unlock at level 1</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> shooting mobs with a crossbow.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Powered Shot</summary><p>Bolts hit harder: +10% damage per rank, with ranks at levels 1, 100, 150, 200 and every 50 after, up to +200% at rank 20 (level 1000). The bonus damage itself is capped at 9 (4 and a half hearts).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Trick Shot</summary><p>Bolts ricochet into extra nearby targets. Rank 1 at level 50, rank 2 at 200, rank 3 at 400; the rank is how many bounces you get, and each bounce hits softer than the last.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Crossbows Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Excavation</span><span class="st-blurb">Dig up treasure, flint, and double drops from dirt and gravel.</span><span class="st-meta">2 perks · first unlock at level 1</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> digging dirt, sand, gravel, clay and similar blocks with a shovel.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Archaeology</summary><p>Digging can unearth treasures, and better treasures unlock by rank at levels 1, 250, 350, 500, 650, 750, 850 and 1000. Each digging material (dirt, gravel, sand and so on) has its own treasure list.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Giga Drill Breaker</summary><p>Active ability: right-click with a shovel, then dig with instant breaks and triple the treasure chance while it lasts.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Fishing</span><span class="st-blurb">Better treasure, enchanted catches, and food from your catches.</span><span class="st-meta">6 perks · first unlock at level 1</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> catching fish and treasure.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Treasure Hunter</summary><p>Fishing can pull up treasure, and better treasure tiers unlock by rank at levels 1, 250, 350, 500, 650, 750, 850 and 1000. Your rank also multiplies the vanilla XP you earn from fishing: x1, x2, x3, x3, x4, x4, x5, x5 across the eight ranks.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Master Angler</summary><p>Fish bite sooner. Every rank trims the wait (10 to 30 ticks per rank from advanced.yml, with a bigger trim when you fish from a boat). Ranks at levels 1, 200, 300, 400, 600, 700, 800 and 900.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Ice Fishing</summary><p>Cast into a frozen lake and the ability punches a small hole in the ice so you can fish there.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 150</span> Shake</summary><p>Hook a mob with your rod to shake its drops loose, even skulls. Chance by rank: 15% at 150, 20% at 200, 25% at 250, 35% at 300, 45% at 400, 55% at 500, 65% at 600, 75% at 700.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 200</span> Magic Hunter</summary><p>A chance to fish up enchanted items and gear. The chance itself is set in the fishing treasures config, not the numbers files used here.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 200</span> Fisherman's Diet</summary><p>Fish you eat restore more hunger: +1 per rank, with ranks at levels 200, 400, 600, 800 and 1000.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Herbalism</span><span class="st-blurb">Double harvests, instant replanting, and green-thumb luck.</span><span class="st-meta">7 perks · all on from the start</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> harvesting crops and plants.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Hylian Luck</summary><p>Breaking grass and flowers with a sword can turn up rare items: 0.01% per level, reaching 10% at level 1000. No rank gate in skillranks.yml; it scales from the start.</p></details>
+              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Shroom Thumb</summary><p>A chance to spread mycelium onto dirt and grass: 0.05% per level, reaching 50% at level 1000. No rank gate in skillranks.yml; it scales from the start.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Double Drops</summary><p>A chance for double drops when you harvest: 0.1% per level, reaching 100% at level 1000.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Green Terra</summary><p>Active ability: right-click with a hoe for a chance at triple harvest drops while it lasts, and use seeds on blocks to turn them mossy or planted.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 200</span> Farmer's Diet</summary><p>Plant foods (bread, cookies, melons, carrots, potatoes and more) restore more hunger: +1 per rank, with ranks at levels 200, 400, 600, 800 and 1000.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 250</span> Green Thumb</summary><p>Harvested crops replant themselves: 0.1% per level, reaching 100% at level 1000. Higher ranks, at levels 250, 500, 750 and 1000, widen which crops auto-replant.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 1000</span> Verdant Bounty</summary><p>The level-cap perk: a chance at triple drops on every harvest. It scales over a 10000-level curve in the config, so at level 1000 the live chance is 5% (ChanceMax 50).</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Maces</span><span class="st-blurb">Crushing blows and a heavy density breach with a mace.</span><span class="st-meta">3 perks · first unlock at level 50</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> hitting mobs with a mace.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Cripple</summary><p>Mace hits can slow the target. Chance by rank: 10% at level 50, 15% at 200, 20% at 400, 33% at 800.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Crush</summary><p>Maces hit harder: +0.5 damage at level 100, then +1 more per rank at levels 250, 750 and 900, reaching +3.5.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Maces Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Mining</span><span class="st-blurb">Double drops, tougher tools, and blast mining.</span><span class="st-meta">6 perks · first unlock at level 1</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> mining stone and ores with a pickaxe.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Double Drops</summary><p>A chance for double drops from every block you mine: 0.1% per level, reaching 100% at level 1000. It even works alongside Silk Touch (SilkTouch: true in advanced.yml).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Super Breaker</summary><p>Active ability: right-click with a pickaxe, then mine with instant breaks and a triple-drop chance while it lasts (AllowTripleDrops: true).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Blast Mining</summary><p>Crouch and right-click TNT from up to 100 blocks away to detonate it remotely. Ranks at levels 100, 250, 350, 500, 650, 750, 850 and 1000 raise the bonus ores from blasted blocks from 35% up to 70%, grow the blast radius (+1 up to +4), and from rank 4 cut the blast damage you take (25%, 25%, 50%, 50%, then 100% at rank 8).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Bigger Bombs</summary><p>The blast-radius half of Blast Mining: your TNT explosions reach further at every rank. Unlocks with Blast Mining rank 1.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Demolitions Expertise</summary><p>The safety half of Blast Mining: explosions hurt you less at every rank, down to no blast damage at all at rank 8. Unlocks with Blast Mining rank 1.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 1000</span> Mother Lode</summary><p>The level-cap perk: a chance at triple drops from mining. It scales over a 10000-level curve in the config, so at level 1000 the live chance is 5% (ChanceMax 50).</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Repair</span><span class="st-blurb">Repair gear before it breaks and keep its enchantments.</span><span class="st-meta">3 perks · first unlock at level 1</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> repairing gear on the mcMMO anvil, which is an iron block here (not a vanilla anvil).</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Repair Mastery</summary><p>Every repair restores more durability: a bonus of 0.2% per level, reaching +200% at level 1000.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Arcane Forging</summary><p>Repairs can keep an item's enchantments. Keep chance by rank at levels 100, 250, 350, 500, 650, 750, 850 and 1000: 10, 20, 30, 40, 50, 50, 60, 60 percent. If an enchant is not kept cleanly it may be downgraded instead (chance falls from 75% at rank 1 to 10% at rank 8) or lost, and kept enchants are capped at level 5.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 400</span> Super Repair</summary><p>A chance that a repair works at double effectiveness: 0.1% per level, reaching 100% at level 1000.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Salvage</span><span class="st-blurb">Break down old gear and fishing catches into useful materials.</span><span class="st-meta">2 perks · first unlock at level 1</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> </p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Scrap Collector</summary><p>Salvage tools and armor back into their materials. Higher ranks, at levels 1, 100, 150, 200, 250, 300, 350 and 400, return a bigger share and can salvage more heavily damaged items; at high ranks you always get at least 1 material back.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Arcane Salvage</summary><p>Salvaging an enchanted item can pull its enchantments out as books. Across ranks at levels 100, 250, 350, 500, 650, 750, 850 and 1000, the chance to extract a full enchant climbs 2.5% to 32.5%, and a partial (weaker) enchant 2% to 17.5%. Enchants may downgrade (capped at level 5) or be lost.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Smelting</span><span class="st-blurb">Second ingots from the furnace, longer fuel, and faster smelting.</span><span class="st-meta">4 perks · all on from the start</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> smelting ores and materials in furnaces.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Second Smelt</summary><p>Every smelt has a chance to produce one bonus item on top of the normal result: 0.05% per level, reaching 50% at level 1000. This is the perk behind the "extra iron from nowhere" reports; it scales from the very start, with no rank gate.</p></details>
+              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Flux Mining</summary><p>Mining an ore can instantly smelt it into its finished form (coal ore into coal, iron ore into an ingot and so on). The configured chance is 33 at MaxBonusLevel 1000 in advanced.yml, scaling with your Smelting level up to 33% at level 1000. No rank gate in skillranks.yml.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Fuel Efficiency</summary><p>Your fuel burns longer in the furnace: burn time x2 at level 100, x3 at 500, x4 at 750.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Understanding the Art</summary><p>The vanilla XP you earn from smelting is multiplied by your rank at levels 100, 250, 350, 500, 650, 750, 850 and 1000: x1, x2, x3, x3, x4, x4, x5, x5.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Spears</span><span class="st-blurb">Longer reach and momentum hits with a spear.</span><span class="st-meta">3 perks · first unlock at level 1</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> hitting mobs with a spear.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Momentum</summary><p>Hits can build momentum and speed you up. Chance by rank at levels 1, 100, 150, 200, 250, 400, 500, 600, 800 and 950: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 percent.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Spear Mastery</summary><p>Spears hit harder: +0.4 damage per rank, with ranks at levels 50, 150, 300, 450, 600, 750, 900 and 1000, reaching +3.2.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Spears Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Swords</span><span class="st-blurb">Bleeding hits, counters, and serrated strikes.</span><span class="st-meta">5 perks · first unlock at level 1</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> dealing damage with a sword.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Rupture</summary><p>Your hits can open a bleed: 5 seconds of pure damage that armor cannot soften. Chance by rank: 15% at level 1, 33% at 150, 40% at 750, 66% at 900. Top-rank bleed ticks are 1.0 damage against mobs and 0.3 against players.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Serrated Strikes</summary><p>Active ability: right-click with a sword, then your hits splash a quarter damage (DamageModifier 4.0) onto nearby enemies and can apply Rupture.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Swords Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 200</span> Counter Attack</summary><p>While blocking, a chance to reflect half the damage back at your attacker: 0.03% per level, reaching 30% at level 1000. Reflected damage is the incoming damage divided by 2.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 750</span> Stab</summary><p>A late-game passive that adds bonus damage to your attacks: base 1.0, multiplied by 1.5 per rank, with rank 2 at level 1000.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Taming</span><span class="st-blurb">A wolf partner that grows stronger and fights at your side.</span><span class="st-meta">10 perks · first unlock at level 1</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> taming wolves and ocelots, and fighting alongside your wolves.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Beast Lore</summary><p>Left-click a wolf or ocelot to inspect its stats.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Call of the Wild</summary><p>Sneak and left-click holding 10 bones to summon a wolf, 10 cod for an ocelot, or 10 apples for a horse. Summons last 240 seconds; per-player limits are 2 wolves, 1 ocelot and 1 horse at once. A summoned horse's jump strength lands between 0.7 and 2.0.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Environmentally Aware</summary><p>Your wolves teleport to safety away from cactus and lava hazards, and take no fall damage.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 150</span> Gore</summary><p>Your wolves' attacks can gore the target, a bleed effect: 0.1% per level, reaching 100% at level 1000, with the gore damage modifier at 2.0.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 200</span> Fast Food Service</summary><p>When your wolf lands a hit, a flat 50% chance it heals itself.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 200</span> Pummel</summary><p>Your wolves' hits have a flat 10% chance to pummel the target with extra force.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 250</span> Thick Fur</summary><p>Your wolves take half damage (divided by 2) and resist fire.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 350</span> Holy Hound</summary><p>Your wolves are healed by magic and poison instead of being harmed by them (the jar's own one-line description).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 500</span> Shock Proof</summary><p>Explosion damage to your wolves is divided by 6.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 750</span> Sharpened Claws</summary><p>Your wolves deal +2 damage.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Tridents</span><span class="st-blurb">Impaling surges and lightning strikes with a trident.</span><span class="st-meta">2 perks · first unlock at level 50</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> hitting mobs with a trident.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Impale</summary><p>Tridents hit harder: +1 damage at rank 1, then +0.5 per rank at levels 150, 250, 350, 450, 550, 650, 750, 850 and 1000, reaching +5.5.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Tridents Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Unarmed</span><span class="st-blurb">Disarm attackers, deflect arrows, and hit like a truck.</span><span class="st-meta">7 perks · all on from the start</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> fighting with your fists.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Block Cracker</summary><p>Fists can crack stone-type blocks (turning them into their cracked forms). Enabled in config.yml (Allow_Block_Cracker: true); it has no rank gate and its strength is set in the mcMMO code, not these files.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Steel Arm Style</summary><p>Your fists gain bonus damage at every rank: ranks at levels 1, 100, 150, 200 and every 50 after, 20 ranks in all. The config's override damage table climbs to +13.5 at rank 20, but Damage_Override is off, so the built-in mcMMO curve is what applies.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Berserk</summary><p>Active ability: right-click to rage: +50% fist damage and instant breaks on soft blocks like dirt and grass while it lasts.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Unarmed Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 200</span> Arrow Deflect</summary><p>A chance to deflect arrows harmlessly to the ground: 0.05% per level, reaching 50% at level 1000.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 250</span> Disarm</summary><p>A chance to knock the held item out of another player's hand: 0.033% per level, reaching 33% at level 1000. Player targets only, and server PvP is off, so this one sleeps in normal play.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 600</span> Iron Grip</summary><p>A chance to keep hold of your own item when someone tries to disarm you: 0.1% per level, reaching 100% at level 1000. Player-versus-player only, so dormant while server PvP is off.</p></details>
+            </div>
+          </div>
+        </details>
+        <details class="st-track">
+          <summary><span class="st-title">Woodcutting</span><span class="st-blurb">Double logs, splitter hits, and knock-on-wood fortune.</span><span class="st-meta">5 perks · first unlock at level 1</span></summary>
+          <div class="st-body">
+            <p class="st-xp"><b>Gain XP by:</b> chopping logs with an axe.</p>
+            <div class="st-nodes">
+              <details class="st-node"><summary><span class="st-lv">Level 1</span> Harvest Lumber</summary><p>A chance for double drops from every log: 0.1% per level, reaching 100% at level 1000.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Tree Feller</summary><p>Active ability: right-click with an axe, then bring whole trees down at once. Config note: falling logs can also drop XP orbs (Add_XP_Orbs_To_Drops: true).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 150</span> Leaf Blower</summary><p>Leaves break instantly when you hit them with an axe.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 300</span> Knock on Wood</summary><p>While Tree Feller runs, felled logs can drop bonus finds such as apples. Two ranks: level 300 and level 600.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 1000</span> Clean Cuts</summary><p>The level-cap perk: a chance at triple drops from logs. It scales over a 10000-level curve in the config, so at level 1000 the live chance is 5% (ChanceMax 50).</p></details>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="panel" role="tabpanel" id="st-panel-magic" aria-labelledby="st-tab-magic">
+        <p class="guide-kicker">Sealed · Coming with the Adventurers Guild</p>
+        <h3 class="guide-title">The Magic Skill Tree (sealed)</h3>
+        <p>Magic is <b>not in the game yet</b>. This tree is the plan, shown early on purpose: the Adventurers Guild is sealed, and as the family's five boss seals fall, magic seeps back into the valley one school at a time. The guild is at <b>0 of 5 seals</b> today.</p>
+        <h4>How magic will work</h4>
+        <ul>
+          <li>Every mage walks one path: <b>Beginner, then Student, then Apprentice, then Master</b>. Your mana pool grows along the way: 50, then 100, then 150, then 200.</li>
+          <li>You earn <b>spell points (SP)</b> by casting spells. Each spell pays out on its own cooldown, so repeating one spell cannot farm points; trying different spells is how you grow.</li>
+          <li>Each rank is paced at about <b>two days of casual play</b>. Playing more is fine; the tree just will not be rushed in an afternoon.</li>
+          <li>Spells unlock by learning them with SP once your rank is high enough. The costs below are the real planned costs.</li>
+          <li>Magic is built on the Magic plugin by NathanWolf (elMakers), configured by us for this server, with one spell of our own: Storm Shackle.</li>
+          <li>Before the first school opens, the family runs a player trial (healing practice, tablet casting, claim safety). The seals decide when each school opens; the trial decides it is safe to open.</li>
+        </ul>
+        <h4>The five seals</h4>
+        <p>Each seal falls when the family earns any one of these victories, in any order: the Ender Dragon, the Wither, an Elder Guardian, the Warden, or a raid victory. The first seal opens the first school below, the second seal the second school, and so on.</p>
+        <details class="st-track st-sealed">
+          <summary><span class="st-title">Seal 1 · The Healer</span><span class="st-meta">Sealed · 13 spells open with this seal</span></summary>
+          <div class="st-body">
+            <p class="st-gate">Opens with the family's first fallen seal: any one of the five bosses, in any order.</p>
+            <div class="st-band">
+              <h5>Beginner band · 5 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Heal</b> <span class="st-cost">1200 SP</span></li>
+                <li><b>Boon</b> <span class="st-cost">880 SP</span></li>
+                <li><b>Feed</b> <span class="st-cost">Free</span></li>
+                <li><b>Extinguish</b> <span class="st-cost">400 SP</span></li>
+                <li><b>Aqualung</b> <span class="st-cost">120 SP</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Student band · 4 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Cure</b> <span class="st-cost">550 SP</span></li>
+                <li><b>Shell</b> <span class="st-cost">470 SP</span></li>
+                <li><b>Diving Helmet</b> <span class="st-cost">320 SP</span></li>
+                <li><b>Storm Shackle</b> <span class="st-cost">1260 SP</span> <span class="st-tag">created by us for this server</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Apprentice band · 2 new spells · learning them all ≈ 980 SP (about 0.8 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>SuperHeal</b> <span class="st-cost">880 SP</span></li>
+                <li><b>Recall</b> <span class="st-cost">100 SP</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Master band · 2 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Blessing</b> <span class="st-cost">2600 SP</span></li>
+                <li><b>Recall to Last Death</b> <span class="st-cost">Free</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="st-track st-sealed">
+          <summary><span class="st-title">Seal 2 · The Pathfinder</span><span class="st-meta">Sealed · 20 spells open with this seal</span></summary>
+          <div class="st-body">
+            <p class="st-gate">Opens with the family's second fallen seal: any boss, any order.</p>
+            <div class="st-band">
+              <h5>Beginner band · 6 new spells · learning them all ≈ 2590 SP (about 2.0 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Torch</b> <span class="st-cost">430 SP</span></li>
+                <li><b>Peek</b> <span class="st-cost">650 SP</span></li>
+                <li><b>Workbench</b> <span class="st-cost">170 SP</span></li>
+                <li><b>Bubble</b> <span class="st-cost">220 SP</span></li>
+                <li><b>Backflip</b> <span class="st-cost">1080 SP</span></li>
+                <li><b>Gasp</b> <span class="st-cost">40 SP</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Student band · 9 new spells · learning them all ≈ 2590 SP (about 2.0 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Magic Torch</b> <span class="st-cost">Free</span></li>
+                <li><b>Throw Magic Torch</b> <span class="st-cost">Free</span></li>
+                <li><b>Fling</b> <span class="st-cost">1730 SP</span></li>
+                <li><b>Dash</b> <span class="st-cost">430 SP</span></li>
+                <li><b>Evade</b> <span class="st-cost">Free</span></li>
+                <li><b>Hulk Leap</b> <span class="st-cost">Free</span></li>
+                <li><b>Piggyback</b> <span class="st-cost">430 SP</span></li>
+                <li><b>Repair Item</b> <span class="st-cost">Free</span></li>
+                <li><b>Repair Equipment</b> <span class="st-cost">Free</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Apprentice band · 4 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Glide</b> <span class="st-cost">400 SP</span></li>
+                <li><b>Lift</b> <span class="st-cost">80 SP</span></li>
+                <li><b>Stash</b> <span class="st-cost">1060 SP</span></li>
+                <li><b>Disposal</b> <span class="st-cost">1060 SP</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Master band · 1 new spell · learning them all ≈ 2500 SP (about 1.9 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Blink</b> <span class="st-cost">2500 SP</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="st-track st-sealed">
+          <summary><span class="st-title">Seal 3 · The Wonder</span><span class="st-meta">Sealed · 26 spells open with this seal</span></summary>
+          <div class="st-body">
+            <p class="st-gate">Opens with the family's third fallen seal: any boss, any order.</p>
+            <div class="st-band">
+              <h5>Beginner band · 7 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Magic Missile</b> <span class="st-cost">660 SP</span></li>
+                <li><b>Frost</b> <span class="st-cost">880 SP</span></li>
+                <li><b>Arrow</b> <span class="st-cost">310 SP</span></li>
+                <li><b>Flare</b> <span class="st-cost">90 SP</span></li>
+                <li><b>Stun</b> <span class="st-cost">350 SP</span></li>
+                <li><b>Push</b> <span class="st-cost">220 SP</span></li>
+                <li><b>Pull</b> <span class="st-cost">90 SP</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Student band · 10 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Sparkle</b> <span class="st-cost">20 SP</span></li>
+                <li><b>Stream</b> <span class="st-cost">50 SP</span></li>
+                <li><b>Grow</b> <span class="st-cost">30 SP</span></li>
+                <li><b>Familiar</b> <span class="st-cost">30 SP</span></li>
+                <li><b>Ice Arrow</b> <span class="st-cost">240 SP</span></li>
+                <li><b>Light Arrow</b> <span class="st-cost">1690 SP</span></li>
+                <li><b>Shock Arrow</b> <span class="st-cost">410 SP</span></li>
+                <li><b>Normal Arrow</b> <span class="st-cost">30 SP</span></li>
+                <li><b>Wolf</b> <span class="st-cost">50 SP</span></li>
+                <li><b>Cat</b> <span class="st-cost">50 SP</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Apprentice band · 5 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Wave</b> <span class="st-cost">650 SP</span></li>
+                <li><b>Smite</b> <span class="st-cost">810 SP</span></li>
+                <li><b>Growth</b> <span class="st-cost">980 SP</span></li>
+                <li><b>Hat</b> <span class="st-cost">130 SP</span></li>
+                <li><b>Gather</b> <span class="st-cost">30 SP</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Master band · 4 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Lightning</b> <span class="st-cost">300 SP</span></li>
+                <li><b>Chain Lightning</b> <span class="st-cost">600 SP</span></li>
+                <li><b>Pollinate</b> <span class="st-cost">1200 SP</span></li>
+                <li><b>Tame</b> <span class="st-cost">500 SP</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <details class="st-track st-sealed">
+          <summary><span class="st-title">Seal 4 · The Masons</span><span class="st-meta">Sealed · 8 builder spells, behind a gate</span></summary>
+          <div class="st-body">
+            <p class="st-gate">Opens with the family's fourth fallen seal: any boss, any order.</p>
+            <p>The Masons are the one school that does not join the normal path at this seal. Their spells go to a small group of trusted builders first, because a spell that conjures buildings needs careful hands. Every block they conjure is temporary (gone again in 4 to 60 seconds) and respects land claims.</p>
+            <ul class="st-spells">
+                <li><b>Platform</b> <span class="st-note">a temporary platform appears under your feet</span></li>
+                <li><b>Walls</b> <span class="st-note">a temporary wall for a quick build or block</span></li>
+                <li><b>Sponge</b> <span class="st-note">a temporary sponge block for water work</span></li>
+                <li><b>Tent</b> <span class="st-note">a temporary tent to rest and plan under</span></li>
+                <li><b>Tiny House</b> <span class="st-note">a tiny practice house, up in seconds</span></li>
+                <li><b>Giant House</b> <span class="st-note">a big practice house for group builds</span></li>
+                <li><b>Harden</b> <span class="st-note">toughen blocks while you build</span></li>
+                <li><b>Rubberize</b> <span class="st-note">soften blocks while you build</span></li>
+            </ul>
+            <p>At Seal 5, the Masons spells join the Master band for every mage.</p>
+          </div>
+        </details>
+        <details class="st-track st-sealed">
+          <summary><span class="st-title">Seal 5 · The Guild Opens</span><span class="st-meta">Sealed · 41 spells open with this seal</span></summary>
+          <div class="st-body">
+            <p class="st-gate">Opens with the family's fifth and final seal. The Adventurers Guild itself opens with this one.</p>
+            <div class="st-band">
+              <h5>Beginner band · 4 new spells · learning them all ≈ 1000 SP (about 0.8 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Eat Food</b> <span class="st-cost">Free</span></li>
+                <li><b>Roll Dice</b> <span class="st-cost">Free</span></li>
+                <li><b>Cloak</b> <span class="st-cost">500 SP</span></li>
+                <li><b>Reflect</b> <span class="st-cost">500 SP</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Student band · 7 new spells · learning them all ≈ 1850 SP (about 1.4 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Boomerang</b> <span class="st-cost">500 SP</span></li>
+                <li><b>Throw Sword</b> <span class="st-cost">Free</span></li>
+                <li><b>skating</b> <span class="st-cost">Free</span></li>
+                <li><b>wearskates</b> <span class="st-cost">Free</span></li>
+                <li><b>Admission</b> <span class="st-cost">100 SP</span></li>
+                <li><b>Earth</b> <span class="st-cost">750 SP</span></li>
+                <li><b>Whip</b> <span class="st-cost">500 SP</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Apprentice band · 9 new spells · learning them all ≈ 2280 SP (about 1.8 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>tamepet</b> <span class="st-cost">Free</span></li>
+                <li><b>Anvil</b> <span class="st-cost">110 SP</span></li>
+                <li><b>Healing</b> <span class="st-cost">160 SP</span></li>
+                <li><b>Critical</b> <span class="st-cost">550 SP</span></li>
+                <li><b>Counterspell</b> <span class="st-cost">660 SP</span></li>
+                <li><b>Music</b> <span class="st-cost">30 SP</span></li>
+                <li><b>Arrow Rain</b> <span class="st-cost">110 SP</span></li>
+                <li><b>Sweep</b> <span class="st-cost">110 SP</span></li>
+                <li><b>Power Stone</b> <span class="st-cost">550 SP</span></li>
+              </ul>
+            </div>
+            <div class="st-band">
+              <h5>Master band · 21 new spells · learning them all ≈ 2510 SP (about 2.0 days of casual play)</h5>
+              <ul class="st-spells">
+                <li><b>Force</b> <span class="st-cost">550 SP</span></li>
+                <li><b>Fury</b> <span class="st-cost">440 SP</span></li>
+                <li><b>Invincible</b> <span class="st-cost">110 SP</span></li>
+                <li><b>Tendril</b> <span class="st-cost">90 SP</span></li>
+                <li><b>Shrink</b> <span class="st-cost">170 SP</span></li>
+                <li><b>Holy Light</b> <span class="st-cost">150 SP</span></li>
+                <li><b>Master Blast</b> <span class="st-cost">Free</span></li>
+                <li><b>Sunny Day</b> <span class="st-cost">220 SP</span></li>
+                <li><b>A Dark and Stormy Night</b> <span class="st-cost">180 SP</span></li>
+                <li><b>Weather</b> <span class="st-cost">110 SP</span></li>
+                <li><b>Time</b> <span class="st-cost">90 SP</span></li>
+                <li><b>localrain</b> <span class="st-cost">Free</span></li>
+                <li><b>restorelocalweather</b> <span class="st-cost">Free</span></li>
+                <li><b>Platform</b> <span class="st-cost">30 SP</span></li>
+                <li><b>Walls</b> <span class="st-cost">60 SP</span></li>
+                <li><b>Sponge</b> <span class="st-cost">20 SP</span></li>
+                <li><b>Tent</b> <span class="st-cost">150 SP</span></li>
+                <li><b>Tiny House</b> <span class="st-cost">40 SP</span></li>
+                <li><b>Giant House</b> <span class="st-cost">40 SP</span></li>
+                <li><b>Harden</b> <span class="st-cost">30 SP</span></li>
+                <li><b>Rubberize</b> <span class="st-cost">30 SP</span></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+        <p><b>Staying locked for good:</b> lava, explosions, grenades, flamethrowers, nuke-class spells, Wither summons, shop spells, and vengeance. They do not fit a family server, and no seal opens them. When the fifth seal falls, the Adventurers Guild itself opens, and the full tree holds 100 spells.</p>
+      </div>
+    </div>
+<style>
+.st-tabbar{display:none}
+.st-tabs.js .st-tabbar{display:flex;gap:.4rem;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:.2rem .1rem .6rem;margin-bottom:.4rem}
+.st-tabbar button{flex:0 0 auto;font:inherit;font-weight:800;border:2px solid var(--grass);background:#fff;color:var(--grass-d);border-radius:999px;padding:.55rem 1rem;cursor:pointer;white-space:nowrap;min-height:44px}
+.st-tabbar button[aria-selected=true]{background:var(--grass-d);border-color:var(--grass-d);color:#fff}
+.st-track{border:1px solid #d9dfcf;border-radius:8px;background:#fff;margin:.65rem 0;min-width:0;overflow-wrap:anywhere}
+.st-track>summary{cursor:pointer;padding:.9rem 1rem;list-style:none;position:relative;padding-right:2.6rem;min-height:60px}
+.st-track>summary::-webkit-details-marker{display:none}
+.st-track>summary:after{content:'+';font-size:1.5rem;font-weight:800;line-height:1;position:absolute;right:1rem;top:1.1rem;color:var(--grass-d)}
+.st-track[open]>summary:after{content:'\2212'}
+.st-track[open]>summary{background:#eef3e6;border-bottom:1px solid #d9dfcf;border-radius:8px 8px 0 0}
+.st-title{display:block;font-size:1.15rem;font-weight:800;color:var(--grass-d)}
+.st-blurb{display:block;font-size:.94rem;margin:.2rem 0}
+.st-meta{display:block;font-size:.8rem;color:#626a59;margin-top:.3rem}
+.st-body{padding:0 1rem 1rem}
+.st-xp{margin:.8rem 0}
+.st-node{border-top:1px solid #e4e7df;padding:.45rem 0}
+.st-node>summary{cursor:pointer;font-weight:700;padding:.35rem 0;min-height:40px}
+.st-node p{margin:.3rem 0 .6rem;font-size:.95rem}
+.st-lv{display:inline-block;font-size:.75rem;font-weight:800;border-radius:4px;padding:.18rem .45rem;background:#f1f0eb;color:#4f4b40;margin-right:.4rem}
+.st-lv.st-start{background:#eaf0e1;color:#385528}
+.st-sealed{border-style:dashed;border-color:#b9a888}
+.st-sealed .st-title{color:var(--dirt-d)}
+.st-gate{font-weight:700}
+.st-band h5{font-size:1rem;margin:1rem 0 .4rem;color:var(--grass-d)}
+.st-sealed .st-band h5{color:var(--dirt-d)}
+.st-spells{list-style:none;padding:0;margin:.4rem 0}
+.st-spells li{padding:.35rem 0;border-top:1px solid #eee8da}
+.st-cost{display:inline-block;font-size:.78rem;font-weight:800;border-radius:4px;padding:.15rem .45rem;background:#f2e5cf;color:#6b4518;margin-left:.4rem}
+.st-tag{font-size:.8rem;color:#626a59}
+.st-note{font-size:.92rem;color:#4c4a3e}
+</style>
+<script>
+(function(){
+  var wrap = document.getElementById('st-tabs');
+  if (!wrap) return;
+  var tabs = Array.prototype.slice.call(wrap.querySelectorAll('[role="tab"]'));
+  function show(tab){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  wrap.classList.add('js');
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t); }); });
+  show(location.hash === '#st-panel-magic' ? tabs[1] : tabs[0]);
+})();
+</script>
+  </section>
   <section id="all-plugins">
     <h2>All plugins</h2>
     <p>Every add-on currently installed on the server. The server runs on Paper 26.2, by the <a href="https://papermc.io" target="_blank" rel="noopener noreferrer">PaperMC</a> team.</p>
@@ -1747,6 +2302,7 @@
     <details open>
       <summary>Oct 17, 2026</summary>
       <ul>
+        <li><b>New: the Skill Trees page.</b> Every mcMMO perk (83 across 19 skills) with the exact level it unlocks on this server and how strong it is here, plus a sealed preview of the Magic skill tree that arrives as the Adventurers Guild seals fall. The game already announces each unlock in chat as you earn it; now the whole ladder is on the website too. Nothing on the server changed.</li>
         <li><b>Installed live at 8:08 AM Central: ExcelTogether 0.3.0, the party range indicator.</b> While you are in a party, the bar above your hotbar now shows whether party members are in bonus range: green "Party bonus ACTIVE: N in range (x1.25)" or dim "Party: nobody in range". Coming into range flashes "Party bonus ON" with a soft sound; leaving range flashes "Party bonus OFF". <code>/excelparty cue off</code> turns the flashes and sound off. It went in while the server was empty (two checks of 0 of 10 players), 492 of 492 automated tests pass, and the previous version is kept on the server as a backup for rollback. Not yet confirmed with real players: the two-player indicator on Java and on phones and consoles. Record: <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/37" target="_blank" rel="noopener noreferrer">open draft record on GitHub</a>.</li>
       </ul>
     </details>
