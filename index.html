@@ -83,11 +83,106 @@
       <div class="card"><h3>RPG skills</h3><p>Level up with mcMMO. Unlock new abilities as you mine, explore, and build. <a href="#panel-mcmmo">Explore the skills</a>. <a href="#skill-trees">See the Skill Trees page</a>.</p></div>
       <div class="card"><h3>Earn in-game cash</h3><p>Earn in-game cash from doing anything you like, and spend it in player shops.</p></div>
       <div class="card"><h3>Big adventures</h3><p>EliteMobs brings stronger monsters and boss adventures to take on together.</p></div>
+      <div class="card"><h3>The Five Seals</h3><p>The Adventurers Guild is sealed, magic is returning, and the monsters can feel it. Five family victories walk the road to the guild. <a href="#seals">Read the story of the seals</a>.</p></div>
       <div class="card"><h3>Land claims</h3><p>Protect your stuff with GriefPrevention. Use a golden shovel to claim land.</p></div>
       <div class="card"><h3>Rollback</h3><p>CoreProtect can undo griefing if something goes wrong.</p></div>
       <div class="card"><h3>Handy commands</h3><p>/spawn, /tpa, /compass, and warps. Use the menu compass to get around. You always respawn with it. Sleep in a bed to set your respawn.</p></div>
       <div class="card"><h3>Weekend bonus</h3><p>1.2× eligible mcMMO and green-bar XP every weekend. <a href="#mcmmo-xp-preview">See XP bonuses</a>.</p></div>
     </div>
+  </section>
+
+  <section id="seals">
+    <h2>The Five Seals: the Road to the Guild</h2>
+    <p>Long ago, in the days of the Adventurers Guild, magic flowed free through the valley. It fed everything it touched: the fields, the tools in a farmer's hands, and the monsters in the dark. Fed on magic, the monsters of that age were far stronger than the ones you know today.</p>
+    <p>That age ended. The world was sealed. Magic drained away, the guild's door was locked, and the monsters shrank to the shadows you fight now. But seals do not hold forever. Magic is seeping back into the valley, and the Old Quartermaster's warning stands over everything below: the magic returning now is <b>stronger than the magic of his era</b>.</p>
+    <p>The Old Quartermaster served the guild in those days. He stands in the spawn village today, an old man by a lectern of tales, because he remembers how this story goes. Five seals hold the guild. Each one falls to a family victory, and progress is shared: a victory earned by anyone counts for everyone. As each seal falls, more magic returns to the world — spells the family can cast, and strength in the wild things. That is the bargain of the road: every door you open, opens for the monsters too.</p>
+
+    <div class="howto" id="seals-today">
+      <h3>The valley today: 0 of 5 seals broken</h3>
+      <ul>
+        <li><b>The guild is LOCKED.</b> The Adventurers Guild hall stands built but sealed. The guild button and <code>/ag</code> show the quest page instead, and <code>/seals</code> in game shows what remains.</li>
+        <li><b>Magic is asleep.</b> 30 spells and 6 wands are loaded on the server, but nobody can cast anything yet. The first seal wakes it.</li>
+        <li><b>Night has come back.</b> The valley's long day ended on October 18: the sun rises and sets again, and the dark belongs to the monsters once more. Plan your exploring around the night.</li>
+        <li><b>The wild already has an edge.</b> Since October 18, about 3 of every 100 wild monsters rise as elites, and they feel like the Quartermaster's stories: they hit about 40% harder, and your weapons land about a third softer on them. An elite is matched to the strength of the player it fights, so every fight is winnable — and running away is always allowed. Only wild, natural monsters can rise as elites; spawner and farm mobs never do.</li>
+        <li><b>The Quartermaster is waiting.</b> Tap him in the spawn village and he tells his tales, one at a time. When the first seal falls, he is the one who hands out the first wands.</li>
+      </ul>
+    </div>
+
+    <h3>The five keys</h3>
+    <p>The seals fall to five great victories. They can be won in any order: the first victory breaks Seal 1, the second breaks Seal 2, and so on, whichever they are.</p>
+    <div class="cards">
+      <div class="card"><h3>The Ender Dragon</h3><p>In the End, the dragon circles her obsidian towers while end crystals heal her. Shatter the crystals, then bring her down.</p></div>
+      <div class="card"><h3>The Wither</h3><p>Built from soul sand and three wither skeleton skulls, it is born exploding, and everything its skulls touch withers away.</p></div>
+      <div class="card"><h3>An Elder Guardian</h3><p>Deep in an ocean monument, the elder guardian curses trespassers with mining fatigue and guards the monument's gold.</p></div>
+      <div class="card"><h3>The Warden</h3><p>It sleeps in the Deep Dark and hunts by sound and smell. Sneak, distract, and pick your moment: nothing in the valley hits harder.</p></div>
+      <div class="card"><h3>A Raid Victory</h3><p>Carry Bad Omen into a village and hold the line, wave after wave of pillagers, until the village stands safe. Only genuine victories break this seal.</p></div>
+    </div>
+
+    <h3>What each seal releases</h3>
+    <p>Every fallen seal changes the world twice: once for the family, and once for the wild. Tap a seal to see both halves.</p>
+<style>
+.sv-track{border:1px solid #d9dfcf;border-radius:8px;background:#fff;margin:.65rem 0;min-width:0;overflow-wrap:anywhere}
+.sv-track>summary{cursor:pointer;padding:.9rem 1rem;list-style:none;position:relative;padding-right:2.6rem;min-height:60px}
+.sv-track>summary::-webkit-details-marker{display:none}
+.sv-track>summary:after{content:'+';font-size:1.5rem;font-weight:800;line-height:1;position:absolute;right:1rem;top:1.1rem;color:var(--grass-d)}
+.sv-track[open]>summary:after{content:'\2212'}
+.sv-track[open]>summary{background:#eef3e6;border-bottom:1px solid #d9dfcf;border-radius:8px 8px 0 0}
+.sv-title{display:block;font-size:1.15rem;font-weight:800;color:var(--grass-d)}
+.sv-meta{display:block;font-size:.8rem;color:#626a59;margin-top:.3rem}
+.sv-body{padding:0 1rem 1rem}
+.sv-sealed{border-style:dashed;border-color:#b9a888}
+.sv-sealed .sv-title{color:var(--dirt-d)}
+.sv-table{border-collapse:collapse;width:100%;margin:.8rem 0;font-size:.95rem}
+.sv-table th,.sv-table td{border:1px solid #d9dfcf;padding:.45rem .6rem;text-align:left}
+.sv-table th{background:#eef3e6}
+</style>
+    <details class="sv-track sv-sealed">
+      <summary><span class="sv-title">Seal 1 · Magic Wakes</span><span class="sv-meta">Sealed · breaks with the family's first victory, any of the five</span></summary>
+      <div class="sv-body">
+        <p><b>For the family:</b> the first magic returns. The Old Quartermaster hands out the first wands in the village, and the Healer's school of supportive magic opens: 30 spells in the world, including Storm Shackle, a chaining lightning spell made just for this valley. Full spell list: <a href="#st-panel-magic">the Magic skill tree</a>.</p>
+        <p><b>For the wild:</b> the returning magic feeds the monsters too. Elites rise more often: about 5 of every 100 wild spawns, up from 3.</p>
+      </div>
+    </details>
+    <details class="sv-track sv-sealed">
+      <summary><span class="sv-title">Seal 2 · The Pathfinder</span><span class="sv-meta">Sealed · breaks with the family's second victory</span></summary>
+      <div class="sv-body">
+        <p><b>For the family:</b> the Pathfinder's school opens and the spellbook grows to 68 spells: travel, finding, and getting home again.</p>
+        <p><b>For the wild:</b> elites hit harder. Their damage rises from about 40% above normal to about 50%.</p>
+      </div>
+    </details>
+    <details class="sv-track sv-sealed">
+      <summary><span class="sv-title">Seal 3 · The Wonder</span><span class="sv-meta">Sealed · breaks with the family's third victory</span></summary>
+      <div class="sv-body">
+        <p><b>For the family:</b> the Wonder school opens and the spellbook grows to 127 spells, the strangest and showiest magic of the road.</p>
+        <p><b>For the wild:</b> both halves move. Elite damage rises to about 60% above normal, and elites stand longer against you: your hits land at about 60% of their usual strength.</p>
+      </div>
+    </details>
+    <details class="sv-track sv-sealed">
+      <summary><span class="sv-title">Seal 4 · The Masons</span><span class="sv-meta">Sealed · breaks with the family's fourth victory</span></summary>
+      <div class="sv-body">
+        <p><b>For the family:</b> the Masons' building magic opens, 142 spells in the world. The Masons start with a small group of trusted builders, because a spell that conjures buildings needs careful hands; their conjured blocks are temporary and respect land claims. At Seal 5 the Masons join every mage.</p>
+        <p><b>For the wild:</b> the hardest nights yet. Elites rise about 7 of every 100 wild spawns and hit about 70% harder than normal.</p>
+      </div>
+    </details>
+    <details class="sv-track sv-sealed">
+      <summary><span class="sv-title">Seal 5 · The Guild Opens</span><span class="sv-meta">Sealed · breaks with the family's fifth and final victory</span></summary>
+      <div class="sv-body">
+        <p><b>For the family:</b> the last seal falls and the Adventurers Guild opens its doors: <code>/ag</code> to the guild hall, its own world of NPCs, shops, quests, and arenas like the Wood League. The spellbook completes at 186 spells, and the Masons' magic joins every mage.</p>
+        <p><b>For the wild:</b> the flood arrives with the open doors. Elites hit about 75% harder than normal, your hits land at about 55%, and the ceiling on how strong an elite can grow rises, so the wild keeps pace with geared players.</p>
+      </div>
+    </details>
+
+    <h3>The road at a glance</h3>
+    <table class="sv-table">
+      <tr><th>Seals broken</th><th>Spells in the world</th><th>Elites rise</th><th>Elite damage</th><th>Your damage to elites</th></tr>
+      <tr><td>0 (today)</td><td>None can be cast (30 loaded, asleep)</td><td>About 3 of 100 wild spawns</td><td>About +40%</td><td>Lands at about 65%</td></tr>
+      <tr><td>1</td><td>30</td><td>About 5 of 100</td><td>About +40%</td><td>About 65%</td></tr>
+      <tr><td>2</td><td>68</td><td>About 5 of 100</td><td>About +50%</td><td>About 65%</td></tr>
+      <tr><td>3</td><td>127</td><td>About 5 of 100</td><td>About +60%</td><td>About 60%</td></tr>
+      <tr><td>4</td><td>142</td><td>About 7 of 100</td><td>About +70%</td><td>About 60%</td></tr>
+      <tr><td>5</td><td>186</td><td>About 7 of 100</td><td>About +75%</td><td>About 55%</td></tr>
+    </table>
+    <p>Watch it happen in game: type <code>/seals</code> any time to see which seals stand and which have fallen. When a seal falls, a narrator's voice tells everyone online what opened, and anyone who was offline hears their missed beats once, on their next join. The road is shared, so every victory moves the whole valley.</p>
   </section>
 
   <section id="guide">
@@ -2305,6 +2400,8 @@
     <details open>
       <summary>Oct 18, 2026</summary>
       <ul>
+        <li><b>New on this website: The Five Seals.</b> The valley's story now has its own section: how magic fed the monsters of the guild's era, why the world was sealed, what each of the five family victories releases (magic stages, bolder elites, and the guild itself at the fifth seal), and where things stand today. <a href="#seals">Read The Five Seals</a>. Nothing on the server changed with this entry.</li>
+        <li><b>The wild got bolder at about 2:15 PM Central: elites, step 0 ("Feared").</b> Ahead of the seals, wild elites were retuned to feel like the stronger monsters the Old Quartermaster describes: they hit about 40% harder, and player damage lands on them at about 65%. About 3 in 100 natural spawns rise as elites, only natural spawns can rise, and an elite is matched to the player it fights. Each further step still waits for its seal, up to the full ramp in <a href="#seals">The Five Seals</a>. Verified live after a restart: values read back in the live file, and the guild is still LOCKED at 0 of 5.</li>
         <li><b>New in the village: the Old Quartermaster, and he talks.</b> A retired guild quartermaster now stands in the spawn village with his lectern of tales beside him. He was the guild's quartermaster back when magic ran free and fed everything, monsters included, and his stories are the pre-seal lore of the guild: the five seals, the stronger monsters of his era, and the warning that the returning magic is stronger still. <b>ExcelQuartermaster 0.1.0</b> makes him speak: tap him and he tells you the next tale, in order, remembered per player. He sells nothing. When the first seal falls, he is where the first wands are handed out. <b>Still to check:</b> the tap on a real phone (does the tale appear and the empty shop window stay shut?).</li>
         <li><b>Installed live at about 2:39 AM Central: ExcelGuildGate 0.3.0, with the narrator.</b> When a seal falls now, a recorded narrator voice line (the deep "Boomy Mountain" voice) plays for everyone online, and a short text guide follows in steps saying what opened. If you were offline when a seal fell, the beats you missed are told to you once on your next join (join catch-up). Java players are offered the narrator resource pack when they join; it is optional, and declining it changes nothing else. Bedrock hears the narrator too, through a Bedrock narrator pack served by Geyser (phone check pending). Admins can preview any seal with <code>/guildgate narrate 1</code> to <code>5</code>. The campaign is untouched: still 0 of 5 seals, guild LOCKED. <b>Still to check:</b> hearing the narrator on a real phone.</li>
         <li><b>Installed live at about 2:08 AM Central: Magic, dormant at stage 0.</b> Magic by NathanWolf (11.2.5, configured by us) is now on the server together with our ExcelMagicGate 0.1.0 bridge, but it is asleep: 30 spells and 6 wands are loaded, zero permissions are granted, and nothing can be cast until the first seal falls. Each fallen seal opens one stage (1 The Healer, 2 The Pathfinder, 3 Wonder, 4 The Masons, 5 The Schools), applied automatically by the bridge. It went in while the server was empty and was verified in the startup log and with permission probes: heal and cure both come back undefined for players, which is the dormancy proof.</li>
