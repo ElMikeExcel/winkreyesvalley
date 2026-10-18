@@ -6,7 +6,8 @@ h1,h2{font-family:"Press Start 2P",monospace;line-height:1.4}
 h1{font-size:clamp(1.3rem,6vw,2.4rem);margin:0 0 .6rem;text-shadow:3px 3px 0 var(--dirt-d)}
 h2{font-size:1rem;color:var(--grass-d);margin:2.5rem 0 1rem}
 h3{margin:0 0 .4rem}
-.hero{background:linear-gradient(var(--grass) 0 70%,var(--dirt) 70%);color:#fff;text-align:center;padding:3rem 0 4rem;border-bottom:8px solid var(--dirt-d)}
+.hero{background:var(--grass);color:#fff;text-align:center;padding:3rem 0 2.75rem}
+.server-strip{background:var(--dirt);color:#fff;text-align:center;padding:1.5rem 0 2.25rem;border-bottom:8px solid var(--dirt-d)}
 .tagline{font-weight:800;font-size:1.2rem;margin:0}
 .sub{max-width:34rem;margin:.6rem auto 1.6rem}
 .btn{display:inline-block;font:inherit;font-weight:800;border:0;cursor:pointer;text-decoration:none;color:#fff;background:var(--dirt-d);border-radius:6px;box-shadow:0 4px 0 #2e2015}
@@ -135,7 +136,7 @@ a{color:#315a20;text-underline-offset:.15em}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 @media print{
-  .hero,.tabbar,.skill-controls,.video,.skip-link,footer{display:none!important}
+  .hero,.server-strip,.tabbar,.skill-controls,.video,.skip-link,footer{display:none!important}
   .wrap{max-width:none;padding:0}
   .panel[hidden]{display:block!important}
   .skill-grid{display:block}
