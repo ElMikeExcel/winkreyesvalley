@@ -13,7 +13,7 @@
 </head>
 <body>
 <a class="skip-link" href="#guide">Skip to the plugin guide</a>
-<p class="site-credit" style="text-align:center;font-size:.8rem;color:#626a59;margin:.6rem 1rem 0;">With thanks to G.G., whose idea sparked this website, and to Marv, who has helped test the server every step of the way.</p>
+<p class="site-credit" style="text-align:center;font-size:.8rem;color:#626a59;margin:.6rem 1rem 0;">With thanks to G.G., whose Minecraft talk at work sparked this whole server, and to Marv, who has helped test it every step of the way.</p>
 <header class="hero">
   <div class="wrap">
     <h1>Wink Reyes Valley</h1>
@@ -25,6 +25,12 @@
       <code id="addr">winkreyes.duckdns.org:20795</code>
       <button class="btn small" id="copy" type="button">Copy address</button>
     </div>
+    <p class="server-status" style="margin:1rem 0 0;">
+      <span id="server-status-pill" role="status" style="display:none;align-items:center;gap:.5rem;background:rgba(0,0,0,.3);color:#fff;font-weight:700;font-size:.95rem;padding:.45rem .9rem;border-radius:999px;">
+        <span id="server-status-dot" aria-hidden="true" style="width:.65rem;height:.65rem;border-radius:50%;background:#9aa38f;flex:none;"></span>
+        <span id="server-status-text"></span>
+      </span>
+    </p>
     <p class="note" id="copied" aria-live="polite"></p>
   </div>
 </header>
@@ -2639,6 +2645,91 @@
       .catch(function(){ wait.textContent = 'The assistant could not be reached. Try again in a moment.'; })
       .finally(function(){ send.disabled = false; input.focus(); });
   });
+})();
+</script>
+<script>
+(function(){
+  var pill = document.getElementById('server-status-pill');
+  var dot = document.getElementById('server-status-dot');
+  var label = document.getElementById('server-status-text');
+  if (!pill || !dot || !label) return;
+  var STATUS_URL = 'https://api.mcsrvstat.us/3/157.85.90.174:20795';
+  function show(color, text){
+    dot.style.background = color;
+    label.textContent = text;
+    pill.style.display = 'inline-flex';
+  }
+  function check(){
+    var settled = false;
+    var timer = setTimeout(function(){
+      if (!settled) { settled = true; show('#9aa38f', 'Server status unknown'); }
+    }, 10000);
+    fetch(STATUS_URL, { cache: 'no-store' })
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        if (d && d.online === true && d.players) {
+          show('#57c84c', 'Server online · ' + (d.players.online || 0) + ' of ' + (d.players.max || 10) + ' playing');
+        } else if (d && d.online === false) {
+          show('#e05252', 'Server offline');
+        } else {
+          show('#9aa38f', 'Server status unknown');
+        }
+      })
+      .catch(function(){
+        if (!settled) { settled = true; clearTimeout(timer); show('#9aa38f', 'Server status unknown'); }
+      });
+  }
+  check();
+  setInterval(check, 60000);
+})();
+</script>
+<script>
+(function(){
+  var addr = document.getElementById('addr');
+  if (!addr || !addr.parentNode) return;
+  var box = addr.parentNode;
+  function copyValue(node, value, labelText){
+    var status = document.getElementById('copied');
+    function fallback(){
+      var range = document.createRange();
+      range.selectNodeContents(node);
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      if (status) status.textContent = 'Select it and copy it, or press and hold on a phone.';
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(value).then(function(){
+        if (status) status.textContent = labelText + ' copied!';
+      }, fallback);
+    } else fallback();
+  }
+  function makeBox(labelText, value){
+    var wrap = document.createElement('span');
+    wrap.style.cssText = 'display:inline-flex;flex-direction:column;align-items:center;gap:.15rem;';
+    var lab = document.createElement('span');
+    lab.textContent = labelText;
+    lab.style.cssText = 'font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;opacity:.85;';
+    var code = document.createElement('code');
+    code.textContent = value;
+    code.setAttribute('role', 'button');
+    code.setAttribute('tabindex', '0');
+    code.setAttribute('title', 'Tap to copy');
+    code.style.cursor = 'pointer';
+    code.addEventListener('click', function(){ copyValue(code, value, labelText); });
+    code.addEventListener('keydown', function(ev){
+      if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); copyValue(code, value, labelText); }
+    });
+    wrap.appendChild(lab);
+    wrap.appendChild(code);
+    return wrap;
+  }
+  box.insertBefore(makeBox('Server Address', 'winkreyes.duckdns.org'), addr);
+  box.insertBefore(makeBox('Port', '20795'), addr);
+  addr.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;';
 })();
 </script>
 
