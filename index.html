@@ -1681,6 +1681,7 @@
           <p>Your body becomes invisible and <b>standard mobs ignore you, even in armor</b>. Other players can still see your armor and held items. Harvesting, planting, tilling, chopping, mining and air swings keep the effect. Passive Thorns retaliation also keeps it.</p>
           <p><b>Attacking ends all accumulated time.</b> Hitting an animal, mob, player or other entity, firing an offensive projectile, or supported damage attributed to you reveals you. Milk, death, expiry or another effect removing/replacing invisibility also ends it. Another ordinary invisibility effect can block drinking a Veil Potion; wait for it to end. Do not brew Veil Potions: brewing removes their custom properties.</p>
           <p><b>This is not invulnerability.</b> Existing projectiles, explosions, collisions, environmental hazards and area attacks can still hurt you. <b>EliteMobs custom boss scripts and Ender Dragon behavior are outside the first-version targeting guarantee.</b> Wardens have their anger cleared, but can still investigate sounds or apply nearby darkness. Custom AI and other plugins may behave differently. This is separate from Death Protection.</p>
+          <p><code>/mobveil status</code> shows your veil; <code>/mobveil buy</code> starts the same reviewed purchase.</p>
           <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/plugin/excelmobveil-0.1.0-2026-10-14/ExcelMobVeil/PLAYER-GUIDE.md" target="_blank" rel="noopener noreferrer">Read the Veil Potion player instructions on GitHub</a></p>
         </div>
         <div class="howto" id="death-protection"><h4>Death Protection: two ways to keep your items through one death</h4>
@@ -1693,6 +1694,7 @@
           <p><b>When you die:</b> you still die and respawn normally, but you keep your inventory once. <b>Neither option saves your XP; the server's normal XP rules still apply.</b> That death uses up your protection. Active protection survives logging out and ordinary server restarts.</p>
           <p><b>Only one active protection at a time:</b> if either kind is active, buying basic protection is blocked before you are charged. Drinking another protection potion is also blocked, and you keep the potion. An undrunk potion in your inventory is not active protection.</p>
           <p><b>Already protected, or have an older potion?</b> Existing active protection and old Death Protection Potions stay premium, with no extra payment. Check your active tier at any time with <code>/dp status</code>.</p>
+          <p>You can also check or buy in chat: <code>/deathprotection status</code> shows what you hold; <code>/deathprotection buy</code> starts the same reviewed purchase.</p>
           <p class="guide-footer-link"><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/plugin/exceldeathprotection-0.1.0-2026-10-13/ExcelDeathProtection/PLAYER-GUIDE.md" target="_blank" rel="noopener noreferrer">Read the Death Protection player instructions on GitHub</a></p>
         </div>
         <div class="howto"><h4>Quantity and price controls</h4><p><b>ExcelShops 1.1 retains the in-place button update.</b> Java price and quantity plus/minus buttons update the existing inventory instead of closing and reopening it. Java cursor checks are still open. For phone shopping, use the <a href="#mobile-shop-controls">Bedrock buying walkthrough</a>; for typed prices or quantities, see <a href="#shop-amount-preview">exact amounts below</a>.</p></div>
@@ -1736,6 +1738,7 @@
         <li><code>/compass</code> get a new Server Menu compass if yours is missing</li>
         <li><code>/pouch</code> opens your Utility Pouch (see below)</li>
       </ul>
+      <p>If the menu opens when you join and you would rather it didn't, type <code>/menujoin</code> — it toggles the auto-open. The Server Commands menu has the same toggle as a button.</p>
       <div class="howto">
         <h4>The Utility Pouch: a pocket for your server gear</h4>
         <p>The Utility Pouch (ExcelPouch 0.1.0, live October 19, 2026) is a small extra pocket that only holds server gear. Open it with <code>/pouch</code>, or tap the <b>Utility Pouch</b> button in the server menu: both the computer menu and the phone menu have the button now.</p>
@@ -2205,6 +2208,12 @@
       <p>Waves of illagers attack the village: 3 waves on Easy, 5 on Normal, 7 on Hard, plus one bonus wave if your omen is level II or higher. Later waves bring vindicators, witches, evokers (which always drop a totem of undying), and ravagers.</p>
       <p>Win by defeating the last raider of the final wave: the village celebrates with fireworks and every player who fought gains Hero of the Village, which means trade discounts (on Java, villagers also give gifts; on Bedrock, raiders drop extra loot). On this server, a genuine raid victory is also one of the five seals that open the Adventurers Guild - and for the seal to break, the raid must be won under Bad Omen V, the strongest omen, with at least one of our players standing among the winners.</p>
       <p>On this server the omen also decides how hard the raid hits back (ExcelRaidBuff). Raiders grow tougher with the omen: their health is normal at Bad Omen I, one and a half times at Bad Omen II, almost double at Bad Omen III, and three times at Bad Omen V, and their hits grow too, up to about 45% harder at Bad Omen V. The last two waves are tougher again, with about a quarter more health on top. And the stronger the omen, the more raiders rise as elites: none at Bad Omen I, about 8 in every 100 at Bad Omen II, rising to about 28 in every 100 at Bad Omen V. Elite raiders follow the same strength ceiling as wild elites.</p>
+      <p>Raids have a 6-hour lifetime: finish in time or the raiders give up and go home — no loot, no victory, and the raid must be started over.</p>
+    </section>
+
+    <section class="guide-section" id="raid-expiry" aria-labelledby="raid-expiry-title">
+      <h3 id="raid-expiry-title">Raids die down after 6 hours</h3>
+      <p>A raid that runs for 6 hours with no victory dies down on its own: the remaining raiders give up and leave. A raid that dies down pays nothing — no loot, no EliteMobs coins, no Hero of the Village — and it does not count as a win or a loss. To try again, the raid has to be started over from the beginning. Fighting a raid does not reset or extend the 6-hour clock, and the clock keeps running through server restarts. When a raid dies down, players near the raid see one line: “The raid has died down — the raiders have given up and gone.”</p>
     </section>
 
     <section class="guide-section" id="vanilla-totem" aria-labelledby="vanilla-totem-title">
