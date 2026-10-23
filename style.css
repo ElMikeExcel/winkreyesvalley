@@ -142,3 +142,30 @@ a{color:#315a20;text-underline-offset:.15em}
   .skill-grid{display:block}
   .skill-card{break-inside:avoid;margin:.5rem 0}
 }
+
+/* Oct 23, 2026 restructure: site nav, Questions page, main-page stub. */
+.site-nav{position:sticky;top:0;z-index:60;background:var(--dirt-d);box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.site-nav .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:.1rem .35rem;padding-top:.35rem;padding-bottom:.35rem}
+.site-nav a{display:inline-flex;align-items:center;min-height:44px;padding:.4rem .6rem;border-radius:6px;color:#f2e9d8;text-decoration:none;font-weight:800;font-size:.95rem}
+.site-nav a:hover{background:rgba(255,255,255,.14)}
+.site-nav a[aria-current="page"]{background:var(--grass-d);color:#fff}
+section[id],.skill-card{scroll-margin-top:4.5rem}
+.qa-stub-sec{margin-top:2.5rem}
+.qa-stub{background:var(--card);border-radius:8px;padding:1.1rem;border-top:6px solid var(--grass);box-shadow:0 2px 6px rgba(0,0,0,.08);margin:0}
+.qa-stub .btn{margin-top:.7rem}
+.qa-tools{background:#e6eedb;border-radius:8px;padding:1rem;margin:1rem 0}
+.qa-tools input{font:inherit;color:var(--ink);background:#fff;border:1px solid #7c8d6f;border-radius:6px;min-height:46px;padding:.55rem .7rem;width:100%;min-width:0}
+.qa-results{font-size:.9rem;margin:.7rem 0 0;color:#415437}
+.qgroup{margin-top:2.2rem}
+.qgroup::before{content:attr(data-group-label);display:block;font-family:"Press Start 2P",monospace;font-size:1rem;line-height:1.4;color:var(--grass-d);margin:0 0 .2rem}
+.qa-entry{margin-top:.65rem}
+.qa{border:1px solid #d9dfcf;border-radius:8px;background:#fff;min-width:0;overflow-wrap:anywhere}
+.qa>summary{cursor:pointer;padding:.9rem 1rem;padding-right:2.6rem;position:relative;list-style:none;font-weight:800;color:var(--grass-d);min-height:44px}
+.qa>summary::-webkit-details-marker{display:none}
+.qa>summary:after{content:'+';font-size:1.5rem;font-weight:800;line-height:1;position:absolute;right:1rem;top:1rem}
+.qa>summary:hover{background:#f5f8f0;border-radius:8px}
+.qa[open]>summary{background:#eef3e6;border-bottom:1px solid #d9dfcf;border-radius:8px 8px 0 0}
+.qa[open]>summary:after{content:'\2212'}
+.qa-body{padding:0 1rem 1rem}
+.qa-body>p{margin:.8rem 0}
+@media print{.site-nav{display:none!important}}
