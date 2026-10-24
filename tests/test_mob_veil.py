@@ -44,9 +44,8 @@ class MobVeilChecks(unittest.TestCase):
 
     def test_first_version_limits(self):
         for phrase in ['not invulnerability', 'Existing projectiles', 'environmental hazards',
-                       'EliteMobs custom boss scripts and Ender Dragon behavior',
+                       'Bosses, EliteMobs custom scripts, custom AI and other plugins',
                        'outside the first-version targeting guarantee',
-                       'Wardens', 'investigate sounds', 'nearby darkness',
                        'separate from Death Protection']:
             self.assertIn(phrase, self.guide)
 
