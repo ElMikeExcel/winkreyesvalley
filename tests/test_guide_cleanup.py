@@ -62,7 +62,12 @@ class GuideCleanupChecks(unittest.TestCase):
         page = AnchorParents(CURRENT)
         for anchor in ['shops', 'shops-preview', 'mobile-shop-controls']:
             self.assertIn(anchor, page.parents)
-            self.assertNotIn('details', page.parents[anchor])
+            # Oct 23, 2026: the whole plugin guide sits in one section fold
+            # (details.sec-fold); guide.js opens every fold around a linked
+            # anchor. No other details may hide these anchors.
+            self.assertLessEqual(page.parents[anchor].count('details'), 1)
+        self.assertIn('<details class="sec-fold" id="guide-more">', CURRENT)
+        self.assertIn('open every fold around the target', (Path(__file__).resolve().parents[1] / 'guide.js').read_text())
         self.assertIn('<h3 id="shops">', SHOPS)
         self.assertIn('id="shops-preview"', SHOPS)
 
