@@ -344,7 +344,7 @@
     <p class="guide-kicker">The family field guide</p>
     <h3 class="guide-title">mcMMO: what will you unlock next?</h3>
     <p>Mine, fish, farm, fight, and get better as you play. Every skill has its own level, and you can work on all of them. You don't have to choose a class.</p>
-    <p>Some rewards happen automatically. Others are short boosts you switch on. Pick a skill below to see what it does, when it unlocks, and how to use it.</p>
+    <p>Some rewards happen automatically. Others are short boosts you switch on. Pick a skill below to see what it does, when it unlocks, and how to use it. For every perk on one page, see the <a href="#skill-trees">Skill Trees</a>.</p>
   </div>
   <nav class="guide-nav" aria-label="mcMMO guide sections">
     <a href="#mcmmo-skills">Explore skills</a><a href="#mcmmo-activate">Use an ability</a><a href="#mcmmo-commands">Useful commands</a><a href="#mcmmo-party">Play together</a><a href="#mcmmo-xp-preview">XP bonuses</a>
@@ -1441,12 +1441,12 @@
     <h4 id="mcmmo-activate-title">How to use an active ability</h4>
     <ol class="guide-steps">
       <li>Reach the required level and hold the right tool.</li>
-      <li>Use/right-click the tool to ready it. On a phone or controller, use your control scheme's <b>Use / Interact</b> action.</li>
+      <li>Use/right-click the tool to ready it. On a phone, iPad, tablet or controller, use your control scheme's <b>Use / Interact</b> action.</li>
       <li>Within <b>4 seconds</b>, do the matching action: mine, chop, dig, harvest, or hit a target.</li>
       <li>Watch for the ability message. After the boost ends, most active abilities have a <b>4-minute base cooldown</b>. Blast Mining has its own activation and a <b>1-minute cooldown</b>.</li>
     </ol>
     <p>The usual level-50 boosts start at about 3 seconds, grow to 12 seconds at level 500, and reach 22 seconds at level 1000. Player perks can change the timing.</p>
-    <div class="howto"><h4>Nothing happened?</h4><p>Check your level with the skill command and your timer with <code>/mccooldown</code>. Make sure you're using the right tool and target. With something in your off-hand, try sneaking while you ready the tool. <code>/mcability</code> toggles ability activation, so check its message instead of repeatedly switching it.</p><p class="note">Touch controls differ by Minecraft control scheme. A long press is not the same action on every phone.</p></div>
+    <div class="howto"><h4>Nothing happened?</h4><p>Check your level with the skill command and your timer with <code>/mccooldown</code>. Make sure you're using the right tool and target. With something in your off-hand, try sneaking while you ready the tool. <code>/mcability</code> toggles ability activation, so check its message instead of repeatedly switching it.</p><p class="note">Touch controls differ by Minecraft control scheme. A long press is not the same action on every phone, iPad or tablet.</p></div>
     <p class="guide-warning"><b>Keep family builds safe.</b> Tree Feller can take down connected logs, and Blast Mining explodes immediately. Practice far from homes, animals, and other players. Repair may remove enchantments; Salvage destroys the item.</p>
   </section>
   <section class="guide-section" id="mcmmo-commands" aria-labelledby="mcmmo-commands-title">
@@ -1459,7 +1459,8 @@
       <li><code>/mctop</code> see the skill leaderboard</li>
       <li><code>/party info</code> check your party and unlocked features</li>
     </ul>
-    <p class="note">On Java, the compass menu's mcMMO Stats button also runs <code>/mcstats</code>. You can always use chat if a menu doesn't have that button.</p>
+    <p class="note"><b>Server party (new):</b> the family party that gives the +25% party bonus (Jobs money and XP, and mcMMO skill XP) uses <code>/excelparty</code> (also <code>/eparty</code> or <code>/together</code>), not <code>/party</code>. Try <code>/excelparty invite NAME</code>, <code>/excelparty accept</code>, <code>/excelparty decline</code>, <code>/excelparty list</code>, <code>/excelparty leave</code>, and (leader only) <code>/excelparty kick NAME</code>. The menu Party button does the same with taps. An invite also sends an mcMMO party invite. A party holds up to 5 players and is not saved over a server restart. Mike saw the Together x1.25 bonus bar work in game on October 16; the Java and Bedrock checks, the Jobs money bonus and shared party XP with real players are still unconfirmed. The always-on "party member in range" sign is live in ExcelTogether 0.3.0: the action bar above your hotbar shows your party range state and how many party members are in range, a title flash and a soft sound play when you come into range, and <code>/excelparty cue off</code> turns the flashes and sound off.</p>
+    <p class="note">On Java, the compass menu's mcMMO Stats button also runs <code>/mcstats</code>. On a phone or console, the server menu's <b>Skills &amp; Perks</b> button (added October 20, 2026) opens the skill ladders in brief and the commands for checking your levels, so you no longer have to type <code>/mcstats</code> as your only in-game skills page. You can always use chat if a menu doesn't have that button.</p>
   </section>
   <section class="guide-section" id="mcmmo-party" aria-labelledby="mcmmo-party-title">
     <h4 id="mcmmo-party-title">Play together in a party</h4>
@@ -1478,9 +1479,9 @@
     <div class="howto"><h4>What about the Together bonus?</h4><p>The <b>Together and Weekend XP update is installed</b>. It adds bonuses to eligible mcMMO skill XP and green-bar XP, plus the <code>/xpbonus</code> indicator controls. Party XP sharing is a separate feature.</p><p>Startup and command registration are confirmed, with Together and the indicator enabled. The server owner reported the XP indicator working after personal testing on October 12. Identified-platform and detailed reward checks remain pending.</p></div>
     <section class="guide-section" id="mcmmo-xp-preview" aria-labelledby="mcmmo-xp-preview-title">
       <h4 id="mcmmo-xp-preview-title">XP bonuses: how to use them</h4>
-      <p class="guide-warning"><b>Installed October 12, 2026.</b> The server is running mcMMO 2.3.003-WRV-XP-2 and WeekendXP 1.0.2. The instructions below describe this installed pair. Basic indicator behavior passed by owner report on October 12. The platform was not supplied; cross-platform and detailed gameplay acceptance checks remain pending.</p>
-      <p><b>Together:</b> join the same mcMMO party and stay <b>less than 32 blocks</b> from at least one other online teammate in the same world. Where enabled and permitted, eligible skill XP and green-bar XP receive <b>1.25×</b>, or 25% more points. Party level 10 is not required for this separate Together bonus.</p>
-      <p><b>Weekend:</b> Saturday and Sunday in Central time give <b>1.20×</b>, or 20% more eligible points, including when you play solo. Both bonuses together give <b>1.50×</b>, or 50% more points. The weekend check runs every 30 minutes, so a midnight change can take up to 30 minutes.</p>
+      <p class="guide-warning"><b>Installed October 12, 2026.</b> The server is running mcMMO 2.3.003-WRV-XP-2 and ExcelWeekendXP 1.2.0 (formerly WeekendXP 1.0.2; renamed October 16, 2026; Friday added the same day). The instructions below describe this installed pair. Basic indicator behavior passed by owner report on October 12. The platform was not supplied; cross-platform and detailed gameplay acceptance checks remain pending.</p>
+      <p><b>Together:</b> join the same mcMMO party and stay <b>within 50 blocks</b> of at least one other online teammate in the same world. Where enabled and permitted, eligible skill XP and green-bar XP receive <b>1.25×</b>, or 25% more points. Party level 10 is not required for this separate Together bonus.</p>
+      <p><b>Weekend:</b> Friday, Saturday and Sunday in Central time give <b>1.20×</b>, or 20% more eligible points, including when you play solo. Both bonuses together give <b>1.50×</b>, or 50% more points. The weekend check runs every 30 minutes, so a midnight change can take up to 30 minutes. <b>Friday joined the weekend on October 16, 2026</b> (ExcelWeekendXP 1.2.0).</p>
       <p>The update covers every normally earnable mcMMO skill. It boosts the skill you are actually using; it does not award every skill at once. Smelting and Salvage keep their parent-skill progression. These multipliers apply to XP points, not directly to the number of levels you gain.</p>
       <div class="howto"><h4>Read the bonus bar</h4><p>A separate bonus bar appears after positive accepted skill XP or eligible green-bar XP. It <b>hides three seconds after your latest gain</b>; earning more XP extends the same bar. Joining, standing still, or checking status does not open it. Server lag can stretch the three-second timer. <b>×1.00</b> means the base bonus factor. If skill XP and green-bar XP have different factors, it shows them separately. Restrictions or unavailable green-bar support are labeled instead of promising a reward.</p></div>
       <ul class="cmds">
@@ -1490,7 +1491,7 @@
         <li><code>/xpbonus toggle</code> switches future notifications on or off</li>
       </ul>
       <p class="note"><b>Temporary indicator installed October 12:</b> the three-second setting and startup were verified. The server owner personally tested it on October 12 and reported that it worked. This is a basic user-reported pass; identified Java/Bedrock coverage, precise timing and edge-case checks remain open. <code>/xpbonus status</code> still reports your factors in chat without opening the bar.</p>
-      <p class="note"><b>Created by us: ExcelWeekendXP (WeekendXP).</b> <b>Modified by us: Excel XP (mcMMO).</b> These are website/GitHub labels for our weekend add-on and our changes to upstream mcMMO. Installed names remain WeekendXP 1.0.2 and mcMMO; upstream mcMMO authors retain credit for the original plugin.</p>
+      <p class="note"><b>Created by us: ExcelWeekendXP (WeekendXP).</b> <b>Modified by us: Excel XP (mcMMO).</b> These are website/GitHub labels for our weekend add-on and our changes to upstream mcMMO. The installed name of the weekend add-on is now ExcelWeekendXP (it was WeekendXP until October 16, 2026), and mcMMO keeps its name; the original mcMMO is by <a href="https://github.com/mcMMO-Dev/mcMMO" target="_blank" rel="noopener noreferrer">nossr50 and the mcMMO Team</a>, who keep full credit for it.</p>
       <p>Your shown/hidden preference is saved for later joins. If a factor is unexpected, check that your teammate is in the same party and world, is close enough, and that the status command does not show a permission or area restriction.</p>
       <details class="skill-notes"><summary>Which green-bar XP counts?</summary>
         <p>The bonus applies to eligible, positive XP-orb pickups <b>after Mending</b>. It boosts the points left for your green bar, not Mending repairs. Normal identified gameplay sources include mining, mob drops, fishing, furnace output, breeding, trading, bottles o' enchanting, and grindstones.</p>
