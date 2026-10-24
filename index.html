@@ -1987,7 +1987,7 @@
         <ul>
           <li>Bonuses stack: Friday through Sunday, mcMMO and vanilla XP earn at 1.2x (ExcelWeekendXP), and playing near your party shares mcMMO XP (ExcelTogether).</li>
           <li>Jobs pays cash for many of the same activities, but Jobs has no level perks of its own. Its only boost is the Jobs weekend bonus: 1.2x XP and money on Saturday and Sunday.</li>
-          <li>A few perks are switched off on purpose on this family server: player-vs-player fighting is off, so the PvP perks (Daze, Disarm, Iron Grip) and the Limit Breaks never trigger. They are marked "Not active" below instead of being hidden.</li>
+          <li>Player-vs-player fighting is on, with two limits: party members can't hurt each other (ExcelTogether parties and mcMMO parties), and players can't hurt each other inside land claims (GriefPrevention). mcMMO has its skills switched on for PvP, so the PvP perks (Daze, Disarm, Iron Grip) work when you fight another player outside your party and outside a claim. Limit Breaks only add damage against other players, never against mobs.</li>
           <li>Salvage is a child skill: it grows from your Repair and Fishing levels together.</li>
         </ul>
         <details class="st-track">
@@ -2016,10 +2016,10 @@
           <div class="st-body">
             <p class="st-xp"><b>Gain XP by:</b> shooting mobs with a bow.</p>
             <div class="st-nodes">
-              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Daze</summary><p>Arrows have a chance to daze a player target, forcing their view up and adding 4 damage (2 hearts): 0.05% per level, reaching 50% at level 1000. Player targets only, and server PvP is off, so this one sleeps in normal play. No rank gate in skillranks.yml; it scales from the start.</p></details>
+              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Daze</summary><p>Arrows have a chance to daze a player target, forcing their view up and adding 4 damage (2 hearts): 0.05% per level, reaching 50% at level 1000. Player targets only: it works in PvP outside your party and outside land claims, never on mobs. No rank gate in skillranks.yml; it scales from the start.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 1</span> Skill Shot</summary><p>Arrows hit harder: +10% damage per rank, with ranks at levels 1, 100, 150, 200 and every 50 after, up to +200% at rank 20 (level 1000). The bonus damage itself is capped at 9 (4 and a half hearts).</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 1</span> Arrow Retrieval</summary><p>When you kill something with your bow, a chance to get your arrows back: 0.1% per level, reaching 100% at level 1000.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 100</span> Archery Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. On this server it is dormant: Limit Break PvE is disabled in advanced.yml and server PvP is off.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Archery Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. On this server it only works against other players (Limit Break PvE is disabled in advanced.yml), outside your party and outside land claims.</p></details>
             </div>
           </div>
         </details>
@@ -2032,7 +2032,7 @@
               <details class="st-node"><summary><span class="st-lv">Level 1</span> Armor Impact</summary><p>On a hit, a flat 25% chance to damage the target's armor. The durability damage grows with your rank (DamagePerRank 6.5, ranks at 1, 100, 150, 200 and every 50 after to 1000).</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Axe Mastery</summary><p>Axes simply hit harder: +1 damage at level 50, +2 at 100, +3 at 150, +4 at 200.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Skull Splitter</summary><p>Active ability: right-click with an axe, then your hits splash half damage (DamageModifier 2.0) onto nearby enemies.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 100</span> Axes Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Axes Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Players only on this server (Limit Break PvE disabled): it works in PvP outside your party and outside land claims, never on mobs.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 250</span> Greater Impact</summary><p>A flat 25% chance on a hit for a huge knockback (1.5x velocity, like Knockback II) plus 2 bonus damage.</p></details>
             </div>
           </div>
@@ -2044,7 +2044,7 @@
             <div class="st-nodes">
               <details class="st-node"><summary><span class="st-lv">Level 1</span> Powered Shot</summary><p>Bolts hit harder: +10% damage per rank, with ranks at levels 1, 100, 150, 200 and every 50 after, up to +200% at rank 20 (level 1000). The bonus damage itself is capped at 9 (4 and a half hearts).</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Trick Shot</summary><p>Bolts ricochet into extra nearby targets. Rank 1 at level 50, rank 2 at 200, rank 3 at 400; the rank is how many bounces you get, and each bounce hits softer than the last.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 100</span> Crossbows Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Crossbows Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Players only on this server (Limit Break PvE disabled): it works in PvP outside your party and outside land claims, never on mobs.</p></details>
             </div>
           </div>
         </details>
@@ -2094,7 +2094,7 @@
             <div class="st-nodes">
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Cripple</summary><p>Mace hits can slow the target. Chance by rank: 10% at level 50, 15% at 200, 20% at 400, 33% at 800.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 100</span> Crush</summary><p>Maces hit harder: +0.5 damage at level 100, then +1 more per rank at levels 250, 750 and 900, reaching +3.5.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 100</span> Maces Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Maces Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Players only on this server (Limit Break PvE disabled): it works in PvP outside your party and outside land claims, never on mobs.</p></details>
             </div>
           </div>
         </details>
@@ -2152,7 +2152,7 @@
             <div class="st-nodes">
               <details class="st-node"><summary><span class="st-lv">Level 1</span> Momentum</summary><p>Hits can build momentum and speed you up. Chance by rank at levels 1, 100, 150, 200, 250, 400, 500, 600, 800 and 950: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 percent.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Spear Mastery</summary><p>Spears hit harder: +0.4 damage per rank, with ranks at levels 50, 150, 300, 450, 600, 750, 900 and 1000, reaching +3.2.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 100</span> Spears Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Spears Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Players only on this server (Limit Break PvE disabled): it works in PvP outside your party and outside land claims, never on mobs.</p></details>
             </div>
           </div>
         </details>
@@ -2163,7 +2163,7 @@
             <div class="st-nodes">
               <details class="st-node"><summary><span class="st-lv">Level 1</span> Rupture</summary><p>Your hits can open a bleed: 5 seconds of pure damage that armor cannot soften. Chance by rank: 15% at level 1, 33% at 150, 40% at 750, 66% at 900. Top-rank bleed ticks are 1.0 damage against mobs and 0.3 against players.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Serrated Strikes</summary><p>Active ability: right-click with a sword, then your hits splash a quarter damage (DamageModifier 4.0) onto nearby enemies and can apply Rupture.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 100</span> Swords Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Swords Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Players only on this server (Limit Break PvE disabled): it works in PvP outside your party and outside land claims, never on mobs.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 200</span> Counter Attack</summary><p>While blocking, a chance to reflect half the damage back at your attacker: 0.03% per level, reaching 30% at level 1000. Reflected damage is the incoming damage divided by 2.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 750</span> Stab</summary><p>A late-game passive that adds bonus damage to your attacks: base 1.0, multiplied by 1.5 per rank, with rank 2 at level 1000.</p></details>
             </div>
@@ -2193,7 +2193,7 @@
             <p class="st-xp"><b>Gain XP by:</b> hitting mobs with a trident.</p>
             <div class="st-nodes">
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Impale</summary><p>Tridents hit harder: +1 damage at rank 1, then +0.5 per rank at levels 150, 250, 350, 450, 550, 650, 750, 850 and 1000, reaching +5.5.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 100</span> Tridents Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Tridents Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Players only on this server (Limit Break PvE disabled): it works in PvP outside your party and outside land claims, never on mobs.</p></details>
             </div>
           </div>
         </details>
@@ -2205,10 +2205,10 @@
               <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Block Cracker</summary><p>Fists can crack stone-type blocks (turning them into their cracked forms). Enabled in config.yml (Allow_Block_Cracker: true); it has no rank gate and its strength is set in the mcMMO code, not these files.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 1</span> Steel Arm Style</summary><p>Your fists gain bonus damage at every rank: ranks at levels 1, 100, 150, 200 and every 50 after, 20 ranks in all. The config's override damage table climbs to +13.5 at rank 20, but Damage_Override is off, so the built-in mcMMO curve is what applies.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Berserk</summary><p>Active ability: right-click to rage: +50% fist damage and instant breaks on soft blocks like dirt and grass while it lasts.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 100</span> Unarmed Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Dormant on this server (Limit Break PvE disabled, PvP off).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Unarmed Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Players only on this server (Limit Break PvE disabled): it works in PvP outside your party and outside land claims, never on mobs.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 200</span> Arrow Deflect</summary><p>A chance to deflect arrows harmlessly to the ground: 0.05% per level, reaching 50% at level 1000.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 250</span> Disarm</summary><p>A chance to knock the held item out of another player's hand: 0.033% per level, reaching 33% at level 1000. Player targets only, and server PvP is off, so this one sleeps in normal play.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 600</span> Iron Grip</summary><p>A chance to keep hold of your own item when someone tries to disarm you: 0.1% per level, reaching 100% at level 1000. Player-versus-player only, so dormant while server PvP is off.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 250</span> Disarm</summary><p>A chance to knock the held item out of another player's hand: 0.033% per level, reaching 33% at level 1000. Player targets only: it works in PvP outside your party and outside land claims.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 600</span> Iron Grip</summary><p>A chance to keep hold of your own item when someone tries to disarm you: 0.1% per level, reaching 100% at level 1000. Player-versus-player only: it protects you when another player tries to disarm you.</p></details>
             </div>
           </div>
         </details>
@@ -2634,6 +2634,7 @@
       <summary>Oct 23, 2026</summary>
       <ul>
         <li><b>Party members can no longer hurt each other, and parties of 3 get double drops (ExcelTogether 0.4.0).</b> Installed in a restart at about 10:19 PM Central, with ExcelCosmetics 0.1.2 (28 chat colors, 21 for sale), ExcelMenu 0.1.5, ExcelBedrockMenu 1.5.16 (<code>/childproofmenu</code>), ExcelDeathRecord 0.2.0 and two behind-the-scenes tools, ExcelAuditLog 0.2.0 and ExcelMenuStats 0.2.2. The health number under player names now shows right after you join. At 10:27 PM Central new [Tip] lines for <code>/childproof</code> and <code>/cosmetics</code> went live. CoreProtect is offline for now: its test build did not start, and a fix is being prepared. <b>Still to check in game:</b> party checks with real players on Java and Bedrock, and a real color buy.</li>
+        <li><b>PvP wording corrected (website only, not a server change).</b> Updated about 11:30 PM Central. The skills guide used to say PvP is off. PvP is on, party members can't hurt each other, and players can't hurt each other inside land claims. mcMMO's PvP perks and Limit Breaks work in player fights outside your party and outside claims.</li>
         <li><b>Plugin list refreshed (website only, not a server change).</b> Updated about 10:41 PM Central. The list now shows all 62 plugins running on the server, with versions checked in the start-up log, and the site assistant knows about tonight's changes.</li>
         <li><b>The website is shorter and easier to read (website only, not a server change).</b> Updated about 10:30 PM Central. The plugin list is now one card per plugin, with the description across the full width, so it no longer squeezes into a thin strip or scrolls sideways on a computer. Long sections now start folded: the Five Seals story, the Phantom Debt, the plugin guide, the Skill Trees, the plugin list and this change log. Tap a section's green bar to open it. Links to a spot inside a folded section open it for you. An "On this page" list sits near the top, and a Back to top button shows in the corner once you scroll.</li>
         <li><b>Health numbers under player names.</b> Live at about 9:48 PM Central, no restart. A small red heart number under each player's name, and in the player list, shows how much health they have, so you can see when a friend needs help. A number can read 0 until that player takes damage or heals once.</li>
