@@ -50,6 +50,12 @@
     try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return; }
     var target = document.getElementById(id);
     if (!target) return;
+    // Long sections start folded: open every fold around the target.
+    var fold = target.parentElement && target.parentElement.closest('details');
+    while (fold) {
+      fold.open = true;
+      fold = fold.parentElement && fold.parentElement.closest('details');
+    }
     var panel = target.closest('[role="tabpanel"]');
     if (panel) {
       var tab = document.getElementById(panel.getAttribute('aria-labelledby'));
@@ -244,4 +250,14 @@
     window.addEventListener('hashchange', qaOpenHash);
     qaOpenHash();
   }
+})();
+
+/* Oct 23, 2026 layout pass: the Back to top button shows once you scroll. */
+(function () {
+  'use strict';
+  var fab = document.querySelector('.to-top-fab');
+  if (!fab) return;
+  function update() { fab.classList.toggle('is-hidden', window.scrollY < 700); }
+  window.addEventListener('scroll', update, {passive: true});
+  update();
 })();

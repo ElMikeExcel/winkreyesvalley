@@ -169,3 +169,38 @@ section[id],.skill-card{scroll-margin-top:4.5rem}
 .qa-body{padding:0 1rem 1rem}
 .qa-body>p{margin:.8rem 0}
 @media print{.site-nav{display:none!important}}
+
+/* Oct 23, 2026 layout pass: plugin list cards, folded long sections,
+   on-this-page links, back to top. */
+[id]{scroll-margin-top:4.5rem}
+.toc{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .5rem;margin:1.4rem 0 0;padding:.7rem .9rem;background:var(--card);border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.toc-label{font-weight:800;color:var(--dirt-d);margin-right:.2rem}
+.toc a{display:inline-block;padding:.3rem .65rem;border-radius:999px;background:#e6eedb;color:var(--grass-d);font-weight:800;font-size:.92rem;text-decoration:none}
+.toc a:hover{background:var(--grass);color:#fff}
+.sec-fold{margin:.8rem 0 0;border:2px solid var(--grass);border-radius:8px;background:var(--card);min-width:0}
+.sec-fold>summary{cursor:pointer;list-style:none;position:relative;padding:.8rem 2.8rem .8rem 1rem;font-weight:800;color:#fff;background:var(--grass-d);border-radius:6px}
+.sec-fold>summary::-webkit-details-marker{display:none}
+.sec-fold>summary:after{content:'Show';position:absolute;right:.9rem;top:50%;transform:translateY(-50%);font-size:.8rem;background:rgba(255,255,255,.18);padding:.15rem .5rem;border-radius:999px}
+.sec-fold[open]>summary{border-radius:6px 6px 0 0}
+.sec-fold[open]>summary:after{content:'Hide'}
+.sec-fold>summary:focus-visible{outline:3px solid var(--dirt);outline-offset:2px}
+.sec-fold-body{padding:.4rem 1rem 1rem;min-width:0;overflow-wrap:anywhere}
+.sec-fold-body>h2:first-child,.sec-fold-body>h3:first-child{margin-top:1rem}
+.to-top{text-align:right;margin:1rem 0 0;font-weight:800}
+.to-top-fab{position:fixed;left:16px;bottom:16px;z-index:9998;background:var(--dirt-d);color:#fff;text-decoration:none;font-weight:800;font-size:.9rem;padding:.6rem .9rem;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.35);transition:opacity .2s}
+.to-top-fab.is-hidden{opacity:0;pointer-events:none}
+/* The plugin list: one card per plugin, description at full width. */
+#all-plugins .tablewrap{overflow:visible;background:none;box-shadow:none}
+#all-plugins table,#all-plugins tbody{display:block;width:100%}
+#all-plugins thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#all-plugins tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.25rem 1rem;background:#fbfaf5;border:1px solid #e6dfd0;border-left:5px solid var(--grass);border-radius:8px;padding:.75rem .9rem;margin:0 0 .7rem}
+#all-plugins td{display:block;padding:0;border:0;white-space:normal;min-width:0;overflow-wrap:anywhere}
+#all-plugins td:first-child{font-weight:800;color:var(--grass-d);font-size:1.02rem}
+#all-plugins td:first-child .plugin-next{font-weight:400;max-width:none}
+#all-plugins td:nth-child(2){text-align:right;font-weight:800;color:var(--dirt-d);white-space:normal}
+#all-plugins td:nth-child(2)::before{content:'Version ';font-weight:400;font-size:.8rem;color:#626a59}
+#all-plugins .pv-when{display:block;font-weight:400;font-size:.78rem;color:#626a59;max-width:16rem;margin-left:auto;line-height:1.35}
+#all-plugins td:nth-child(3){grid-column:1/-1;margin-top:.35rem;line-height:1.55}
+@media(max-width:520px){#all-plugins tr{grid-template-columns:1fr}#all-plugins td:nth-child(2){text-align:left}#all-plugins .pv-when{margin-left:0;max-width:none}}
+@media print{.to-top-fab,.toc{display:none!important}.sec-fold>summary:after{content:''}}
+@media(max-width:520px){.sv-table{display:block;overflow-x:auto;font-size:.85rem}}
