@@ -14,6 +14,11 @@ The existing family Minecraft website, hosted with GitHub Pages. This is a plain
 
 Use the checked server's Retro levels. Do not substitute levels from a newer wiki, infer live settings from bundled defaults, or publish private server configuration exports. Keep `unlockLabel` for abilities with additional gates; it may intentionally differ from the first configured rank. Recheck the settings and source version when mcMMO changes. The guide describes configured behavior; actual permissions and in-game behavior still need player testing.
 
+## Update the site assistant
+
+- After editing `index.html` or `questions.html`, run `python3 scripts/build_ai_knowledge.py` to rebuild `ai-knowledge.json` (the chunks the site assistant reads).
+- Commit the regenerated `ai-knowledge.json` with the page change.
+
 ## Checks
 
 ```sh
