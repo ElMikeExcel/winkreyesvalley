@@ -2633,6 +2633,7 @@
     <details open>
       <summary>Oct 25, 2026</summary>
       <ul>
+        <li><b>Status check now uses the server name instead of a numeric address.</b> Website only, not a server change. The server-status light at the top of the page now looks up winkreyes.duckdns.org.</li>
         <li><b>Party bonus text fixed on phones, and new wand styles.</b> Installed in the night maintenance window at about 2:30 AM Central, with nobody online. <b>Party menu</b> (ExcelTogether 0.4.2): on a phone or tablet, the Party menu now shows the percent signs again, so it reads +25% and 100% instead of +25 and 100. The party bonus line above your hotbar also shows when your bonus changes and every 30 seconds, instead of flashing all the time. <b>Wand styles</b> (ExcelWandBars 0.2.4): type <code>/wandstyle</code> to pick how your wand works. The choices are Classic, Sneak bars (phones and consoles), Cycle, Tap to cycle and Tap bar. Tap bar is made for phones: tap your wand and your hotbar turns into spell icons, tap an icon to cast it, press and hold to read that spell's page, and tap an empty slot to get your items back. On a phone, the spell list is now a Spell Book page that shows your rank. Everyone starts on Classic, and your wand only changes if you pick a new style. <b>Still to check in game:</b> Tap bar and the Party menu on a real phone.</li>
       </ul>
     </details>
@@ -2940,7 +2941,7 @@
   var dot = document.getElementById('server-status-dot');
   var label = document.getElementById('server-status-text');
   if (!pill || !dot || !label) return;
-  var STATUS_URL = 'https://api.mcsrvstat.us/3/157.85.90.174:20795';
+  var STATUS_URL = 'https://api.mcsrvstat.us/3/winkreyes.duckdns.org:20795';
   function show(color, text){
     dot.style.background = color;
     label.textContent = text;
