@@ -16,6 +16,7 @@ h3{margin:0 0 .4rem}
 .btn.small{padding:.55rem .9rem}
 .note{font-size:.9rem;opacity:.9;margin:.5rem 0}
 .addr{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;align-items:center;margin-top:1rem}
+.addr-alt{font-size:.8rem;opacity:.7;margin:.4rem 0 0;overflow-wrap:anywhere}
 .addr code{background:rgba(0,0,0,.3);padding:.55rem .8rem;border-radius:6px;font-size:1rem;user-select:all}
 .chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
 .chips li{background:var(--grass);color:#fff;padding:.35rem .8rem;border-radius:999px;font-weight:700}

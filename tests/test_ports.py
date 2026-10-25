@@ -4,14 +4,14 @@ import json, re, unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-JAVA = 'winkreyes.duckdns.org:20795'
+JAVA = 'wrv.duckdns.org:20795'
 
 
 class PortChecks(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.text = (ROOT / 'index.html').read_text(encoding='utf-8')
-        m = re.search(r'addExternalServer=Wink%20Reyes%20Valley\|winkreyes\.duckdns\.org:(\w+)"', cls.text)
+        m = re.search(r'addExternalServer=Wink%20Reyes%20Valley\|wrv\.duckdns\.org:(\w+)"', cls.text)
         cls.bedrock = m.group(1) if m else None
 
     def test_bedrock_port_is_placeholder_or_real_and_not_java(self):

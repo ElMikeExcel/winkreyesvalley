@@ -72,7 +72,7 @@ class SiteChecks(unittest.TestCase):
         self.assertEqual(len(panels),15)
         for name in ['jobs','essentials','griefprevention','coreprotect','elitemobs','shops','shopkeepers','server-menu-compass','leaderboards','no-phantoms','restart-warnings','world-map','player-map','behind-the-scenes']:
             self.assertIn('panel-'+name,self.ids)
-        self.assertIn('winkreyes.duckdns.org:20795',self.text)
+        self.assertIn('wrv.duckdns.org:20795',self.text)
     def test_preview_instructions_and_status(self):
         for phrase in ['/playermap list', 'ordinary empty map', 'Add paper to zoom out', 'Add an empty map to make a copy', 'Add a glass pane to make a locked copy', 'main hand', 'fixed, vanilla-aligned', 'does not follow or continuously recenter', 'ExcelPlayerMap 0.2.1 is installed on the family server.', 'not automatically upgraded', 'BlueMap web map removed', '/xpbonus status', '/xpbonus hide', '/xpbonus show', '/xpbonus toggle', 'Installed October 12, 2026.', 'after Mending']:
             self.assertIn(phrase, self.text)
