@@ -30,6 +30,7 @@
       <button class="btn small" id="copy" type="button">Copy address</button>
     </div>
     <p class="note" id="ports">Two ports, one address. <b>Bedrock</b> (phone, iPad, tablet, Windows, console): <b>winkreyes.duckdns.org</b> port <b>25622</b>. <b>Java</b> (PC or Mac): <b>winkreyes.duckdns.org:20795</b>.</p>
+    <p class="note" id="bedrock-port-cutoff"><b>Old Bedrock port ends soon:</b> the old Bedrock port 20795 keeps working only until each device updates to Bedrock 26.60, expected Tuesday, October 27, 2026. After that, phones, tablets, Windows and consoles must use port <b>25622</b>. Keep the address <b>winkreyes.duckdns.org</b>. Consoles that join through BedrockConnect need the new port 25622 there too.</p>
     <p class="server-status" style="margin:1rem 0 0;">
       <span id="server-status-pill" role="status" style="display:none;align-items:center;gap:.5rem;background:rgba(0,0,0,.3);color:#fff;font-weight:700;font-size:.95rem;padding:.45rem .9rem;border-radius:999px;">
         <span id="server-status-dot" aria-hidden="true" style="width:.65rem;height:.65rem;border-radius:50%;background:#9aa38f;flex:none;"></span>
@@ -87,6 +88,7 @@
           <li>The BedrockConnect menu opens. Pick <b>Connect to a Server</b></li>
           <li>Enter <b>winkreyes.duckdns.org</b>, port <b>25622</b> (the Bedrock port). If you saved us there before with port 20795, remove that entry and add it again with the new port</li>
         </ol>
+        <p class="note"><b>Old port ends with Bedrock 26.60:</b> port 20795 keeps working only until your console updates to Bedrock 26.60, expected Tuesday, October 27, 2026. After that, use port <b>25622</b> in BedrockConnect with the address <b>winkreyes.duckdns.org</b>.</p>
         <p class="note"><b>Heads up for consoles:</b> after the Bedrock update on October 27, 2026, the BedrockConnect helper may stop reaching servers until it adds support for Bedrock's new way of connecting. That part is run by the BedrockConnect project, not by us. If it stops working, check back here.</p>
         <p class="note"><b>Stuck?</b> Restart the console and Minecraft after changing DNS. If the featured server just opens normally with no menu, your home network may be using IPv6 or a content filter, so set the DNS on your router instead. On PlayStation, try <b>45.55.68.52</b> as the primary DNS. Set your DNS back to automatic later if you want.</p>
       </article>
@@ -100,6 +102,7 @@
         <li>Leave the address as <b>winkreyes.duckdns.org</b>. Change only the <b>Port</b> to <b>25622</b>, then Save.</li>
         <li>Join. The first time, a <b>Trust on First Use?</b> box pops up. Tap <b>Trust</b>. You only do this once on each device.</li>
       </ol>
+      <p class="note"><b>When does the old Bedrock port stop working?</b> The old Bedrock port 20795 keeps working only until each device updates to Bedrock 26.60, expected Tuesday, October 27, 2026. After that, phones, tablets, Windows and consoles must use port <b>25622</b>. Keep the address <b>winkreyes.duckdns.org</b>. Consoles that join through BedrockConnect need the new port there too. Change it now so nothing breaks.</p>
       <p class="note">Java players change nothing: Java stays on <b>winkreyes.duckdns.org:20795</b>.</p>
     </div>
   </section>
@@ -2634,6 +2637,7 @@
     <details open>
       <summary>Oct 25, 2026</summary>
       <ul>
+        <li id="cl-bedrock-port-cutoff"><b>When the old Bedrock port stops working (website only, not a server change).</b> Added about 11:40 AM Central. The old Bedrock port 20795 keeps working only until each device updates to Bedrock 26.60, expected Tuesday, October 27, 2026. After that, phones, tablets, Windows and consoles must use port 25622 with the same address, winkreyes.duckdns.org. Consoles that join through BedrockConnect need the new port there too. Java players change nothing. See <a href="#bedrock-new-port">how to change your port</a>.</li>
         <li id="cl-whats-new"><b>What's New: a news page on the server menu, and a short popup when something new arrives.</b> Installed in a restart at about 10:41 AM Central, with a one-minute warning, a 10-second countdown and nobody online. Open the compass and tap <b>What's New</b> (on a computer, click What's New in the compass menu), or type <code>/whatsnew</code> (also <code>/news</code>), to read the latest server news. When something new arrives, a short popup shows it once, a few seconds after you join, at a calm moment (no menu open and no fight going on). Tap or click <b>OK</b> and it won't show again; <b>Older news</b> shows earlier updates. The first news is about the new wand styles. (ExcelWhatsNew 0.1.0, new, and ExcelBedrockMenu 1.5.19.)</li>
         <li><b>Bedrock players: new port, see <a href="#bedrock-new-port">How to join</a>.</b> Phones, tablets and consoles keep the address winkreyes.duckdns.org and change only the port to 25622 (details in the Bedrock port entry below). Java players change nothing.</li>
         <li><b>The Valley Guide learned the latest info.</b> At about 10:34 AM Central the in-game Guide (<code>/ask</code>) was refreshed with this website's current pages, including the new Bedrock port. No restart was needed.</li>
