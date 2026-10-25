@@ -19,16 +19,17 @@
     <h1>Wink Reyes Valley</h1>
     <p class="tagline">A family Minecraft server</p>
     <p class="sub">Survival with RPG skills, cash for everyday play, and big adventures to share. Play together on a phone, iPad, tablet, PC, Mac or console.</p>
-    <a class="btn big" href="minecraft://?addExternalServer=Wink%20Reyes%20Valley|winkreyes.duckdns.org:20795">Add our server in Minecraft</a>
-    <p class="note">On a phone, tablet, or Windows PC with Minecraft installed, this opens the game and may offer to add our server. If it doesn't fill anything in, it hasn't worked; use the steps below instead, they always work. On console or Java this button won't do anything.</p>
+    <a class="btn big" href="minecraft://?addExternalServer=Wink%20Reyes%20Valley|winkreyes.duckdns.org:25622">Add our server in Minecraft</a>
+    <p class="note">On a phone, tablet, or Windows PC with Minecraft installed, this opens the game and may offer to add our server with the Bedrock port. If it doesn't fill anything in, it hasn't worked; use the steps below instead, they always work. On console or Java this button won't do anything.</p>
   </div>
 </header>
 <section class="server-strip">
   <div class="wrap">
     <div class="addr">
-      <code id="addr">winkreyes.duckdns.org:20795</code>
+      <code id="addr">winkreyes.duckdns.org</code>
       <button class="btn small" id="copy" type="button">Copy address</button>
     </div>
+    <p class="note" id="ports">Two ports, one address. <b>Bedrock</b> (phone, iPad, tablet, Windows, console): <b>winkreyes.duckdns.org</b> port <b>25622</b>. <b>Java</b> (PC or Mac): <b>winkreyes.duckdns.org:20795</b>.</p>
     <p class="server-status" style="margin:1rem 0 0;">
       <span id="server-status-pill" role="status" style="display:none;align-items:center;gap:.5rem;background:rgba(0,0,0,.3);color:#fff;font-weight:700;font-size:.95rem;padding:.45rem .9rem;border-radius:999px;">
         <span id="server-status-dot" aria-hidden="true" style="width:.65rem;height:.65rem;border-radius:50%;background:#9aa38f;flex:none;"></span>
@@ -66,15 +67,16 @@
       <article class="card">
         <h3>Phone, iPad or tablet</h3>
         <p>The <b>Add our server in Minecraft</b> button above may open Minecraft for you. If it doesn't add our server, do it yourself with these steps:</p>
-        <ol><li>Play, then Servers, then Add Server</li><li>Name: <b>Wink Reyes Valley</b></li><li>Address: <b>winkreyes.duckdns.org</b></li><li>Port: <b>20795</b></li></ol>
+        <ol><li>Play, then Servers, then Add Server</li><li>Name: <b>Wink Reyes Valley</b></li><li>Address: <b>winkreyes.duckdns.org</b></li><li>Port: <b>25622</b> (the Bedrock port)</li><li>The first time you join, tap <b>Trust</b> on the pop-up</li></ol>
       </article>
       <article class="card">
         <h3>Windows (Bedrock)</h3>
-        <ol><li>Play, then Servers, then Add Server</li><li>Name: <b>Wink Reyes Valley</b></li><li>Address: <b>winkreyes.duckdns.org</b></li><li>Port: <b>20795</b></li></ol>
+        <ol><li>Play, then Servers, then Add Server</li><li>Name: <b>Wink Reyes Valley</b></li><li>Address: <b>winkreyes.duckdns.org</b></li><li>Port: <b>25622</b> (the Bedrock port)</li><li>The first time you join, tap <b>Trust</b> on the pop-up</li></ol>
       </article>
       <article class="card">
         <h3>Java on PC or Mac</h3>
         <ol><li>Multiplayer, then Add Server</li><li>Address: <b>winkreyes.duckdns.org:20795</b></li></ol>
+        <p class="note">Java keeps port <b>20795</b>. Nothing changed for Java players.</p>
       </article>
       <article class="card">
         <h3>Xbox, PlayStation, Switch</h3>
@@ -83,10 +85,22 @@
           <li>Restart Minecraft, then go to Servers</li>
           <li>Join one of the featured servers. Look for <b>Mineville</b> or <b>Lifeboat</b> first; <b>The Hive, Galaxite or Enchanted</b> also work. The list on your screen may look different or be in a different order; any of those five opens the same menu. CubeCraft does not work for this</li>
           <li>The BedrockConnect menu opens. Pick <b>Connect to a Server</b></li>
-          <li>Enter <b>winkreyes.duckdns.org</b>, port <b>20795</b></li>
+          <li>Enter <b>winkreyes.duckdns.org</b>, port <b>25622</b> (the Bedrock port). If you saved us there before with port 20795, remove that entry and add it again with the new port</li>
         </ol>
+        <p class="note"><b>Heads up for consoles:</b> after the Bedrock update on October 27, 2026, the BedrockConnect helper may stop reaching servers until it adds support for Bedrock's new way of connecting. That part is run by the BedrockConnect project, not by us. If it stops working, check back here.</p>
         <p class="note"><b>Stuck?</b> Restart the console and Minecraft after changing DNS. If the featured server just opens normally with no menu, your home network may be using IPv6 or a content filter, so set the DNS on your router instead. On PlayStation, try <b>45.55.68.52</b> as the primary DNS. Set your DNS back to automatic later if you want.</p>
       </article>
+    </div>
+    <div class="howto" id="bedrock-new-port">
+      <h3>Already play on Bedrock? Change your port once</h3>
+      <p>On October 25, 2026 the Bedrock side of the server moved to its own port so it keeps working after Bedrock's October 27 update. The address stays the same. On a phone, iPad, tablet or Windows PC:</p>
+      <ol>
+        <li>Play, then Servers. Scroll down to the servers you added.</li>
+        <li>Pick <b>Wink Reyes Valley</b>, then <b>Edit</b>. On a touch screen, tap it and then Edit, or press and hold it.</li>
+        <li>Leave the address as <b>winkreyes.duckdns.org</b>. Change only the <b>Port</b> to <b>25622</b>, then Save.</li>
+        <li>Join. The first time, a <b>Trust on First Use?</b> box pops up. Tap <b>Trust</b>. You only do this once on each device.</li>
+      </ol>
+      <p class="note">Java players change nothing: Java stays on <b>winkreyes.duckdns.org:20795</b>.</p>
     </div>
   </section>
 
@@ -2619,6 +2633,7 @@
     <details open>
       <summary>Oct 25, 2026</summary>
       <ul>
+        <li id="cl-bedrock-port"><b>Bedrock has its own port now: 25622.</b> Switched in a server restart at about 9:18 AM Central. Bedrock players (phones, iPads, tablets, Windows and consoles) keep the address winkreyes.duckdns.org and change only the port, from 20795 to 25622, then tap Trust once on the first join. Java players change nothing and stay on winkreyes.duckdns.org:20795. This gets the server ready for Bedrock's October 27 update, which needs Bedrock's new way of connecting. See <a href="#bedrock-new-port">how to change your port</a>.</li>
         <li><b>Status check now uses the server name instead of a numeric address.</b> Website only, not a server change. The server-status light at the top of the page now looks up winkreyes.duckdns.org.</li>
         <li><b>Party bonus text fixed on phones, and new wand styles.</b> Installed in the night maintenance window at about 2:30 AM Central, with nobody online. <b>Party menu</b> (ExcelTogether 0.4.2): on a phone or tablet, the Party menu now shows the percent signs again, so it reads +25% and 100% instead of +25 and 100. The party bonus line above your hotbar also shows when your bonus changes and every 30 seconds, instead of flashing all the time. <b>Wand styles</b> (ExcelWandBars 0.2.4): type <code>/wandstyle</code> to pick how your wand works. The choices are Classic, Sneak bars (phones and consoles), Cycle, Tap to cycle and Tap bar. Tap bar is made for phones: tap your wand and your hotbar turns into spell icons, tap an icon to cast it, press and hold to read that spell's page, and tap an empty slot to get your items back. On a phone, the spell list is now a Spell Book page that shows your rank. Everyone starts on Classic, and your wand only changes if you pick a new style. <b>Still to check in game:</b> Tap bar and the Party menu on a real phone.</li>
       </ul>
@@ -3001,7 +3016,8 @@
     return wrap;
   }
   box.insertBefore(makeBox('Server Address', 'winkreyes.duckdns.org'), addr);
-  box.insertBefore(makeBox('Port', '20795'), addr);
+  box.insertBefore(makeBox('Bedrock Port', '25622'), addr);
+  box.insertBefore(makeBox('Java Port', '20795'), addr);
   addr.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;';
 })();
 </script>
