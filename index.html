@@ -277,7 +277,7 @@
     </div>
     <div class="howto" id="wand-guide">
       <h3>How to use your wand</h3>
-      <p>Your first wand from the Old Quartermaster knows Healer spells: Heal, Boon, Feed, Extinguish and Aqualung. Cure comes later when you rank up to Student. (Wand controls updated October 23, 2026 so phones, tablets and controllers can switch spells fast, even in a fight.)</p>
+      <p>Your first wand from the Old Quartermaster knows Healer spells: Heal, Boon, Feed, Extinguish and Aqualung. Cure comes later when your wand ranks up to Student: casting spells earns spell points, and at 800 the wand moves up by itself (since October 26, 2026). (Wand controls updated October 23, 2026 so phones, tablets and controllers can switch spells fast, even in a fight.)</p>
       <p><b>Java (mouse and keyboard)</b></p>
       <ul>
         <li>Cast: left-click.</li>
@@ -2264,9 +2264,10 @@
         <h4>How magic will work</h4>
         <ul>
           <li>Every mage walks one path: <b>Beginner, then Student, then Apprentice, then Master</b>. Your mana pool grows along the way: 60, then 100, then 150, then 200.</li>
-          <li>You earn <b>spell points (SP)</b> by casting spells. Each spell pays out on its own cooldown, so repeating one spell cannot farm points; trying different spells is how you grow.</li>
-          <li>Each rank is paced at about <b>two days of casual play</b>. Playing more is fine; the tree just will not be rushed in an afternoon.</li>
-          <li>Spells unlock by learning them with SP once your rank is high enough. The costs below are the real planned costs.</li>
+          <li>You earn <b>spell points (SP)</b> by casting spells with your wand. When you have enough, <b>your wand moves up a rank by itself</b>: the same wand, every spell kept, and it learns that rank's new spells at once. Spells you already know get stronger too. A title tells you, and the whole server sees a short "reached Student rank!" line in chat.</li>
+          <li>It takes about <b>two days of normal play per rank</b>: <b>800 SP</b> to Student, <b>1,600 SP</b> to Apprentice, <b>1,800 SP</b> to Master. Your progress is at the top of your Spell Book (for example "Student: 340/1,600 SP to Apprentice"), and a short line above your hotbar shows each gain.</li>
+          <li>Each spell pays its full SP about once a minute, and healing spells only pay when they really heal someone, so spamming one spell does not speed things up. Mixing spells does. A daily limit keeps the pace even for everyone.</li>
+          <li><b>Server XP bonuses count for SP too:</b> the weekend bonus (Friday to Sunday) gives SP x1.2, and casting with a party member within 50 blocks gives SP x1.25. Together they make x1.5, the most there is. When a bonus is on, your Spell Book says so (for example "Bonus now: SP x1.25 (group)").</li>
           <li>Magic is built on the Magic plugin by NathanWolf (elMakers), configured by us for this server, with one spell of our own: Storm Shackle.</li>
           <li>Magic went in dormant on purpose, with no player trial first (the owner's call on October 17, 2026), and stayed asleep until Seal 1 broke on October 23: the family becomes the test as each school opens. The seals decide when each school opens.</li>
         </ul>
@@ -2282,40 +2283,40 @@
           <div class="st-body">
             <p class="st-gate">Opens with the family's first fallen seal: any one of the five bosses, in any order.</p>
             <div class="st-band">
-              <h5>Beginner band · 6 new spells · learning them all ≈ 2800 SP (about 2.2 days of casual play)</h5>
+              <h5>Beginner band · 6 new spells</h5>
               <ul class="st-spells">
-                <li><b>Heal</b> <span class="st-cost">1200 SP</span></li>
-                <li><b>Boon</b> <span class="st-cost">880 SP</span></li>
-                <li><b>Feed</b> <span class="st-cost">Free</span></li>
-                <li><b>Extinguish</b> <span class="st-cost">400 SP</span></li>
-                <li><b>Aqualung</b> <span class="st-cost">120 SP</span></li>
-                <li><b>Mend</b> <span class="st-cost">200 SP</span> <span class="st-tag">healer's kit: quick filler heal, no cooldown; nonstop Mend empties your mana in about 20 casts (since October 26, 2026: 4 / 8 / 12 / 17 mana by wand)</span></li>
+                <li><b>Heal</b></li>
+                <li><b>Boon</b></li>
+                <li><b>Feed</b></li>
+                <li><b>Extinguish</b></li>
+                <li><b>Aqualung</b></li>
+                <li><b>Mend</b> <span class="st-tag">healer's kit: quick filler heal, no cooldown; nonstop Mend empties your mana in about 20 casts (since October 26, 2026: 4 / 8 / 12 / 17 mana by wand)</span></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Student band · 6 new spells · learning them all ≈ 3570 SP (about 2.7 days of casual play)</h5>
+              <h5>Student band · 6 new spells</h5>
               <ul class="st-spells">
-                <li><b>Cure</b> <span class="st-cost">550 SP</span></li>
-                <li><b>Shell</b> <span class="st-cost">470 SP</span></li>
-                <li><b>Diving Helmet</b> <span class="st-cost">320 SP</span></li>
-                <li><b>Storm Shackle</b> <span class="st-cost">1260 SP</span> <span class="st-tag">created by us for this server</span></li>
-                <li><b>Flash Heal</b> <span class="st-cost">500 SP</span> <span class="st-tag">healer's kit: a fast heal that costs more mana</span></li>
-                <li><b>Ward</b> <span class="st-cost">470 SP</span> <span class="st-tag">healer's kit: a small absorption shield</span></li>
+                <li><b>Cure</b></li>
+                <li><b>Shell</b></li>
+                <li><b>Diving Helmet</b></li>
+                <li><b>Storm Shackle</b> <span class="st-tag">created by us for this server</span></li>
+                <li><b>Flash Heal</b> <span class="st-tag">healer's kit: a fast heal that costs more mana</span></li>
+                <li><b>Ward</b> <span class="st-tag">healer's kit: a small absorption shield</span></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Apprentice band · 3 new spells · learning them all ≈ 1580 SP (about 1.2 days of casual play)</h5>
+              <h5>Apprentice band · 3 new spells</h5>
               <ul class="st-spells">
-                <li><b>SuperHeal</b> <span class="st-cost">880 SP</span></li>
-                <li><b>Recall</b> <span class="st-cost">100 SP</span></li>
-                <li><b>Greater Heal</b> <span class="st-cost">600 SP</span> <span class="st-tag">healer's kit: a 2 second cast, the most healing for the mana</span></li>
+                <li><b>SuperHeal</b></li>
+                <li><b>Recall</b></li>
+                <li><b>Greater Heal</b> <span class="st-tag">healer's kit: a 2 second cast, the most healing for the mana</span></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Master band · 2 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Master band · 2 new spells</h5>
               <ul class="st-spells">
-                <li><b>Blessing</b> <span class="st-cost">2600 SP</span></li>
-                <li><b>Recall to Last Death</b> <span class="st-cost">Free</span></li>
+                <li><b>Blessing</b></li>
+                <li><b>Recall to Last Death</b></li>
               </ul>
             </div>
           </div>
@@ -2325,43 +2326,43 @@
           <div class="st-body">
             <p class="st-gate">Opens with the family's second fallen seal: any boss, any order.</p>
             <div class="st-band">
-              <h5>Beginner band · 6 new spells · learning them all ≈ 2590 SP (about 2.0 days of casual play)</h5>
+              <h5>Beginner band · 6 new spells</h5>
               <ul class="st-spells">
-                <li><b>Torch</b> <span class="st-cost">430 SP</span></li>
-                <li><b>Peek</b> <span class="st-cost">650 SP</span></li>
-                <li><b>Workbench</b> <span class="st-cost">170 SP</span></li>
-                <li><b>Bubble</b> <span class="st-cost">220 SP</span></li>
-                <li><b>Backflip</b> <span class="st-cost">1080 SP</span></li>
-                <li><b>Gasp</b> <span class="st-cost">40 SP</span></li>
+                <li><b>Torch</b></li>
+                <li><b>Peek</b></li>
+                <li><b>Workbench</b></li>
+                <li><b>Bubble</b></li>
+                <li><b>Backflip</b></li>
+                <li><b>Gasp</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Student band · 9 new spells · learning them all ≈ 2590 SP (about 2.0 days of casual play)</h5>
+              <h5>Student band · 9 new spells</h5>
               <ul class="st-spells">
-                <li><b>Magic Torch</b> <span class="st-cost">Free</span></li>
-                <li><b>Throw Magic Torch</b> <span class="st-cost">Free</span></li>
-                <li><b>Fling</b> <span class="st-cost">1730 SP</span></li>
-                <li><b>Dash</b> <span class="st-cost">430 SP</span></li>
-                <li><b>Evade</b> <span class="st-cost">Free</span></li>
-                <li><b>Hulk Leap</b> <span class="st-cost">Free</span></li>
-                <li><b>Piggyback</b> <span class="st-cost">430 SP</span></li>
-                <li><b>Repair Item</b> <span class="st-cost">Free</span></li>
-                <li><b>Repair Equipment</b> <span class="st-cost">Free</span></li>
+                <li><b>Magic Torch</b></li>
+                <li><b>Throw Magic Torch</b></li>
+                <li><b>Fling</b></li>
+                <li><b>Dash</b></li>
+                <li><b>Evade</b></li>
+                <li><b>Hulk Leap</b></li>
+                <li><b>Piggyback</b></li>
+                <li><b>Repair Item</b></li>
+                <li><b>Repair Equipment</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Apprentice band · 4 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Apprentice band · 4 new spells</h5>
               <ul class="st-spells">
-                <li><b>Glide</b> <span class="st-cost">400 SP</span></li>
-                <li><b>Lift</b> <span class="st-cost">80 SP</span></li>
-                <li><b>Stash</b> <span class="st-cost">1060 SP</span></li>
-                <li><b>Disposal</b> <span class="st-cost">1060 SP</span></li>
+                <li><b>Glide</b></li>
+                <li><b>Lift</b></li>
+                <li><b>Stash</b></li>
+                <li><b>Disposal</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Master band · 1 new spell · learning them all ≈ 2500 SP (about 1.9 days of casual play)</h5>
+              <h5>Master band · 1 new spell</h5>
               <ul class="st-spells">
-                <li><b>Blink</b> <span class="st-cost">2500 SP</span></li>
+                <li><b>Blink</b></li>
               </ul>
             </div>
           </div>
@@ -2371,49 +2372,49 @@
           <div class="st-body">
             <p class="st-gate">Opens with the family's third fallen seal: any boss, any order.</p>
             <div class="st-band">
-              <h5>Beginner band · 7 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Beginner band · 7 new spells</h5>
               <ul class="st-spells">
-                <li><b>Magic Missile</b> <span class="st-cost">660 SP</span></li>
-                <li><b>Frost</b> <span class="st-cost">880 SP</span></li>
-                <li><b>Arrow</b> <span class="st-cost">310 SP</span></li>
-                <li><b>Flare</b> <span class="st-cost">90 SP</span></li>
-                <li><b>Stun</b> <span class="st-cost">350 SP</span></li>
-                <li><b>Push</b> <span class="st-cost">220 SP</span></li>
-                <li><b>Pull</b> <span class="st-cost">90 SP</span></li>
+                <li><b>Magic Missile</b></li>
+                <li><b>Frost</b></li>
+                <li><b>Arrow</b></li>
+                <li><b>Flare</b></li>
+                <li><b>Stun</b></li>
+                <li><b>Push</b></li>
+                <li><b>Pull</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Student band · 10 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Student band · 10 new spells</h5>
               <ul class="st-spells">
-                <li><b>Sparkle</b> <span class="st-cost">20 SP</span></li>
-                <li><b>Stream</b> <span class="st-cost">50 SP</span></li>
-                <li><b>Grow</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Familiar</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Ice Arrow</b> <span class="st-cost">240 SP</span></li>
-                <li><b>Light Arrow</b> <span class="st-cost">1690 SP</span></li>
-                <li><b>Shock Arrow</b> <span class="st-cost">410 SP</span></li>
-                <li><b>Normal Arrow</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Wolf</b> <span class="st-cost">50 SP</span></li>
-                <li><b>Cat</b> <span class="st-cost">50 SP</span></li>
+                <li><b>Sparkle</b></li>
+                <li><b>Stream</b></li>
+                <li><b>Grow</b></li>
+                <li><b>Familiar</b></li>
+                <li><b>Ice Arrow</b></li>
+                <li><b>Light Arrow</b></li>
+                <li><b>Shock Arrow</b></li>
+                <li><b>Normal Arrow</b></li>
+                <li><b>Wolf</b></li>
+                <li><b>Cat</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Apprentice band · 5 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Apprentice band · 5 new spells</h5>
               <ul class="st-spells">
-                <li><b>Wave</b> <span class="st-cost">650 SP</span></li>
-                <li><b>Smite</b> <span class="st-cost">810 SP</span></li>
-                <li><b>Growth</b> <span class="st-cost">980 SP</span></li>
-                <li><b>Hat</b> <span class="st-cost">130 SP</span></li>
-                <li><b>Gather</b> <span class="st-cost">30 SP</span></li>
+                <li><b>Wave</b></li>
+                <li><b>Smite</b></li>
+                <li><b>Growth</b></li>
+                <li><b>Hat</b></li>
+                <li><b>Gather</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Master band · 4 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Master band · 4 new spells</h5>
               <ul class="st-spells">
-                <li><b>Lightning</b> <span class="st-cost">300 SP</span></li>
-                <li><b>Chain Lightning</b> <span class="st-cost">600 SP</span></li>
-                <li><b>Pollinate</b> <span class="st-cost">1200 SP</span></li>
-                <li><b>Tame</b> <span class="st-cost">500 SP</span></li>
+                <li><b>Lightning</b></li>
+                <li><b>Chain Lightning</b></li>
+                <li><b>Pollinate</b></li>
+                <li><b>Tame</b></li>
               </ul>
             </div>
           </div>
@@ -2441,64 +2442,64 @@
           <div class="st-body">
             <p class="st-gate">Opens with the family's fifth and final seal. The Adventurers Guild itself opens with this one.</p>
             <div class="st-band">
-              <h5>Beginner band · 4 new spells · learning them all ≈ 1000 SP (about 0.8 days of casual play)</h5>
+              <h5>Beginner band · 4 new spells</h5>
               <ul class="st-spells">
-                <li><b>Eat Food</b> <span class="st-cost">Free</span></li>
-                <li><b>Roll Dice</b> <span class="st-cost">Free</span></li>
-                <li><b>Cloak</b> <span class="st-cost">500 SP</span></li>
-                <li><b>Reflect</b> <span class="st-cost">500 SP</span></li>
+                <li><b>Eat Food</b></li>
+                <li><b>Roll Dice</b></li>
+                <li><b>Cloak</b></li>
+                <li><b>Reflect</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Student band · 7 new spells · learning them all ≈ 1850 SP (about 1.4 days of casual play)</h5>
+              <h5>Student band · 7 new spells</h5>
               <ul class="st-spells">
-                <li><b>Boomerang</b> <span class="st-cost">500 SP</span></li>
-                <li><b>Throw Sword</b> <span class="st-cost">Free</span></li>
-                <li><b>skating</b> <span class="st-cost">Free</span></li>
-                <li><b>wearskates</b> <span class="st-cost">Free</span></li>
-                <li><b>Admission</b> <span class="st-cost">100 SP</span></li>
-                <li><b>Earth</b> <span class="st-cost">750 SP</span></li>
-                <li><b>Whip</b> <span class="st-cost">500 SP</span></li>
+                <li><b>Boomerang</b></li>
+                <li><b>Throw Sword</b></li>
+                <li><b>skating</b></li>
+                <li><b>wearskates</b></li>
+                <li><b>Admission</b></li>
+                <li><b>Earth</b></li>
+                <li><b>Whip</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Apprentice band · 9 new spells · learning them all ≈ 2280 SP (about 1.8 days of casual play)</h5>
+              <h5>Apprentice band · 9 new spells</h5>
               <ul class="st-spells">
-                <li><b>tamepet</b> <span class="st-cost">Free</span></li>
-                <li><b>Anvil</b> <span class="st-cost">110 SP</span></li>
-                <li><b>Healing</b> <span class="st-cost">160 SP</span></li>
-                <li><b>Critical</b> <span class="st-cost">550 SP</span></li>
-                <li><b>Counterspell</b> <span class="st-cost">660 SP</span></li>
-                <li><b>Music</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Arrow Rain</b> <span class="st-cost">110 SP</span></li>
-                <li><b>Sweep</b> <span class="st-cost">110 SP</span></li>
-                <li><b>Power Stone</b> <span class="st-cost">550 SP</span></li>
+                <li><b>tamepet</b></li>
+                <li><b>Anvil</b></li>
+                <li><b>Healing</b></li>
+                <li><b>Critical</b></li>
+                <li><b>Counterspell</b></li>
+                <li><b>Music</b></li>
+                <li><b>Arrow Rain</b></li>
+                <li><b>Sweep</b></li>
+                <li><b>Power Stone</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Master band · 21 new spells · learning them all ≈ 2510 SP (about 2.0 days of casual play)</h5>
+              <h5>Master band · 21 new spells</h5>
               <ul class="st-spells">
-                <li><b>Force</b> <span class="st-cost">550 SP</span></li>
-                <li><b>Fury</b> <span class="st-cost">440 SP</span></li>
-                <li><b>Invincible</b> <span class="st-cost">110 SP</span></li>
-                <li><b>Tendril</b> <span class="st-cost">90 SP</span></li>
-                <li><b>Shrink</b> <span class="st-cost">170 SP</span></li>
-                <li><b>Holy Light</b> <span class="st-cost">150 SP</span></li>
-                <li><b>Master Blast</b> <span class="st-cost">Free</span></li>
-                <li><b>Sunny Day</b> <span class="st-cost">220 SP</span></li>
-                <li><b>A Dark and Stormy Night</b> <span class="st-cost">180 SP</span></li>
-                <li><b>Weather</b> <span class="st-cost">110 SP</span></li>
-                <li><b>Time</b> <span class="st-cost">90 SP</span></li>
-                <li><b>localrain</b> <span class="st-cost">Free</span></li>
-                <li><b>restorelocalweather</b> <span class="st-cost">Free</span></li>
-                <li><b>Platform</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Walls</b> <span class="st-cost">60 SP</span></li>
-                <li><b>Sponge</b> <span class="st-cost">20 SP</span></li>
-                <li><b>Tent</b> <span class="st-cost">150 SP</span></li>
-                <li><b>Tiny House</b> <span class="st-cost">40 SP</span></li>
-                <li><b>Giant House</b> <span class="st-cost">40 SP</span></li>
-                <li><b>Harden</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Rubberize</b> <span class="st-cost">30 SP</span></li>
+                <li><b>Force</b></li>
+                <li><b>Fury</b></li>
+                <li><b>Invincible</b></li>
+                <li><b>Tendril</b></li>
+                <li><b>Shrink</b></li>
+                <li><b>Holy Light</b></li>
+                <li><b>Master Blast</b></li>
+                <li><b>Sunny Day</b></li>
+                <li><b>A Dark and Stormy Night</b></li>
+                <li><b>Weather</b></li>
+                <li><b>Time</b></li>
+                <li><b>localrain</b></li>
+                <li><b>restorelocalweather</b></li>
+                <li><b>Platform</b></li>
+                <li><b>Walls</b></li>
+                <li><b>Sponge</b></li>
+                <li><b>Tent</b></li>
+                <li><b>Tiny House</b></li>
+                <li><b>Giant House</b></li>
+                <li><b>Harden</b></li>
+                <li><b>Rubberize</b></li>
               </ul>
             </div>
           </div>
@@ -2636,7 +2637,7 @@
         <tr><td>floodgate<small class="plugin-next">By the GeyserMC Team</small></td><td>2.2.5</td><td>Lets phone, iPad, tablet, and console players join without a computer account.</td></tr>
         <tr><td>Excel XP (mcMMO)<small class="plugin-next">Modified by us · upstream mcMMO</small></td><td>2.3.003-WRV-XP-2</td><td>Skills that get better with practice, Together XP bonuses, and the /xpbonus indicator. This is our modified build of mcMMO, originally created by nossr50 and the mcMMO Team.</td></tr>
         <tr><td>ExcelTrainingWheels<small class="plugin-next">Created by us</small></td><td><span class="pv">0.1.7</span><small class="pv-when">installed October 25, 2026, about 11:18 PM Central; 0.1.5 on October 25, 2026, about 9:39 AM Central</small></td><td>Version 0.1.7 (installed October 25, 2026, about 11:18 PM Central) adds two things. <b>A safe moment on Bedrock:</b> on phones, tablets and consoles you cannot be hurt for 4 seconds after you join, respawn or change worlds, so the loading screen never costs you a life (the void, <code>/kill</code> and lava still count). <b>Night Hearing, from Seal 2:</b> once the second seal falls, at night in the overworld, nearby zombies hear loud noises inside a base (doors, breaking or placing blocks, fighting, shooting, chests and note blocks) and come for whoever made the noise. Sneaking halves how far a noise carries, and footsteps stay silent. A zombie that hears you still has to get through your doors the usual way, and it gives up after a minute if it gets nowhere. Night Hearing is waiting for now, while 1 of 5 seals is broken. Tested on our test server; not yet checked on a real phone. Version 0.1.5 (installed October 25, 2026, about 9:39 AM Central) only makes the server console quieter: door-break notes are written less often. No gameplay change. Version 0.1.4 installed October 24, 2026, about 11:37 AM Central. The behind-the-scenes family-protections add-on: younger players get a gentler time of it, entirely in the background, while the Hard-mode door drama applies to everyone who fights for it. Every zombie can now break doors, on a tier ladder — wooden doors fall in about 14 seconds, copper doors fall to a ~45-second siege, iron doors last about 60 seconds before they fall — so better doors buy more time to get out and fight. See the family protections note below.</td></tr>
-        <tr><td>ExcelWandBars<small class="plugin-next">Created by us</small></td><td><span class="pv">0.2.7</span><small class="pv-when">installed October 26, 2026, about 11:47 AM Central; 0.2.6 on October 26, 2026, about 9:48 AM Central</small></td><td>Version 0.2.7 (installed October 26, 2026, about 11:47 AM Central): in <b>Tap bar</b> and <b>Tap to pick</b> your wand moves to the last hotbar slot (slot 9) by itself, and whatever was there swaps into the wand's old slot; nothing is dropped or deleted, and it waits while your bar or any screen is open. In Tap bar on a phone, tablet or console, <b>tap the wand</b> with the bar up to get your items back, and tap again to open it (computers: Q or right-click, unchanged). <b>Spell info</b> now shows real numbers from the server's spell settings (hearts healed, damage, effects, duration, radius, cost, cooldown, range) and what the next rank changes. <b>Still to check in game:</b> tapping the wand on a real phone. See <a href="#cl-wand-last-slot">the change log</a>. Version 0.2.6 (installed October 26, 2026, about 9:48 AM Central): <b>Tap to pick really picks.</b> Tapping a spell icon now only picks that spell and never casts it, also for the healing spells that used to go off on a tap (Cure, Boon, Feed and others). On a phone, tablet or console, press and hold the screen to cast the spell you picked; it casts once and the bar stays up (before, the hold could close the bar). On a computer, the hotbar keys pick, left-click casts, and right-click or Q puts your items back (right-click again brings the bar back). Tap bar, crouch paging and the other styles did not change. <b>Still to check in game:</b> a real phone and a real computer. See <a href="#cl-tap-to-pick-fix">the change log</a>. Version 0.2.5 (installed October 26, 2026, about 3:10 AM Central): the <b>Tap bar</b> puts every spell you have on your hotbar, 7 to a page, with one empty slot kept for getting your items back; crouch flips pages only when they do not all fit. On a phone, press and hold the screen to read the spell list or the spell you just tapped (it never casts and the bar stays up). <b>Sneak bars</b> can now be picked on a computer too, Tap to cycle is now called <b>Tap to pick</b>, every style says what crouch does, and the Tap bar and compass no longer flicker when you scroll during a stance. <b>Still to check in game:</b> hold-to-read and crouch paging on a real phone, and the same on a real computer. <b>Known issue (fixed in 0.2.6):</b> in Tap to pick, tapping an icon could cast it instead of picking it. This was already the case in 0.2.4. Version 0.2.4 (installed October 25, 2026, about 2:30 AM Central): <code>/wandstyle</code> now has five styles: Classic, Sneak bars, Cycle, Tap to cycle and Tap bar (best on a phone). On a phone, the spell list is a Spell Book page that shows your rank. Everyone still starts on Classic. Version 0.2.1 (installed October 24, 2026, about 6:42 PM Central): the second style is now called <b>Sneak bars</b> and is for phones and consoles (right-click opens the bar, a sneak press flips to the next bar). Computer players always use Classic. A short wand tip shows until you press OK. NEW. Your wand controls, your choice. Everyone starts on the Classic controls (see How to use your wand). Type <code>/wandstyle</code> to switch to Spell bars and back; on a phone or console it opens a two-button screen. Your choice is saved and comes back after a rejoin, a respawn, a new wand or a new seal. <b>Still to check in game:</b> the switch on a real phone.</td></tr>
+        <tr><td>ExcelWandBars<small class="plugin-next">Created by us</small></td><td><span class="pv">0.2.8</span><small class="pv-when">installed October 26, 2026, about 12:13 PM Central; 0.2.7 on October 26, 2026, about 11:47 AM Central</small></td><td>Version 0.2.8 (installed October 26, 2026, about 12:13 PM Central): <b>wands rank up when you cast.</b> Every successful spell with your wand earns spell points (SP); at 800 SP the wand becomes a Student wand by itself, then 1,600 SP to Apprentice and 1,800 SP to Master. Same wand, every spell kept, new ones learned, and the whole server sees a short cheer in chat. Each spell pays about once a minute, healing spells pay only when they heal, a daily limit keeps the pace even, and the weekend (x1.2) and party (x1.25) bonuses count, up to x1.5. Your SP is at the top of your Spell Book. Version 0.2.7 (installed October 26, 2026, about 11:47 AM Central): in <b>Tap bar</b> and <b>Tap to pick</b> your wand moves to the last hotbar slot (slot 9) by itself, and whatever was there swaps into the wand's old slot; nothing is dropped or deleted, and it waits while your bar or any screen is open. In Tap bar on a phone, tablet or console, <b>tap the wand</b> with the bar up to get your items back, and tap again to open it (computers: Q or right-click, unchanged). <b>Spell info</b> now shows real numbers from the server's spell settings (hearts healed, damage, effects, duration, radius, cost, cooldown, range) and what the next rank changes. <b>Still to check in game:</b> tapping the wand on a real phone. See <a href="#cl-wand-last-slot">the change log</a>. Version 0.2.6 (installed October 26, 2026, about 9:48 AM Central): <b>Tap to pick really picks.</b> Tapping a spell icon now only picks that spell and never casts it, also for the healing spells that used to go off on a tap (Cure, Boon, Feed and others). On a phone, tablet or console, press and hold the screen to cast the spell you picked; it casts once and the bar stays up (before, the hold could close the bar). On a computer, the hotbar keys pick, left-click casts, and right-click or Q puts your items back (right-click again brings the bar back). Tap bar, crouch paging and the other styles did not change. <b>Still to check in game:</b> a real phone and a real computer. See <a href="#cl-tap-to-pick-fix">the change log</a>. Version 0.2.5 (installed October 26, 2026, about 3:10 AM Central): the <b>Tap bar</b> puts every spell you have on your hotbar, 7 to a page, with one empty slot kept for getting your items back; crouch flips pages only when they do not all fit. On a phone, press and hold the screen to read the spell list or the spell you just tapped (it never casts and the bar stays up). <b>Sneak bars</b> can now be picked on a computer too, Tap to cycle is now called <b>Tap to pick</b>, every style says what crouch does, and the Tap bar and compass no longer flicker when you scroll during a stance. <b>Still to check in game:</b> hold-to-read and crouch paging on a real phone, and the same on a real computer. <b>Known issue (fixed in 0.2.6):</b> in Tap to pick, tapping an icon could cast it instead of picking it. This was already the case in 0.2.4. Version 0.2.4 (installed October 25, 2026, about 2:30 AM Central): <code>/wandstyle</code> now has five styles: Classic, Sneak bars, Cycle, Tap to cycle and Tap bar (best on a phone). On a phone, the spell list is a Spell Book page that shows your rank. Everyone still starts on Classic. Version 0.2.1 (installed October 24, 2026, about 6:42 PM Central): the second style is now called <b>Sneak bars</b> and is for phones and consoles (right-click opens the bar, a sneak press flips to the next bar). Computer players always use Classic. A short wand tip shows until you press OK. NEW. Your wand controls, your choice. Everyone starts on the Classic controls (see How to use your wand). Type <code>/wandstyle</code> to switch to Spell bars and back; on a phone or console it opens a two-button screen. Your choice is saved and comes back after a rejoin, a respawn, a new wand or a new seal. <b>Still to check in game:</b> the switch on a real phone.</td></tr>
         <tr><td>ExcelWhatsNew<small class="plugin-next">Created by us</small></td><td><span class="pv">0.1.1</span><small class="pv-when">installed October 26, 2026, about 9:38 AM Central; 0.1.0 on October 25, 2026, about 10:41 AM Central</small></td><td>Version 0.1.1 (installed October 26, 2026, about 9:38 AM Central): news pages now go <b>both ways</b>. When you are reading an older entry, a <b>Newer news</b> button takes you one step back toward the newest, next to the <b>Older news</b> button. On a computer they are clickable [Newer news] and [Older news] buttons at the end of the entry; on a phone, tablet or console they are buttons in the news window (OK when the entry is still waiting for your OK, Newer news, Older news, and Close when there is no OK button). On a phone, <code>/whatsnew list</code> now names the real range you can type (for example "/whatsnew 2 to /whatsnew 9") instead of always saying "2 (or 3)". Version 0.1.0: New. Server news inside the game. Type <code>/whatsnew</code> (also <code>/news</code>), or tap <b>What's New</b> on the compass menu, to read the latest news; <code>/whatsnew list</code> shows older entries (up to the 10 newest since October 26, 2026; it was 3 before). When a new entry is added, everyone gets a short popup once, a few seconds after joining, at a calm moment: on phones and consoles it is a small window with an OK button, and on a computer it is a chat message with a clickable [OK]. Press OK and that entry won't show again. Each entry lists new commands, commands that got better, and other changes, in plain words.</td></tr>
         <tr><td>ExcelMakersMark<small class="plugin-next">Created by us</small></td><td><span class="pv">0.1.0</span><small class="pv-when">installed October 24, 2026, about 6:42 PM Central</small></td><td>NEW. Maker's mark: tools, weapons, armor, shields, bows and elytra you craft get a gray "Crafted by" line with your name, and it cannot be faked or removed at an anvil. Weapons count kills and bosses slain, and armor counts hits blocked. <code>/mark off</code> and <code>/mark on</code> turn signing off or on for you, and <code>/mark stats off</code> hides the counters. Magic wands and EliteMobs gear are never signed. <b>Still to check in game:</b> a signed tool on a phone.</td></tr>
         <tr><td>ExcelTips<small class="plugin-next">Created by us</small></td><td><span class="pv">0.1.0</span><small class="pv-when">installed October 24, 2026, about 6:42 PM Central</small></td><td>NEW. Short first-use tips: the first few times you use a feature, a tip explains it until you say OK (a clickable [OK] on a computer, an OK pop-up on a phone or console, or <code>/tips ok</code>). <code>/tips show</code> reads a tip again.</td></tr>
@@ -2679,6 +2680,7 @@
     <details open>
       <summary>Oct 26, 2026</summary>
       <ul>
+        <li id="cl-wand-ranks-by-casting"><b>Wands now rank up when you cast.</b> Installed live in one short restart on October 26, 2026, with nobody online. The owner approved it at about 12:07 PM Central. The server was closed to players (whitelist on, owner only, nobody removed) at about 12:10 PM, and two checks about two minutes apart (about 12:10 and 12:12 PM) both showed 0 players. After a reason, a one-minute warning and a 10-second countdown in chat it shut down at about 12:13 PM, started right away, was fully up at about 12:14 PM (19.2 seconds), and opened to everyone again at about 12:17 PM. Nobody was kicked. <b>Why:</b> the wands could never rank up: Magic's rank wands came with spell point earning turned off, so casting paid nothing. The owner asked that wands rank up by being used, at a pace of about two days of normal play per rank, that the server's XP bonuses count too, and that the whole server gets to cheer each rank-up. <b>How it works:</b> every successful spell you cast with your wand pays spell points (SP). At <b>800 SP</b> your wand becomes a <b>Student</b> wand by itself, then <b>1,600 SP</b> to <b>Apprentice</b> and <b>1,800 SP</b> to <b>Master</b>. It is the same wand, still bound to you, every spell you had stays, and it learns the new rank's spells at once. You get a title and a sound, and everyone online sees a short line like "<i>name</i> reached Student rank!". Each spell pays its full SP about once a minute, and Heal, Mend, Flash Heal and Greater Heal pay only when they really heal someone, so mixing spells is the fastest way. A daily limit (full pay up to 800 SP a day, then a quarter) keeps the pace even. <b>XP bonuses count:</b> the weekend bonus (Friday to Sunday) gives SP x1.2, casting with a party member within 50 blocks gives SP x1.25, and together x1.5, the most there is. <b>Where to see it:</b> the top of your Spell Book shows your rank and progress (for example "Student: 340/1,600 SP to Apprentice") and any bonus on now, and a short line above your hotbar shows each gain, like "+2 SP | Beginner 2/800". It waits a moment if the party line is showing, so the two never overlap. Everyone starts at 0 SP; nothing was taken away from anyone. Seals still decide which spells exist; they never cap your rank. ExcelWandBars 0.2.8.</li>
         <li id="cl-wand-last-slot"><b>Your wand moves to the last hotbar slot, tap the wand to get your items back, spell info shows real numbers, and a blue mana bar shows your mana as a number.</b> Installed live in one short restart on October 26, 2026, with nobody online. The owner approved it at about 11:40 AM Central. Two checks a minute and a half apart (about 11:42 and 11:44 AM) both showed 0 players. The server was closed to players (whitelist on, owner only, nobody removed) at about 11:43 AM, and after a reason, a one-minute warning and a 10-second countdown in chat it shut down at about 11:47 AM, started right away, was fully up at about 11:48 AM (19.6 seconds), and opened to everyone again at about 11:50 AM. Nobody was kicked. The mana bar went in after that with a Magic reload at about 11:53 AM, no second restart. <b>Why:</b> the owner asked for three things: in Tap bar the wand should sit in the last slot by itself, tapping the wand should give you your normal items back, and the spell info screen should be detailed and accurate (real numbers, like how much a heal heals) and say how to rank up. He also asked that players can see their mana as a number. <b>1. The wand moves to slot 9 (Tap bar and Tap to pick):</b> the first time you hold or pick your wand in one of those two styles, it swaps into the last hotbar slot (slot 9). Whatever was in slot 9 swaps into the wand's old slot at the same moment. Nothing is ever dropped, deleted or copied. It waits while your spell bar is up, while any other screen is open, while you have an item on your cursor, for 3 seconds after you click in your inventory, join or respawn, while you are dead, in spectator or creative, and while you are holding slot 9 yourself (it moves as soon as you look away). A wand in your main inventory (not the hotbar) is left alone. Picking the wand moves it, selects slot 9 and opens your bar as usual, without casting anything. Classic, Cycle and Sneak bars never move the wand. <b>2. Tap the wand for your items (Tap bar):</b> on a phone, tablet or console, with the spell bar up, tap the wand again: the bar closes and your items come back exactly as they were. Tap it again to open the bar. On a computer nothing changed: Q or right-click puts your items back, the same as before. The <code>/wandstyle</code> button on a phone now reads "Tap bar (tap wand: items back)" and "Tap: cast. Hold: read. Crouch: page", and on a computer "Tap bar (Q: items back)". The wand tip says the same. <b>3. Spell info shows what a spell really does:</b> press and hold to read a spell (or <code>/spellinfo</code>) and you now see real numbers taken from the server's own spell settings: hearts healed, damage, effects and their levels, how long it lasts, who it hits, the radius, cast time, what stops it, mana cost, the real cooldown and range, and what the next rank changes. Examples: Mend on a beginner wand "Heals 0.75 heart" (1 heart at the next rank), Heal "0.5 heart every 1 sec for 10 sec, 5 hearts in all", Feed "Heals 2 hearts, cures Poison and Wither, fills 3 drumsticks". Where the next rank is not open yet it says so: "Student rank is not open yet. Watch What's New." <b>4. A blue mana bar with a number:</b> while you hold your wand, a thin blue bar at the top of your screen shows "Mana" and your mana as a whole number, like "Mana 42", and its fill shows how full you are. It counts up as your mana refills. It does not use the line above your hotbar, so it never covers your spell, stance, range or page lines. Java and Bedrock see the same bar. It also stays when the next seal breaks. <b>What did not change:</b> your spells, wands, ranks, mana amounts, refill speed, costs and cooldowns. The Tap bar still puts every spell you have on your hotbar, 7 to a page, and crouch still flips pages. The stance scrolling fix, Classic, Cycle, Sneak bars and Tap to pick controls are the same. <b>Tested:</b> on our test server, 1,050 automatic checks passed, including 2,000 random hotbars where every item was kept exactly once. A computer-style test player passed 23 of 23 checks (wand to slot 9, waiting while holding slot 9, picking the wand, tapping the wand to close and reopen the bar, inventory clicks, cursor items, relog, death and respawn, creative, main inventory), with exact item counts every time and nothing on the ground. The mana bar was tested there too. After the install the server showed the new spell info ("Heals 0.75 heart" for Mend) and the phone tap hook switched on. <b>Still to check in game:</b> tapping the wand on a real phone (our phone-style test player could not send that tap, so it is not tested yet; if it does not work, the empty slot and press and hold still give your items back), the wand moving to slot 9 on a real phone and a real computer, and the mana bar on both. <b>Also:</b> a new What's New entry, "Tap bar: your wand lives in slot 9", tells everyone about it once on their next join. Plugin: ExcelWandBars 0.2.6 to 0.2.7 (created by us; it sets up Magic wands, by elMakers). The mana bar is a Magic (elMakers) wand setting, the same Magic version. Nothing in EliteMobs (by MagmaGuy) changed. Record: <a href="https://github.com/ElMikeExcel/wrv-plugins/pull/86">wrv-plugins draft PR #86</a>.</li>
         <li id="cl-tap-to-pick-fix"><b>Tap to pick really picks: tapping a spell picks it, press and hold casts it.</b> Installed live in one short restart on October 26, 2026, with nobody online: the server was closed to players at about 9:47 AM Central, and after a reason, a one-minute warning and a 10-second countdown in chat it shut down at about 9:48 AM, started right away, was fully up at about 9:49 AM, and opened to everyone again at about 9:50 AM. Nobody was kicked. The owner picked this fix from the morning to-do list. <b>Why:</b> in the <b>Tap to pick</b> wand style (the first wand setup, see <code>/wandstyle</code>), tapping a spell icon is supposed to only pick that spell, and pressing and holding is supposed to cast it. Instead, tapping some spells cast them at once: the healing and helper spells that are set to cast on a single click everywhere (Cure, Boon, Superheal, Feed and Recall). And on a phone, tablet or console, pressing and holding the screen could close the spell bar instead of casting. <b>What you notice:</b> in Tap to pick, tap your wand and your spells fill the hotbar. Tapping any spell icon now only picks it, every spell, and nothing casts. <b>On a phone, tablet or console:</b> press and hold the screen to cast the spell you picked. It casts once per hold and the bar stays up. Crouch still flips to the next page, and holding the wand slot or tapping the empty slot still gives your items back. <b>On a computer:</b> the hotbar keys pick a spell, left-click casts it, and right-click or Q puts your items back; right-click again brings the bar back. The <code>/wandstyle</code> button now says it in one line: "Tap: pick. Hold: cast. Crouch: page" on a phone, and "Key picks, left click casts, sneak pages" on a computer. If you want a tap to cast straight away, pick <b>Tap bar</b> instead. <b>What did not change:</b> Tap bar (a tap casts, press and hold reads), Classic, Sneak bars, Cycle, crouch paging, and the stance scrolling fix. Your spells, wands, mana and cooldowns are the same. A wand set to Tap to pick updates itself the next time you hold it. <b>Tested:</b> on our test server, phone-style and computer-style test players picked Cure, Boon and Feed with a tap and nothing cast, press and hold cast the picked spell once with the bar still up, crouch flipped to page 2, and items came back exactly; the old version failed the same checks. <b>Still to check in game:</b> a real phone and a real computer. <b>Also:</b> a new What's New entry, "Tap to pick really picks now", tells everyone about it once on their next join. Plugin: ExcelWandBars 0.2.5 to 0.2.6 (created by us; it sets up Magic wands, by elMakers). Nothing in EliteMobs (by MagmaGuy) changed.</li>
         <li id="cl-whatsnew-newer"><b>What's New: a Newer news button, so you can page back to the newest news.</b> Installed live in one short restart on October 26, 2026, with nobody online: the server was closed to players at about 9:31 AM Central, shut down at about 9:37 AM, started at about 9:38 AM, and opened to everyone again at about 9:40 AM. Because nobody was on, there was no countdown, and nobody was kicked. The owner asked for this at about 9:15 AM, after asking whether players can go back to the newer news once they have paged back to older news. <b>Why:</b> since this morning What's New keeps up to 10 entries (see <a href="#cl-am-fixes-1026">What's New shows more news</a>), but the pages only went one way. Each entry had an <b>Older news</b> button and nothing to come back with, so after paging back you had to close it and open What's New again to see the newest entry. <b>What you notice:</b> when you are reading any entry that is not the newest, there is now a <b>Newer news</b> button that opens the next newer entry. Press it again and again to walk back to the newest. The newest entry has no Newer news button (there is nothing newer), and the oldest entry you can reach has no Older news button. <b>On a computer:</b> each entry ends with clickable buttons, left to right: [OK] (only on the newest entry you have not said OK to yet), [Newer news], [Older news]. Hovering a button says what it does. You can still type <code>/whatsnew 3</code> to jump to one entry, <code>/whatsnew 1</code> always goes back to the newest, and <code>/whatsnew list</code> still has a [Read] button on every row. <b>On a phone, tablet or console:</b> the news window has its buttons top to bottom: OK (only when that entry is still waiting for your OK), then Newer news, then Older news, then Close (only when there is no OK button, as before; Close used to be at the top and is now at the bottom). Tapping Newer news or Older news opens that entry in a fresh window. If the window cannot open for some reason and the news shows in chat instead, the last line now tells you what to type in both directions, for example "Newer news: /whatsnew 3. Older news: /whatsnew 5." <b>Fixed:</b> on a phone, <code>/whatsnew list</code> ended with "Type /whatsnew 2 (or 3) to read an older one." even though up to 10 entries can be opened now. It now says the real range, for example "Type /whatsnew 2 to /whatsnew 9 to read an older one." (with 2 entries it says "Type /whatsnew 2 to read the older one", and with 1 entry it says nothing). <b>Same on both:</b> computers and phones get the same buttons in the same order; only the Close button is phone-only, because chat on a computer does not need one. <b>What did not change:</b> the popup when you join. You still get at most one news popup per join, for the newest entry you have not said OK to, and pressing OK still hides it for good. The news itself, the 10-entry limit, your saved OK choices and every other plugin stayed the same. No settings file was edited: the button's name comes from the plugin itself. <b>New news entry:</b> a What's New entry "News pages go both ways" was added right after the restart (<code>whatsnew reload</code>, 9 entries, no warnings), so everyone hears about the button once on their next join. <b>How it went in:</b> two empty-server checks before closing the server, the old plugin file kept on the server as a dated backup, the new file uploaded under a temporary name, renamed into place and matched by checksum before the start. After the start the server came up cleanly in about 19 seconds with all 71 plugins, no serious errors and only the usual known start-up notices, and the seal count was unchanged. <b>Tested first:</b> on our test server, with a computer test player and a phone test player, against the same news and settings as the real server: every button opened the right entry on both, Newer news walked back to the newest, Close did nothing extra, OK still worked, and the phone list line named the right range. 86 automatic checks passed too. <b>Still to check in game:</b> the new buttons on a real computer and a real phone (on a computer, <code>/whatsnew 3</code> then [Newer news] twice; on a phone, compass, What's New, Older news, then Newer news). <b>Undo, if ever needed:</b> the old version is kept on the server and goes back with one restart. <b>GitHub record:</b> the source, tests and full change list are in the plugin repository as a draft record.</li>
