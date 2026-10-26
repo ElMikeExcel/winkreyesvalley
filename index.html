@@ -2264,9 +2264,10 @@
         <h4>How magic will work</h4>
         <ul>
           <li>Every mage walks one path: <b>Beginner, then Student, then Apprentice, then Master</b>. Your mana pool grows along the way: 60, then 100, then 150, then 200.</li>
-          <li>You earn <b>spell points (SP)</b> by casting spells. Each spell pays out on its own cooldown, so repeating one spell cannot farm points; trying different spells is how you grow.</li>
-          <li>Each rank is paced at about <b>two days of casual play</b>. Playing more is fine; the tree just will not be rushed in an afternoon.</li>
-          <li>Spells unlock by learning them with SP once your rank is high enough. The costs below are the real planned costs.</li>
+          <li>You earn <b>spell points (SP)</b> by casting spells with your wand. When you have enough, <b>your wand moves up a rank by itself</b>: the same wand, every spell kept, and it learns that rank's new spells at once. Spells you already know get stronger too. A title tells you, and the whole server sees a short "reached Student rank!" line in chat.</li>
+          <li>It takes about <b>two days of normal play per rank</b>: <b>800 SP</b> to Student, <b>1,600 SP</b> to Apprentice, <b>1,800 SP</b> to Master. Your progress is at the top of your Spell Book (for example "Student: 340/1,600 SP to Apprentice"), and a short line above your hotbar shows each gain.</li>
+          <li>Each spell pays its full SP about once a minute, and healing spells only pay when they really heal someone, so spamming one spell does not speed things up. Mixing spells does. A daily limit keeps the pace even for everyone.</li>
+          <li><b>Server XP bonuses count for SP too:</b> the weekend bonus (Friday to Sunday) gives SP x1.2, and casting with a party member within 50 blocks gives SP x1.25. Together they make x1.5, the most there is. When a bonus is on, your Spell Book says so (for example "Bonus now: SP x1.25 (group)").</li>
           <li>Magic is built on the Magic plugin by NathanWolf (elMakers), configured by us for this server, with one spell of our own: Storm Shackle.</li>
           <li>Magic went in dormant on purpose, with no player trial first (the owner's call on October 17, 2026), and stayed asleep until Seal 1 broke on October 23: the family becomes the test as each school opens. The seals decide when each school opens.</li>
         </ul>
@@ -2282,40 +2283,40 @@
           <div class="st-body">
             <p class="st-gate">Opens with the family's first fallen seal: any one of the five bosses, in any order.</p>
             <div class="st-band">
-              <h5>Beginner band · 6 new spells · learning them all ≈ 2800 SP (about 2.2 days of casual play)</h5>
+              <h5>Beginner band · 6 new spells</h5>
               <ul class="st-spells">
-                <li><b>Heal</b> <span class="st-cost">1200 SP</span></li>
-                <li><b>Boon</b> <span class="st-cost">880 SP</span></li>
-                <li><b>Feed</b> <span class="st-cost">Free</span></li>
-                <li><b>Extinguish</b> <span class="st-cost">400 SP</span></li>
-                <li><b>Aqualung</b> <span class="st-cost">120 SP</span></li>
-                <li><b>Mend</b> <span class="st-cost">200 SP</span> <span class="st-tag">healer's kit: quick filler heal, no cooldown; nonstop Mend empties your mana in about 20 casts (since October 26, 2026: 4 / 8 / 12 / 17 mana by wand)</span></li>
+                <li><b>Heal</b></li>
+                <li><b>Boon</b></li>
+                <li><b>Feed</b></li>
+                <li><b>Extinguish</b></li>
+                <li><b>Aqualung</b></li>
+                <li><b>Mend</b> <span class="st-tag">healer's kit: quick filler heal, no cooldown; nonstop Mend empties your mana in about 20 casts (since October 26, 2026: 4 / 8 / 12 / 17 mana by wand)</span></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Student band · 6 new spells · learning them all ≈ 3570 SP (about 2.7 days of casual play)</h5>
+              <h5>Student band · 6 new spells</h5>
               <ul class="st-spells">
-                <li><b>Cure</b> <span class="st-cost">550 SP</span></li>
-                <li><b>Shell</b> <span class="st-cost">470 SP</span></li>
-                <li><b>Diving Helmet</b> <span class="st-cost">320 SP</span></li>
-                <li><b>Storm Shackle</b> <span class="st-cost">1260 SP</span> <span class="st-tag">created by us for this server</span></li>
-                <li><b>Flash Heal</b> <span class="st-cost">500 SP</span> <span class="st-tag">healer's kit: a fast heal that costs more mana</span></li>
-                <li><b>Ward</b> <span class="st-cost">470 SP</span> <span class="st-tag">healer's kit: a small absorption shield</span></li>
+                <li><b>Cure</b></li>
+                <li><b>Shell</b></li>
+                <li><b>Diving Helmet</b></li>
+                <li><b>Storm Shackle</b> <span class="st-tag">created by us for this server</span></li>
+                <li><b>Flash Heal</b> <span class="st-tag">healer's kit: a fast heal that costs more mana</span></li>
+                <li><b>Ward</b> <span class="st-tag">healer's kit: a small absorption shield</span></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Apprentice band · 3 new spells · learning them all ≈ 1580 SP (about 1.2 days of casual play)</h5>
+              <h5>Apprentice band · 3 new spells</h5>
               <ul class="st-spells">
-                <li><b>SuperHeal</b> <span class="st-cost">880 SP</span></li>
-                <li><b>Recall</b> <span class="st-cost">100 SP</span></li>
-                <li><b>Greater Heal</b> <span class="st-cost">600 SP</span> <span class="st-tag">healer's kit: a 2 second cast, the most healing for the mana</span></li>
+                <li><b>SuperHeal</b></li>
+                <li><b>Recall</b></li>
+                <li><b>Greater Heal</b> <span class="st-tag">healer's kit: a 2 second cast, the most healing for the mana</span></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Master band · 2 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Master band · 2 new spells</h5>
               <ul class="st-spells">
-                <li><b>Blessing</b> <span class="st-cost">2600 SP</span></li>
-                <li><b>Recall to Last Death</b> <span class="st-cost">Free</span></li>
+                <li><b>Blessing</b></li>
+                <li><b>Recall to Last Death</b></li>
               </ul>
             </div>
           </div>
@@ -2325,43 +2326,43 @@
           <div class="st-body">
             <p class="st-gate">Opens with the family's second fallen seal: any boss, any order.</p>
             <div class="st-band">
-              <h5>Beginner band · 6 new spells · learning them all ≈ 2590 SP (about 2.0 days of casual play)</h5>
+              <h5>Beginner band · 6 new spells</h5>
               <ul class="st-spells">
-                <li><b>Torch</b> <span class="st-cost">430 SP</span></li>
-                <li><b>Peek</b> <span class="st-cost">650 SP</span></li>
-                <li><b>Workbench</b> <span class="st-cost">170 SP</span></li>
-                <li><b>Bubble</b> <span class="st-cost">220 SP</span></li>
-                <li><b>Backflip</b> <span class="st-cost">1080 SP</span></li>
-                <li><b>Gasp</b> <span class="st-cost">40 SP</span></li>
+                <li><b>Torch</b></li>
+                <li><b>Peek</b></li>
+                <li><b>Workbench</b></li>
+                <li><b>Bubble</b></li>
+                <li><b>Backflip</b></li>
+                <li><b>Gasp</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Student band · 9 new spells · learning them all ≈ 2590 SP (about 2.0 days of casual play)</h5>
+              <h5>Student band · 9 new spells</h5>
               <ul class="st-spells">
-                <li><b>Magic Torch</b> <span class="st-cost">Free</span></li>
-                <li><b>Throw Magic Torch</b> <span class="st-cost">Free</span></li>
-                <li><b>Fling</b> <span class="st-cost">1730 SP</span></li>
-                <li><b>Dash</b> <span class="st-cost">430 SP</span></li>
-                <li><b>Evade</b> <span class="st-cost">Free</span></li>
-                <li><b>Hulk Leap</b> <span class="st-cost">Free</span></li>
-                <li><b>Piggyback</b> <span class="st-cost">430 SP</span></li>
-                <li><b>Repair Item</b> <span class="st-cost">Free</span></li>
-                <li><b>Repair Equipment</b> <span class="st-cost">Free</span></li>
+                <li><b>Magic Torch</b></li>
+                <li><b>Throw Magic Torch</b></li>
+                <li><b>Fling</b></li>
+                <li><b>Dash</b></li>
+                <li><b>Evade</b></li>
+                <li><b>Hulk Leap</b></li>
+                <li><b>Piggyback</b></li>
+                <li><b>Repair Item</b></li>
+                <li><b>Repair Equipment</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Apprentice band · 4 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Apprentice band · 4 new spells</h5>
               <ul class="st-spells">
-                <li><b>Glide</b> <span class="st-cost">400 SP</span></li>
-                <li><b>Lift</b> <span class="st-cost">80 SP</span></li>
-                <li><b>Stash</b> <span class="st-cost">1060 SP</span></li>
-                <li><b>Disposal</b> <span class="st-cost">1060 SP</span></li>
+                <li><b>Glide</b></li>
+                <li><b>Lift</b></li>
+                <li><b>Stash</b></li>
+                <li><b>Disposal</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Master band · 1 new spell · learning them all ≈ 2500 SP (about 1.9 days of casual play)</h5>
+              <h5>Master band · 1 new spell</h5>
               <ul class="st-spells">
-                <li><b>Blink</b> <span class="st-cost">2500 SP</span></li>
+                <li><b>Blink</b></li>
               </ul>
             </div>
           </div>
@@ -2371,49 +2372,49 @@
           <div class="st-body">
             <p class="st-gate">Opens with the family's third fallen seal: any boss, any order.</p>
             <div class="st-band">
-              <h5>Beginner band · 7 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Beginner band · 7 new spells</h5>
               <ul class="st-spells">
-                <li><b>Magic Missile</b> <span class="st-cost">660 SP</span></li>
-                <li><b>Frost</b> <span class="st-cost">880 SP</span></li>
-                <li><b>Arrow</b> <span class="st-cost">310 SP</span></li>
-                <li><b>Flare</b> <span class="st-cost">90 SP</span></li>
-                <li><b>Stun</b> <span class="st-cost">350 SP</span></li>
-                <li><b>Push</b> <span class="st-cost">220 SP</span></li>
-                <li><b>Pull</b> <span class="st-cost">90 SP</span></li>
+                <li><b>Magic Missile</b></li>
+                <li><b>Frost</b></li>
+                <li><b>Arrow</b></li>
+                <li><b>Flare</b></li>
+                <li><b>Stun</b></li>
+                <li><b>Push</b></li>
+                <li><b>Pull</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Student band · 10 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Student band · 10 new spells</h5>
               <ul class="st-spells">
-                <li><b>Sparkle</b> <span class="st-cost">20 SP</span></li>
-                <li><b>Stream</b> <span class="st-cost">50 SP</span></li>
-                <li><b>Grow</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Familiar</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Ice Arrow</b> <span class="st-cost">240 SP</span></li>
-                <li><b>Light Arrow</b> <span class="st-cost">1690 SP</span></li>
-                <li><b>Shock Arrow</b> <span class="st-cost">410 SP</span></li>
-                <li><b>Normal Arrow</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Wolf</b> <span class="st-cost">50 SP</span></li>
-                <li><b>Cat</b> <span class="st-cost">50 SP</span></li>
+                <li><b>Sparkle</b></li>
+                <li><b>Stream</b></li>
+                <li><b>Grow</b></li>
+                <li><b>Familiar</b></li>
+                <li><b>Ice Arrow</b></li>
+                <li><b>Light Arrow</b></li>
+                <li><b>Shock Arrow</b></li>
+                <li><b>Normal Arrow</b></li>
+                <li><b>Wolf</b></li>
+                <li><b>Cat</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Apprentice band · 5 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Apprentice band · 5 new spells</h5>
               <ul class="st-spells">
-                <li><b>Wave</b> <span class="st-cost">650 SP</span></li>
-                <li><b>Smite</b> <span class="st-cost">810 SP</span></li>
-                <li><b>Growth</b> <span class="st-cost">980 SP</span></li>
-                <li><b>Hat</b> <span class="st-cost">130 SP</span></li>
-                <li><b>Gather</b> <span class="st-cost">30 SP</span></li>
+                <li><b>Wave</b></li>
+                <li><b>Smite</b></li>
+                <li><b>Growth</b></li>
+                <li><b>Hat</b></li>
+                <li><b>Gather</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Master band · 4 new spells · learning them all ≈ 2600 SP (about 2.0 days of casual play)</h5>
+              <h5>Master band · 4 new spells</h5>
               <ul class="st-spells">
-                <li><b>Lightning</b> <span class="st-cost">300 SP</span></li>
-                <li><b>Chain Lightning</b> <span class="st-cost">600 SP</span></li>
-                <li><b>Pollinate</b> <span class="st-cost">1200 SP</span></li>
-                <li><b>Tame</b> <span class="st-cost">500 SP</span></li>
+                <li><b>Lightning</b></li>
+                <li><b>Chain Lightning</b></li>
+                <li><b>Pollinate</b></li>
+                <li><b>Tame</b></li>
               </ul>
             </div>
           </div>
@@ -2441,64 +2442,64 @@
           <div class="st-body">
             <p class="st-gate">Opens with the family's fifth and final seal. The Adventurers Guild itself opens with this one.</p>
             <div class="st-band">
-              <h5>Beginner band · 4 new spells · learning them all ≈ 1000 SP (about 0.8 days of casual play)</h5>
+              <h5>Beginner band · 4 new spells</h5>
               <ul class="st-spells">
-                <li><b>Eat Food</b> <span class="st-cost">Free</span></li>
-                <li><b>Roll Dice</b> <span class="st-cost">Free</span></li>
-                <li><b>Cloak</b> <span class="st-cost">500 SP</span></li>
-                <li><b>Reflect</b> <span class="st-cost">500 SP</span></li>
+                <li><b>Eat Food</b></li>
+                <li><b>Roll Dice</b></li>
+                <li><b>Cloak</b></li>
+                <li><b>Reflect</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Student band · 7 new spells · learning them all ≈ 1850 SP (about 1.4 days of casual play)</h5>
+              <h5>Student band · 7 new spells</h5>
               <ul class="st-spells">
-                <li><b>Boomerang</b> <span class="st-cost">500 SP</span></li>
-                <li><b>Throw Sword</b> <span class="st-cost">Free</span></li>
-                <li><b>skating</b> <span class="st-cost">Free</span></li>
-                <li><b>wearskates</b> <span class="st-cost">Free</span></li>
-                <li><b>Admission</b> <span class="st-cost">100 SP</span></li>
-                <li><b>Earth</b> <span class="st-cost">750 SP</span></li>
-                <li><b>Whip</b> <span class="st-cost">500 SP</span></li>
+                <li><b>Boomerang</b></li>
+                <li><b>Throw Sword</b></li>
+                <li><b>skating</b></li>
+                <li><b>wearskates</b></li>
+                <li><b>Admission</b></li>
+                <li><b>Earth</b></li>
+                <li><b>Whip</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Apprentice band · 9 new spells · learning them all ≈ 2280 SP (about 1.8 days of casual play)</h5>
+              <h5>Apprentice band · 9 new spells</h5>
               <ul class="st-spells">
-                <li><b>tamepet</b> <span class="st-cost">Free</span></li>
-                <li><b>Anvil</b> <span class="st-cost">110 SP</span></li>
-                <li><b>Healing</b> <span class="st-cost">160 SP</span></li>
-                <li><b>Critical</b> <span class="st-cost">550 SP</span></li>
-                <li><b>Counterspell</b> <span class="st-cost">660 SP</span></li>
-                <li><b>Music</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Arrow Rain</b> <span class="st-cost">110 SP</span></li>
-                <li><b>Sweep</b> <span class="st-cost">110 SP</span></li>
-                <li><b>Power Stone</b> <span class="st-cost">550 SP</span></li>
+                <li><b>tamepet</b></li>
+                <li><b>Anvil</b></li>
+                <li><b>Healing</b></li>
+                <li><b>Critical</b></li>
+                <li><b>Counterspell</b></li>
+                <li><b>Music</b></li>
+                <li><b>Arrow Rain</b></li>
+                <li><b>Sweep</b></li>
+                <li><b>Power Stone</b></li>
               </ul>
             </div>
             <div class="st-band">
-              <h5>Master band · 21 new spells · learning them all ≈ 2510 SP (about 2.0 days of casual play)</h5>
+              <h5>Master band · 21 new spells</h5>
               <ul class="st-spells">
-                <li><b>Force</b> <span class="st-cost">550 SP</span></li>
-                <li><b>Fury</b> <span class="st-cost">440 SP</span></li>
-                <li><b>Invincible</b> <span class="st-cost">110 SP</span></li>
-                <li><b>Tendril</b> <span class="st-cost">90 SP</span></li>
-                <li><b>Shrink</b> <span class="st-cost">170 SP</span></li>
-                <li><b>Holy Light</b> <span class="st-cost">150 SP</span></li>
-                <li><b>Master Blast</b> <span class="st-cost">Free</span></li>
-                <li><b>Sunny Day</b> <span class="st-cost">220 SP</span></li>
-                <li><b>A Dark and Stormy Night</b> <span class="st-cost">180 SP</span></li>
-                <li><b>Weather</b> <span class="st-cost">110 SP</span></li>
-                <li><b>Time</b> <span class="st-cost">90 SP</span></li>
-                <li><b>localrain</b> <span class="st-cost">Free</span></li>
-                <li><b>restorelocalweather</b> <span class="st-cost">Free</span></li>
-                <li><b>Platform</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Walls</b> <span class="st-cost">60 SP</span></li>
-                <li><b>Sponge</b> <span class="st-cost">20 SP</span></li>
-                <li><b>Tent</b> <span class="st-cost">150 SP</span></li>
-                <li><b>Tiny House</b> <span class="st-cost">40 SP</span></li>
-                <li><b>Giant House</b> <span class="st-cost">40 SP</span></li>
-                <li><b>Harden</b> <span class="st-cost">30 SP</span></li>
-                <li><b>Rubberize</b> <span class="st-cost">30 SP</span></li>
+                <li><b>Force</b></li>
+                <li><b>Fury</b></li>
+                <li><b>Invincible</b></li>
+                <li><b>Tendril</b></li>
+                <li><b>Shrink</b></li>
+                <li><b>Holy Light</b></li>
+                <li><b>Master Blast</b></li>
+                <li><b>Sunny Day</b></li>
+                <li><b>A Dark and Stormy Night</b></li>
+                <li><b>Weather</b></li>
+                <li><b>Time</b></li>
+                <li><b>localrain</b></li>
+                <li><b>restorelocalweather</b></li>
+                <li><b>Platform</b></li>
+                <li><b>Walls</b></li>
+                <li><b>Sponge</b></li>
+                <li><b>Tent</b></li>
+                <li><b>Tiny House</b></li>
+                <li><b>Giant House</b></li>
+                <li><b>Harden</b></li>
+                <li><b>Rubberize</b></li>
               </ul>
             </div>
           </div>
