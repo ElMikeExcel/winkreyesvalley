@@ -18,7 +18,7 @@ class CategoryGuideChecks(unittest.TestCase):
     def test_current_version_and_narrow_phone_confirmation(self):
         self.assertIn('ExcelShops 1.1 is installed.', CURRENT)
         self.assertIn('Mike checked the new shop on his phone on October 14, 2026 and confirmed the flow works.', CURRENT)
-        self.assertIn('A live purchase with money movement, and a second player buying from a chest shop, have not been verified yet.', CURRENT)
+        self.assertIn('A live purchase with money movement, and a second player buying from a player shop, have not been verified yet.', CURRENT)
         for stale in ['ExcelShops 1.0 is installed.', 'Actual phone delivery, touch behavior and live-purchase acceptance remain unverified;', 'Real-device acceptance remains unverified']:
             self.assertNotIn(stale, CURRENT)
     def test_installed_mobile_controls_and_preserved_milestone(self):

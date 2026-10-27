@@ -15,7 +15,7 @@ class DeathProtectionChecks(unittest.TestCase):
 
     def test_installed_version_has_explicit_acceptance_limits(self):
         for phrase in ['ExcelDeathProtection 0.1.3 is installed, October 13, 2026.',
-                       'Java and Bedrock-phone review-window checks, real purchases and gameplay acceptance are still pending for 0.1.3.',
+                       'Java and Bedrock-phone review-window checks, real purchases and gameplay acceptance for 0.1.3 were waived by the server owner on October 13, 2026; they are recorded as unverified, not passed.',
                        'Startup and automated tests do not prove the in-game experience.']:
             self.assertIn(phrase, self.guide)
         self.assertNotIn('Bedrock phone test passed', self.current)

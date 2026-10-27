@@ -5,10 +5,10 @@ The existing family Minecraft website, hosted with GitHub Pages. This is a plain
 ## Edit the mcMMO guide
 
 - Edit player-facing facts in `data/mcmmo-guide.json`.
-- Edit the introduction, commands, party help, or card rendering in `scripts/build_guide.py`.
+- Edit introduction, commands, party help, and current XP notices directly in `index.html`. Edit only card rendering in `scripts/build_guide.py`.
 - Run `python3 scripts/build_guide.py` to update the marked section of `index.html`.
 - Keep the generated `index.html` committed so all skills work without JavaScript.
-- The generator also versions the CSS and JavaScript URLs so returning visitors receive changed assets.
+- The generator updates only the `MCMO_SKILL_CARDS_START` / `MCMO_SKILL_CARDS_END` region. It must preserve all surrounding current instructions and asset URLs. Version CSS/JavaScript URLs separately when changing those assets.
 - `guide.js` adds filtering, expandable controls, tab keyboard navigation, and skill permalinks. Native `<details>` elements still work without it.
 - `style.css` preserves the site's existing green/brown design and adds responsive guide styles.
 

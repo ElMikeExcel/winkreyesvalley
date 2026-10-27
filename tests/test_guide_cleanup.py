@@ -41,7 +41,7 @@ class GuideCleanupChecks(unittest.TestCase):
             'Bedrock shop controls (ExcelShops 1.1): read first, then choose the amount',
             'Installed October 14, 2026. On a phone or console, each item opens its own details screen before you choose an amount. Mike checked this flow on his phone on October 14 and confirmed it works.',
             'Mike checked the new shop on his phone on October 14, 2026 and confirmed the flow works.',
-            'A live purchase with money movement, and a second player buying from a chest shop, have not been verified yet.',
+            'A live purchase with money movement, and a second player buying from a player shop, have not been verified yet.',
         ]:
             self.assertIn(value, plain(SHOPS))
         for stale in ['Prepared for 1.1', 'prepared 1.1', 'Not installed yet', 'ExcelShops 1.2', '3-tap']:
@@ -87,14 +87,14 @@ class GuideCleanupChecks(unittest.TestCase):
             self.assertIn(phrase.lower(), HISTORY.lower())
 
     def test_wealthboard_version_and_historical_versions(self):
-        self.assertIn('WealthBoard 1.3.0-mobile.7 is installed.', BOARDS)
-        self.assertIn('<td>ExcelWealthBoard (WealthBoard)<small class="plugin-next">Created by us</small></td><td>1.3.0-mobile.7</td>', CURRENT)
+        self.assertIn('ExcelWealthBoard 1.4.0 is installed', BOARDS)
+        self.assertIn('<td>ExcelWealthBoard<small class="plugin-next">Created by us</small></td><td>1.4.0</td>', CURRENT)
         self.assertIn('Updated WealthBoard to 1.3.0-mobile.7: welcome-title timing fix for the join popup.', HISTORY)
         self.assertIn('WealthBoard to 1.3.0-mobile.6', HISTORY)
         self.assertIn('WealthBoard 1.3.0-mobile.1', HISTORY)
 
     def test_nine_boards_with_platform_status(self):
-        self.assertIn('/leaderboard opens the boards menu: Top Miner, Top Builder, Most Playtime, Top Slayer, Top Traveler, Most Deaths, Richest, mcMMO Power and Jobs Levels. On a phone it is a button list; on Java it is a clickable chat menu. Mike confirmed the phone version works on October 15; the Java chat-menu check is still to come.', plain(BOARDS))
+        self.assertIn('/leaderboard opens the boards menu: Top Miner, Top Builder, Most Playtime, Top Slayer, Top Traveler, Most Deaths, Richest, mcMMO Power, Jobs Levels and Land Claimed. Land Claimed ranks everyone by how much land they have claimed, and every row also shows how many claim blocks that player can still claim. On a phone it is a button list; on Java it is a clickable chat menu. Mike confirmed the phone version works on October 15; the Java chat-menu check is still to come.', plain(BOARDS))
         self.assertNotIn('reopens the full wealth and mcMMO boards', BOARDS)
 
     def test_join_steps_are_expectations(self):
@@ -106,7 +106,7 @@ class GuideCleanupChecks(unittest.TestCase):
 
     def test_guild_is_not_open(self):
         elite = CURRENT.split('id="panel-elitemobs"', 1)[1].split('id="panel-shops"', 1)[0]
-        self.assertIn("A big Adventurer's Guild adventure is being set up for later; it is not open yet. For now, the challenge is the stronger elite monsters you meet while exploring.", elite)
+        self.assertIn("hall stands built, but it is sealed:", elite)
         self.assertNotIn('There are also adventure areas to explore', elite)
         self.assertIn('Phase 2 is still pending', HISTORY)
 

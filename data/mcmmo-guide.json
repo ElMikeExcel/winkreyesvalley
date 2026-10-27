@@ -951,7 +951,7 @@
           "cooldownSeconds": null,
           "cooldown": "No separate ability cooldown",
           "caveats": [
-            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+            "This is a player-versus-player bonus, not a bonus against monsters. PvP is off on this server, so it is not available in normal player combat. The numbers above describe the underlying mechanic, not an active PvP feature."
           ],
           "sources": [
             "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
@@ -1145,7 +1145,7 @@
           "cooldownSeconds": null,
           "cooldown": "No separate ability cooldown",
           "caveats": [
-            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+            "This is a player-versus-player bonus, not a bonus against monsters. PvP is off on this server, so it is not available in normal player combat. The numbers above describe the underlying mechanic, not an active PvP feature."
           ],
           "sources": [
             "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
@@ -1287,7 +1287,7 @@
           "cooldownSeconds": null,
           "cooldown": "No separate ability cooldown",
           "caveats": [
-            "This affects players. Dropped items can be picked up by others, so be careful around family members’ valuables."
+            "This mechanic affects players, not monsters. PvP is off on this server, so Disarm is not an available player-combat perk."
           ],
           "sources": [
             "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L54-L61",
@@ -1310,7 +1310,7 @@
           "cooldownSeconds": null,
           "cooldown": "No separate ability cooldown",
           "caveats": [
-            "The listed first rank is level 600, but protection can happen earlier in this server build."
+            "The listed first rank is level 600, but the underlying mechanic can protect earlier in this build. PvP is off on this server, so this player-combat protection is listed for reference."
           ],
           "sources": [
             "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/unarmed/UnarmedManager.java#L233-L246",
@@ -1363,7 +1363,7 @@
           "cooldownSeconds": null,
           "cooldown": "No separate ability cooldown",
           "caveats": [
-            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+            "This is a player-versus-player bonus, not a bonus against monsters. PvP is off on this server, so it is not available in normal player combat. The numbers above describe the underlying mechanic, not an active PvP feature."
           ],
           "sources": [
             "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
@@ -1484,7 +1484,7 @@
           "cooldownSeconds": null,
           "cooldown": "No separate ability cooldown",
           "caveats": [
-            "Affects players, not monsters. The chance starts at zero and grows with Archery level."
+            "Affects players, not monsters. The chance starts at zero and grows with Archery level. PvP is off on this server, so Daze is listed for reference rather than as an available player-combat perk."
           ],
           "sources": [
             "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/skills/archery/ArcheryManager.java#L31-L37",
@@ -1518,7 +1518,7 @@
           "cooldownSeconds": null,
           "cooldown": "No separate ability cooldown",
           "caveats": [
-            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+            "This is a player-versus-player bonus, not a bonus against monsters. PvP is off on this server, so it is not available in normal player combat. The numbers above describe the underlying mechanic, not an active PvP feature."
           ],
           "sources": [
             "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
@@ -2001,7 +2001,7 @@
           "cooldownSeconds": null,
           "cooldown": "No separate ability cooldown",
           "caveats": [
-            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+            "This is a player-versus-player bonus, not a bonus against monsters. PvP is off on this server, so it is not available in normal player combat. The numbers above describe the underlying mechanic, not an active PvP feature."
           ],
           "sources": [
             "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
@@ -2088,7 +2088,7 @@
           "cooldownSeconds": null,
           "cooldown": "No separate ability cooldown",
           "caveats": [
-            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+            "This is a player-versus-player bonus, not a bonus against monsters. PvP is off on this server, so it is not available in normal player combat. The numbers above describe the underlying mechanic, not an active PvP feature."
           ],
           "sources": [
             "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
@@ -2190,7 +2190,7 @@
           "cooldownSeconds": null,
           "cooldown": "No separate ability cooldown",
           "caveats": [
-            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+            "This is a player-versus-player bonus, not a bonus against monsters. PvP is off on this server, so it is not available in normal player combat. The numbers above describe the underlying mechanic, not an active PvP feature."
           ],
           "sources": [
             "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
@@ -2304,7 +2304,7 @@
           "cooldownSeconds": null,
           "cooldown": "No separate ability cooldown",
           "caveats": [
-            "This bonus currently affects player-versus-player combat, not monsters. Armor still reduces the final damage."
+            "This is a player-versus-player bonus, not a bonus against monsters. PvP is off on this server, so it is not available in normal player combat. The numbers above describe the underlying mechanic, not an active PvP feature."
           ],
           "sources": [
             "https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/java/com/gmail/nossr50/util/skills/CombatUtils.java#L855-L939",
