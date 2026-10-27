@@ -367,6 +367,7 @@
     </div>
     <p class="skill-empty" id="skill-empty" hidden>No skills match that search. Try an ability name, a shorter word, or choose All skills.</p>
     <div class="skill-grid">
+<!-- MCMO_SKILL_CARDS_START -->
 <details class="skill-card" id="mcmmo-mining" data-category="gathering">
 <summary><span class="skill-title">Mining</span>
 <span class="skill-summary">Mine stone and ores for extra drops and powerful digging abilities.</span>
@@ -1428,6 +1429,7 @@
 <li><a href="https://github.com/mcMMO-Dev/mcMMO/blob/058279c148a65bd708dc85067d3858f6adde1173/src/main/resources/advanced.yml#L454">advanced settings</a></li>
 </ul></details>
 </div></details>
+<!-- MCMO_SKILL_CARDS_END -->
     </div>
   </section>
   <section class="guide-section" id="mcmmo-activate" aria-labelledby="mcmmo-activate-title">
@@ -1852,7 +1854,7 @@
         <ol class="guide-steps">
           <li>After you join and enter the world, the <b>Wink Reyes Valley</b> welcome popup appears.</li>
           <li>The three richest players take turns underneath the title, with each full name and balance readable.</li>
-          <li><code>/leaderboard</code> opens the nine-board menu whenever you want to see more.</li>
+          <li><code>/leaderboard</code> opens the ten-board menu whenever you want to see more.</li>
         </ol>
       </div>
       <p><a href="https://github.com/ElMikeExcel/wrv-plugins/blob/fix/wealthboard-popup-cycle-2026-10-13/WealthBoard/PLAYER-GUIDE.md" target="_blank" rel="noopener noreferrer">Read the WealthBoard player instructions on GitHub</a>.</p>
@@ -2113,7 +2115,7 @@
               <details class="st-node"><summary><span class="st-lv">Level 1</span> Double Drops</summary><p>A chance for double drops when you harvest: 0.1% per level, reaching 100% at level 1000.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Green Terra</summary><p>Active ability: right-click with a hoe for a chance at triple harvest drops while it lasts, and use seeds on blocks to turn them mossy or planted.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 200</span> Farmer's Diet</summary><p>Plant foods (bread, cookies, melons, carrots, potatoes and more) restore more hunger: +1 per rank, with ranks at levels 200, 400, 600, 800 and 1000.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 250</span> Green Thumb</summary><p>Harvested crops replant themselves: 0.1% per level, reaching 100% at level 1000. Higher ranks, at levels 250, 500, 750 and 1000, widen which crops auto-replant.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 250</span> Green Thumb</summary><p>Supported crops can replant even before level 250, starting at the earliest growth stage. Chance grows with level, reaching 100% at level 1000. Ranks at 250, 500, 750 and 1000 improve the replanted growth stage, not the list of supported crops. Keep the matching seeds or crop item; sneaking skips replanting.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 1000</span> Verdant Bounty</summary><p>The level-cap perk: a chance at triple drops on every harvest. It scales over a 10000-level curve in the config, so at level 1000 the live chance is 5% (ChanceMax 50).</p></details>
             </div>
           </div>
@@ -2124,7 +2126,7 @@
             <p class="st-xp"><b>Gain XP by:</b> hitting mobs with a mace.</p>
             <div class="st-nodes">
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Cripple</summary><p>Mace hits can slow the target. Chance by rank: 10% at level 50, 15% at 200, 20% at 400, 33% at 800.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 100</span> Crush</summary><p>Maces hit harder: +0.5 damage at level 100, then +1 more per rank at levels 250, 750 and 900, reaching +3.5.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 100</span> Crush</summary><p>Maces hit harder: +1.5 damage at level 100, then +1 more per rank at levels 250, 750 and 900, reaching +4.5 before armor.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 100</span> Maces Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Player targets only (Limit Break PvE disabled), never mobs. PvP is off on this server, so this is a reference mechanic, not an available damage bonus.</p></details>
             </div>
           </div>
@@ -2165,12 +2167,11 @@
           </div>
         </details>
         <details class="st-track">
-          <summary><span class="st-title">Smelting</span><span class="st-blurb">Second ingots from the furnace, longer fuel, and faster smelting.</span><span class="st-meta">4 perks · all on from the start</span></summary>
+          <summary><span class="st-title">Smelting</span><span class="st-blurb">Second ingots from the furnace, longer fuel, and more smelting XP.</span><span class="st-meta">3 perks · first ranked unlock at level 100</span></summary>
           <div class="st-body">
             <p class="st-xp"><b>Gain XP by:</b> smelting ores and materials in furnaces.</p>
             <div class="st-nodes">
               <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Second Smelt</summary><p>Every smelt has a chance to produce one bonus item on top of the normal result: 0.05% per level, reaching 50% at level 1000. This is the perk behind the "extra iron from nowhere" reports; it scales from the very start, with no rank gate.</p></details>
-              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Flux Mining</summary><p>Mining an ore can instantly smelt it into its finished form (coal ore into coal, iron ore into an ingot and so on). The configured chance is 33 at MaxBonusLevel 1000 in advanced.yml, scaling with your Smelting level up to 33% at level 1000. No rank gate in skillranks.yml.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 100</span> Fuel Efficiency</summary><p>Your fuel burns longer in the furnace: burn time x2 at level 100, x3 at 500, x4 at 750.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 100</span> Understanding the Art</summary><p>The vanilla XP you earn from smelting is multiplied by your rank at levels 100, 250, 350, 500, 650, 750, 850 and 1000: x1, x2, x3, x3, x4, x4, x5, x5.</p></details>
             </div>
@@ -2196,7 +2197,7 @@
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Serrated Strikes</summary><p>Active ability: right-click with a sword, then your hits splash a quarter damage (DamageModifier 4.0) onto nearby enemies and can apply Rupture.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 100</span> Swords Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Player targets only (Limit Break PvE disabled), never mobs. PvP is off on this server, so this is a reference mechanic, not an available damage bonus.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 200</span> Counter Attack</summary><p>While blocking, a chance to reflect half the damage back at your attacker: 0.03% per level, reaching 30% at level 1000. Reflected damage is the incoming damage divided by 2.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 750</span> Stab</summary><p>A late-game passive that adds bonus damage to your attacks: base 1.0, multiplied by 1.5 per rank, with rank 2 at level 1000.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 750</span> Stab</summary><p>A late-game passive that adds +2.5 damage at level 750 and +4 at level 1000 before armor. The calculation is base 1.0 plus rank times 1.5, not base times a multiplier.</p></details>
             </div>
           </div>
         </details>
@@ -2208,11 +2209,11 @@
               <details class="st-node"><summary><span class="st-lv">Level 1</span> Beast Lore</summary><p>Left-click a wolf or ocelot to inspect its stats.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 1</span> Call of the Wild</summary><p>Sneak and left-click holding 10 bones to summon a wolf, 10 cod for an ocelot, or 10 apples for a horse. Summons last 240 seconds; per-player limits are 2 wolves, 1 ocelot and 1 horse at once. A summoned horse's jump strength lands between 0.7 and 2.0.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 100</span> Environmentally Aware</summary><p>Your wolves teleport to safety away from cactus and lava hazards, and take no fall damage.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 150</span> Gore</summary><p>Your wolves' attacks can gore the target, a bleed effect: 0.1% per level, reaching 100% at level 1000, with the gore damage modifier at 2.0.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 150</span> Gore</summary><p>Your wolf's attack gains another copy of its base hit damage before other bonuses and armor. This is extra hit damage, not a bleed effect; a leftover chance setting does not establish a chance roll in the checked implementation.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 200</span> Fast Food Service</summary><p>When your wolf lands a hit, a flat 50% chance it heals itself.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 200</span> Pummel</summary><p>Your wolves' hits have a flat 10% chance to pummel the target with extra force.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 250</span> Thick Fur</summary><p>Your wolves take half damage (divided by 2) and resist fire.</p></details>
-              <details class="st-node"><summary><span class="st-lv">Level 350</span> Holy Hound</summary><p>Your wolves are healed by magic and poison instead of being harmed by them (the jar's own one-line description).</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 350</span> Holy Hound</summary><p>Adds health when your wolf takes magic, poison or wither damage, which can help offset the hit. The original damage can still apply: this is not immunity or guaranteed net healing.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 500</span> Shock Proof</summary><p>Explosion damage to your wolves is divided by 6.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 750</span> Sharpened Claws</summary><p>Your wolves deal +2 damage.</p></details>
             </div>
@@ -2223,7 +2224,7 @@
           <div class="st-body">
             <p class="st-xp"><b>Gain XP by:</b> hitting mobs with a trident.</p>
             <div class="st-nodes">
-              <details class="st-node"><summary><span class="st-lv">Level 50</span> Impale</summary><p>Tridents hit harder: +1 damage at rank 1, then +0.5 per rank at levels 150, 250, 350, 450, 550, 650, 750, 850 and 1000, reaching +5.5.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50</span> Impale</summary><p>Tridents hit harder: +1.5 damage at rank 1, then +0.5 per rank at levels 150, 250, 350, 450, 550, 650, 750, 850 and 1000, reaching +6 before armor.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 100</span> Tridents Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Player targets only (Limit Break PvE disabled), never mobs. PvP is off on this server, so this is a reference mechanic, not an available damage bonus.</p></details>
             </div>
           </div>
@@ -2233,7 +2234,7 @@
           <div class="st-body">
             <p class="st-xp"><b>Gain XP by:</b> fighting with your fists.</p>
             <div class="st-nodes">
-              <details class="st-node"><summary><span class="st-lv st-start">From the start</span> Block Cracker</summary><p>Fists can crack stone-type blocks (turning them into their cracked forms). Enabled in config.yml (Allow_Block_Cracker: true); it has no rank gate and its strength is set in the mcMMO code, not these files.</p></details>
+              <details class="st-node"><summary><span class="st-lv">Level 50, during Berserk</span> Block Cracker</summary><p>Fists can crack eligible stone-type blocks while Berserk is active, which unlocks at level 50. Having no separate Block Cracker rank entry does not remove the Berserk requirement.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 1</span> Steel Arm Style</summary><p>Your fists gain bonus damage at every rank: ranks at levels 1, 100, 150, 200 and every 50 after, 20 ranks in all. The config's override damage table climbs to +13.5 at rank 20, but Damage_Override is off, so the built-in mcMMO curve is what applies.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 50</span> Berserk</summary><p>Active ability: right-click to rage: +50% fist damage and instant breaks on soft blocks like dirt and grass while it lasts.</p></details>
               <details class="st-node"><summary><span class="st-lv">Level 100</span> Unarmed Limit Break</summary><p>Extra damage against very high-health targets, one rank every 100 levels to 1000. Player targets only (Limit Break PvE disabled), never mobs. PvP is off on this server, so this is a reference mechanic, not an available damage bonus.</p></details>
@@ -2645,7 +2646,7 @@
 
   <section>
     <h2>Close to vanilla</h2>
-    <p><b>Difficulty: Hard</b> in the Overworld, Nether, and End. The valley ran on Normal until October 19, 2026, when it flipped to Hard on a trial through the weekend (set and read back in all three worlds that afternoon); the family gives its verdict on Monday, October 26. This is the vanilla difficulty setting; EliteMobs keeps its separate settings.</p>
+    <p><b>Difficulty: Hard</b> in the Overworld, Nether, and End. The valley moved from Normal to Hard on October 19, 2026 (set and read back in all three worlds that afternoon). The owner made Hard permanent on October 25; the trial and its verdict check are closed. This is the vanilla difficulty setting; EliteMobs keeps its separate settings.</p>
     <p>No starter kits. Everybody starts fresh. Keep inventory is off, so take care of your things when you explore. If you want a safety net, the paid exceptions are the two <a href="#death-protection">Death Protection options</a>.</p>
     <p><b>Family protections.</b> This is a family server, and the rough edges stay quiet for its youngest players: they get a gentler time of it, entirely in the background, with nothing visible changing for them. The nights still belong to everyone who fights them — every zombie can now break doors: a wooden door falls in about 14 seconds, a copper door lasts through a ~45-second siege, an iron door lasts about 60 seconds before it falls. Better doors buy more time to get out and fight.</p>
     <p><b>Tidy treetops.</b> If you chop most of a tree and the last couple of logs are left floating up in the leaves, the valley tidies them away — the leftover logs come down as drops and the leaves fall on their own. Anything still standing on the ground, part of a build, or inside someone's claim is never touched, and you can turn it off for yourself any time with <code>/treecleanup off</code>.</p>
@@ -2670,6 +2671,7 @@
     <details open>
       <summary>Oct 26, 2026</summary>
       <ul>
+        <li id="cl-skill-doc-test-cleanup"><b>Clearer skill descriptions and safer website maintenance.</b> Corrected the mcMMO skill tree to match the checked source and settings: Crush, Impale and Stab use base plus rank bonuses; Gore adds hit damage rather than bleeding; Holy Hound is not guaranteed immunity; Block Cracker requires Berserk; Green Thumb ranks improve replanted growth. Removed the inactive Flux Mining perk from the tree. The leaderboard list now consistently says ten boards, and Hard is recorded as permanent following the October 25 decision. The website checks pass all 67 tests, and skill-card generation now preserves current surrounding instructions. <b>Documentation only:</b> no gameplay, plugin, port or server-setting change. These source and automated checks are not a new phone, controller or gameplay acceptance pass. The website assistant corpus was rebuilt; the in-game Guide refresh is verified separately.</li>
         <li id="cl-bedrock-join-doc-followup"><b>Joining instructions now consistently allow both Bedrock ports.</b> Documentation follow-up on October 26, 2026: keep a saved entry that works, including port 20795. If one Bedrock port does not connect on your device, try the other (20795 or 25622) with the same server address. Removed the stale instruction to delete a working 20795 entry and the one-way troubleshooting advice to always switch to 25622. The current server has both ports enabled; device and game-version compatibility can differ. Java remains on port 20795. <b>Documentation only:</b> this follow-up changes no server settings, plugins or networking and performs no restart. The website assistant corpus was regenerated; the separate in-game Guide refresh still needs its own verification.</li>
         <li id="cl-bedrock-both-ports"><b>Bedrock works on both ports again: 25622 and the old 20795.</b> Changed in a short restart on October 26, 2026 (owner approved at 7:07 PM Central; owner-only for about two minutes, nobody online, fully up at about 7:09 PM). A family member's Bedrock device could not connect after the old port was turned off that morning, so the old way of connecting is back next to the new one, the same setup that worked on October 25. Phones, tablets, Windows and consoles can join on port <b>25622</b> or <b>20795</b> with the same address; Java players change nothing and stay on wrv.duckdns.org:20795. <b>Checked after the start:</b> no serious errors, Bedrock listening on both ports. <b>Coming up:</b> Bedrock 26.60, planned for October 27, drops the old connection method on devices after they install that client update, so 25622 is the port to use for the long run, and the server's Bedrock bridge (Geyser) needs an update for it. <b>Rollback:</b> put the backup config back and restart. <b>Owner-confirmed follow-up:</b> a player who could not connect rejoined through port 20795, and a phone also connected through port 25622. This does not establish compatibility on every device or game version.</li>
         <li id="cl-pvp-live-doc-sync"><b>PvP documentation now matches the checked live server: player-vs-player fighting is off.</b> On October 26, 2026, a read-only check found the live server setting was off while this guide incorrectly said it was on. The overview, detailed mcMMO notes and skill-tree descriptions now distinguish player-only reference mechanics (Daze, Disarm, Iron Grip and Limit Breaks) from what is available here. Limit Breaks still do not affect mobs. The older PvP-on changelog entry is retained as history and marked superseded. <b>Documentation only:</b> no gameplay settings, plugin JARs, balance numbers or permissions changed, and no server restart was performed for this correction. The website assistant corpus was regenerated from these pages. The in-game Guide knowledge refresh is a separate deployment and is not claimed complete by this website entry.</li>
