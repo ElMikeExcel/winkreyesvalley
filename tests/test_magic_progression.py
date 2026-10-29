@@ -10,8 +10,8 @@ class MagicProgressionTests(unittest.TestCase):
     def test_player_explanation(self):
         html = (ROOT / "index.html").read_text()
         section = html.split('<h4 id="magic-progression">', 1)[1].split('<h4>Combat Attunement', 1)[0]
-        for phrase in ("800 SP", "1,600 SP", "1,800 SP", "spends that step", "not a separate per-spell XP",
-                       "not every wand upgrade", "Seals separately", "/spellbook", "Server Menu → Spell Book",
+        for phrase in ("800 SP", "1,600 SP", "1,800 SP", "spends that step", "spell practice are separate",
+                       "Single-level spells stay unlock-only", "Seals separately", "/spellbook", "Server Menu → Spell Book",
                        "proportionally over 60 seconds", "25% rate", "Central-time day",
                        "does not announce a fix"):
             self.assertIn(phrase, section)
@@ -20,7 +20,7 @@ class MagicProgressionTests(unittest.TestCase):
         chunks = json.loads((ROOT / "ai-knowledge.json").read_text())
         faq = next(c for c in chunks if c["id"] == "magic-progression-qa")
         for phrase in ("shared Magic SP", "800 SP", "1,600 SP", "1,800 SP",
-                       "/spellbook", "no independent ability-XP meter", "25%", "not announced as fixed"):
+                       "/spellbook", "No past cast counts are invented", "25%", "does not announce a fix"):
             self.assertIn(phrase, faq["text"])
 
     def test_corpus_matches_generator(self):
