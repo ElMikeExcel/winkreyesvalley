@@ -16,7 +16,7 @@ class MakersMarkFinderDocs(unittest.TestCase):
     def test_settings_and_limits(self):
         s = (ROOT / "index.html").read_text().split('id="makers-mark"', 1)[1].split('</div>', 1)[0]
         for text in ("Settings → Maker's Mark", "/mark off", "/mark stats off",
-                     "does not erase existing names", "Color milestones are not included",
+                     "does not erase existing names", "actual kill totals stay visible",
                      "acceptance still needs checking", "Ambiguous transfers"):
             self.assertIn(text, s)
 
