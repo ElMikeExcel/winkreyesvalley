@@ -1,3 +1,4 @@
+# Excel signature: MikeExcel / WinkReyesValley. Existing contributor and upstream credits preserved.
 """Dependency-free structural and content regression checks."""
 import importlib.util
 import json
@@ -100,13 +101,13 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('Chat-number entry is not a verified Java workaround',self.text.split('id="changelog"',1)[1])
         self.assertIn('Both the shop chest and its attached sign open the UI',shop)
         self.assertNotIn('/excelshop amount 19',shop)
-        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td><span class="pv">1.3.5</span>',self.text)
+        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td><span class="pv">1.3.7-analytics-OFFLINE</span>',self.text)
         self.assertNotIn('<td>ChestShop</td>',self.text)
     def test_typed_amount_installed_with_pending_device_checks(self):
         preview=self.text.split('id="shop-amount-preview"',1)[1].split('</div>',1)[0]
         for phrase in ['ExcelShops 1.1 is installed.', 'Mike confirmed the Bedrock phone flow on October 14, 2026; Java display and input checks are still open.', 'Enter Amount', 'Use amount', '0.50', '19', '60 seconds', 'Escape is disabled', 'Bedrock keeps its native number forms', '0322d8ade7fe2a1a29ea20e70e1c8c9ebda6a465', 'AMOUNT-ENTRY-0.1.4.md', 'Other device checks are still open', 'console/controller', 'instead of a Java-only dialog', '70000']:
             self.assertIn(phrase,preview)
-        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td><span class="pv">1.3.5</span>',self.text)
+        self.assertIn('<td>ExcelShops (WRVShops)<small class="plugin-next">Created by us</small></td><td><span class="pv">1.3.7-analytics-OFFLINE</span>',self.text)
         self.assertNotIn('not installed',preview)
         self.assertNotIn('server still runs 0.1.3',preview)
     def test_installed_xp_status(self):

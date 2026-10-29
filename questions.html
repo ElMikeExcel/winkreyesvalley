@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Excel signature: MikeExcel / WinkReyesValley. Existing contributor and upstream credits preserved. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -447,6 +448,19 @@
     </section>
 
 
+    <section class="guide-section qa-entry" id="silk-touch-warnings-qa" aria-labelledby="silk-touch-warnings-title">
+      <details class="qa">
+        <summary id="silk-touch-warnings-title">Why do I see a Silk Touch warning when using my ender chest?</summary>
+        <div class="qa-body">
+      <p><b>Installed October 29, 2026, about 12:55 AM Central:</b> ExcelSilkWatch adds a small warning above your hotbar after a Silk Touch tool, Silk Touch enchanted book, or a shulker containing one is deposited into your own native ender chest. <b>Warning only:</b> your items move normally; there is no confirmation, cancellation, item movement or inventory edit by this plugin.</p>
+      <p><b>Your choice:</b> warnings start <b>ON</b>. Open <b>Server Menu → Settings → Silk Touch Warnings</b> on Java or Bedrock, or use <code>/silkwarnings</code> to toggle them. <code>/silkwarnings on</code>, <code>/silkwarnings off</code> and <code>/silkwarnings status</code> are also available. Your choice is saved across rejoin and restart. If saving fails, the old setting stays in effect and the command tells you.</p>
+      <p><b>What is covered:</b> your own native ender chest and bounded, read-only shulker contents. Ordinary vanilla shulkers are covered; unusually deep or large custom contents can exceed the scan limits (four levels, 256 visited stacks). Custom vaults, pouches, backpacks, bundles, other nested containers and direct plugin transfers are not supported. Empty shulkers, ordinary items, withdrawals, cancelled moves and no-net-change swaps do not earn a warning. Several quick deposits may share one warning because of the three-second cooldown.</p>
+      <p><b>Checking the setting:</b> the menu reads your saved state when opened; reopen it after changing the setting elsewhere, or use <code>/silkwarnings status</code>. This is a reminder, not protection against losing items or a guarantee about every custom item. Startup, the setting placeholder and 19 Java menus loaded successfully; real-player deposits, saved-toggle checks, Java/Bedrock screens and hotbar-message coexistence remain pending.</p>
+          <p><a href="index.html#silk-touch-warnings">Full Silk Touch Warnings instructions</a>.</p>
+        </div>
+      </details>
+    </section>
+
     <section class="guide-section qa-entry" id="personal-boss-rewards-qa" aria-labelledby="personal-boss-rewards-title">
       <details class="qa">
         <summary id="personal-boss-rewards-title">Do healers and teammates who die still get their own boss reward?</summary>
@@ -570,7 +584,7 @@
       <details class="qa">
       <summary id="bedrock-port-cutoff-qa-title">When does the old Bedrock port stop working?</summary>
         <div class="qa-body">
-      <p>Right now both ports work. The old Bedrock port 20795 was off from about 12:37 AM to 7:09 PM Central on October 26, 2026, then turned back on to restore an alternative for devices having trouble. Bedrock 26.60, planned for October 27, drops the old connection method on devices after they install that client update, so port 25622 is the one to use for the long run. Keep your saved address (wrv.duckdns.org and the older winkreyes.duckdns.org both work) and change only the port.</p>
+      <p>Right now both ports work. The old Bedrock port 20795 was off from about 12:37 AM to 7:09 PM Central on October 26, 2026, then turned back on to restore an alternative for devices having trouble. Geyser 2.12.1-b1276 was installed October 29 at about 10:29 AM Central. Its live version reports Bedrock 26.40–26.60 support, and a natural Bedrock 26.60 connection was confirmed. That confirms one connection, not every device or menu. Both server listeners remain enabled; port 25622 is the new connection method. Keep your saved address (wrv.duckdns.org and the older winkreyes.duckdns.org both work) and change only the port.</p>
       <p>Keep a saved Bedrock entry that already works, whether it uses 20795 or 25622. If the server shows as offline or will not connect on one port, try the other (20795 or 25622) with the same address. Both ports are enabled; device and game-version compatibility can differ. Consoles that join through BedrockConnect can use either available port. Java players change nothing and stay on port 20795, at wrv.duckdns.org:20795 (the older addresses also work). The steps are on the main page under How to join. The first time you join on the new port, tap Trust on the pop-up, once on each device.</p>
         </div>
       </details>
