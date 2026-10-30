@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class InstalledOctober29(unittest.TestCase):
  def test_current_rows_have_receipted_versions(self):
   t=(ROOT/'index.html').read_text()
-  for name,version in [('Geyser-Spigot','2.12.1-b1276'),('ExcelBossTrial','0.2.10-marker-fix'),('ExcelMenu','0.1.6-timer-map-OFFLINE'),('ExcelShops (WRVShops)','1.3.7-analytics-OFFLINE'),('ExcelMakersMark','0.1.5-lookup-prefilter-OFFLINE')]:
+  for name,version in [('Geyser-Spigot','2.12.1-b1276'),('ExcelBossTrial','0.2.10-marker-fix'),('ExcelMenu','0.1.7'),('ExcelShops (WRVShops)','1.3.7-analytics-OFFLINE'),('ExcelMakersMark','0.1.5-lookup-prefilter-OFFLINE')]:
    row=t.split('<tr><td>'+name,1)[1].split('</tr>',1)[0]
    self.assertEqual(re.search(r'<span class="pv">(.*?)</span>',row)[1],version)
  def test_bedrock_current_not_future(self):
