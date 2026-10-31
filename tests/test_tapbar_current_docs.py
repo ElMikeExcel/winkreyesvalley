@@ -18,7 +18,7 @@ class TapBarCurrentDocsTests(unittest.TestCase):
     def test_current_version_and_historical_label(self):
         html = (ROOT / "index.html").read_text()
         row = html.split("<tr><td>ExcelWandBars", 1)[1].split("</tr>", 1)[0]
-        self.assertIn('<span class="pv">0.3.4</span>', row)
+        self.assertIn('<span class="pv">0.3.5</span>', row)
         self.assertIn("0.3.4-sp-display-candidate", row)
         self.assertIn("Historical WandBars versions", row)
         self.assertIn("not current control guarantees", row)
