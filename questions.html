@@ -580,6 +580,66 @@
       </details>
     </section>
 
+    <section class="guide-section qa-entry" id="magic-mana-wait-qa" aria-labelledby="magic-mana-wait-qa-title">
+      <details class="qa">
+        <summary id="magic-mana-wait-qa-title">Why is there a number on my spell that I never cast?</summary>
+        <div class="qa-body">
+<p>That number is a <b>mana-wait indicator</b>, not a cooldown. The wand bar shows Magic's live mana display on the spell icons: when a spell costs more mana than you have right now, the number counts down the seconds until your mana refills enough to cast it. Nothing is broken and the spell is not on cooldown — wait for the number to clear, or cast something cheaper meanwhile.</p>
+<p class="source-note">Mana-wait display behavior verified against the live wand bar Oct 30–31, 2026 (ExcelWandBars 0.3.5 + Magic 11.2.5).</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section qa-entry" id="storm-shackle-qa" aria-labelledby="storm-shackle-qa-title">
+      <details class="qa">
+        <summary id="storm-shackle-qa-title">How does Storm Shackle work now?</summary>
+        <div class="qa-body">
+<p>Storm Shackle is a <b>toggle lightning channel</b> (since Oct 30, 2026). Cast it once and it keeps zapping what you look at — about four times a second — arcs to up to two more mobs nearby, and holds a light slow on everything it touches. You only need to look in a mob's general direction; the channel finds it. Cast again, or swap off your wand, to stop. It costs 10 / 8 / 6 / 5 mana to start and sips 2 / 1.5 / 1 / 0.5 mana a second while it runs (the upkeep was halved Oct 30, 2026), and <b>your mana keeps refilling during the channel</b>. Shackle tags and slows; your party does the killing.</p>
+<p class="source-note">Phase 1.1 values verified against the live spell settings Oct 31, 2026.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section qa-entry" id="boon-qa" aria-labelledby="boon-qa-title">
+      <details class="qa">
+        <summary id="boon-qa-title">How does Boon work now?</summary>
+        <div class="qa-body">
+<p>Boon is a buff you toggle on with your wand: Speed at the first level, then Jump, then stronger Speed, then Night Vision. It costs 15 / 12 / 10 / 5 mana to start and sips 1 / 0.75 / 0.5 / 0.25 mana a second. While Boon is on, <b>your mana pool is cut in half — and mana keeps refilling up to that smaller cap</b>, so a long fight no longer drains you dry; the full pool returns within about two seconds of Boon ending. The martial lock still applies: Boon ends the moment you swap to a sword or any other non-wand item, and you cannot cast other spells while it runs.</p>
+<p class="source-note">Phase 1.2 values verified against the live spell settings Oct 31, 2026.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section qa-entry" id="aim-assist-qa" aria-labelledby="aim-assist-qa-title">
+      <details class="qa">
+        <summary id="aim-assist-qa-title">How do I turn aim assist on or off?</summary>
+        <div class="qa-body">
+<p>Two ways. In the Server Menu: Java players open <b>Settings</b> and flip the <b>Aim Assist</b> button (slot 43) — it shows ON or OFF before it flips; Bedrock players get the same state-reading button in the menu form. Or type <code>/aimassist off</code> and <code>/aimassist on</code>. Your choice is remembered across restarts. Aim assist only bends shots from bows, crossbows and thrown tridents toward a monster you were already aiming at; it never locks on by itself.</p>
+<p class="source-note">Menu toggle added in ExcelAimAssist 0.1.4 / ExcelBedrockMenu 1.5.27, installed Oct 30, 2026.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section qa-entry" id="lostfound-qa" aria-labelledby="lostfound-qa-title">
+      <details class="qa">
+        <summary id="lostfound-qa-title">How does Lost &amp; Found work, and what does it cost?</summary>
+        <div class="qa-body">
+<p>Type <code>/lostfound</code> (or <code>/recover</code>) to see your own items that the world destroyed — lost to lava, fire, the void or a despawn — <b>in the last 14 days</b>, and bring one back per claim. Each recovery costs <b>$10,000</b> of server money, charged only when the recovery happens; there is <b>no daily limit</b>; your <b>first recovery is free</b> if your balance is under $10,000 when you claim; and you need a free inventory slot. A signpost on the Spawn Shop's Potions &amp; Protection page opens Lost &amp; Found too. Items that dropped normally and are still lying in the world are not in Lost &amp; Found — they are where you died, waiting to be picked up.</p>
+<p class="source-note">Rules as live since the Oct 31, 2026 update (ExcelDeathRecord 0.3.0).</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section qa-entry" id="arrange-mode-qa" aria-labelledby="arrange-mode-qa-title">
+      <details class="qa">
+        <summary id="arrange-mode-qa-title">How do I arrange my spell bar?</summary>
+        <div class="qa-body">
+<p>Type <code>/spellbar</code> to open <b>Arrange mode</b> for 90 seconds (ExcelWandBars 0.3.5): drag a spell off the tap bar to remove it from the bar — <b>the spell stays learned</b>, only the layout changes — and drag spells between slots to reorder them. The mode ends itself when the timer runs out. You can also open <b>Server Menu → Spell Book → My spell bar (change it)</b>. Spells you just unlocked gather in the Spellbook's <b>New</b> tab until you place one or tap Got it.</p>
+<p class="source-note">Arrange mode and the New tab shipped in ExcelWandBars 0.3.5, installed Oct 30, 2026.</p>
+        </div>
+      </details>
+    </section>
+
     <section class="guide-section qa-entry" id="bedrock-port-cutoff-qa" aria-labelledby="bedrock-port-cutoff-qa-title">
       <details class="qa">
       <summary id="bedrock-port-cutoff-qa-title">When does the old Bedrock port stop working?</summary>
