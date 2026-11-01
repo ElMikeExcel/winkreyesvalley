@@ -654,8 +654,29 @@
       <details class="qa">
         <summary id="magicgate-stage-qa-title">What stage is MagicGate at now?</summary>
         <div class="qa-body">
-<p>MagicGate is at <b>stage 2 of 5 (The Pathfinder)</b>. MagicGate watches the five guild seals, and the moment one falls it applies that seal's Magic stage: the stage's spell and wand settings, its permission grants, and the announcement of what opened. Stage 1 (The Healer) opened when the raid seal broke on October 23, 2026. Stage 2 opened on October 30, 2026, about a minute after the dragon seal broke at about 10:21 PM Central, and it opened the Pathfinder's school of travel and finding, with Spark and Frostbite joining the spellbook. Stages only ever move up: stage 3 comes when the family's third seal falls.</p>
-<p class="source-note">Stage 2 applied live October 30, 2026 (ExcelMagicGate 0.1.0, <code>/magicgate status</code>).</p>
+<p>MagicGate is at <b>stage 3 of 5 (The Wonder)</b>. MagicGate watches the five guild seals, and the moment one falls it applies that seal's Magic stage: the stage's spell and wand settings, its permission grants, and the announcement of what opened. Stage 1 (The Healer) opened when the raid seal broke on October 23, 2026. Stage 2 opened on October 30, 2026, about a minute after the dragon seal broke at about 10:21 PM Central, and it opened the Pathfinder's school of travel and finding, with Spark and Frostbite joining the spellbook. Stage 3 opened on October 31, 2026, about a minute after the elder seal broke at about 11:16 PM Central, and it opened the Wonder school of strange, showy magic. Stages only ever move up: stage 4 comes when the family's fourth seal falls.</p>
+<p class="source-note">Stage 3 applied live October 31, 2026 (ExcelMagicGate 0.1.0, <code>/magicgate status</code>).</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section qa-entry" id="halloween-scares-qa" aria-labelledby="halloween-scares-qa-title">
+      <details class="qa">
+        <summary id="halloween-scares-qa-title">Can I turn off just one Halloween scare?</summary>
+        <div class="qa-body">
+<p>Yes — the big scares have their own switches. Type <code>/scares</code> to see your seven switches and how each one is set (they all start ON), and type <code>/scares</code> plus a name to flip just that one: <code>loginpumpkin</code> (the pumpkin that lands on your head at login), <code>pumpkincurse</code>, <code>slenderman</code>, <code>darkness</code>, <code>lightning</code>, <code>fire</code> or <code>herobrine</code>. For example, <code>/scares slenderman</code> turns Slenderman off for you; type it again to turn him back on. <code>/halloweentoggles</code> does the same thing. Your choices are saved, and they only change what happens to you.</p>
+<p>Not everything is on a switch: the Witching Hour's sounds and announcements, the pumpkin-headed monsters, and the pumpkin's glow and cake (stop those by taking the pumpkin off) stay the same for everyone. The pumpkin bosses, the grave ritual and the Pumpkin Trader only happen when a player starts them. To leave the whole event instead, type <code>/halloween disable</code>; <code>/halloween enable</code> brings it back.</p>
+<p class="source-note">Per-scare switches added in ExcelHalloweenToggles 0.1.0, installed October 31, 2026.</p>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section qa-entry" id="server-menu-qa" aria-labelledby="server-menu-qa-title">
+      <details class="qa">
+        <summary id="server-menu-qa-title">Did the server menu change?</summary>
+        <div class="qa-body">
+<p>Is the menu different now? Only behind the scenes — what you press, no. On November 1, 2026 the menus were rebuilt as one system (ExcelMenu 2.0, Phase 1): every menu entry — all 84 of them, including a new Magic Level entry — now lives in one shared list that the server checks at start-up, so a broken button is a loud error at start-up instead of a silent dead click in game. The compass, <code>/menu</code> and <code>/servercommands</code> work exactly as before. The phone and console menu is unchanged for now and still served by ExcelBedrockMenu 1.5.27; the shared list takes it over in Phase 2.</p>
+<p class="source-note">ExcelMenu 2.0 Phase 1 installed November 1, 2026, about 3:44 AM Central.</p>
         </div>
       </details>
     </section>
