@@ -386,6 +386,40 @@
       <p><b>Choose your settings:</b> open the compass's <b>Settings → Maker's Mark</b>. Java uses a dedicated settings submenu; Bedrock uses the two-switch form. Or use <code>/mark</code>, <code>/mark on</code>, <code>/mark off</code>, <code>/mark stats on</code> or <code>/mark stats off</code>. Turning signatures off stops new signatures; it does not erase existing names. Gear stats has its own switch.</p>
       <p>Eligible ordinary gear, shields and tested Magic wands keep named-mob and boss history on the original item. Other protected custom-item types, including EliteMobs gear, remain excluded unless specifically adapted. Hold a tracked item and use <code>/mark history page [number]</code> for its fuller story. Boss assistance records an accomplishment without inventing a finishing kill. Weapon colors use separate milestone credit: gray below 100, green at 100, blue at 500, purple at 1,000 and gold at 5,000. Farm kills contribute one-fifth milestone credit; actual kill totals stay visible and are not rewritten. Armor colors use its existing Hits blocked count with those same thresholds. These colors add no damage or armor bonus and change no drops or XP. If history needs reconciliation, ask an admin rather than repeatedly editing or replacing the item. Real Java/Bedrock menu and inventory-transfer acceptance still needs checking. Ambiguous transfers can remain unsigned rather than guessing a finder, and third-party plugins that replace all item metadata cannot be guaranteed to preserve it.</p>
     </div>
+    <div class="howto" id="quests-compass">
+      <h3>Your quest compass points at your tracked quest</h3>
+      <p>When you accept a quest, the server starts tracking it for you, and your quest compass points toward that quest's target. You do not have to guess the way or wander — follow the compass.</p>
+      <p>Only one quest is tracked at a time. Accepting a quest starts tracking it, and when you finish the tracked quest, tracking moves on to another active quest by itself. If the compass is following the wrong quest, open /em, go to Quests, and pick the quest you want to track — or click the tracking message in chat.</p>
+      <p>What the compass points at depends on the objective:</p>
+      <ul>
+        <li>Talk to someone: it points at that NPC. When you get close, quest NPCs show a marker over their heads (you can see your own markers from about 30 blocks away). Walk up and interact with the NPC — talking to them is what completes the step.</li>
+        <li>Kill a boss: it points at that boss, and it keeps following the boss as it moves.</li>
+        <li>Fetch an item: it points at a boss or treasure chest that can give you that item. It does not point at every possible source of the item, so it is a strong hint, not the only way to get it.</li>
+      </ul>
+      <p>An arrow next to the compass symbol tells you about height: an up arrow means your target is well above you, a down arrow means well below you — think stairs, cliffs, and caves, not just forwards.</p>
+      <p>When you arrive, do what the quest scoreboard on the side of your screen says: talk to the NPC, fight the boss, or pick up the item. Your progress shows there and in chat as you go.</p>
+      <p>Finished all the objectives? Most quests must be handed in: the scoreboard shows "Turn in!", and you go back to the quest giver and talk to them to complete the quest and collect your reward. Follow the compass back the same way you came out.</p>
+      <p>Three messages that are NOT errors:</p>
+      <ul>
+        <li>"Go to world …!" — your target is in another world. Travel there first (for guild quests, /ag takes you to the Adventurer's Guild Hub). On the way, the compass points at the wormhole that leads toward your target when there is one.</li>
+        <li>"[EM] Enter $dungeon!" — your target is inside an instanced dungeon (the message fills in that dungeon's name where it says $dungeon). Go into that dungeon to reach your target; from outside it, the compass cannot lead you the rest of the way.</li>
+        <li>"[EM] No quest destination found!" — this objective simply has no compass destination (for example some arena or roaming-kill objectives, or a dungeon boss that has not loaded yet). Your quest still counts progress normally — use the objective text on your scoreboard and explore the area the quest describes.</li>
+      </ul>
+      <p>Good to know: tracking survives death — after you respawn, the compass picks your quest back up. And the compass shows the straight-line direction to your target; it does not promise a walkable path, so you may still need to go around, over, or through.</p>
+    </div>
+    <div class="howto" id="quests-compass-first-steps">
+      <h3>Follow your compass — it knows your quest</h3>
+      <p>The moment you accept a quest, your compass starts pointing at that quest's target.</p>
+      <p>You never have to guess which way to go: turn until the compass points ahead, and walk.</p>
+      <p>Your very first quest, "Finding the AG!", asks you to talk to Casus at the Adventurer's Guild. Take /ag to the Guild Hub, then follow your compass to Casus and talk to him — that conversation is the quest step.</p>
+      <p>Remember three things:</p>
+      <ul>
+        <li>1. One quest at a time — the compass follows the one quest you are tracking. Pick a different one any time in /em → Quests.</li>
+        <li>2. Up and down count too — an ↑ or ↓ next to the compass means your target is above or below you, not just ahead.</li>
+        <li>3. Done is not finished — when the scoreboard says "Turn in!", follow the compass back to the quest giver and talk to them to collect your reward.</li>
+      </ul>
+      <p>If the compass ever says "No quest destination found!", don't worry — that objective has no compass target. Read the objective on your scoreboard and keep going; your progress still counts. Two more messages are normal, not errors: "Go to world ...!" means your target is in another world, so travel there first; "[EM] Enter &lt;dungeon&gt;!" (a dungeon name appears where &lt;dungeon&gt; is) means your target is inside an instanced dungeon, so head into that dungeon to reach it.</p>
+    </div>
     <div class="howto" id="item-insight">
       <h3>Your gear explains itself</h3>
       <p><b>New: your gear explains itself.</b> Every enchanted item carries a short block under its own text saying what each of its enchantments does at that item's level, with the real numbers, and weapons also show their true total hit. The green 'Attack Damage' line still shows the item's base damage only — that's how the game draws it, not a bug: Sharpness adds its damage inside the hit itself (a Sharpness 5 diamond sword reads 7 there but hits for 10). Old gear picks up its explanation the next time you handle it; enchanting, the anvil and the grindstone keep it current.</p>
@@ -2807,6 +2841,7 @@
       <ul>
         <li id="cl-excelmenu-302-back"><b>Menus: every screen has a Back button.</b> Every menu now has a Back button: teleport, childproof, Skills and Perks, the website page, Ask the Guide and Server Commands all lead back where you came from. Confirm screens step back to the screen that opened them without acting: going Back never teleports you and never changes a childproof setting. Server Commands and the teleport and childproof pickers now lead back to the Server Menu, and closing the Ask the Guide box reopens the Server Menu.</li>
         <li id="cl-excelbraingames-304-back"><b>Brain Games: every screen has a Back button.</b> The Brain Games menu now takes you back to the Server Menu, and every game board and question card has a Back button that saves your round and returns to the game picker: pick up right where you left off. On the big 9x9 Sudoku board, the eraser now sits with the 6-9 numbers so Back could take its place.</li>
+        <li id="cl-quest-compass-guide"><b>Your quest compass, explained:</b> the compass points at the quest you are tracking. The Guide and the first-steps page now walk through following it, the up/down arrows, handing quests in, and what "No quest destination found!", "Go to world ...!" and "[EM] Enter <dungeon>!" actually mean (none of them is a bug).</li>
       </ul>
     </details>
     <details>
