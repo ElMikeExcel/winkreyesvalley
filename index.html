@@ -3584,10 +3584,19 @@
     wrap.appendChild(code);
     return wrap;
   }
-  box.insertBefore(makeBox('Java Address', 'winkreyes.duckdns.org'), addr);
-  box.insertBefore(makeBox('Bedrock Address', 'featheredpineapple.wdn.gg'), addr);
-  box.insertBefore(makeBox('Bedrock Port', '443'), addr);
-  box.insertBefore(makeBox('Java Port', '20795'), addr);
+  function makeRow(){
+    var row = document.createElement('div');
+    row.style.cssText = 'display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:.4rem 1rem;flex-basis:100%;width:100%;';
+    return row;
+  }
+  var javaRow = makeRow();
+  javaRow.appendChild(makeBox('Java Address', 'winkreyes.duckdns.org'));
+  javaRow.appendChild(makeBox('Java Port', '20795'));
+  box.insertBefore(javaRow, addr);
+  var bedrockRow = makeRow();
+  bedrockRow.appendChild(makeBox('Bedrock Address', 'featheredpineapple.wdn.gg'));
+  bedrockRow.appendChild(makeBox('Bedrock Port', '443'));
+  box.insertBefore(bedrockRow, addr);
   addr.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;';
 })();
 </script>
