@@ -4,7 +4,7 @@ import json, re, unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-JAVA = 'wrv.duckdns.org:20795'
+JAVA = 'winkreyes.duckdns.org:20795'
 
 
 class PortChecks(unittest.TestCase):
