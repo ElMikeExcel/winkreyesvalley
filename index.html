@@ -27,12 +27,12 @@
 <section class="server-strip">
   <div class="wrap">
     <div class="addr">
-      <code id="addr">winkreyes.duckdns.org</code>
+      <code id="addr">dedication-taxis.tun.ply.gg</code>
       <button class="btn small" id="copy" type="button">Copy address</button>
     </div>
-    <p class="note addr-alt" id="addr-alt">Also works: wrv.duckdns.org or winkreyesvalley.duckdns.org (same server, same ports)</p>
-    <p class="note" id="ports">The server moved home on November 21, 2026, and Bedrock got a new address. <b>Bedrock</b> (phone, iPad, tablet, Windows, console): <b>featheredpineapple.wdn.gg</b> port <b>443</b> — if it errors the first time, tap Join once more; that's normal on this connection. <b>Java</b> (PC or Mac): <b>winkreyes.duckdns.org:20795</b>, unchanged.</p>
-    <p class="note" id="bedrock-port-cutoff"><b>The server moved home — Bedrock has a new address.</b> As of November 21, 2026, the server runs on Mike's PC at home instead of the rented host. Bedrock (phones, tablets, Windows and consoles) now joins at <b>featheredpineapple.wdn.gg</b> port <b>443</b>; the old Bedrock entry (wrv.duckdns.org port 25622, or port 20795) no longer works, so update your saved server to the new address and port. If it errors the first time, tap Join once more — that's normal on this connection. Java players change nothing: <b>winkreyes.duckdns.org:20795</b>. Consoles that join through BedrockConnect enter the same new Bedrock address and port.</p>
+    <p class="note addr-alt" id="addr-alt">Also works: <b>winkreyes.duckdns.org:20795</b>, the direct address, on most networks</p>
+    <p class="note" id="ports">The server moved home on November 21, 2026, and Bedrock got a new address. <b>Bedrock</b> (phone, iPad, tablet, Windows, console): <b>featheredpineapple.wdn.gg</b> port <b>443</b> — if it errors the first time, tap Join once more; that's normal on this connection. <b>Java</b> (PC or Mac): <b>dedication-taxis.tun.ply.gg</b> (no port) — use this address for now; it reaches the server from any network. The direct address <b>winkreyes.duckdns.org:20795</b> also works on most networks.</p>
+    <p class="note" id="bedrock-port-cutoff"><b>The server moved home — Bedrock has a new address.</b> As of November 21, 2026, the server runs on Mike's PC at home instead of the rented host. Bedrock (phones, tablets, Windows and consoles) now joins at <b>featheredpineapple.wdn.gg</b> port <b>443</b>; the old Bedrock entry (wrv.duckdns.org port 25622, or port 20795) no longer works, so update your saved server to the new address and port. If it errors the first time, tap Join once more — that's normal on this connection. Java players: use <b>dedication-taxis.tun.ply.gg</b> (no port) for now; it reaches the server from any network. The direct address <b>winkreyes.duckdns.org:20795</b> also works on most networks. Consoles that join through BedrockConnect enter the same new Bedrock address and port.</p>
     <p class="server-status" style="margin:1rem 0 0;">
       <span id="server-status-pill" role="status" style="display:none;align-items:center;gap:.5rem;background:rgba(0,0,0,.3);color:#fff;font-weight:700;font-size:.95rem;padding:.45rem .9rem;border-radius:999px;">
         <span id="server-status-dot" aria-hidden="true" style="width:.65rem;height:.65rem;border-radius:50%;background:#9aa38f;flex:none;"></span>
@@ -81,8 +81,8 @@
       </article>
       <article class="card">
         <h3>Java on PC or Mac</h3>
-        <ol><li>Multiplayer, then Add Server</li><li>Address: <b>winkreyes.duckdns.org:20795</b></li></ol>
-        <p class="note">Java keeps port <b>20795</b>. Nothing changed for Java players. If that address will not connect from your network, add the server again with the address <b>dedication-taxis.tun.ply.gg</b> and no port — it reaches the same server from any network.</p>
+        <ol><li>Multiplayer, then Add Server</li><li>Address: <b>dedication-taxis.tun.ply.gg</b> (no port)</li></ol>
+        <p class="note">Java players: use this address for now. It reaches the same server from any network and needs no port. The direct address <b>winkreyes.duckdns.org:20795</b> also works on most networks.</p>
       </article>
       <article class="card">
         <h3>Xbox, PlayStation, Switch</h3>
@@ -108,7 +108,7 @@
         <li>Join. The first time, a <b>Trust on First Use?</b> box pops up. Tap <b>Trust</b>. You only do this once on each device.</li>
       </ol>
       <p class="note"><b>Does the old Bedrock entry still work?</b> No. When the server moved home on November 21, 2026, the old Bedrock address and ports (wrv.duckdns.org on 25622 or 20795) stopped working. Use <b>featheredpineapple.wdn.gg</b> port <b>443</b> — and if it errors the first time, tap Join once more; that's normal on this connection. Consoles that join through BedrockConnect enter the same new address and port.</p>
-      <p class="note">Java players change nothing: Java stays on port <b>20795</b>, now at <b>winkreyes.duckdns.org:20795</b> (the older addresses also work).</p>
+      <p class="note">Java players: use <b>dedication-taxis.tun.ply.gg</b> (no port) for now. The direct address <b>winkreyes.duckdns.org:20795</b> also works on most networks.</p>
     </div>
   </section>
 
@@ -3610,8 +3610,8 @@
     return row;
   }
   var javaRow = makeRow();
-  javaRow.appendChild(makeBox('Java Address', 'winkreyes.duckdns.org'));
-  javaRow.appendChild(makeBox('Java Port', '20795'));
+  javaRow.appendChild(makeBox('Java Address', 'dedication-taxis.tun.ply.gg'));
+  javaRow.appendChild(makeBox('Java Port', 'No port'));
   box.insertBefore(javaRow, addr);
   var bedrockRow = makeRow();
   bedrockRow.appendChild(makeBox('Bedrock Address', 'featheredpineapple.wdn.gg'));
